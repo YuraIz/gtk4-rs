@@ -1,0 +1,739 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/constraint_layout.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>constraint_layout.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
+
+    function checkDocsLatestStable() {
+        function popup(msg, url) { return `
+            <style scoped="scoped">
+                .popup {
+                    max-width: 16em;
+                    background-color: #fff;
+                    position: fixed;
+                    z-index: 1;
+                    margin-left: auto;
+                    bottom: 1em;
+                    right: 1em;
+                    border-radius: 5px;
+                    box-shadow: 1px 1px 4px #777;
+                }
+
+                .popup a.version {
+                    color: #e57300;
+                    padding: 0.6em 1em;
+                    display: block;
+                }
+                .popup a.version:hover {
+                    color: #b25900;
+                }
+
+                .popup a.close {
+                    color: white;
+                    background: grey;
+                    border-radius: 99px;
+                    display: inline-block;
+                    width: 19px;
+                    line-height: 19px;
+                    font-weight: bold;
+                    text-align: center;
+                    margin: 0.6em;
+                    float: right;
+                }
+                .popup a.close:hover {
+                    background: black;
+                }
+            </style>
+            <section class="popup" id="gir_docs_popup">
+                <a class="close" href="#" onclick="document.getElementById('gir_docs_popup').remove(); return false">×</a>
+                <a class="version" href="https://gtk-rs.org/gtk4-rs/stable/latest/docs">
+                    ⚠ ${msg}
+                </a>
+            </section>
+        ` };
+
+        if ("master" == "master") {
+            document.body.insertAdjacentHTML(
+                'beforeend',
+                popup("This is the development version. Go to latest stable version.", "stable/latest")
+            );
+        } else {
+            fetch('https://gtk-rs.org/gtk4-rs/LATEST_RELEASE_BRANCH')
+                .then(response => response.text())
+                .then(latest_branch => {
+                    if (latest_branch.trim() != "master") {
+                        document.body.insertAdjacentHTML(
+                            'beforeend',
+                            popup("This version is outdated. Go to latest version.", "stable/latest")
+                        );
+                    }
+                });
+        }
+    }
+</script>
+
+
+<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<span id="2">2</span>
+<span id="3">3</span>
+<span id="4">4</span>
+<span id="5">5</span>
+<span id="6">6</span>
+<span id="7">7</span>
+<span id="8">8</span>
+<span id="9">9</span>
+<span id="10">10</span>
+<span id="11">11</span>
+<span id="12">12</span>
+<span id="13">13</span>
+<span id="14">14</span>
+<span id="15">15</span>
+<span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
+<span id="65">65</span>
+<span id="66">66</span>
+<span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
+<span id="75">75</span>
+<span id="76">76</span>
+<span id="77">77</span>
+<span id="78">78</span>
+<span id="79">79</span>
+<span id="80">80</span>
+<span id="81">81</span>
+<span id="82">82</span>
+<span id="83">83</span>
+<span id="84">84</span>
+<span id="85">85</span>
+<span id="86">86</span>
+<span id="87">87</span>
+<span id="88">88</span>
+<span id="89">89</span>
+<span id="90">90</span>
+<span id="91">91</span>
+<span id="92">92</span>
+<span id="93">93</span>
+<span id="94">94</span>
+<span id="95">95</span>
+<span id="96">96</span>
+<span id="97">97</span>
+<span id="98">98</span>
+<span id="99">99</span>
+<span id="100">100</span>
+<span id="101">101</span>
+<span id="102">102</span>
+<span id="103">103</span>
+<span id="104">104</span>
+<span id="105">105</span>
+<span id="106">106</span>
+<span id="107">107</span>
+<span id="108">108</span>
+<span id="109">109</span>
+<span id="110">110</span>
+<span id="111">111</span>
+<span id="112">112</span>
+<span id="113">113</span>
+<span id="114">114</span>
+<span id="115">115</span>
+<span id="116">116</span>
+<span id="117">117</span>
+<span id="118">118</span>
+<span id="119">119</span>
+<span id="120">120</span>
+<span id="121">121</span>
+<span id="122">122</span>
+<span id="123">123</span>
+<span id="124">124</span>
+<span id="125">125</span>
+<span id="126">126</span>
+<span id="127">127</span>
+<span id="128">128</span>
+<span id="129">129</span>
+<span id="130">130</span>
+<span id="131">131</span>
+<span id="132">132</span>
+<span id="133">133</span>
+<span id="134">134</span>
+<span id="135">135</span>
+<span id="136">136</span>
+<span id="137">137</span>
+<span id="138">138</span>
+<span id="139">139</span>
+<span id="140">140</span>
+<span id="141">141</span>
+<span id="142">142</span>
+<span id="143">143</span>
+<span id="144">144</span>
+<span id="145">145</span>
+<span id="146">146</span>
+<span id="147">147</span>
+<span id="148">148</span>
+<span id="149">149</span>
+<span id="150">150</span>
+<span id="151">151</span>
+<span id="152">152</span>
+<span id="153">153</span>
+<span id="154">154</span>
+<span id="155">155</span>
+<span id="156">156</span>
+<span id="157">157</span>
+<span id="158">158</span>
+<span id="159">159</span>
+<span id="160">160</span>
+<span id="161">161</span>
+<span id="162">162</span>
+<span id="163">163</span>
+<span id="164">164</span>
+<span id="165">165</span>
+<span id="166">166</span>
+<span id="167">167</span>
+<span id="168">168</span>
+<span id="169">169</span>
+<span id="170">170</span>
+<span id="171">171</span>
+<span id="172">172</span>
+<span id="173">173</span>
+<span id="174">174</span>
+<span id="175">175</span>
+<span id="176">176</span>
+<span id="177">177</span>
+<span id="178">178</span>
+<span id="179">179</span>
+<span id="180">180</span>
+<span id="181">181</span>
+<span id="182">182</span>
+<span id="183">183</span>
+<span id="184">184</span>
+<span id="185">185</span>
+<span id="186">186</span>
+<span id="187">187</span>
+<span id="188">188</span>
+<span id="189">189</span>
+<span id="190">190</span>
+<span id="191">191</span>
+<span id="192">192</span>
+<span id="193">193</span>
+<span id="194">194</span>
+<span id="195">195</span>
+<span id="196">196</span>
+<span id="197">197</span>
+<span id="198">198</span>
+<span id="199">199</span>
+<span id="200">200</span>
+<span id="201">201</span>
+<span id="202">202</span>
+<span id="203">203</span>
+<span id="204">204</span>
+<span id="205">205</span>
+<span id="206">206</span>
+<span id="207">207</span>
+<span id="208">208</span>
+<span id="209">209</span>
+<span id="210">210</span>
+<span id="211">211</span>
+<span id="212">212</span>
+<span id="213">213</span>
+<span id="214">214</span>
+<span id="215">215</span>
+<span id="216">216</span>
+<span id="217">217</span>
+<span id="218">218</span>
+<span id="219">219</span>
+<span id="220">220</span>
+<span id="221">221</span>
+<span id="222">222</span>
+<span id="223">223</span>
+<span id="224">224</span>
+<span id="225">225</span>
+<span id="226">226</span>
+<span id="227">227</span>
+<span id="228">228</span>
+<span id="229">229</span>
+<span id="230">230</span>
+<span id="231">231</span>
+<span id="232">232</span>
+<span id="233">233</span>
+<span id="234">234</span>
+<span id="235">235</span>
+<span id="236">236</span>
+<span id="237">237</span>
+<span id="238">238</span>
+<span id="239">239</span>
+<span id="240">240</span>
+<span id="241">241</span>
+<span id="242">242</span>
+<span id="243">243</span>
+<span id="244">244</span>
+<span id="245">245</span>
+<span id="246">246</span>
+<span id="247">247</span>
+<span id="248">248</span>
+<span id="249">249</span>
+<span id="250">250</span>
+<span id="251">251</span>
+<span id="252">252</span>
+<span id="253">253</span>
+<span id="254">254</span>
+<span id="255">255</span>
+<span id="256">256</span>
+<span id="257">257</span>
+<span id="258">258</span>
+<span id="259">259</span>
+<span id="260">260</span>
+<span id="261">261</span>
+<span id="262">262</span>
+<span id="263">263</span>
+<span id="264">264</span>
+<span id="265">265</span>
+<span id="266">266</span>
+<span id="267">267</span>
+<span id="268">268</span>
+<span id="269">269</span>
+<span id="270">270</span>
+<span id="271">271</span>
+<span id="272">272</span>
+<span id="273">273</span>
+<span id="274">274</span>
+<span id="275">275</span>
+<span id="276">276</span>
+<span id="277">277</span>
+<span id="278">278</span>
+<span id="279">279</span>
+<span id="280">280</span>
+<span id="281">281</span>
+<span id="282">282</span>
+<span id="283">283</span>
+<span id="284">284</span>
+<span id="285">285</span>
+<span id="286">286</span>
+<span id="287">287</span>
+<span id="288">288</span>
+<span id="289">289</span>
+<span id="290">290</span>
+<span id="291">291</span>
+<span id="292">292</span>
+<span id="293">293</span>
+<span id="294">294</span>
+<span id="295">295</span>
+<span id="296">296</span>
+<span id="297">297</span>
+<span id="298">298</span>
+<span id="299">299</span>
+<span id="300">300</span>
+<span id="301">301</span>
+<span id="302">302</span>
+<span id="303">303</span>
+<span id="304">304</span>
+<span id="305">305</span>
+<span id="306">306</span>
+<span id="307">307</span>
+<span id="308">308</span>
+<span id="309">309</span>
+<span id="310">310</span>
+<span id="311">311</span>
+<span id="312">312</span>
+<span id="313">313</span>
+<span id="314">314</span>
+<span id="315">315</span>
+<span id="316">316</span>
+<span id="317">317</span>
+<span id="318">318</span>
+<span id="319">319</span>
+<span id="320">320</span>
+<span id="321">321</span>
+<span id="322">322</span>
+<span id="323">323</span>
+<span id="324">324</span>
+<span id="325">325</span>
+<span id="326">326</span>
+<span id="327">327</span>
+<span id="328">328</span>
+<span id="329">329</span>
+<span id="330">330</span>
+<span id="331">331</span>
+<span id="332">332</span>
+</pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
+// from gir-files (https://github.com/gtk-rs/gir-files)
+// DO NOT EDIT
+
+</span><span class="kw">use </span><span class="kw">crate</span>::Buildable;
+<span class="kw">use </span><span class="kw">crate</span>::Constraint;
+<span class="kw">use </span><span class="kw">crate</span>::ConstraintGuide;
+<span class="kw">use </span><span class="kw">crate</span>::LayoutManager;
+<span class="kw">use </span>glib::object::Cast;
+<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+<span class="kw">use </span>std::fmt;
+
+<span class="macro">glib::wrapper! </span>{
+    <span class="doccomment">/// A layout manager using constraints to describe relations between widgets.
+    ///
+    /// [`ConstraintLayout`][crate::ConstraintLayout] is a layout manager that uses relations between
+    /// widget attributes, expressed via [`Constraint`][crate::Constraint] instances, to
+    /// measure and allocate widgets.
+    ///
+    /// ### How do constraints work
+    ///
+    /// Constraints are objects defining the relationship between attributes
+    /// of a widget; you can read the description of the [`Constraint`][crate::Constraint]
+    /// class to have a more in depth definition.
+    ///
+    /// By taking multiple constraints and applying them to the children of
+    /// a widget using [`ConstraintLayout`][crate::ConstraintLayout], it&#39;s possible to describe
+    /// complex layout policies; each constraint applied to a child or to the parent
+    /// widgets contributes to the full description of the layout, in terms of
+    /// parameters for resolving the value of each attribute.
+    ///
+    /// It is important to note that a layout is defined by the totality of
+    /// constraints; removing a child, or a constraint, from an existing layout
+    /// without changing the remaining constraints may result in an unstable
+    /// or unsolvable layout.
+    ///
+    /// Constraints have an implicit &quot;reading order&quot;; you should start describing
+    /// each edge of each child, as well as their relationship with the parent
+    /// container, from the top left (or top right, in RTL languages), horizontally
+    /// first, and then vertically.
+    ///
+    /// A constraint-based layout with too few constraints can become &quot;unstable&quot;,
+    /// that is: have more than one solution. The behavior of an unstable layout
+    /// is undefined.
+    ///
+    /// A constraint-based layout with conflicting constraints may be unsolvable,
+    /// and lead to an unstable layout. You can use the `property::Constraint::strength`
+    /// property of [`Constraint`][crate::Constraint] to &quot;nudge&quot; the layout towards a solution.
+    ///
+    /// ### GtkConstraintLayout as GtkBuildable
+    ///
+    /// [`ConstraintLayout`][crate::ConstraintLayout] implements the [`Buildable`][crate::Buildable] interface and
+    /// has a custom &quot;constraints&quot; element which allows describing constraints in
+    /// a [`Builder`][crate::Builder] UI file.
+    ///
+    /// An example of a UI definition fragment specifying a constraint:
+    ///
+    /// ```xml
+    ///   &lt;object class=&quot;GtkConstraintLayout&quot;&gt;
+    ///     &lt;constraints&gt;
+    ///       &lt;constraint target=&quot;button&quot; target-attribute=&quot;start&quot;
+    ///                   relation=&quot;eq&quot;
+    ///                   source=&quot;super&quot; source-attribute=&quot;start&quot;
+    ///                   constant=&quot;12&quot;
+    ///                   strength=&quot;required&quot; /&gt;
+    ///       &lt;constraint target=&quot;button&quot; target-attribute=&quot;width&quot;
+    ///                   relation=&quot;ge&quot;
+    ///                   constant=&quot;250&quot;
+    ///                   strength=&quot;strong&quot; /&gt;
+    ///     &lt;/constraints&gt;
+    ///   &lt;/object&gt;
+    /// ```
+    ///
+    /// The definition above will add two constraints to the GtkConstraintLayout:
+    ///
+    ///  - a required constraint between the leading edge of &quot;button&quot; and
+    ///    the leading edge of the widget using the constraint layout, plus
+    ///    12 pixels
+    ///  - a strong, constant constraint making the width of &quot;button&quot; greater
+    ///    than, or equal to 250 pixels
+    ///
+    /// The &quot;target&quot; and &quot;target-attribute&quot; attributes are required.
+    ///
+    /// The &quot;source&quot; and &quot;source-attribute&quot; attributes of the &quot;constraint&quot;
+    /// element are optional; if they are not specified, the constraint is
+    /// assumed to be a constant.
+    ///
+    /// The &quot;relation&quot; attribute is optional; if not specified, the constraint
+    /// is assumed to be an equality.
+    ///
+    /// The &quot;strength&quot; attribute is optional; if not specified, the constraint
+    /// is assumed to be required.
+    ///
+    /// The &quot;source&quot; and &quot;target&quot; attributes can be set to &quot;super&quot; to indicate
+    /// that the constraint target is the widget using the GtkConstraintLayout.
+    ///
+    /// There can be &quot;constant&quot; and &quot;multiplier&quot; attributes.
+    ///
+    /// Additionally, the &quot;constraints&quot; element can also contain a description
+    /// of the `GtkConstraintGuides` used by the layout:
+    ///
+    /// ```xml
+    ///   &lt;constraints&gt;
+    ///     &lt;guide min-width=&quot;100&quot; max-width=&quot;500&quot; name=&quot;hspace&quot;/&gt;
+    ///     &lt;guide min-height=&quot;64&quot; nat-height=&quot;128&quot; name=&quot;vspace&quot; strength=&quot;strong&quot;/&gt;
+    ///   &lt;/constraints&gt;
+    /// ```
+    ///
+    /// The &quot;guide&quot; element has the following optional attributes:
+    ///
+    ///   - &quot;min-width&quot;, &quot;nat-width&quot;, and &quot;max-width&quot;, describe the minimum,
+    ///     natural, and maximum width of the guide, respectively
+    ///   - &quot;min-height&quot;, &quot;nat-height&quot;, and &quot;max-height&quot;, describe the minimum,
+    ///     natural, and maximum height of the guide, respectively
+    ///   - &quot;strength&quot; describes the strength of the constraint on the natural
+    ///     size of the guide; if not specified, the constraint is assumed to
+    ///     have a medium strength
+    ///   - &quot;name&quot; describes a name for the guide, useful when debugging
+    ///
+    /// ### Using the Visual Format Language
+    ///
+    /// Complex constraints can be described using a compact syntax called VFL,
+    /// or *Visual Format Language*.
+    ///
+    /// The Visual Format Language describes all the constraints on a row or
+    /// column, typically starting from the leading edge towards the trailing
+    /// one. Each element of the layout is composed by &quot;views&quot;, which identify
+    /// a [`ConstraintTarget`][crate::ConstraintTarget].
+    ///
+    /// For instance:
+    ///
+    /// ```text
+    ///   [button]-[textField]
+    /// ```
+    ///
+    /// Describes a constraint that binds the trailing edge of &quot;button&quot; to the
+    /// leading edge of &quot;textField&quot;, leaving a default space between the two.
+    ///
+    /// Using VFL is also possible to specify predicates that describe constraints
+    /// on attributes like width and height:
+    ///
+    /// ```text
+    ///   // Width must be greater than, or equal to 50
+    ///   [button(&gt;=50)]
+    ///
+    ///   // Width of button1 must be equal to width of button2
+    ///   [button1(==button2)]
+    /// ```
+    ///
+    /// The default orientation for a VFL description is horizontal, unless
+    /// otherwise specified:
+    ///
+    /// ```text
+    ///   // horizontal orientation, default attribute: width
+    ///   H:[button(&gt;=150)]
+    ///
+    ///   // vertical orientation, default attribute: height
+    ///   V:[button1(==button2)]
+    /// ```
+    ///
+    /// It&#39;s also possible to specify multiple predicates, as well as their
+    /// strength:
+    ///
+    /// ```text
+    ///   // minimum width of button must be 150
+    ///   // natural width of button can be 250
+    ///   [button(&gt;=150@required, ==250@medium)]
+    /// ```
+    ///
+    /// Finally, it&#39;s also possible to use simple arithmetic operators:
+    ///
+    /// ```text
+    ///   // width of button1 must be equal to width of button2
+    ///   // divided by 2 plus 12
+    ///   [button1(button2 / 2 + 12)]
+    /// ```
+    ///
+    /// # Implements
+    ///
+    /// [`LayoutManagerExt`][trait@crate::prelude::LayoutManagerExt], [`trait@glib::ObjectExt`], [`BuildableExt`][trait@crate::prelude::BuildableExt]
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkConstraintLayout&quot;</span>)]
+    </span><span class="kw">pub struct </span>ConstraintLayout(Object&lt;ffi::GtkConstraintLayout, ffi::GtkConstraintLayoutClass&gt;) @extends LayoutManager, @implements Buildable;
+
+    <span class="kw">match fn </span>{
+        type_ =&gt; || ffi::gtk_constraint_layout_get_type(),
+    }
+}
+
+<span class="kw">impl </span>ConstraintLayout {
+    <span class="doccomment">/// Creates a new [`ConstraintLayout`][crate::ConstraintLayout] layout manager.
+    ///
+    /// # Returns
+    ///
+    /// the newly created [`ConstraintLayout`][crate::ConstraintLayout]
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_constraint_layout_new&quot;</span>)]
+    </span><span class="kw">pub fn </span>new() -&gt; ConstraintLayout {
+        <span class="macro">assert_initialized_main_thread!</span>();
+        <span class="kw">unsafe </span>{ LayoutManager::from_glib_full(ffi::gtk_constraint_layout_new()).unsafe_cast() }
+    }
+
+    <span class="doccomment">/// Adds a constraint to the layout manager.
+    ///
+    /// The `property::Constraint::source` and `property::Constraint::target`
+    /// properties of `constraint` can be:
+    ///
+    ///  - set to `NULL` to indicate that the constraint refers to the
+    ///    widget using `layout`
+    ///  - set to the [`Widget`][crate::Widget] using `layout`
+    ///  - set to a child of the [`Widget`][crate::Widget] using `layout`
+    ///  - set to a [`ConstraintGuide`][crate::ConstraintGuide] that is part of `layout`
+    ///
+    /// The @self acquires the ownership of @constraint after calling
+    /// this function.
+    /// ## `constraint`
+    /// a [`Constraint`][crate::Constraint]
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_constraint_layout_add_constraint&quot;</span>)]
+    </span><span class="kw">pub fn </span>add_constraint(<span class="kw-2">&amp;</span><span class="self">self</span>, constraint: <span class="kw-2">&amp;</span>Constraint) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_constraint_layout_add_constraint(
+                <span class="self">self</span>.to_glib_none().<span class="number">0</span>,
+                constraint.to_glib_full(),
+            );
+        }
+    }
+
+    <span class="doccomment">/// Adds a guide to `layout`.
+    ///
+    /// A guide can be used as the source or target of constraints,
+    /// like a widget, but it is not visible.
+    ///
+    /// The `layout` acquires the ownership of `guide` after calling
+    /// this function.
+    /// ## `guide`
+    /// a [`ConstraintGuide`][crate::ConstraintGuide] object
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_constraint_layout_add_guide&quot;</span>)]
+    </span><span class="kw">pub fn </span>add_guide(<span class="kw-2">&amp;</span><span class="self">self</span>, guide: <span class="kw-2">&amp;</span>ConstraintGuide) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_constraint_layout_add_guide(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, guide.to_glib_full());
+        }
+    }
+
+    <span class="doccomment">/// Returns a `GListModel` to track the constraints that are
+    /// part of the layout.
+    ///
+    /// Calling this function will enable extra internal bookkeeping
+    /// to track constraints and emit signals on the returned listmodel.
+    /// It may slow down operations a lot.
+    ///
+    /// Applications should try hard to avoid calling this function
+    /// because of the slowdowns.
+    ///
+    /// # Returns
+    ///
+    /// a
+    ///   `GListModel` tracking the layout&#39;s constraints
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_constraint_layout_observe_constraints&quot;</span>)]
+    </span><span class="kw">pub fn </span>observe_constraints(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::ListModel {
+        <span class="kw">unsafe </span>{
+            from_glib_full(ffi::gtk_constraint_layout_observe_constraints(
+                <span class="self">self</span>.to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
+
+    <span class="doccomment">/// Returns a `GListModel` to track the guides that are
+    /// part of the layout.
+    ///
+    /// Calling this function will enable extra internal bookkeeping
+    /// to track guides and emit signals on the returned listmodel.
+    /// It may slow down operations a lot.
+    ///
+    /// Applications should try hard to avoid calling this function
+    /// because of the slowdowns.
+    ///
+    /// # Returns
+    ///
+    /// a
+    ///   `GListModel` tracking the layout&#39;s guides
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_constraint_layout_observe_guides&quot;</span>)]
+    </span><span class="kw">pub fn </span>observe_guides(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::ListModel {
+        <span class="kw">unsafe </span>{
+            from_glib_full(ffi::gtk_constraint_layout_observe_guides(
+                <span class="self">self</span>.to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
+
+    <span class="doccomment">/// Removes all constraints from the layout manager.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_constraint_layout_remove_all_constraints&quot;</span>)]
+    </span><span class="kw">pub fn </span>remove_all_constraints(<span class="kw-2">&amp;</span><span class="self">self</span>) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_constraint_layout_remove_all_constraints(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
+        }
+    }
+
+    <span class="doccomment">/// Removes `constraint` from the layout manager,
+    /// so that it no longer influences the layout.
+    /// ## `constraint`
+    /// a [`Constraint`][crate::Constraint]
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_constraint_layout_remove_constraint&quot;</span>)]
+    </span><span class="kw">pub fn </span>remove_constraint(<span class="kw-2">&amp;</span><span class="self">self</span>, constraint: <span class="kw-2">&amp;</span>Constraint) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_constraint_layout_remove_constraint(
+                <span class="self">self</span>.to_glib_none().<span class="number">0</span>,
+                constraint.to_glib_none().<span class="number">0</span>,
+            );
+        }
+    }
+
+    <span class="doccomment">/// Removes `guide` from the layout manager,
+    /// so that it no longer influences the layout.
+    /// ## `guide`
+    /// a [`ConstraintGuide`][crate::ConstraintGuide] object
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_constraint_layout_remove_guide&quot;</span>)]
+    </span><span class="kw">pub fn </span>remove_guide(<span class="kw-2">&amp;</span><span class="self">self</span>, guide: <span class="kw-2">&amp;</span>ConstraintGuide) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_constraint_layout_remove_guide(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, guide.to_glib_none().<span class="number">0</span>);
+        }
+    }
+}
+
+<span class="kw">impl </span>Default <span class="kw">for </span>ConstraintLayout {
+    <span class="kw">fn </span>default() -&gt; <span class="self">Self </span>{
+        <span class="self">Self</span>::new()
+    }
+}
+
+<span class="kw">impl </span>fmt::Display <span class="kw">for </span>ConstraintLayout {
+    <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
+        f.write_str(<span class="string">&quot;ConstraintLayout&quot;</span>)
+    }
+}
+</code></pre></div>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (a24a020e6 2022-10-18)" ></div></body></html>
