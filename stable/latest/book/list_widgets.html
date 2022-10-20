@@ -269,7 +269,7 @@ So let's create a custom GObject <code>IntegerObject</code> that which is initia
 
 impl IntegerObject {
     pub fn new(number: i32) -&gt; Self {
-        Object::new(&amp;[(&quot;number&quot;, &amp;number)]).expect(&quot;Failed to create `IntegerObject`.&quot;)
+        Object::new(&amp;[(&quot;number&quot;, &amp;number)])
     }
 }
 <span class="boring">
@@ -305,13 +305,7 @@ pub struct IntegerObject {
 </span><span class="boring">        PROPERTIES.as_ref()
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn set_property(
-</span><span class="boring">        &amp;self,
-</span><span class="boring">        _obj: &amp;Self::Type,
-</span><span class="boring">        _id: usize,
-</span><span class="boring">        value: &amp;Value,
-</span><span class="boring">        pspec: &amp;ParamSpec,
-</span><span class="boring">    ) {
+</span><span class="boring">    fn set_property(&amp;self, _id: usize, value: &amp;Value, pspec: &amp;ParamSpec) {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;number&quot; =&gt; {
 </span><span class="boring">                let input_number =
@@ -322,7 +316,7 @@ pub struct IntegerObject {
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn property(&amp;self, _obj: &amp;Self::Type, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
+</span><span class="boring">    fn property(&amp;self, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;number&quot; =&gt; self.number.get().to_value(),
 </span><span class="boring">            _ =&gt; unimplemented!(),
@@ -781,7 +775,7 @@ For that we first add the method <code>increase_number</code> to our <code>Integ
 </span><span class="boring">
 </span>impl IntegerObject {
     pub fn new(number: i32) -&gt; Self {
-        Object::new(&amp;[(&quot;number&quot;, &amp;number)]).expect(&quot;Failed to create `IntegerObject`.&quot;)
+        Object::new(&amp;[(&quot;number&quot;, &amp;number)])
     }
 
     pub fn increase_number(self) {

@@ -415,13 +415,7 @@ impl ObjectImpl for CustomButton {
         PROPERTIES.as_ref()
     }
 
-    fn set_property(
-        &amp;self,
-        _obj: &amp;Self::Type,
-        _id: usize,
-        value: &amp;Value,
-        pspec: &amp;ParamSpec,
-    ) {
+    fn set_property(&amp;self, _id: usize, value: &amp;Value, pspec: &amp;ParamSpec) {
         match pspec.name() {
             &quot;number&quot; =&gt; {
                 let input_number =
@@ -432,19 +426,21 @@ impl ObjectImpl for CustomButton {
         }
     }
 
-    fn property(&amp;self, _obj: &amp;Self::Type, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
+    fn property(&amp;self, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
         match pspec.name() {
             &quot;number&quot; =&gt; self.number.get().to_value(),
             _ =&gt; unimplemented!(),
         }
     }
 
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
-        self.parent_constructed(obj);
+    fn constructed(&amp;self) {
+        self.parent_constructed();
 
         // Bind label to number
         // `SYNC_CREATE` ensures that the label will be immediately set
-        obj.bind_property(&quot;number&quot;, obj, &quot;label&quot;)
+        let instance = self.instance();
+        instance
+            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
             .flags(BindingFlags::SYNC_CREATE)
             .build();
     }
@@ -455,9 +451,9 @@ impl ObjectImpl for CustomButton {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all buttons
 </span><span class="boring">impl ButtonImpl for CustomButton {
-</span><span class="boring">    fn clicked(&amp;self, button: &amp;Self::Type) {
+</span><span class="boring">    fn clicked(&amp;self) {
 </span><span class="boring">        let incremented_number = self.number.get() + 1;
-</span><span class="boring">        button.set_property(&quot;number&quot;, &amp;incremented_number);
+</span><span class="boring">        self.instance().set_property(&quot;number&quot;, &amp;incremented_number);
 </span><span class="boring">    }
 </span><span class="boring">}
 </span></code></pre>
@@ -497,13 +493,7 @@ This way the &quot;notify&quot; signal will be emitted which bindings work as ex
 </span><span class="boring">        PROPERTIES.as_ref()
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn set_property(
-</span><span class="boring">        &amp;self,
-</span><span class="boring">        _obj: &amp;Self::Type,
-</span><span class="boring">        _id: usize,
-</span><span class="boring">        value: &amp;Value,
-</span><span class="boring">        pspec: &amp;ParamSpec,
-</span><span class="boring">    ) {
+</span><span class="boring">    fn set_property(&amp;self, _id: usize, value: &amp;Value, pspec: &amp;ParamSpec) {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;number&quot; =&gt; {
 </span><span class="boring">                let input_number =
@@ -514,19 +504,21 @@ This way the &quot;notify&quot; signal will be emitted which bindings work as ex
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn property(&amp;self, _obj: &amp;Self::Type, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
+</span><span class="boring">    fn property(&amp;self, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;number&quot; =&gt; self.number.get().to_value(),
 </span><span class="boring">            _ =&gt; unimplemented!(),
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">    fn constructed(&amp;self) {
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Bind label to number
 </span><span class="boring">        // `SYNC_CREATE` ensures that the label will be immediately set
-</span><span class="boring">        obj.bind_property(&quot;number&quot;, obj, &quot;label&quot;)
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance
+</span><span class="boring">            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
 </span><span class="boring">            .build();
 </span><span class="boring">    }
@@ -537,9 +529,9 @@ This way the &quot;notify&quot; signal will be emitted which bindings work as ex
 </span><span class="boring">
 </span>// Trait shared by all buttons
 impl ButtonImpl for CustomButton {
-    fn clicked(&amp;self, button: &amp;Self::Type) {
+    fn clicked(&amp;self) {
         let incremented_number = self.number.get() + 1;
-        button.set_property(&quot;number&quot;, &amp;incremented_number);
+        self.instance().set_property(&quot;number&quot;, &amp;incremented_number);
     }
 }
 </code></pre>
@@ -574,18 +566,12 @@ impl ButtonImpl for CustomButton {
 </span><span class="boring">    button_1
 </span><span class="boring">        .bind_property(&quot;number&quot;, &amp;button_2, &quot;number&quot;)
 </span><span class="boring">        // How to transform &quot;number&quot; from `button_1` to &quot;number&quot; of `button_2`
-</span><span class="boring">        .transform_to(|_, value| {
-</span><span class="boring">            let number = value
-</span><span class="boring">                .get::&lt;i32&gt;()
-</span><span class="boring">                .expect(&quot;The property needs to be of type `i32`.&quot;);
+</span><span class="boring">        .transform_to(|_, number: i32| {
 </span><span class="boring">            let incremented_number = number + 1;
 </span><span class="boring">            Some(incremented_number.to_value())
 </span><span class="boring">        })
 </span><span class="boring">        // How to transform &quot;number&quot; from `button_2` to &quot;number&quot; of `button_1`
-</span><span class="boring">        .transform_from(|_, value| {
-</span><span class="boring">            let number = value
-</span><span class="boring">                .get::&lt;i32&gt;()
-</span><span class="boring">                .expect(&quot;The property needs to be of type `i32`.&quot;);
+</span><span class="boring">        .transform_from(|_, number: i32| {
 </span><span class="boring">            let decremented_number = number - 1;
 </span><span class="boring">            Some(decremented_number.to_value())
 </span><span class="boring">        })
@@ -656,18 +642,12 @@ By leveraging <a href="https://gtk-rs.org/gtk-rs-core/stable/latest/docs/glib/ob
     button_1
         .bind_property(&quot;number&quot;, &amp;button_2, &quot;number&quot;)
         // How to transform &quot;number&quot; from `button_1` to &quot;number&quot; of `button_2`
-        .transform_to(|_, value| {
-            let number = value
-                .get::&lt;i32&gt;()
-                .expect(&quot;The property needs to be of type `i32`.&quot;);
+        .transform_to(|_, number: i32| {
             let incremented_number = number + 1;
             Some(incremented_number.to_value())
         })
         // How to transform &quot;number&quot; from `button_2` to &quot;number&quot; of `button_1`
-        .transform_from(|_, value| {
-            let number = value
-                .get::&lt;i32&gt;()
-                .expect(&quot;The property needs to be of type `i32`.&quot;);
+        .transform_from(|_, number: i32| {
             let decremented_number = number - 1;
             Some(decremented_number.to_value())
         })
@@ -745,18 +725,12 @@ For example like this:</p>
 </span><span class="boring">    button_1
 </span><span class="boring">        .bind_property(&quot;number&quot;, &amp;button_2, &quot;number&quot;)
 </span><span class="boring">        // How to transform &quot;number&quot; from `button_1` to &quot;number&quot; of `button_2`
-</span><span class="boring">        .transform_to(|_, value| {
-</span><span class="boring">            let number = value
-</span><span class="boring">                .get::&lt;i32&gt;()
-</span><span class="boring">                .expect(&quot;The property needs to be of type `i32`.&quot;);
+</span><span class="boring">        .transform_to(|_, number: i32| {
 </span><span class="boring">            let incremented_number = number + 1;
 </span><span class="boring">            Some(incremented_number.to_value())
 </span><span class="boring">        })
 </span><span class="boring">        // How to transform &quot;number&quot; from `button_2` to &quot;number&quot; of `button_1`
-</span><span class="boring">        .transform_from(|_, value| {
-</span><span class="boring">            let number = value
-</span><span class="boring">                .get::&lt;i32&gt;()
-</span><span class="boring">                .expect(&quot;The property needs to be of type `i32`.&quot;);
+</span><span class="boring">        .transform_from(|_, number: i32| {
 </span><span class="boring">            let decremented_number = number - 1;
 </span><span class="boring">            Some(decremented_number.to_value())
 </span><span class="boring">        })

@@ -1120,11 +1120,11 @@ glib::wrapper! {
 
 impl CustomButton {
     pub fn new() -&gt; Self {
-        Object::new(&amp;[]).expect(&quot;Failed to create `CustomButton`.&quot;)
+        Object::new(&amp;[])
     }
 
     pub fn with_label(label: &amp;str) -&gt; Self {
-        Object::new(&amp;[(&quot;label&quot;, &amp;label)]).expect(&quot;Failed to create `CustomButton`.&quot;)
+        Object::new(&amp;[(&quot;label&quot;, &amp;label)])
     }
 }
 <span class="boring">
@@ -1219,9 +1219,9 @@ impl ObjectSubclass for CustomButton {
 
 // Trait shared by all GObjects
 impl ObjectImpl for CustomButton {
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
-        self.parent_constructed(obj);
-        obj.set_label(&amp;self.number.get().to_string());
+    fn constructed(&amp;self) {
+        self.parent_constructed();
+        self.instance().set_label(&amp;self.number.get().to_string());
     }
 }
 
@@ -1230,9 +1230,9 @@ impl WidgetImpl for CustomButton {}
 
 // Trait shared by all buttons
 impl ButtonImpl for CustomButton {
-    fn clicked(&amp;self, button: &amp;Self::Type) {
+    fn clicked(&amp;self) {
         self.number.set(self.number.get() + 1);
-        button.set_label(&amp;self.number.get().to_string())
+        self.instance().set_label(&amp;self.number.get().to_string())
     }
 }
 </code></pre>
@@ -1782,13 +1782,7 @@ impl ObjectImpl for CustomButton {
         PROPERTIES.as_ref()
     }
 
-    fn set_property(
-        &amp;self,
-        _obj: &amp;Self::Type,
-        _id: usize,
-        value: &amp;Value,
-        pspec: &amp;ParamSpec,
-    ) {
+    fn set_property(&amp;self, _id: usize, value: &amp;Value, pspec: &amp;ParamSpec) {
         match pspec.name() {
             &quot;number&quot; =&gt; {
                 let input_number =
@@ -1799,19 +1793,21 @@ impl ObjectImpl for CustomButton {
         }
     }
 
-    fn property(&amp;self, _obj: &amp;Self::Type, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
+    fn property(&amp;self, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
         match pspec.name() {
             &quot;number&quot; =&gt; self.number.get().to_value(),
             _ =&gt; unimplemented!(),
         }
     }
 
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
-        self.parent_constructed(obj);
+    fn constructed(&amp;self) {
+        self.parent_constructed();
 
         // Bind label to number
         // `SYNC_CREATE` ensures that the label will be immediately set
-        obj.bind_property(&quot;number&quot;, obj, &quot;label&quot;)
+        let instance = self.instance();
+        instance
+            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
             .flags(BindingFlags::SYNC_CREATE)
             .build();
     }
@@ -1822,9 +1818,9 @@ impl ObjectImpl for CustomButton {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all buttons
 </span><span class="boring">impl ButtonImpl for CustomButton {
-</span><span class="boring">    fn clicked(&amp;self, button: &amp;Self::Type) {
+</span><span class="boring">    fn clicked(&amp;self) {
 </span><span class="boring">        let incremented_number = self.number.get() + 1;
-</span><span class="boring">        button.set_property(&quot;number&quot;, &amp;incremented_number);
+</span><span class="boring">        self.instance().set_property(&quot;number&quot;, &amp;incremented_number);
 </span><span class="boring">    }
 </span><span class="boring">}
 </span></code></pre>
@@ -1864,13 +1860,7 @@ This way the &quot;notify&quot; signal will be emitted which bindings work as ex
 </span><span class="boring">        PROPERTIES.as_ref()
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn set_property(
-</span><span class="boring">        &amp;self,
-</span><span class="boring">        _obj: &amp;Self::Type,
-</span><span class="boring">        _id: usize,
-</span><span class="boring">        value: &amp;Value,
-</span><span class="boring">        pspec: &amp;ParamSpec,
-</span><span class="boring">    ) {
+</span><span class="boring">    fn set_property(&amp;self, _id: usize, value: &amp;Value, pspec: &amp;ParamSpec) {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;number&quot; =&gt; {
 </span><span class="boring">                let input_number =
@@ -1881,19 +1871,21 @@ This way the &quot;notify&quot; signal will be emitted which bindings work as ex
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn property(&amp;self, _obj: &amp;Self::Type, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
+</span><span class="boring">    fn property(&amp;self, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;number&quot; =&gt; self.number.get().to_value(),
 </span><span class="boring">            _ =&gt; unimplemented!(),
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">    fn constructed(&amp;self) {
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Bind label to number
 </span><span class="boring">        // `SYNC_CREATE` ensures that the label will be immediately set
-</span><span class="boring">        obj.bind_property(&quot;number&quot;, obj, &quot;label&quot;)
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance
+</span><span class="boring">            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
 </span><span class="boring">            .build();
 </span><span class="boring">    }
@@ -1904,9 +1896,9 @@ This way the &quot;notify&quot; signal will be emitted which bindings work as ex
 </span><span class="boring">
 </span>// Trait shared by all buttons
 impl ButtonImpl for CustomButton {
-    fn clicked(&amp;self, button: &amp;Self::Type) {
+    fn clicked(&amp;self) {
         let incremented_number = self.number.get() + 1;
-        button.set_property(&quot;number&quot;, &amp;incremented_number);
+        self.instance().set_property(&quot;number&quot;, &amp;incremented_number);
     }
 }
 </code></pre>
@@ -1941,18 +1933,12 @@ impl ButtonImpl for CustomButton {
 </span><span class="boring">    button_1
 </span><span class="boring">        .bind_property(&quot;number&quot;, &amp;button_2, &quot;number&quot;)
 </span><span class="boring">        // How to transform &quot;number&quot; from `button_1` to &quot;number&quot; of `button_2`
-</span><span class="boring">        .transform_to(|_, value| {
-</span><span class="boring">            let number = value
-</span><span class="boring">                .get::&lt;i32&gt;()
-</span><span class="boring">                .expect(&quot;The property needs to be of type `i32`.&quot;);
+</span><span class="boring">        .transform_to(|_, number: i32| {
 </span><span class="boring">            let incremented_number = number + 1;
 </span><span class="boring">            Some(incremented_number.to_value())
 </span><span class="boring">        })
 </span><span class="boring">        // How to transform &quot;number&quot; from `button_2` to &quot;number&quot; of `button_1`
-</span><span class="boring">        .transform_from(|_, value| {
-</span><span class="boring">            let number = value
-</span><span class="boring">                .get::&lt;i32&gt;()
-</span><span class="boring">                .expect(&quot;The property needs to be of type `i32`.&quot;);
+</span><span class="boring">        .transform_from(|_, number: i32| {
 </span><span class="boring">            let decremented_number = number - 1;
 </span><span class="boring">            Some(decremented_number.to_value())
 </span><span class="boring">        })
@@ -2023,18 +2009,12 @@ By leveraging <a href="https://gtk-rs.org/gtk-rs-core/stable/latest/docs/glib/ob
     button_1
         .bind_property(&quot;number&quot;, &amp;button_2, &quot;number&quot;)
         // How to transform &quot;number&quot; from `button_1` to &quot;number&quot; of `button_2`
-        .transform_to(|_, value| {
-            let number = value
-                .get::&lt;i32&gt;()
-                .expect(&quot;The property needs to be of type `i32`.&quot;);
+        .transform_to(|_, number: i32| {
             let incremented_number = number + 1;
             Some(incremented_number.to_value())
         })
         // How to transform &quot;number&quot; from `button_2` to &quot;number&quot; of `button_1`
-        .transform_from(|_, value| {
-            let number = value
-                .get::&lt;i32&gt;()
-                .expect(&quot;The property needs to be of type `i32`.&quot;);
+        .transform_from(|_, number: i32| {
             let decremented_number = number - 1;
             Some(decremented_number.to_value())
         })
@@ -2112,18 +2092,12 @@ For example like this:</p>
 </span><span class="boring">    button_1
 </span><span class="boring">        .bind_property(&quot;number&quot;, &amp;button_2, &quot;number&quot;)
 </span><span class="boring">        // How to transform &quot;number&quot; from `button_1` to &quot;number&quot; of `button_2`
-</span><span class="boring">        .transform_to(|_, value| {
-</span><span class="boring">            let number = value
-</span><span class="boring">                .get::&lt;i32&gt;()
-</span><span class="boring">                .expect(&quot;The property needs to be of type `i32`.&quot;);
+</span><span class="boring">        .transform_to(|_, number: i32| {
 </span><span class="boring">            let incremented_number = number + 1;
 </span><span class="boring">            Some(incremented_number.to_value())
 </span><span class="boring">        })
 </span><span class="boring">        // How to transform &quot;number&quot; from `button_2` to &quot;number&quot; of `button_1`
-</span><span class="boring">        .transform_from(|_, value| {
-</span><span class="boring">            let number = value
-</span><span class="boring">                .get::&lt;i32&gt;()
-</span><span class="boring">                .expect(&quot;The property needs to be of type `i32`.&quot;);
+</span><span class="boring">        .transform_from(|_, number: i32| {
 </span><span class="boring">            let decremented_number = number - 1;
 </span><span class="boring">            Some(decremented_number.to_value())
 </span><span class="boring">        })
@@ -2307,15 +2281,9 @@ First we override the necessary methods in <code>ObjectImpl</code>.</p>
 impl ObjectImpl for CustomButton {
     fn signals() -&gt; &amp;'static [Signal] {
         static SIGNALS: Lazy&lt;Vec&lt;Signal&gt;&gt; = Lazy::new(|| {
-            vec![Signal::builder(
-                // Signal name
-                &quot;max-number-reached&quot;,
-                // Types of the values which will be sent to the signal handler
-                &amp;[i32::static_type().into()],
-                // Type of the value the signal handler sends back
-                &lt;()&gt;::static_type().into(),
-            )
-            .build()]
+            vec![Signal::builder(&quot;max-number-reached&quot;)
+                .param_types([i32::static_type()])
+                .build()]
         });
         SIGNALS.as_ref()
     }
@@ -2326,13 +2294,7 @@ impl ObjectImpl for CustomButton {
 </span><span class="boring">        PROPERTIES.as_ref()
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn set_property(
-</span><span class="boring">        &amp;self,
-</span><span class="boring">        _obj: &amp;Self::Type,
-</span><span class="boring">        _id: usize,
-</span><span class="boring">        value: &amp;Value,
-</span><span class="boring">        pspec: &amp;ParamSpec,
-</span><span class="boring">    ) {
+</span><span class="boring">    fn set_property(&amp;self, _id: usize, value: &amp;Value, pspec: &amp;ParamSpec) {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;number&quot; =&gt; {
 </span><span class="boring">                let input_number =
@@ -2343,19 +2305,21 @@ impl ObjectImpl for CustomButton {
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn property(&amp;self, _obj: &amp;Self::Type, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
+</span><span class="boring">    fn property(&amp;self, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;number&quot; =&gt; self.number.get().to_value(),
 </span><span class="boring">            _ =&gt; unimplemented!(),
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">    fn constructed(&amp;self) {
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Bind label to number
 </span><span class="boring">        // `SYNC_CREATE` ensures that the label will be immediately set
-</span><span class="boring">        obj.bind_property(&quot;number&quot;, obj, &quot;label&quot;)
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance
+</span><span class="boring">            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
 </span><span class="boring">            .build();
 </span><span class="boring">    }
@@ -2368,15 +2332,16 @@ impl ObjectImpl for CustomButton {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all buttons
 </span><span class="boring">impl ButtonImpl for CustomButton {
-</span><span class="boring">    fn clicked(&amp;self, button: &amp;Self::Type) {
+</span><span class="boring">    fn clicked(&amp;self) {
 </span><span class="boring">        let incremented_number = self.number.get() + 1;
+</span><span class="boring">        let instance = self.instance();
 </span><span class="boring">        // If `number` reached `MAX_NUMBER`,
 </span><span class="boring">        // emit &quot;max-number-reached&quot; signal and set `number` back to 0
 </span><span class="boring">        if incremented_number == MAX_NUMBER {
-</span><span class="boring">            button.emit_by_name::&lt;()&gt;(&quot;max-number-reached&quot;, &amp;[&amp;incremented_number]);
-</span><span class="boring">            button.set_property(&quot;number&quot;, &amp;0);
+</span><span class="boring">            instance.emit_by_name::&lt;()&gt;(&quot;max-number-reached&quot;, &amp;[&amp;incremented_number]);
+</span><span class="boring">            instance.set_property(&quot;number&quot;, &amp;0);
 </span><span class="boring">        } else {
-</span><span class="boring">            button.set_property(&quot;number&quot;, &amp;incremented_number);
+</span><span class="boring">            instance.set_property(&quot;number&quot;, &amp;incremented_number);
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">}
@@ -2384,8 +2349,7 @@ impl ObjectImpl for CustomButton {
 <p>The <code>signals</code> method is responsible for defining a set of signals.
 In our case, we only create a single signal named &quot;max-number-reached&quot;.
 When naming our signal, we make sure to do that in <a href="https://en.wikipedia.org/wiki/Letter_case#Kebab_case">kebab-case</a>.
-When emitted, it sends a single <code>i32</code> value.
-There emitter could get a return value here but we don't need that here so we specify <code>()</code>.</p>
+When emitted, it sends a single <code>i32</code> value.</p>
 <p>We want the signal to be emitted, whenever <code>number</code> reaches <code>MAX_NUMBER</code>.
 Together with the signal we send the value <code>number</code> currently holds.
 After we did that, we set <code>number</code> back to 0.</p>
@@ -2417,15 +2381,9 @@ After we did that, we set <code>number</code> back to 0.</p>
 </span><span class="boring">impl ObjectImpl for CustomButton {
 </span><span class="boring">    fn signals() -&gt; &amp;'static [Signal] {
 </span><span class="boring">        static SIGNALS: Lazy&lt;Vec&lt;Signal&gt;&gt; = Lazy::new(|| {
-</span><span class="boring">            vec![Signal::builder(
-</span><span class="boring">                // Signal name
-</span><span class="boring">                &quot;max-number-reached&quot;,
-</span><span class="boring">                // Types of the values which will be sent to the signal handler
-</span><span class="boring">                &amp;[i32::static_type().into()],
-</span><span class="boring">                // Type of the value the signal handler sends back
-</span><span class="boring">                &lt;()&gt;::static_type().into(),
-</span><span class="boring">            )
-</span><span class="boring">            .build()]
+</span><span class="boring">            vec![Signal::builder(&quot;max-number-reached&quot;)
+</span><span class="boring">                .param_types([i32::static_type()])
+</span><span class="boring">                .build()]
 </span><span class="boring">        });
 </span><span class="boring">        SIGNALS.as_ref()
 </span><span class="boring">    }
@@ -2436,13 +2394,7 @@ After we did that, we set <code>number</code> back to 0.</p>
 </span><span class="boring">        PROPERTIES.as_ref()
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn set_property(
-</span><span class="boring">        &amp;self,
-</span><span class="boring">        _obj: &amp;Self::Type,
-</span><span class="boring">        _id: usize,
-</span><span class="boring">        value: &amp;Value,
-</span><span class="boring">        pspec: &amp;ParamSpec,
-</span><span class="boring">    ) {
+</span><span class="boring">    fn set_property(&amp;self, _id: usize, value: &amp;Value, pspec: &amp;ParamSpec) {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;number&quot; =&gt; {
 </span><span class="boring">                let input_number =
@@ -2453,19 +2405,21 @@ After we did that, we set <code>number</code> back to 0.</p>
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn property(&amp;self, _obj: &amp;Self::Type, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
+</span><span class="boring">    fn property(&amp;self, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;number&quot; =&gt; self.number.get().to_value(),
 </span><span class="boring">            _ =&gt; unimplemented!(),
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">    fn constructed(&amp;self) {
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Bind label to number
 </span><span class="boring">        // `SYNC_CREATE` ensures that the label will be immediately set
-</span><span class="boring">        obj.bind_property(&quot;number&quot;, obj, &quot;label&quot;)
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance
+</span><span class="boring">            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
 </span><span class="boring">            .build();
 </span><span class="boring">    }
@@ -2478,15 +2432,16 @@ After we did that, we set <code>number</code> back to 0.</p>
 
 // Trait shared by all buttons
 impl ButtonImpl for CustomButton {
-    fn clicked(&amp;self, button: &amp;Self::Type) {
+    fn clicked(&amp;self) {
         let incremented_number = self.number.get() + 1;
+        let instance = self.instance();
         // If `number` reached `MAX_NUMBER`,
         // emit &quot;max-number-reached&quot; signal and set `number` back to 0
         if incremented_number == MAX_NUMBER {
-            button.emit_by_name::&lt;()&gt;(&quot;max-number-reached&quot;, &amp;[&amp;incremented_number]);
-            button.set_property(&quot;number&quot;, &amp;0);
+            instance.emit_by_name::&lt;()&gt;(&quot;max-number-reached&quot;, &amp;[&amp;incremented_number]);
+            instance.set_property(&quot;number&quot;, &amp;0);
         } else {
-            button.set_property(&quot;number&quot;, &amp;incremented_number);
+            instance.set_property(&quot;number&quot;, &amp;incremented_number);
         }
     }
 }
@@ -3325,7 +3280,7 @@ First, we create one and add convenience methods for accessing settings as well 
 impl Window {
     pub fn new(app: &amp;Application) -&gt; Self {
         // Create new window
-        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+        Object::new(&amp;[(&quot;application&quot;, app)])
     }
 
     fn setup_settings(&amp;self) {
@@ -3398,19 +3353,22 @@ impl ObjectSubclass for Window {
     type ParentType = ApplicationWindow;
 }
 impl ObjectImpl for Window {
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
-        self.parent_constructed(obj);
+    fn constructed(&amp;self) {
+        self.parent_constructed();
         // Load latest window state
-        obj.setup_settings();
-        obj.load_window_size();
+        let instance = self.instance();
+        instance.setup_settings();
+        instance.load_window_size();
     }
 }
 impl WidgetImpl for Window {}
 impl WindowImpl for Window {
     // Save window state right before the window will be closed
-    fn close_request(&amp;self, obj: &amp;Self::Type) -&gt; Inhibit {
+    fn close_request(&amp;self) -&gt; Inhibit {
         // Save window size
-        obj.save_window_size().expect(&quot;Failed to save window state&quot;);
+        self.instance()
+            .save_window_size()
+            .expect(&quot;Failed to save window state&quot;);
 
         // Don't inhibit the default handler
         Inhibit(false)
@@ -3551,7 +3509,7 @@ So let's create a custom GObject <code>IntegerObject</code> that which is initia
 
 impl IntegerObject {
     pub fn new(number: i32) -&gt; Self {
-        Object::new(&amp;[(&quot;number&quot;, &amp;number)]).expect(&quot;Failed to create `IntegerObject`.&quot;)
+        Object::new(&amp;[(&quot;number&quot;, &amp;number)])
     }
 }
 <span class="boring">
@@ -3587,13 +3545,7 @@ pub struct IntegerObject {
 </span><span class="boring">        PROPERTIES.as_ref()
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn set_property(
-</span><span class="boring">        &amp;self,
-</span><span class="boring">        _obj: &amp;Self::Type,
-</span><span class="boring">        _id: usize,
-</span><span class="boring">        value: &amp;Value,
-</span><span class="boring">        pspec: &amp;ParamSpec,
-</span><span class="boring">    ) {
+</span><span class="boring">    fn set_property(&amp;self, _id: usize, value: &amp;Value, pspec: &amp;ParamSpec) {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;number&quot; =&gt; {
 </span><span class="boring">                let input_number =
@@ -3604,7 +3556,7 @@ pub struct IntegerObject {
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn property(&amp;self, _obj: &amp;Self::Type, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
+</span><span class="boring">    fn property(&amp;self, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;number&quot; =&gt; self.number.get().to_value(),
 </span><span class="boring">            _ =&gt; unimplemented!(),
@@ -4063,7 +4015,7 @@ For that we first add the method <code>increase_number</code> to our <code>Integ
 </span><span class="boring">
 </span>impl IntegerObject {
     pub fn new(number: i32) -&gt; Self {
-        Object::new(&amp;[(&quot;number&quot;, &amp;number)]).expect(&quot;Failed to create `IntegerObject`.&quot;)
+        Object::new(&amp;[(&quot;number&quot;, &amp;number)])
     }
 
     pub fn increase_number(self) {
@@ -4976,17 +4928,15 @@ For our template file we also add the <code>compressed</code> and <code>preproce
 &lt;/gresources&gt;
 </code></pre>
 <p>Now we have to compile the resources and link it to our application.
-One way to do this is to execute <a href="https://gtk-rs.org/gtk-rs-core/stable/latest/docs/gio/fn.compile_resources.html"><code>gio::compile_resources</code></a> within a cargo <a href="https://doc.rust-lang.org/cargo/reference/build-scripts.html">build script</a>.</p>
-<p>First, we have to add <code>gtk4</code> as build dependency in <code>Cargo.toml</code> by executing:</p>
-<pre><code>cargo add gtk4 --rename gtk --build
+One way to do this is to execute <a href="https://gtk-rs.org/gtk-rs-core/stable/latest/docs/glib_build_tools/fn.compile_resources.html"><code>glib_build_tools::compile_resources</code></a> within a cargo <a href="https://doc.rust-lang.org/cargo/reference/build-scripts.html">build script</a>.</p>
+<p>First, we have to add <code>glib-build-tools</code> as build dependency in <code>Cargo.toml</code> by executing:</p>
+<pre><code>cargo add glib-build-tools --build
 </code></pre>
 <p>Then, we create a <code>build.rs</code> at the root of our package with the following content.
 This will compile the resources whenever we trigger a build with cargo and then statically link our executable to them.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/build.rs">listings/build.rs</a></p>
-<pre><code class="language-rust  no_run noplayground">use gtk::gio;
-
-fn main() {
-    gio::compile_resources(
+<pre><code class="language-rust  no_run noplayground">fn main() {
+    glib_build_tools::compile_resources(
         &quot;composite_templates/1/resources&quot;,
         &quot;composite_templates/1/resources/resources.gresource.xml&quot;,
         &quot;composite_templates_1.gresource&quot;,
@@ -5041,7 +4991,7 @@ glib::wrapper! {
 impl Window {
     pub fn new(app: &amp;Application) -&gt; Self {
         // Create new window
-        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;Failed to create Window&quot;)
+        Object::new(&amp;[(&quot;application&quot;, app)])
     }
 }
 </code></pre>
@@ -5084,9 +5034,9 @@ pub struct Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Connect to &quot;clicked&quot; signal of `button`
 </span><span class="boring">        self.button.connect_clicked(move |button| {
@@ -5140,9 +5090,9 @@ impl ObjectSubclass for Window {
 <span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Connect to &quot;clicked&quot; signal of `button`
 </span><span class="boring">        self.button.connect_clicked(move |button| {
@@ -5196,9 +5146,9 @@ The button is easily available thanks to the stored reference in <code>self</cod
 </span><span class="boring">
 </span>// Trait shared by all GObjects
 impl ObjectImpl for Window {
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
+    fn constructed(&amp;self) {
         // Call &quot;constructed&quot; on parent
-        self.parent_constructed(obj);
+        self.parent_constructed();
 
         // Connect to &quot;clicked&quot; signal of `button`
         self.button.connect_clicked(move |button| {
@@ -5263,7 +5213,7 @@ glib::wrapper! {
 <span class="boring">
 </span><span class="boring">impl CustomButton {
 </span><span class="boring">    pub fn new() -&gt; Self {
-</span><span class="boring">        Object::new(&amp;[]).expect(&quot;Failed to create `CustomButton`.&quot;)
+</span><span class="boring">        Object::new(&amp;[])
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -5309,9 +5259,9 @@ pub struct Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Connect to &quot;clicked&quot; signal of `button`
 </span><span class="boring">        self.button.connect_clicked(move |button| {
@@ -5844,7 +5794,7 @@ As usual, we have to list all <a href="https://docs.gtk.org/gtk4/class.Applicati
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -5988,14 +5938,15 @@ impl ObjectSubclass for Window {
 <span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_tasks();
-</span><span class="boring">        obj.setup_callbacks();
-</span><span class="boring">        obj.setup_factory();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_tasks();
+</span><span class="boring">        instance.setup_callbacks();
+</span><span class="boring">        instance.setup_factory();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -6079,7 +6030,6 @@ This object will store the state of the task consisting of:</p>
 impl TaskObject {
     pub fn new(completed: bool, content: String) -&gt; Self {
         Object::new(&amp;[(&quot;completed&quot;, &amp;completed), (&quot;content&quot;, &amp;content)])
-            .expect(&quot;Failed to create `TaskObject`.&quot;)
     }
 }
 <span class="boring">
@@ -6104,7 +6054,6 @@ This will be very convenient when saving the state in one of the following chapt
 </span><span class="boring">impl TaskObject {
 </span><span class="boring">    pub fn new(completed: bool, content: String) -&gt; Self {
 </span><span class="boring">        Object::new(&amp;[(&quot;completed&quot;, &amp;completed), (&quot;content&quot;, &amp;content)])
-</span><span class="boring">            .expect(&quot;Failed to create `TaskObject`.&quot;)
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -6153,13 +6102,7 @@ impl ObjectSubclass for TaskObject {
 </span><span class="boring">        PROPERTIES.as_ref()
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn set_property(
-</span><span class="boring">        &amp;self,
-</span><span class="boring">        _obj: &amp;Self::Type,
-</span><span class="boring">        _id: usize,
-</span><span class="boring">        value: &amp;Value,
-</span><span class="boring">        pspec: &amp;ParamSpec,
-</span><span class="boring">    ) {
+</span><span class="boring">    fn set_property(&amp;self, _id: usize, value: &amp;Value, pspec: &amp;ParamSpec) {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;completed&quot; =&gt; {
 </span><span class="boring">                let input_value =
@@ -6176,7 +6119,7 @@ impl ObjectSubclass for TaskObject {
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn property(&amp;self, _obj: &amp;Self::Type, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
+</span><span class="boring">    fn property(&amp;self, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;completed&quot; =&gt; self.data.borrow().completed.to_value(),
 </span><span class="boring">            &quot;content&quot; =&gt; self.data.borrow().content.to_value(),
@@ -6239,7 +6182,7 @@ The row of a task should look like this:</p>
 </span><span class="boring">
 </span><span class="boring">impl TaskRow {
 </span><span class="boring">    pub fn new() -&gt; Self {
-</span><span class="boring">        Object::new(&amp;[]).expect(&quot;Failed to create `TaskRow`.&quot;)
+</span><span class="boring">        Object::new(&amp;[])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    pub fn bind(&amp;self, task_object: &amp;TaskObject) {
@@ -6268,11 +6211,8 @@ The row of a task should look like this:</p>
 </span><span class="boring">        let content_label_binding = task_object
 </span><span class="boring">            .bind_property(&quot;completed&quot;, &amp;content_label, &quot;attributes&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
-</span><span class="boring">            .transform_to(|_, active_value| {
+</span><span class="boring">            .transform_to(|_, active| {
 </span><span class="boring">                let attribute_list = AttrList::new();
-</span><span class="boring">                let active = active_value
-</span><span class="boring">                    .get::&lt;bool&gt;()
-</span><span class="boring">                    .expect(&quot;The value needs to be of type `bool`.&quot;);
 </span><span class="boring">                if active {
 </span><span class="boring">                    // If &quot;active&quot; is true, content of the label will be strikethrough
 </span><span class="boring">                    let attribute = AttrInt::new_strikethrough(true);
@@ -6382,14 +6322,15 @@ We override the <code>imp::Window::constructed</code> in order to set up window 
 </span><span class="boring">
 </span>// Trait shared by all GObjects
 impl ObjectImpl for Window {
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
+    fn constructed(&amp;self) {
         // Call &quot;constructed&quot; on parent
-        self.parent_constructed(obj);
+        self.parent_constructed();
 
         // Setup
-        obj.setup_tasks();
-        obj.setup_callbacks();
-        obj.setup_factory();
+        let instance = self.instance();
+        instance.setup_tasks();
+        instance.setup_callbacks();
+        instance.setup_factory();
     }
 }
 <span class="boring">
@@ -6426,7 +6367,7 @@ Then we store a reference to the model in <code>imp::Window</code> as well as in
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span>    fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -6552,7 +6493,7 @@ Finally, the entry will be cleared.</p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -6684,7 +6625,7 @@ We will need to unbind them manually when they are no longer needed.</p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -6815,7 +6756,7 @@ Unbinding will only work if it can access the stored <a href="https://gtk-rs.org
 </span><span class="boring">
 </span><span class="boring">impl TaskRow {
 </span><span class="boring">    pub fn new() -&gt; Self {
-</span><span class="boring">        Object::new(&amp;[]).expect(&quot;Failed to create `TaskRow`.&quot;)
+</span><span class="boring">        Object::new(&amp;[])
 </span><span class="boring">    }
 </span><span class="boring">
 </span>    pub fn bind(&amp;self, task_object: &amp;TaskObject) {
@@ -6844,11 +6785,8 @@ Unbinding will only work if it can access the stored <a href="https://gtk-rs.org
         let content_label_binding = task_object
             .bind_property(&quot;completed&quot;, &amp;content_label, &quot;attributes&quot;)
             .flags(BindingFlags::SYNC_CREATE)
-            .transform_to(|_, active_value| {
+            .transform_to(|_, active| {
                 let attribute_list = AttrList::new();
-                let active = active_value
-                    .get::&lt;bool&gt;()
-                    .expect(&quot;The value needs to be of type `bool`.&quot;);
                 if active {
                     // If &quot;active&quot; is true, content of the label will be strikethrough
                     let attribute = AttrInt::new_strikethrough(true);
@@ -6897,7 +6835,7 @@ In the end, it clears the vector.</p>
 </span><span class="boring">
 </span><span class="boring">impl TaskRow {
 </span><span class="boring">    pub fn new() -&gt; Self {
-</span><span class="boring">        Object::new(&amp;[]).expect(&quot;Failed to create `TaskRow`.&quot;)
+</span><span class="boring">        Object::new(&amp;[])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    pub fn bind(&amp;self, task_object: &amp;TaskObject) {
@@ -6926,11 +6864,8 @@ In the end, it clears the vector.</p>
 </span><span class="boring">        let content_label_binding = task_object
 </span><span class="boring">            .bind_property(&quot;completed&quot;, &amp;content_label, &quot;attributes&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
-</span><span class="boring">            .transform_to(|_, active_value| {
+</span><span class="boring">            .transform_to(|_, active| {
 </span><span class="boring">                let attribute_list = AttrList::new();
-</span><span class="boring">                let active = active_value
-</span><span class="boring">                    .get::&lt;bool&gt;()
-</span><span class="boring">                    .expect(&quot;The value needs to be of type `bool`.&quot;);
 </span><span class="boring">                if active {
 </span><span class="boring">                    // If &quot;active&quot; is true, content of the label will be strikethrough
 </span><span class="boring">                    let attribute = AttrInt::new_strikethrough(true);
@@ -7370,7 +7305,7 @@ Within the template we can then set the &quot;action-name&quot; and &quot;action
 </span>impl Window {
     pub fn new(app: &amp;Application) -&gt; Self {
         // Create new window
-        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;Failed to create Window&quot;)
+        Object::new(&amp;[(&quot;application&quot;, app)])
     }
 
     fn setup_actions(&amp;self) {
@@ -7443,12 +7378,12 @@ Within the template we can then set the &quot;action-name&quot; and &quot;action
 </span><span class="boring">
 </span>// Trait shared by all GObjects
 impl ObjectImpl for Window {
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
+    fn constructed(&amp;self) {
         // Call &quot;constructed&quot; on parent
-        self.parent_constructed(obj);
+        self.parent_constructed();
 
         // Add actions
-        obj.setup_actions();
+        self.instance().setup_actions();
     }
 }
 <span class="boring">
@@ -7496,7 +7431,7 @@ This means that the caller can expect the boolean state to toggle after activati
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;Failed to create Window&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_actions(&amp;self) {
@@ -7601,7 +7536,7 @@ We don't need the action state to implement orientation switching, however it is
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;Failed to create Window&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_actions(&amp;self) {
@@ -7809,14 +7744,15 @@ pub struct Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_settings();
-</span><span class="boring">        obj.setup_actions();
-</span><span class="boring">        obj.bind_settings();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_settings();
+</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        instance.bind_settings();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -7851,7 +7787,7 @@ pub struct Window {
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;Failed to create Window&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span>    fn setup_settings(&amp;self) {
@@ -7974,7 +7910,7 @@ We create actions with the<a href="https://gtk-rs.org/gtk-rs-core/stable/latest/
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;Failed to create Window&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -8099,7 +8035,7 @@ For the stateful actions, instead of adding callbacks to their &quot;activate&qu
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;Failed to create Window&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -8240,14 +8176,15 @@ For the stateful actions, instead of adding callbacks to their &quot;activate&qu
 </span><span class="boring">
 </span>// Trait shared by all GObjects
 impl ObjectImpl for Window {
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
+    fn constructed(&amp;self) {
         // Call &quot;constructed&quot; on parent
-        self.parent_constructed(obj);
+        self.parent_constructed();
 
         // Setup
-        obj.setup_settings();
-        obj.setup_actions();
-        obj.bind_settings();
+        let instance = self.instance();
+        instance.setup_settings();
+        instance.setup_actions();
+        instance.bind_settings();
     }
 }
 <span class="boring">
@@ -8391,17 +8328,18 @@ pub struct Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_settings();
-</span><span class="boring">        obj.setup_tasks();
-</span><span class="boring">        obj.restore_data();
-</span><span class="boring">        obj.setup_callbacks();
-</span><span class="boring">        obj.setup_factory();
-</span><span class="boring">        obj.setup_actions();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_settings();
+</span><span class="boring">        instance.setup_tasks();
+</span><span class="boring">        instance.restore_data();
+</span><span class="boring">        instance.setup_callbacks();
+</span><span class="boring">        instance.setup_factory();
+</span><span class="boring">        instance.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -8410,9 +8348,10 @@ pub struct Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all windows
 </span><span class="boring">impl WindowImpl for Window {
-</span><span class="boring">    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+</span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
-</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = window
+</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
+</span><span class="boring">            .instance()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -8426,7 +8365,7 @@ pub struct Window {
 </span><span class="boring">            .expect(&quot;Could not write data to json file&quot;);
 </span><span class="boring">
 </span><span class="boring">        // Pass close request on to the parent
-</span><span class="boring">        self.parent_close_request(window)
+</span><span class="boring">        self.parent_close_request()
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -8463,7 +8402,7 @@ pub struct Window {
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span>    fn setup_settings(&amp;self) {
@@ -8688,7 +8627,6 @@ We will make use of them in the following snippets.</p>
 </span>impl TaskObject {
     pub fn new(completed: bool, content: String) -&gt; Self {
         Object::new(&amp;[(&quot;completed&quot;, &amp;completed), (&quot;content&quot;, &amp;content)])
-            .expect(&quot;Failed to create `TaskObject`.&quot;)
     }
 
     pub fn is_completed(&amp;self) -&gt; bool {
@@ -8742,7 +8680,7 @@ We also add an action which allows us to remove done tasks. </p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -8984,7 +8922,7 @@ If the state is &quot;All&quot; nothing has to be filtered out, so we return <co
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -9224,7 +9162,7 @@ Whenever the state of the key &quot;filter&quot; changes, we call the method <co
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -9584,7 +9522,6 @@ Doing so allows us to derive <code>Serialize</code> and <code>Deserialize</code>
 </span><span class="boring">impl TaskObject {
 </span><span class="boring">    pub fn new(completed: bool, content: String) -&gt; Self {
 </span><span class="boring">        Object::new(&amp;[(&quot;completed&quot;, &amp;completed), (&quot;content&quot;, &amp;content)])
-</span><span class="boring">            .expect(&quot;Failed to create `TaskObject`.&quot;)
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    pub fn is_completed(&amp;self) -&gt; bool {
@@ -9674,17 +9611,18 @@ Then we serialize the <code>Vec</code> and store the data as a json file.</p>
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_settings();
-</span><span class="boring">        obj.setup_tasks();
-</span><span class="boring">        obj.restore_data();
-</span><span class="boring">        obj.setup_callbacks();
-</span><span class="boring">        obj.setup_factory();
-</span><span class="boring">        obj.setup_actions();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_settings();
+</span><span class="boring">        instance.setup_tasks();
+</span><span class="boring">        instance.restore_data();
+</span><span class="boring">        instance.setup_callbacks();
+</span><span class="boring">        instance.setup_factory();
+</span><span class="boring">        instance.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -9693,9 +9631,10 @@ Then we serialize the <code>Vec</code> and store the data as a json file.</p>
 </span><span class="boring">
 </span>// Trait shared by all windows
 impl WindowImpl for Window {
-    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+    fn close_request(&amp;self) -&gt; Inhibit {
         // Store task data in vector
-        let backup_data: Vec&lt;TaskData&gt; = window
+        let backup_data: Vec&lt;TaskData&gt; = self
+            .instance()
             .tasks()
             .snapshot()
             .iter()
@@ -9709,7 +9648,7 @@ impl WindowImpl for Window {
             .expect(&quot;Could not write data to json file&quot;);
 
         // Pass close request on to the parent
-        self.parent_close_request(window)
+        self.parent_close_request()
     }
 }
 <span class="boring">
@@ -9776,7 +9715,7 @@ It might be the first time that we started the app and therefore there is no for
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -10032,17 +9971,18 @@ It might be the first time that we started the app and therefore there is no for
 </span><span class="boring">
 </span>// Trait shared by all GObjects
 impl ObjectImpl for Window {
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
+    fn constructed(&amp;self) {
         // Call &quot;constructed&quot; on parent
-        self.parent_constructed(obj);
+        self.parent_constructed();
 
         // Setup
-        obj.setup_settings();
-        obj.setup_tasks();
-        obj.restore_data();
-        obj.setup_callbacks();
-        obj.setup_factory();
-        obj.setup_actions();
+        let instance = self.instance();
+        instance.setup_settings();
+        instance.setup_tasks();
+        instance.restore_data();
+        instance.setup_callbacks();
+        instance.setup_factory();
+        instance.setup_actions();
     }
 }
 <span class="boring">
@@ -10051,9 +9991,10 @@ impl ObjectImpl for Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all windows
 </span><span class="boring">impl WindowImpl for Window {
-</span><span class="boring">    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+</span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
-</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = window
+</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
+</span><span class="boring">            .instance()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -10067,7 +10008,7 @@ impl ObjectImpl for Window {
 </span><span class="boring">            .expect(&quot;Could not write data to json file&quot;);
 </span><span class="boring">
 </span><span class="boring">        // Pass close request on to the parent
-</span><span class="boring">        self.parent_close_request(window)
+</span><span class="boring">        self.parent_close_request()
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -10697,7 +10638,7 @@ fn build_ui(app: &amp;adw::Application) {
 </span><span class="boring">impl Window {
 </span>    pub fn new(app: &amp;adw::Application) -&gt; Self {
         // Create new window
-        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+        Object::new(&amp;[(&quot;application&quot;, app)])
     }
 <span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -11019,16 +10960,17 @@ impl ObjectSubclass for Window {
 <span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_settings();
-</span><span class="boring">        obj.setup_tasks();
-</span><span class="boring">        obj.restore_data();
-</span><span class="boring">        obj.setup_callbacks();
-</span><span class="boring">        obj.setup_actions();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_settings();
+</span><span class="boring">        instance.setup_tasks();
+</span><span class="boring">        instance.restore_data();
+</span><span class="boring">        instance.setup_callbacks();
+</span><span class="boring">        instance.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -11037,9 +10979,10 @@ impl ObjectSubclass for Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all windows
 </span><span class="boring">impl WindowImpl for Window {
-</span><span class="boring">    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+</span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
-</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = window
+</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
+</span><span class="boring">            .instance()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -11053,7 +10996,7 @@ impl ObjectSubclass for Window {
 </span><span class="boring">            .expect(&quot;Could not write data to json file&quot;);
 </span><span class="boring">
 </span><span class="boring">        // Pass close request on to the parent
-</span><span class="boring">        self.parent_close_request(window)
+</span><span class="boring">        self.parent_close_request()
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -11091,7 +11034,7 @@ There we specify the model, as well as a closure describing how to transform the
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -11328,7 +11271,7 @@ That means we can just bind their properties without having to worry about unbin
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -11562,7 +11505,7 @@ That means we can just bind their properties without having to worry about unbin
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -11796,7 +11739,7 @@ That means we can just bind their properties without having to worry about unbin
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -12189,16 +12132,17 @@ impl ObjectSubclass for Window {
 <span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_settings();
-</span><span class="boring">        obj.setup_tasks();
-</span><span class="boring">        obj.restore_data();
-</span><span class="boring">        obj.setup_callbacks();
-</span><span class="boring">        obj.setup_actions();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_settings();
+</span><span class="boring">        instance.setup_tasks();
+</span><span class="boring">        instance.restore_data();
+</span><span class="boring">        instance.setup_callbacks();
+</span><span class="boring">        instance.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -12207,9 +12151,10 @@ impl ObjectSubclass for Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all windows
 </span><span class="boring">impl WindowImpl for Window {
-</span><span class="boring">    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+</span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
-</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = window
+</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
+</span><span class="boring">            .instance()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -12223,7 +12168,7 @@ impl ObjectSubclass for Window {
 </span><span class="boring">            .expect(&quot;Could not write data to json file&quot;);
 </span><span class="boring">
 </span><span class="boring">        // Pass close request on to the parent
-</span><span class="boring">        self.parent_close_request(window)
+</span><span class="boring">        self.parent_close_request()
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -12283,16 +12228,17 @@ impl ObjectSubclass for Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_settings();
-</span><span class="boring">        obj.setup_tasks();
-</span><span class="boring">        obj.restore_data();
-</span><span class="boring">        obj.setup_callbacks();
-</span><span class="boring">        obj.setup_actions();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_settings();
+</span><span class="boring">        instance.setup_tasks();
+</span><span class="boring">        instance.restore_data();
+</span><span class="boring">        instance.setup_callbacks();
+</span><span class="boring">        instance.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -12301,9 +12247,10 @@ impl ObjectSubclass for Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all windows
 </span><span class="boring">impl WindowImpl for Window {
-</span><span class="boring">    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+</span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
-</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = window
+</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
+</span><span class="boring">            .instance()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -12317,7 +12264,7 @@ impl ObjectSubclass for Window {
 </span><span class="boring">            .expect(&quot;Could not write data to json file&quot;);
 </span><span class="boring">
 </span><span class="boring">        // Pass close request on to the parent
-</span><span class="boring">        self.parent_close_request(window)
+</span><span class="boring">        self.parent_close_request()
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -12355,7 +12302,7 @@ impl AdwApplicationWindowImpl for Window {}
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -12684,20 +12631,13 @@ impl ObjectSubclass for CollectionObject {
 </span><span class="boring">        static PROPERTIES: Lazy&lt;Vec&lt;ParamSpec&gt;&gt; = Lazy::new(|| {
 </span><span class="boring">            vec![
 </span><span class="boring">                ParamSpecString::builder(&quot;title&quot;).build(),
-</span><span class="boring">                ParamSpecObject::builder(&quot;tasks&quot;, gio::ListStore::static_type())
-</span><span class="boring">                    .build(),
+</span><span class="boring">                ParamSpecObject::builder::&lt;gio::ListStore&gt;(&quot;tasks&quot;).build(),
 </span><span class="boring">            ]
 </span><span class="boring">        });
 </span><span class="boring">        PROPERTIES.as_ref()
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn set_property(
-</span><span class="boring">        &amp;self,
-</span><span class="boring">        _obj: &amp;Self::Type,
-</span><span class="boring">        _id: usize,
-</span><span class="boring">        value: &amp;Value,
-</span><span class="boring">        pspec: &amp;ParamSpec,
-</span><span class="boring">    ) {
+</span><span class="boring">    fn set_property(&amp;self, _id: usize, value: &amp;Value, pspec: &amp;ParamSpec) {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;title&quot; =&gt; {
 </span><span class="boring">                let input_value = value
@@ -12715,7 +12655,7 @@ impl ObjectSubclass for CollectionObject {
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn property(&amp;self, _obj: &amp;Self::Type, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
+</span><span class="boring">    fn property(&amp;self, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;title&quot; =&gt; self.title.borrow().to_value(),
 </span><span class="boring">            &quot;tasks&quot; =&gt; self.tasks.get().expect(&quot;Could not get tasks.&quot;).to_value(),
@@ -12743,7 +12683,6 @@ impl ObjectSubclass for CollectionObject {
 </span><span class="boring">impl CollectionObject {
 </span><span class="boring">    pub fn new(title: String, tasks: gio::ListStore) -&gt; Self {
 </span><span class="boring">        Object::new(&amp;[(&quot;title&quot;, &amp;title), (&quot;tasks&quot;, &amp;tasks)])
-</span><span class="boring">            .expect(&quot;Failed to create `CollectionObject`.&quot;)
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    pub fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -12812,7 +12751,6 @@ pub struct CollectionData {
 </span>impl CollectionObject {
     pub fn new(title: String, tasks: gio::ListStore) -&gt; Self {
         Object::new(&amp;[(&quot;title&quot;, &amp;title), (&quot;tasks&quot;, &amp;tasks)])
-            .expect(&quot;Failed to create `CollectionObject`.&quot;)
     }
 
     pub fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -12925,16 +12863,17 @@ pub struct Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_settings();
-</span><span class="boring">        obj.setup_collections();
-</span><span class="boring">        obj.restore_data();
-</span><span class="boring">        obj.setup_callbacks();
-</span><span class="boring">        obj.setup_actions();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_settings();
+</span><span class="boring">        instance.setup_collections();
+</span><span class="boring">        instance.restore_data();
+</span><span class="boring">        instance.setup_callbacks();
+</span><span class="boring">        instance.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -12943,9 +12882,10 @@ pub struct Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all windows
 </span><span class="boring">impl WindowImpl for Window {
-</span><span class="boring">    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+</span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
-</span><span class="boring">        let backup_data: Vec&lt;CollectionData&gt; = window
+</span><span class="boring">        let backup_data: Vec&lt;CollectionData&gt; = self
+</span><span class="boring">            .instance()
 </span><span class="boring">            .collections()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -12959,7 +12899,7 @@ pub struct Window {
 </span><span class="boring">            .expect(&quot;Could not write data to json file&quot;);
 </span><span class="boring">
 </span><span class="boring">        // Pass close request on to the parent
-</span><span class="boring">        self.parent_close_request(window)
+</span><span class="boring">        self.parent_close_request()
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -13001,7 +12941,7 @@ pub struct Window {
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -13491,16 +13431,17 @@ Since most of the implementation is in the method <code>CollectionObject::to_col
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_settings();
-</span><span class="boring">        obj.setup_collections();
-</span><span class="boring">        obj.restore_data();
-</span><span class="boring">        obj.setup_callbacks();
-</span><span class="boring">        obj.setup_actions();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_settings();
+</span><span class="boring">        instance.setup_collections();
+</span><span class="boring">        instance.restore_data();
+</span><span class="boring">        instance.setup_callbacks();
+</span><span class="boring">        instance.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -13509,9 +13450,10 @@ Since most of the implementation is in the method <code>CollectionObject::to_col
 </span><span class="boring">
 </span>// Trait shared by all windows
 impl WindowImpl for Window {
-    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+    fn close_request(&amp;self) -&gt; Inhibit {
         // Store task data in vector
-        let backup_data: Vec&lt;CollectionData&gt; = window
+        let backup_data: Vec&lt;CollectionData&gt; = self
+            .instance()
             .collections()
             .snapshot()
             .iter()
@@ -13525,7 +13467,7 @@ impl WindowImpl for Window {
             .expect(&quot;Could not write data to json file&quot;);
 
         // Pass close request on to the parent
-        self.parent_close_request(window)
+        self.parent_close_request()
     }
 }
 <span class="boring">
@@ -13599,16 +13541,17 @@ Instead of <code>setup_tasks</code> we now call <code>setup_collections</code>.<
 </span><span class="boring">
 </span>// Trait shared by all GObjects
 impl ObjectImpl for Window {
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
+    fn constructed(&amp;self) {
         // Call &quot;constructed&quot; on parent
-        self.parent_constructed(obj);
+        self.parent_constructed();
 
         // Setup
-        obj.setup_settings();
-        obj.setup_collections();
-        obj.restore_data();
-        obj.setup_callbacks();
-        obj.setup_actions();
+        let instance = self.instance();
+        instance.setup_settings();
+        instance.setup_collections();
+        instance.restore_data();
+        instance.setup_callbacks();
+        instance.setup_actions();
     }
 }
 <span class="boring">
@@ -13617,9 +13560,10 @@ impl ObjectImpl for Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all windows
 </span><span class="boring">impl WindowImpl for Window {
-</span><span class="boring">    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+</span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
-</span><span class="boring">        let backup_data: Vec&lt;CollectionData&gt; = window
+</span><span class="boring">        let backup_data: Vec&lt;CollectionData&gt; = self
+</span><span class="boring">            .instance()
 </span><span class="boring">            .collections()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -13633,7 +13577,7 @@ impl ObjectImpl for Window {
 </span><span class="boring">            .expect(&quot;Could not write data to json file&quot;);
 </span><span class="boring">
 </span><span class="boring">        // Pass close request on to the parent
-</span><span class="boring">        self.parent_close_request(window)
+</span><span class="boring">        self.parent_close_request()
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -13676,7 +13620,7 @@ To do that it uses the method <code>create_collection_row</code>.</p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -14134,7 +14078,7 @@ To do that it uses the method <code>create_collection_row</code>.</p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -14595,7 +14539,7 @@ We choose the first one and let the method <code>set_current_collection</code> d
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -15059,7 +15003,7 @@ Finally, we select the collection row.</p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -15518,7 +15462,7 @@ It assures that <code>tasks_list</code> is only visible if the number of tasks i
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -15976,7 +15920,7 @@ It assures that <code>tasks_list</code> is only visible if the number of tasks i
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -16451,7 +16395,7 @@ This action will be activated by a click on the <code>+</code> button as well as
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -16915,7 +16859,7 @@ Afterwards we navigate forward on our leaflet, which means we navigate to the ta
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -17379,7 +17323,7 @@ Finally, we connect to a click of the <code>back_button</code> in the task view 
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -17838,7 +17782,7 @@ This method ensure when there is at least one collection, the &quot;main&quot; p
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {

@@ -267,17 +267,18 @@ pub struct Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_settings();
-</span><span class="boring">        obj.setup_tasks();
-</span><span class="boring">        obj.restore_data();
-</span><span class="boring">        obj.setup_callbacks();
-</span><span class="boring">        obj.setup_factory();
-</span><span class="boring">        obj.setup_actions();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_settings();
+</span><span class="boring">        instance.setup_tasks();
+</span><span class="boring">        instance.restore_data();
+</span><span class="boring">        instance.setup_callbacks();
+</span><span class="boring">        instance.setup_factory();
+</span><span class="boring">        instance.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -286,9 +287,10 @@ pub struct Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all windows
 </span><span class="boring">impl WindowImpl for Window {
-</span><span class="boring">    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+</span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
-</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = window
+</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
+</span><span class="boring">            .instance()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -302,7 +304,7 @@ pub struct Window {
 </span><span class="boring">            .expect(&quot;Could not write data to json file&quot;);
 </span><span class="boring">
 </span><span class="boring">        // Pass close request on to the parent
-</span><span class="boring">        self.parent_close_request(window)
+</span><span class="boring">        self.parent_close_request()
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -339,7 +341,7 @@ pub struct Window {
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span>    fn setup_settings(&amp;self) {
@@ -564,7 +566,6 @@ We will make use of them in the following snippets.</p>
 </span>impl TaskObject {
     pub fn new(completed: bool, content: String) -&gt; Self {
         Object::new(&amp;[(&quot;completed&quot;, &amp;completed), (&quot;content&quot;, &amp;content)])
-            .expect(&quot;Failed to create `TaskObject`.&quot;)
     }
 
     pub fn is_completed(&amp;self) -&gt; bool {
@@ -618,7 +619,7 @@ We also add an action which allows us to remove done tasks. </p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -860,7 +861,7 @@ If the state is &quot;All&quot; nothing has to be filtered out, so we return <co
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -1100,7 +1101,7 @@ Whenever the state of the key &quot;filter&quot; changes, we call the method <co
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -1460,7 +1461,6 @@ Doing so allows us to derive <code>Serialize</code> and <code>Deserialize</code>
 </span><span class="boring">impl TaskObject {
 </span><span class="boring">    pub fn new(completed: bool, content: String) -&gt; Self {
 </span><span class="boring">        Object::new(&amp;[(&quot;completed&quot;, &amp;completed), (&quot;content&quot;, &amp;content)])
-</span><span class="boring">            .expect(&quot;Failed to create `TaskObject`.&quot;)
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    pub fn is_completed(&amp;self) -&gt; bool {
@@ -1550,17 +1550,18 @@ Then we serialize the <code>Vec</code> and store the data as a json file.</p>
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_settings();
-</span><span class="boring">        obj.setup_tasks();
-</span><span class="boring">        obj.restore_data();
-</span><span class="boring">        obj.setup_callbacks();
-</span><span class="boring">        obj.setup_factory();
-</span><span class="boring">        obj.setup_actions();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_settings();
+</span><span class="boring">        instance.setup_tasks();
+</span><span class="boring">        instance.restore_data();
+</span><span class="boring">        instance.setup_callbacks();
+</span><span class="boring">        instance.setup_factory();
+</span><span class="boring">        instance.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -1569,9 +1570,10 @@ Then we serialize the <code>Vec</code> and store the data as a json file.</p>
 </span><span class="boring">
 </span>// Trait shared by all windows
 impl WindowImpl for Window {
-    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+    fn close_request(&amp;self) -&gt; Inhibit {
         // Store task data in vector
-        let backup_data: Vec&lt;TaskData&gt; = window
+        let backup_data: Vec&lt;TaskData&gt; = self
+            .instance()
             .tasks()
             .snapshot()
             .iter()
@@ -1585,7 +1587,7 @@ impl WindowImpl for Window {
             .expect(&quot;Could not write data to json file&quot;);
 
         // Pass close request on to the parent
-        self.parent_close_request(window)
+        self.parent_close_request()
     }
 }
 <span class="boring">
@@ -1652,7 +1654,7 @@ It might be the first time that we started the app and therefore there is no for
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -1908,17 +1910,18 @@ It might be the first time that we started the app and therefore there is no for
 </span><span class="boring">
 </span>// Trait shared by all GObjects
 impl ObjectImpl for Window {
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
+    fn constructed(&amp;self) {
         // Call &quot;constructed&quot; on parent
-        self.parent_constructed(obj);
+        self.parent_constructed();
 
         // Setup
-        obj.setup_settings();
-        obj.setup_tasks();
-        obj.restore_data();
-        obj.setup_callbacks();
-        obj.setup_factory();
-        obj.setup_actions();
+        let instance = self.instance();
+        instance.setup_settings();
+        instance.setup_tasks();
+        instance.restore_data();
+        instance.setup_callbacks();
+        instance.setup_factory();
+        instance.setup_actions();
     }
 }
 <span class="boring">
@@ -1927,9 +1930,10 @@ impl ObjectImpl for Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all windows
 </span><span class="boring">impl WindowImpl for Window {
-</span><span class="boring">    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+</span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
-</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = window
+</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
+</span><span class="boring">            .instance()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -1943,7 +1947,7 @@ impl ObjectImpl for Window {
 </span><span class="boring">            .expect(&quot;Could not write data to json file&quot;);
 </span><span class="boring">
 </span><span class="boring">        // Pass close request on to the parent
-</span><span class="boring">        self.parent_close_request(window)
+</span><span class="boring">        self.parent_close_request()
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">

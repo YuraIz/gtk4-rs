@@ -212,7 +212,7 @@ fn build_ui(app: &amp;adw::Application) {
 </span><span class="boring">impl Window {
 </span>    pub fn new(app: &amp;adw::Application) -&gt; Self {
         // Create new window
-        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+        Object::new(&amp;[(&quot;application&quot;, app)])
     }
 <span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -534,16 +534,17 @@ impl ObjectSubclass for Window {
 <span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_settings();
-</span><span class="boring">        obj.setup_tasks();
-</span><span class="boring">        obj.restore_data();
-</span><span class="boring">        obj.setup_callbacks();
-</span><span class="boring">        obj.setup_actions();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_settings();
+</span><span class="boring">        instance.setup_tasks();
+</span><span class="boring">        instance.restore_data();
+</span><span class="boring">        instance.setup_callbacks();
+</span><span class="boring">        instance.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -552,9 +553,10 @@ impl ObjectSubclass for Window {
 </span><span class="boring">
 </span><span class="boring">// Trait shared by all windows
 </span><span class="boring">impl WindowImpl for Window {
-</span><span class="boring">    fn close_request(&amp;self, window: &amp;Self::Type) -&gt; Inhibit {
+</span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
-</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = window
+</span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
+</span><span class="boring">            .instance()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -568,7 +570,7 @@ impl ObjectSubclass for Window {
 </span><span class="boring">            .expect(&quot;Could not write data to json file&quot;);
 </span><span class="boring">
 </span><span class="boring">        // Pass close request on to the parent
-</span><span class="boring">        self.parent_close_request(window)
+</span><span class="boring">        self.parent_close_request()
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -606,7 +608,7 @@ There we specify the model, as well as a closure describing how to transform the
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -843,7 +845,7 @@ That means we can just bind their properties without having to worry about unbin
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -1077,7 +1079,7 @@ That means we can just bind their properties without having to worry about unbin
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -1311,7 +1313,7 @@ That means we can just bind their properties without having to worry about unbin
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {

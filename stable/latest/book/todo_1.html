@@ -208,7 +208,7 @@ As usual, we have to list all <a href="https://docs.gtk.org/gtk4/class.Applicati
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -352,14 +352,15 @@ impl ObjectSubclass for Window {
 <span class="boring">
 </span><span class="boring">// Trait shared by all GObjects
 </span><span class="boring">impl ObjectImpl for Window {
-</span><span class="boring">    fn constructed(&amp;self, obj: &amp;Self::Type) {
+</span><span class="boring">    fn constructed(&amp;self) {
 </span><span class="boring">        // Call &quot;constructed&quot; on parent
-</span><span class="boring">        self.parent_constructed(obj);
+</span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        obj.setup_tasks();
-</span><span class="boring">        obj.setup_callbacks();
-</span><span class="boring">        obj.setup_factory();
+</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        instance.setup_tasks();
+</span><span class="boring">        instance.setup_callbacks();
+</span><span class="boring">        instance.setup_factory();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -443,7 +444,6 @@ This object will store the state of the task consisting of:</p>
 impl TaskObject {
     pub fn new(completed: bool, content: String) -&gt; Self {
         Object::new(&amp;[(&quot;completed&quot;, &amp;completed), (&quot;content&quot;, &amp;content)])
-            .expect(&quot;Failed to create `TaskObject`.&quot;)
     }
 }
 <span class="boring">
@@ -468,7 +468,6 @@ This will be very convenient when saving the state in one of the following chapt
 </span><span class="boring">impl TaskObject {
 </span><span class="boring">    pub fn new(completed: bool, content: String) -&gt; Self {
 </span><span class="boring">        Object::new(&amp;[(&quot;completed&quot;, &amp;completed), (&quot;content&quot;, &amp;content)])
-</span><span class="boring">            .expect(&quot;Failed to create `TaskObject`.&quot;)
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -517,13 +516,7 @@ impl ObjectSubclass for TaskObject {
 </span><span class="boring">        PROPERTIES.as_ref()
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn set_property(
-</span><span class="boring">        &amp;self,
-</span><span class="boring">        _obj: &amp;Self::Type,
-</span><span class="boring">        _id: usize,
-</span><span class="boring">        value: &amp;Value,
-</span><span class="boring">        pspec: &amp;ParamSpec,
-</span><span class="boring">    ) {
+</span><span class="boring">    fn set_property(&amp;self, _id: usize, value: &amp;Value, pspec: &amp;ParamSpec) {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;completed&quot; =&gt; {
 </span><span class="boring">                let input_value =
@@ -540,7 +533,7 @@ impl ObjectSubclass for TaskObject {
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">
-</span><span class="boring">    fn property(&amp;self, _obj: &amp;Self::Type, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
+</span><span class="boring">    fn property(&amp;self, _id: usize, pspec: &amp;ParamSpec) -&gt; Value {
 </span><span class="boring">        match pspec.name() {
 </span><span class="boring">            &quot;completed&quot; =&gt; self.data.borrow().completed.to_value(),
 </span><span class="boring">            &quot;content&quot; =&gt; self.data.borrow().content.to_value(),
@@ -603,7 +596,7 @@ The row of a task should look like this:</p>
 </span><span class="boring">
 </span><span class="boring">impl TaskRow {
 </span><span class="boring">    pub fn new() -&gt; Self {
-</span><span class="boring">        Object::new(&amp;[]).expect(&quot;Failed to create `TaskRow`.&quot;)
+</span><span class="boring">        Object::new(&amp;[])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    pub fn bind(&amp;self, task_object: &amp;TaskObject) {
@@ -632,11 +625,8 @@ The row of a task should look like this:</p>
 </span><span class="boring">        let content_label_binding = task_object
 </span><span class="boring">            .bind_property(&quot;completed&quot;, &amp;content_label, &quot;attributes&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
-</span><span class="boring">            .transform_to(|_, active_value| {
+</span><span class="boring">            .transform_to(|_, active| {
 </span><span class="boring">                let attribute_list = AttrList::new();
-</span><span class="boring">                let active = active_value
-</span><span class="boring">                    .get::&lt;bool&gt;()
-</span><span class="boring">                    .expect(&quot;The value needs to be of type `bool`.&quot;);
 </span><span class="boring">                if active {
 </span><span class="boring">                    // If &quot;active&quot; is true, content of the label will be strikethrough
 </span><span class="boring">                    let attribute = AttrInt::new_strikethrough(true);
@@ -746,14 +736,15 @@ We override the <code>imp::Window::constructed</code> in order to set up window 
 </span><span class="boring">
 </span>// Trait shared by all GObjects
 impl ObjectImpl for Window {
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
+    fn constructed(&amp;self) {
         // Call &quot;constructed&quot; on parent
-        self.parent_constructed(obj);
+        self.parent_constructed();
 
         // Setup
-        obj.setup_tasks();
-        obj.setup_callbacks();
-        obj.setup_factory();
+        let instance = self.instance();
+        instance.setup_tasks();
+        instance.setup_callbacks();
+        instance.setup_factory();
     }
 }
 <span class="boring">
@@ -790,7 +781,7 @@ Then we store a reference to the model in <code>imp::Window</code> as well as in
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span>    fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -916,7 +907,7 @@ Finally, the entry will be cleared.</p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -1048,7 +1039,7 @@ We will need to unbind them manually when they are no longer needed.</p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -1179,7 +1170,7 @@ Unbinding will only work if it can access the stored <a href="https://gtk-rs.org
 </span><span class="boring">
 </span><span class="boring">impl TaskRow {
 </span><span class="boring">    pub fn new() -&gt; Self {
-</span><span class="boring">        Object::new(&amp;[]).expect(&quot;Failed to create `TaskRow`.&quot;)
+</span><span class="boring">        Object::new(&amp;[])
 </span><span class="boring">    }
 </span><span class="boring">
 </span>    pub fn bind(&amp;self, task_object: &amp;TaskObject) {
@@ -1208,11 +1199,8 @@ Unbinding will only work if it can access the stored <a href="https://gtk-rs.org
         let content_label_binding = task_object
             .bind_property(&quot;completed&quot;, &amp;content_label, &quot;attributes&quot;)
             .flags(BindingFlags::SYNC_CREATE)
-            .transform_to(|_, active_value| {
+            .transform_to(|_, active| {
                 let attribute_list = AttrList::new();
-                let active = active_value
-                    .get::&lt;bool&gt;()
-                    .expect(&quot;The value needs to be of type `bool`.&quot;);
                 if active {
                     // If &quot;active&quot; is true, content of the label will be strikethrough
                     let attribute = AttrInt::new_strikethrough(true);
@@ -1261,7 +1249,7 @@ In the end, it clears the vector.</p>
 </span><span class="boring">
 </span><span class="boring">impl TaskRow {
 </span><span class="boring">    pub fn new() -&gt; Self {
-</span><span class="boring">        Object::new(&amp;[]).expect(&quot;Failed to create `TaskRow`.&quot;)
+</span><span class="boring">        Object::new(&amp;[])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    pub fn bind(&amp;self, task_object: &amp;TaskObject) {
@@ -1290,11 +1278,8 @@ In the end, it clears the vector.</p>
 </span><span class="boring">        let content_label_binding = task_object
 </span><span class="boring">            .bind_property(&quot;completed&quot;, &amp;content_label, &quot;attributes&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
-</span><span class="boring">            .transform_to(|_, active_value| {
+</span><span class="boring">            .transform_to(|_, active| {
 </span><span class="boring">                let attribute_list = AttrList::new();
-</span><span class="boring">                let active = active_value
-</span><span class="boring">                    .get::&lt;bool&gt;()
-</span><span class="boring">                    .expect(&quot;The value needs to be of type `bool`.&quot;);
 </span><span class="boring">                if active {
 </span><span class="boring">                    // If &quot;active&quot; is true, content of the label will be strikethrough
 </span><span class="boring">                    let attribute = AttrInt::new_strikethrough(true);

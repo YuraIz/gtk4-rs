@@ -187,7 +187,7 @@ First, we create one and add convenience methods for accessing settings as well 
 impl Window {
     pub fn new(app: &amp;Application) -&gt; Self {
         // Create new window
-        Object::new(&amp;[(&quot;application&quot;, app)]).expect(&quot;`Window` should be  instantiable.&quot;)
+        Object::new(&amp;[(&quot;application&quot;, app)])
     }
 
     fn setup_settings(&amp;self) {
@@ -260,19 +260,22 @@ impl ObjectSubclass for Window {
     type ParentType = ApplicationWindow;
 }
 impl ObjectImpl for Window {
-    fn constructed(&amp;self, obj: &amp;Self::Type) {
-        self.parent_constructed(obj);
+    fn constructed(&amp;self) {
+        self.parent_constructed();
         // Load latest window state
-        obj.setup_settings();
-        obj.load_window_size();
+        let instance = self.instance();
+        instance.setup_settings();
+        instance.load_window_size();
     }
 }
 impl WidgetImpl for Window {}
 impl WindowImpl for Window {
     // Save window state right before the window will be closed
-    fn close_request(&amp;self, obj: &amp;Self::Type) -&gt; Inhibit {
+    fn close_request(&amp;self) -&gt; Inhibit {
         // Save window size
-        obj.save_window_size().expect(&quot;Failed to save window state&quot;);
+        self.instance()
+            .save_window_size()
+            .expect(&quot;Failed to save window state&quot;);
 
         // Don't inhibit the default handler
         Inhibit(false)
