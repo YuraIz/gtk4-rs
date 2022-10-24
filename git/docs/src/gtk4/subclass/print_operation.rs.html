@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -572,7 +572,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkPrintOperationClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).begin_print {
                 f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;PrintOperation&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -588,7 +588,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkPrintOperationClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).create_custom_widget {
                 <span class="kw">let </span>ret = f(<span class="self">self
-                    </span>.instance()
+                    </span>.obj()
                     .unsafe_cast_ref::&lt;PrintOperation&gt;()
                     .to_glib_none()
                     .<span class="number">0</span>);
@@ -605,7 +605,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkPrintOperationClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).custom_widget_apply {
                 f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;PrintOperation&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -621,7 +621,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkPrintOperationClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).done {
                 f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;PrintOperation&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -637,7 +637,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkPrintOperationClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).draw_page {
                 f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;PrintOperation&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -654,7 +654,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkPrintOperationClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).end_print {
                 f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;PrintOperation&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -670,7 +670,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkPrintOperationClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).paginate {
                 from_glib(f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;PrintOperation&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -694,7 +694,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkPrintOperationClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).preview {
                 from_glib(f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;PrintOperation&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -715,7 +715,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkPrintOperationClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).request_page_setup {
                 f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;PrintOperation&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -733,7 +733,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkPrintOperationClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).status_changed {
                 f(<span class="self">self
-                    </span>.instance()
+                    </span>.obj()
                     .unsafe_cast_ref::&lt;PrintOperation&gt;()
                     .to_glib_none()
                     .<span class="number">0</span>);
@@ -752,7 +752,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkPrintOperationClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).update_custom_widget {
                 f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;PrintOperation&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -884,4 +884,4 @@
     imp.update_custom_widget(<span class="kw-2">&amp;</span>widget, <span class="kw-2">&amp;</span>setup, <span class="kw-2">&amp;</span>settings)
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

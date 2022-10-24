@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -577,57 +577,6 @@
 <span id="504">504</span>
 <span id="505">505</span>
 <span id="506">506</span>
-<span id="507">507</span>
-<span id="508">508</span>
-<span id="509">509</span>
-<span id="510">510</span>
-<span id="511">511</span>
-<span id="512">512</span>
-<span id="513">513</span>
-<span id="514">514</span>
-<span id="515">515</span>
-<span id="516">516</span>
-<span id="517">517</span>
-<span id="518">518</span>
-<span id="519">519</span>
-<span id="520">520</span>
-<span id="521">521</span>
-<span id="522">522</span>
-<span id="523">523</span>
-<span id="524">524</span>
-<span id="525">525</span>
-<span id="526">526</span>
-<span id="527">527</span>
-<span id="528">528</span>
-<span id="529">529</span>
-<span id="530">530</span>
-<span id="531">531</span>
-<span id="532">532</span>
-<span id="533">533</span>
-<span id="534">534</span>
-<span id="535">535</span>
-<span id="536">536</span>
-<span id="537">537</span>
-<span id="538">538</span>
-<span id="539">539</span>
-<span id="540">540</span>
-<span id="541">541</span>
-<span id="542">542</span>
-<span id="543">543</span>
-<span id="544">544</span>
-<span id="545">545</span>
-<span id="546">546</span>
-<span id="547">547</span>
-<span id="548">548</span>
-<span id="549">549</span>
-<span id="550">550</span>
-<span id="551">551</span>
-<span id="552">552</span>
-<span id="553">553</span>
-<span id="554">554</span>
-<span id="555">555</span>
-<span id="556">556</span>
-<span id="557">557</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -720,10 +669,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).commit {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;IMContext&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>,
                     string.to_glib_none().<span class="number">0</span>,
                 );
             }
@@ -736,10 +682,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).delete_surrounding {
                 from_glib(f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;IMContext&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>,
                     offset,
                     n_chars,
                 ))
@@ -756,10 +699,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).filter_keypress {
                 from_glib(f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;IMContext&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>,
                     event.to_glib_none().<span class="number">0</span>,
                 ))
             } <span class="kw">else </span>{
@@ -774,11 +714,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).focus_in {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;IMContext&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -788,11 +724,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).focus_out {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;IMContext&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -805,10 +737,7 @@
                 <span class="kw">let </span><span class="kw-2">mut </span>text = std::ptr::null_mut();
                 <span class="kw">let </span><span class="kw-2">mut </span>cursor_index = std::mem::MaybeUninit::uninit();
                 <span class="kw">let </span>ret = from_glib(f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;IMContext&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>,
                     <span class="kw-2">&amp;mut </span>text,
                     cursor_index.as_mut_ptr(),
                 ));
@@ -831,10 +760,7 @@
             <span class="kw">let </span><span class="kw-2">mut </span>attrs = std::ptr::null_mut();
             <span class="kw">let </span><span class="kw-2">mut </span>cursor_pos = std::mem::MaybeUninit::uninit();
             f(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;IMContext&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>,
                 <span class="kw-2">&amp;mut </span>string,
                 <span class="kw-2">&amp;mut </span>attrs,
                 cursor_pos.as_mut_ptr(),
@@ -852,11 +778,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).preedit_changed {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;IMContext&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -866,11 +788,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).preedit_end {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;IMContext&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -880,11 +798,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).preedit_start {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;IMContext&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -894,11 +808,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).reset {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;IMContext&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -909,7 +819,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).retrieve_surrounding {
                 from_glib(f(<span class="self">self
-                    </span>.instance()
+                    </span>.obj()
                     .unsafe_cast_ref::&lt;IMContext&gt;()
                     .to_glib_none()
                     .<span class="number">0</span>))
@@ -926,10 +836,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).set_client_widget {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;IMContext&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>,
                     widget.map(|p| p.as_ref()).to_glib_none().<span class="number">0</span>,
                 )
             }
@@ -942,10 +849,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).set_cursor_location {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;IMContext&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>,
                     area.to_glib_none().<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 );
             }
@@ -958,10 +862,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).set_surrounding {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;IMContext&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>,
                     text.to_glib_none().<span class="number">0</span>,
                     text.len() <span class="kw">as </span>i32,
                     cursor_index,
@@ -976,10 +877,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkIMContextClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).set_use_preedit {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;IMContext&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;IMContext&gt;().to_glib_none().<span class="number">0</span>,
                     use_preedit.into_glib(),
                 )
             }
@@ -1186,4 +1084,4 @@
     imp.set_use_preedit(from_glib(use_preedit))
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

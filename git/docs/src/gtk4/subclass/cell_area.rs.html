@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1110,60 +1110,6 @@
 <span id="1037">1037</span>
 <span id="1038">1038</span>
 <span id="1039">1039</span>
-<span id="1040">1040</span>
-<span id="1041">1041</span>
-<span id="1042">1042</span>
-<span id="1043">1043</span>
-<span id="1044">1044</span>
-<span id="1045">1045</span>
-<span id="1046">1046</span>
-<span id="1047">1047</span>
-<span id="1048">1048</span>
-<span id="1049">1049</span>
-<span id="1050">1050</span>
-<span id="1051">1051</span>
-<span id="1052">1052</span>
-<span id="1053">1053</span>
-<span id="1054">1054</span>
-<span id="1055">1055</span>
-<span id="1056">1056</span>
-<span id="1057">1057</span>
-<span id="1058">1058</span>
-<span id="1059">1059</span>
-<span id="1060">1060</span>
-<span id="1061">1061</span>
-<span id="1062">1062</span>
-<span id="1063">1063</span>
-<span id="1064">1064</span>
-<span id="1065">1065</span>
-<span id="1066">1066</span>
-<span id="1067">1067</span>
-<span id="1068">1068</span>
-<span id="1069">1069</span>
-<span id="1070">1070</span>
-<span id="1071">1071</span>
-<span id="1072">1072</span>
-<span id="1073">1073</span>
-<span id="1074">1074</span>
-<span id="1075">1075</span>
-<span id="1076">1076</span>
-<span id="1077">1077</span>
-<span id="1078">1078</span>
-<span id="1079">1079</span>
-<span id="1080">1080</span>
-<span id="1081">1081</span>
-<span id="1082">1082</span>
-<span id="1083">1083</span>
-<span id="1084">1084</span>
-<span id="1085">1085</span>
-<span id="1086">1086</span>
-<span id="1087">1087</span>
-<span id="1088">1088</span>
-<span id="1089">1089</span>
-<span id="1090">1090</span>
-<span id="1091">1091</span>
-<span id="1092">1092</span>
-<span id="1093">1093</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -1489,10 +1435,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).activate {
                 from_glib(f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellArea&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                     context.as_ref().to_glib_none().<span class="number">0</span>,
                     widget.as_ref().to_glib_none().<span class="number">0</span>,
                     area.to_glib_none().<span class="number">0</span>,
@@ -1511,10 +1454,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).add {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellArea&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                     renderer.as_ref().to_glib_none().<span class="number">0</span>,
                 )
             }
@@ -1533,10 +1473,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).apply_attributes {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellArea&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                     tree_model.as_ref().to_glib_none().<span class="number">0</span>,
                     iter.to_glib_none().<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                     is_expander.into_glib(),
@@ -1554,11 +1491,7 @@
                 .create_context
                 .expect(<span class="string">&quot;No parent class impl for \&quot;create_context\&quot;&quot;</span>);
 
-            <span class="kw">let </span>ret = f(<span class="self">self
-                </span>.instance()
-                .unsafe_cast_ref::&lt;CellArea&gt;()
-                .to_glib_none()
-                .<span class="number">0</span>);
+            <span class="kw">let </span>ret = f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>);
             <span class="prelude-val">Some</span>(from_glib_full(ret))
         }
     }
@@ -1572,10 +1505,7 @@
                 .expect(<span class="string">&quot;No parent class impl for \&quot;copy_context\&quot;&quot;</span>);
 
             <span class="kw">let </span>ret = f(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;CellArea&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                 context.as_ref().to_glib_none().<span class="number">0</span>,
             );
             <span class="prelude-val">Some</span>(from_glib_full(ret))
@@ -1595,10 +1525,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).event {
                 from_glib(f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellArea&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                     context.as_ref().to_glib_none().<span class="number">0</span>,
                     widget.as_ref().to_glib_none().<span class="number">0</span>,
                     event.to_glib_none().<span class="number">0</span>,
@@ -1618,10 +1545,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).foreach {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellArea&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                     callback.callback,
                     callback.user_data,
                 )
@@ -1642,10 +1566,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).foreach_alloc {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellArea&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                     context.as_ref().to_glib_none().<span class="number">0</span>,
                     widget.as_ref().to_glib_none().<span class="number">0</span>,
                     area.to_glib_none().<span class="number">0</span>,
@@ -1663,10 +1584,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).remove {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellArea&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                     renderer.as_ref().to_glib_none().<span class="number">0</span>,
                 )
             }
@@ -1678,11 +1596,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).is_activatable {
-                from_glib(f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;CellArea&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>))
+                from_glib(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>))
             } <span class="kw">else </span>{
                 <span class="bool-val">false
             </span>}
@@ -1695,10 +1609,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).focus {
                 from_glib(f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellArea&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                     direction_type.into_glib(),
                 ))
             } <span class="kw">else </span>{
@@ -1714,11 +1625,7 @@
             <span class="kw">let </span>f = (<span class="kw-2">*</span>parent_class)
                 .get_request_mode
                 .expect(<span class="string">&quot;No parent class impl for \&quot;get_request_mode\&quot;&quot;</span>);
-            from_glib(f(<span class="self">self
-                </span>.instance()
-                .unsafe_cast_ref::&lt;CellArea&gt;()
-                .to_glib_none()
-                .<span class="number">0</span>))
+            from_glib(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>))
         }
     }
 
@@ -1735,10 +1642,7 @@
             <span class="kw">let </span><span class="kw-2">mut </span>minimum_size = mem::MaybeUninit::uninit();
             <span class="kw">let </span><span class="kw-2">mut </span>natural_size = mem::MaybeUninit::uninit();
             f(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;CellArea&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                 cell_area_context.as_ref().to_glib_none().<span class="number">0</span>,
                 widget.as_ref().to_glib_none().<span class="number">0</span>,
                 minimum_size.as_mut_ptr(),
@@ -1761,10 +1665,7 @@
             <span class="kw">let </span><span class="kw-2">mut </span>minimum_size = mem::MaybeUninit::uninit();
             <span class="kw">let </span><span class="kw-2">mut </span>natural_size = mem::MaybeUninit::uninit();
             f(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;CellArea&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                 cell_area_context.as_ref().to_glib_none().<span class="number">0</span>,
                 widget.as_ref().to_glib_none().<span class="number">0</span>,
                 minimum_size.as_mut_ptr(),
@@ -1788,10 +1689,7 @@
             <span class="kw">let </span><span class="kw-2">mut </span>minimum_size = mem::MaybeUninit::uninit();
             <span class="kw">let </span><span class="kw-2">mut </span>natural_size = mem::MaybeUninit::uninit();
             f(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;CellArea&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                 cell_area_context.as_ref().to_glib_none().<span class="number">0</span>,
                 widget.as_ref().to_glib_none().<span class="number">0</span>,
                 height,
@@ -1815,10 +1713,7 @@
             <span class="kw">let </span><span class="kw-2">mut </span>minimum_size = mem::MaybeUninit::uninit();
             <span class="kw">let </span><span class="kw-2">mut </span>natural_size = mem::MaybeUninit::uninit();
             f(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;CellArea&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                 cell_area_context.as_ref().to_glib_none().<span class="number">0</span>,
                 widget.as_ref().to_glib_none().<span class="number">0</span>,
                 width,
@@ -1844,10 +1739,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).snapshot {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellArea&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellArea&gt;().to_glib_none().<span class="number">0</span>,
                     context.as_ref().to_glib_none().<span class="number">0</span>,
                     widget.as_ref().to_glib_none().<span class="number">0</span>,
                     snapshot.to_glib_none().<span class="number">0</span>,
@@ -2258,4 +2150,4 @@
 
 <span class="kw">unsafe impl</span>&lt;T: ClassStruct&gt; CellAreaClassSubclassExt <span class="kw">for </span>T <span class="kw">where </span>T::Type: CellAreaImpl {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1485,14 +1485,6 @@
 <span id="1412">1412</span>
 <span id="1413">1413</span>
 <span id="1414">1414</span>
-<span id="1415">1415</span>
-<span id="1416">1416</span>
-<span id="1417">1417</span>
-<span id="1418">1418</span>
-<span id="1419">1419</span>
-<span id="1420">1420</span>
-<span id="1421">1421</span>
-<span id="1422">1422</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -1742,7 +1734,7 @@
                 <span class="kw">let </span><span class="kw-2">mut </span>hexpand_glib = hexpand.into_glib();
                 <span class="kw">let </span><span class="kw-2">mut </span>vexpand_glib = vexpand.into_glib();
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     <span class="kw-2">&amp;mut </span>hexpand_glib,
                     <span class="kw-2">&amp;mut </span>vexpand_glib,
                 );
@@ -1758,7 +1750,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).contains {
                 from_glib(f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     x,
                     y,
                 ))
@@ -1774,7 +1766,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).direction_changed {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     previous_direction.into_glib(),
                 )
             }
@@ -1787,7 +1779,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).focus {
                 from_glib(f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     direction_type.into_glib(),
                 ))
             } <span class="kw">else </span>{
@@ -1803,11 +1795,7 @@
             <span class="kw">let </span>f = (<span class="kw-2">*</span>parent_class)
                 .get_request_mode
                 .expect(<span class="string">&quot;No parent class impl for \&quot;get_request_mode\&quot;&quot;</span>);
-            from_glib(f(<span class="self">self
-                </span>.instance()
-                .unsafe_cast_ref::&lt;Widget&gt;()
-                .to_glib_none()
-                .<span class="number">0</span>))
+            from_glib(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>))
         }
     }
 
@@ -1816,11 +1804,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).grab_focus {
-                from_glib(f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;Widget&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>))
+                from_glib(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>))
             } <span class="kw">else </span>{
                 <span class="bool-val">false
             </span>}
@@ -1832,7 +1816,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).hide {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -1843,7 +1827,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).keynav_failed {
                 from_glib(f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     direction_type.into_glib(),
                 ))
             } <span class="kw">else </span>{
@@ -1857,7 +1841,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).map {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -1876,7 +1860,7 @@
             <span class="kw">let </span><span class="kw-2">mut </span>min_base = -<span class="number">1</span>;
             <span class="kw">let </span><span class="kw-2">mut </span>nat_base = -<span class="number">1</span>;
             f(
-                <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                 orientation.into_glib(),
                 for_size,
                 <span class="kw-2">&amp;mut </span>min,
@@ -1894,7 +1878,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).mnemonic_activate {
                 from_glib(f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     group_cycling.into_glib(),
                 ))
             } <span class="kw">else </span>{
@@ -1909,7 +1893,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).move_focus {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     direction_type.into_glib(),
                 )
             }
@@ -1928,7 +1912,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).query_tooltip {
                 from_glib(f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     x,
                     y,
                     keyboard_tooltip.into_glib(),
@@ -1945,7 +1929,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).realize {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -1955,7 +1939,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).root {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -1966,7 +1950,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).set_focus_child {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     child.to_glib_none().<span class="number">0</span>,
                 )
             }
@@ -1978,7 +1962,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).show {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -1989,7 +1973,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).size_allocate {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     width,
                     height,
                     baseline,
@@ -2004,7 +1988,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).snapshot {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     snapshot.to_glib_none().<span class="number">0</span>,
                 )
             }
@@ -2017,7 +2001,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).state_flags_changed {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     state_flags.into_glib(),
                 )
             }
@@ -2030,7 +2014,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).system_setting_changed {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     settings.into_glib(),
                 )
             }
@@ -2042,7 +2026,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).unmap {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -2052,7 +2036,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).unrealize {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -2062,7 +2046,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).unroot {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -2120,7 +2104,7 @@
     <span class="kw">let </span>instance = <span class="kw-2">&amp;*</span>(ptr <span class="kw">as </span><span class="kw-2">*mut </span>T::Instance);
     <span class="kw">let </span>imp = instance.imp();
 
-    <span class="kw">let </span>widget = imp.instance();
+    <span class="kw">let </span>widget = imp.obj();
     <span class="kw">let </span>widget = widget.unsafe_cast_ref::&lt;Widget&gt;();
     <span class="kw">let </span><span class="kw-2">mut </span>hexpand: bool = <span class="kw">if </span>widget.is_hexpand_set() {
         widget.hexpands()
@@ -2916,4 +2900,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

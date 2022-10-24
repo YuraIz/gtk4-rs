@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -592,58 +592,6 @@
 <span id="519">519</span>
 <span id="520">520</span>
 <span id="521">521</span>
-<span id="522">522</span>
-<span id="523">523</span>
-<span id="524">524</span>
-<span id="525">525</span>
-<span id="526">526</span>
-<span id="527">527</span>
-<span id="528">528</span>
-<span id="529">529</span>
-<span id="530">530</span>
-<span id="531">531</span>
-<span id="532">532</span>
-<span id="533">533</span>
-<span id="534">534</span>
-<span id="535">535</span>
-<span id="536">536</span>
-<span id="537">537</span>
-<span id="538">538</span>
-<span id="539">539</span>
-<span id="540">540</span>
-<span id="541">541</span>
-<span id="542">542</span>
-<span id="543">543</span>
-<span id="544">544</span>
-<span id="545">545</span>
-<span id="546">546</span>
-<span id="547">547</span>
-<span id="548">548</span>
-<span id="549">549</span>
-<span id="550">550</span>
-<span id="551">551</span>
-<span id="552">552</span>
-<span id="553">553</span>
-<span id="554">554</span>
-<span id="555">555</span>
-<span id="556">556</span>
-<span id="557">557</span>
-<span id="558">558</span>
-<span id="559">559</span>
-<span id="560">560</span>
-<span id="561">561</span>
-<span id="562">562</span>
-<span id="563">563</span>
-<span id="564">564</span>
-<span id="565">565</span>
-<span id="566">566</span>
-<span id="567">567</span>
-<span id="568">568</span>
-<span id="569">569</span>
-<span id="570">570</span>
-<span id="571">571</span>
-<span id="572">572</span>
-<span id="573">573</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -754,11 +702,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTreeViewClass;
             <span class="comment">// columns-changed is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).columns_changed {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TreeView&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -769,11 +713,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTreeViewClass;
             <span class="comment">// cursor-changed is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).cursor_changed {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TreeView&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -790,10 +730,7 @@
             <span class="comment">// expand-collapse-cursor-row is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).expand_collapse_cursor_row {
                 from_glib(f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TreeView&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>,
                     logical.into_glib(),
                     expand.into_glib(),
                     open_all.into_glib(),
@@ -817,10 +754,7 @@
             <span class="comment">// move-cursor is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).move_cursor {
                 from_glib(f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TreeView&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>,
                     step.into_glib(),
                     count,
                     extend.into_glib(),
@@ -840,10 +774,7 @@
             <span class="comment">// row-activated is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).row_activated {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TreeView&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>,
                     path.to_glib_none().<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                     column.to_glib_none().<span class="number">0</span>,
                 );
@@ -858,10 +789,7 @@
             <span class="comment">// row-collapsed is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).row_collapsed {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TreeView&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>,
                     iter.to_glib_none().<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                     path.to_glib_none().<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 )
@@ -876,10 +804,7 @@
             <span class="comment">// row-expanded is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).row_expanded {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TreeView&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>,
                     iter.to_glib_none().<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                     path.to_glib_none().<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 )
@@ -893,11 +818,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTreeViewClass;
             <span class="comment">// select-all is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).select_all {
-                from_glib(f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TreeView&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>))
+                from_glib(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>))
             } <span class="kw">else </span>{
                 <span class="bool-val">false
             </span>}
@@ -910,11 +831,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTreeViewClass;
             <span class="comment">// select-cursor-parent is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).select_cursor_parent {
-                from_glib(f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TreeView&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>))
+                from_glib(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>))
             } <span class="kw">else </span>{
                 <span class="bool-val">false
             </span>}
@@ -928,10 +845,7 @@
             <span class="comment">// select-cursor-row is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).select_cursor_row {
                 from_glib(f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TreeView&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>,
                     start_editing.into_glib(),
                 ))
             } <span class="kw">else </span>{
@@ -946,11 +860,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTreeViewClass;
             <span class="comment">// start-interactive-search is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).start_interactive_search {
-                from_glib(f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TreeView&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>))
+                from_glib(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>))
             } <span class="kw">else </span>{
                 <span class="bool-val">false
             </span>}
@@ -964,10 +874,7 @@
             <span class="comment">// test-collapse-row is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).test_collapse_row {
                 from_glib(f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TreeView&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>,
                     iter.to_glib_none().<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                     path.to_glib_none().<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 ))
@@ -985,10 +892,7 @@
             <span class="comment">// test-expand-row is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).test_expand_row {
                 from_glib(f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TreeView&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>,
                     iter.to_glib_none().<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                     path.to_glib_none().<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 ))
@@ -1005,11 +909,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTreeViewClass;
             <span class="comment">// toggle-cursor-row is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).toggle_cursor_row {
-                from_glib(f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TreeView&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>))
+                from_glib(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>))
             } <span class="kw">else </span>{
                 <span class="bool-val">false
             </span>}
@@ -1022,11 +922,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTreeViewClass;
             <span class="comment">// unselect-all is a signal
             </span><span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).unselect_all {
-                from_glib(f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TreeView&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>))
+                from_glib(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TreeView&gt;().to_glib_none().<span class="number">0</span>))
             } <span class="kw">else </span>{
                 <span class="bool-val">false
             </span>}
@@ -1218,4 +1114,4 @@
     imp.unselect_all().into_glib()
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -385,25 +385,6 @@
 <span id="312">312</span>
 <span id="313">313</span>
 <span id="314">314</span>
-<span id="315">315</span>
-<span id="316">316</span>
-<span id="317">317</span>
-<span id="318">318</span>
-<span id="319">319</span>
-<span id="320">320</span>
-<span id="321">321</span>
-<span id="322">322</span>
-<span id="323">323</span>
-<span id="324">324</span>
-<span id="325">325</span>
-<span id="326">326</span>
-<span id="327">327</span>
-<span id="328">328</span>
-<span id="329">329</span>
-<span id="330">330</span>
-<span id="331">331</span>
-<span id="332">332</span>
-<span id="333">333</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -462,10 +443,7 @@
                 .delete_text
                 .expect(<span class="string">&quot;No parent class impl for \&quot;delete_text\&quot;&quot;</span>);
             f(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;EntryBuffer&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;EntryBuffer&gt;().to_glib_none().<span class="number">0</span>,
                 position,
                 n_chars.unwrap_or(u32::MAX),
             )
@@ -478,10 +456,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkEntryBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).deleted_text {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;EntryBuffer&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;EntryBuffer&gt;().to_glib_none().<span class="number">0</span>,
                     position,
                     n_chars.unwrap_or(u32::MAX),
                 )
@@ -496,11 +471,7 @@
             <span class="kw">let </span>f = (<span class="kw-2">*</span>parent_class)
                 .get_length
                 .expect(<span class="string">&quot;No parent class impl for \&quot;get_length\&quot;&quot;</span>);
-            f(<span class="self">self
-                </span>.instance()
-                .unsafe_cast_ref::&lt;EntryBuffer&gt;()
-                .to_glib_none()
-                .<span class="number">0</span>)
+            f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;EntryBuffer&gt;().to_glib_none().<span class="number">0</span>)
         }
     }
 
@@ -513,10 +484,7 @@
                 .expect(<span class="string">&quot;No parent class impl for \&quot;get_text\&quot;&quot;</span>);
             <span class="kw">let </span><span class="kw-2">mut </span>n_bytes = <span class="number">0</span>;
             <span class="kw">let </span>res = f(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;EntryBuffer&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;EntryBuffer&gt;().to_glib_none().<span class="number">0</span>,
                 <span class="kw-2">&amp;mut </span>n_bytes,
             );
             FromGlibContainer::from_glib_none_num(res, n_bytes <span class="kw">as </span>usize)
@@ -532,10 +500,7 @@
                 .expect(<span class="string">&quot;No parent class impl for \&quot;insert_text\&quot;&quot;</span>);
 
             f(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;EntryBuffer&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;EntryBuffer&gt;().to_glib_none().<span class="number">0</span>,
                 position,
                 text.to_glib_none().<span class="number">0</span>,
                 text.chars().count() <span class="kw">as </span>u32,
@@ -549,10 +514,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkEntryBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).inserted_text {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;EntryBuffer&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;EntryBuffer&gt;().to_glib_none().<span class="number">0</span>,
                     position,
                     text.to_glib_none().<span class="number">0</span>,
                     text.chars().count() <span class="kw">as </span>u32,
@@ -632,7 +594,7 @@
     <span class="comment">// Ensures that the returned text stays alive for as long as
     // the entry buffer instance
     </span><span class="kw">let </span>fullptr = ret.to_glib_full();
-    imp.instance().set_qdata(
+    imp.obj().set_qdata(
         <span class="kw-2">*</span>GET_TEXT_QUARK,
         PtrHolder(fullptr, |ptr| {
             glib::ffi::g_free(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
@@ -738,4 +700,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

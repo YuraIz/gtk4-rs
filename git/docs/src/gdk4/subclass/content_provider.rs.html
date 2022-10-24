@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gdk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../gdk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -599,7 +599,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GdkContentProviderClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).content_changed {
                 f(<span class="self">self
-                    </span>.instance()
+                    </span>.obj()
                     .unsafe_cast_ref::&lt;ContentProvider&gt;()
                     .to_glib_none()
                     .<span class="number">0</span>)
@@ -613,7 +613,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GdkContentProviderClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).attach_clipboard {
                 f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;ContentProvider&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -629,7 +629,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GdkContentProviderClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).detach_clipboard {
                 f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;ContentProvider&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -647,7 +647,7 @@
                 .ref_formats
                 .expect(<span class="string">&quot;no parent \&quot;ref_formats\&quot; implementation&quot;</span>);
             <span class="kw">let </span>ret = f(<span class="self">self
-                </span>.instance()
+                </span>.obj()
                 .unsafe_cast_ref::&lt;ContentProvider&gt;()
                 .to_glib_none()
                 .<span class="number">0</span>);
@@ -664,7 +664,7 @@
                 .ref_storable_formats
                 .expect(<span class="string">&quot;no parent \&quot;ref_storable_formats\&quot; implementation&quot;</span>);
             <span class="kw">let </span>ret = f(<span class="self">self
-                </span>.instance()
+                </span>.obj()
                 .unsafe_cast_ref::&lt;ContentProvider&gt;()
                 .to_glib_none()
                 .<span class="number">0</span>);
@@ -736,7 +736,7 @@
             <span class="kw">let </span>cancellable = cancellable.map(|p| p.as_ref());
             <span class="kw">let </span>callback = parent_write_mime_type_async_trampoline::&lt;R&gt;;
             f(
-                <span class="self">self</span>.instance()
+                <span class="self">self</span>.obj()
                     .unsafe_cast_ref::&lt;ContentProvider&gt;()
                     .to_glib_none()
                     .<span class="number">0</span>,
@@ -785,7 +785,7 @@
 
             <span class="kw">let </span><span class="kw-2">mut </span>error = std::ptr::null_mut();
             f(
-                <span class="self">self</span>.instance()
+                <span class="self">self</span>.obj()
                     .unsafe_cast_ref::&lt;ContentProvider&gt;()
                     .to_glib_none()
                     .<span class="number">0</span>,
@@ -950,4 +950,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

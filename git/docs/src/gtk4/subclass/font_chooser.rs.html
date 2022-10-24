@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -412,22 +412,6 @@
 <span id="339">339</span>
 <span id="340">340</span>
 <span id="341">341</span>
-<span id="342">342</span>
-<span id="343">343</span>
-<span id="344">344</span>
-<span id="345">345</span>
-<span id="346">346</span>
-<span id="347">347</span>
-<span id="348">348</span>
-<span id="349">349</span>
-<span id="350">350</span>
-<span id="351">351</span>
-<span id="352">352</span>
-<span id="353">353</span>
-<span id="354">354</span>
-<span id="355">355</span>
-<span id="356">356</span>
-<span id="357">357</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -527,7 +511,7 @@
                 .expect(<span class="string">&quot;no parent \&quot;get_font_family\&quot; implementation&quot;</span>);
 
             from_glib_none(f(<span class="self">self
-                </span>.instance()
+                </span>.obj()
                 .unsafe_cast_ref::&lt;FontChooser&gt;()
                 .to_glib_none()
                 .<span class="number">0</span>))
@@ -545,7 +529,7 @@
                 .expect(<span class="string">&quot;no parent \&quot;get_font_face\&quot; implementation&quot;</span>);
 
             from_glib_none(f(<span class="self">self
-                </span>.instance()
+                </span>.obj()
                 .unsafe_cast_ref::&lt;FontChooser&gt;()
                 .to_glib_none()
                 .<span class="number">0</span>))
@@ -559,11 +543,7 @@
                 <span class="kw">as </span><span class="kw-2">*const </span>ffi::GtkFontChooserIface;
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_iface).get_font_size {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;FontChooser&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;FontChooser&gt;().to_glib_none().<span class="number">0</span>)
             } <span class="kw">else </span>{
                 <span class="comment">// No font size is selected
                 </span>-<span class="number">1
@@ -580,20 +560,14 @@
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_iface).set_filter_func {
                 <span class="kw">if let </span><span class="prelude-val">Some</span>(filter_callback) = callback {
                     f(
-                        <span class="self">self</span>.instance()
-                            .unsafe_cast_ref::&lt;FontChooser&gt;()
-                            .to_glib_none()
-                            .<span class="number">0</span>,
+                        <span class="self">self</span>.obj().unsafe_cast_ref::&lt;FontChooser&gt;().to_glib_none().<span class="number">0</span>,
                         filter_callback.filter_func,
                         filter_callback.user_data,
                         filter_callback.destroy_notify,
                     )
                 } <span class="kw">else </span>{
                     f(
-                        <span class="self">self</span>.instance()
-                            .unsafe_cast_ref::&lt;FontChooser&gt;()
-                            .to_glib_none()
-                            .<span class="number">0</span>,
+                        <span class="self">self</span>.obj().unsafe_cast_ref::&lt;FontChooser&gt;().to_glib_none().<span class="number">0</span>,
                         <span class="prelude-val">None</span>,
                         std::ptr::null_mut(),
                         <span class="prelude-val">None</span>,
@@ -613,10 +587,7 @@
                 .set_font_map
                 .expect(<span class="string">&quot;no parent \&quot;set_font_map\&quot; implementation&quot;</span>);
             f(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;FontChooser&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;FontChooser&gt;().to_glib_none().<span class="number">0</span>,
                 font_map.map(|fm| fm.as_ref()).to_glib_none().<span class="number">0</span>,
             );
         }
@@ -633,7 +604,7 @@
                 .expect(<span class="string">&quot;no parent \&quot;get_font_map\&quot; implementation&quot;</span>);
 
             from_glib_none(f(<span class="self">self
-                </span>.instance()
+                </span>.obj()
                 .unsafe_cast_ref::&lt;FontChooser&gt;()
                 .to_glib_none()
                 .<span class="number">0</span>))
@@ -647,10 +618,7 @@
                 <span class="kw">as </span><span class="kw-2">*const </span>ffi::GtkFontChooserIface;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_iface).font_activated {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;FontChooser&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;FontChooser&gt;().to_glib_none().<span class="number">0</span>,
                     font_name.to_glib_none().<span class="number">0</span>,
                 );
             }
@@ -689,7 +657,7 @@
     <span class="kw">let </span>ret = imp.font_family();
     <span class="kw">if let </span><span class="prelude-val">Some</span>(font_family) = ret {
         <span class="kw">let </span>font_family = font_family.to_glib_full();
-        imp.instance().set_qdata(
+        imp.obj().set_qdata(
             <span class="kw-2">*</span>FONT_CHOOSER_GET_FONT_FAMILY_QUARK,
             PtrHolder(font_family, |ptr| {
                 glib::gobject_ffi::g_object_unref(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>)
@@ -712,7 +680,7 @@
     <span class="kw">let </span>ret = imp.font_face();
     <span class="kw">if let </span><span class="prelude-val">Some</span>(font_face) = ret {
         <span class="kw">let </span>font_face = font_face.to_glib_full();
-        imp.instance().set_qdata(
+        imp.obj().set_qdata(
             <span class="kw-2">*</span>FONT_CHOOSER_GET_FONT_FACE_QUARK,
             PtrHolder(font_face, |ptr| {
                 glib::gobject_ffi::g_object_unref(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
@@ -786,4 +754,4 @@
     imp.set_filter_func(callback);
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

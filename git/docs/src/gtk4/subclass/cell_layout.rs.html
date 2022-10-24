@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -487,35 +487,6 @@
 <span id="414">414</span>
 <span id="415">415</span>
 <span id="416">416</span>
-<span id="417">417</span>
-<span id="418">418</span>
-<span id="419">419</span>
-<span id="420">420</span>
-<span id="421">421</span>
-<span id="422">422</span>
-<span id="423">423</span>
-<span id="424">424</span>
-<span id="425">425</span>
-<span id="426">426</span>
-<span id="427">427</span>
-<span id="428">428</span>
-<span id="429">429</span>
-<span id="430">430</span>
-<span id="431">431</span>
-<span id="432">432</span>
-<span id="433">433</span>
-<span id="434">434</span>
-<span id="435">435</span>
-<span id="436">436</span>
-<span id="437">437</span>
-<span id="438">438</span>
-<span id="439">439</span>
-<span id="440">440</span>
-<span id="441">441</span>
-<span id="442">442</span>
-<span id="443">443</span>
-<span id="444">444</span>
-<span id="445">445</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -637,10 +608,7 @@
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_iface).add_attribute {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellLayout&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellLayout&gt;().to_glib_none().<span class="number">0</span>,
                     cell.as_ref().to_glib_none().<span class="number">0</span>,
                     attribute.to_glib_none().<span class="number">0</span>,
                     column,
@@ -657,10 +625,7 @@
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_iface).clear_attributes {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellLayout&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellLayout&gt;().to_glib_none().<span class="number">0</span>,
                     cell.as_ref().to_glib_none().<span class="number">0</span>,
                 );
             }
@@ -678,11 +643,7 @@
                 .as_ref()
                 .expect(<span class="string">&quot;no parent \&quot;get_cells\&quot; implementation&quot;</span>);
 
-            <span class="kw">let </span>cells = f(<span class="self">self
-                </span>.instance()
-                .unsafe_cast_ref::&lt;CellLayout&gt;()
-                .to_glib_none()
-                .<span class="number">0</span>);
+            <span class="kw">let </span>cells = f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellLayout&gt;().to_glib_none().<span class="number">0</span>);
             FromGlibPtrArrayContainerAsVec::from_glib_container_as_vec(cells)
         }
     }
@@ -705,10 +666,7 @@
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(data_cb) = callback {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellLayout&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellLayout&gt;().to_glib_none().<span class="number">0</span>,
                     cell.as_ref().to_glib_none().<span class="number">0</span>,
                     data_cb.callback,
                     data_cb.user_data,
@@ -716,10 +674,7 @@
                 );
             } <span class="kw">else </span>{
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellLayout&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellLayout&gt;().to_glib_none().<span class="number">0</span>,
                     cell.as_ref().to_glib_none().<span class="number">0</span>,
                     <span class="prelude-val">None</span>,
                     std::ptr::null_mut(),
@@ -738,10 +693,7 @@
 
                 <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_iface).reorder {
                     f(
-                        <span class="self">self</span>.instance()
-                            .unsafe_cast_ref::&lt;CellLayout&gt;()
-                            .to_glib_none()
-                            .<span class="number">0</span>,
+                        <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellLayout&gt;().to_glib_none().<span class="number">0</span>,
                         cell.as_ref().to_glib_none().<span class="number">0</span>,
                         position,
                     );
@@ -757,11 +709,7 @@
                 <span class="kw">as </span><span class="kw-2">*const </span>ffi::GtkCellLayoutIface;
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_iface).clear {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;CellLayout&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>);
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellLayout&gt;().to_glib_none().<span class="number">0</span>);
             }
         }
     }
@@ -774,10 +722,7 @@
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_iface).pack_start {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellLayout&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellLayout&gt;().to_glib_none().<span class="number">0</span>,
                     cell.as_ref().to_glib_none().<span class="number">0</span>,
                     expand.into_glib(),
                 );
@@ -793,10 +738,7 @@
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_iface).pack_end {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;CellLayout&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;CellLayout&gt;().to_glib_none().<span class="number">0</span>,
                     cell.as_ref().to_glib_none().<span class="number">0</span>,
                     expand.into_glib(),
                 );
@@ -812,7 +754,7 @@
 
             (<span class="kw-2">*</span>parent_iface).get_area.map(|f| {
                 from_glib_none(f(<span class="self">self
-                    </span>.instance()
+                    </span>.obj()
                     .unsafe_cast_ref::&lt;CellLayout&gt;()
                     .to_glib_none()
                     .<span class="number">0</span>))
@@ -957,9 +899,9 @@
 
     <span class="comment">// transfer container: list owned by the caller by not the actual content
     // so we need to keep the cells around and return a ptr of the list
-    </span>imp.instance()
+    </span>imp.obj()
         .set_qdata(<span class="kw-2">*</span>CELL_LAYOUT_GET_CELLS_QUARK, cells.clone());
     cells.to_glib_container().<span class="number">0
 </span>}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

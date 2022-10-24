@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -531,57 +531,6 @@
 <span id="458">458</span>
 <span id="459">459</span>
 <span id="460">460</span>
-<span id="461">461</span>
-<span id="462">462</span>
-<span id="463">463</span>
-<span id="464">464</span>
-<span id="465">465</span>
-<span id="466">466</span>
-<span id="467">467</span>
-<span id="468">468</span>
-<span id="469">469</span>
-<span id="470">470</span>
-<span id="471">471</span>
-<span id="472">472</span>
-<span id="473">473</span>
-<span id="474">474</span>
-<span id="475">475</span>
-<span id="476">476</span>
-<span id="477">477</span>
-<span id="478">478</span>
-<span id="479">479</span>
-<span id="480">480</span>
-<span id="481">481</span>
-<span id="482">482</span>
-<span id="483">483</span>
-<span id="484">484</span>
-<span id="485">485</span>
-<span id="486">486</span>
-<span id="487">487</span>
-<span id="488">488</span>
-<span id="489">489</span>
-<span id="490">490</span>
-<span id="491">491</span>
-<span id="492">492</span>
-<span id="493">493</span>
-<span id="494">494</span>
-<span id="495">495</span>
-<span id="496">496</span>
-<span id="497">497</span>
-<span id="498">498</span>
-<span id="499">499</span>
-<span id="500">500</span>
-<span id="501">501</span>
-<span id="502">502</span>
-<span id="503">503</span>
-<span id="504">504</span>
-<span id="505">505</span>
-<span id="506">506</span>
-<span id="507">507</span>
-<span id="508">508</span>
-<span id="509">509</span>
-<span id="510">510</span>
-<span id="511">511</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -665,10 +614,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).apply_tag {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>,
                     tag.to_glib_none().<span class="number">0</span>,
                     start.to_glib_none().<span class="number">0</span>,
                     end.to_glib_none().<span class="number">0</span>,
@@ -682,11 +628,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).begin_user_action {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -696,11 +638,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).changed {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -711,10 +649,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).delete_range {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>,
                     start.to_glib_none_mut().<span class="number">0</span>,
                     end.to_glib_none_mut().<span class="number">0</span>,
                 )
@@ -727,11 +662,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).end_user_action {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -742,10 +673,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).insert_child_anchor {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>,
                     iter.to_glib_none_mut().<span class="number">0</span>,
                     anchor.to_glib_none().<span class="number">0</span>,
                 )
@@ -759,10 +687,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).insert_paintable {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>,
                     iter.to_glib_none_mut().<span class="number">0</span>,
                     paintable.to_glib_none().<span class="number">0</span>,
                 )
@@ -776,10 +701,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).insert_text {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>,
                     iter.to_glib_none_mut().<span class="number">0</span>,
                     new_text.to_glib_none().<span class="number">0</span>,
                     new_text.len() <span class="kw">as </span>i32,
@@ -794,10 +716,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).mark_deleted {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>,
                     mark.to_glib_none().<span class="number">0</span>,
                 )
             }
@@ -810,10 +729,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).mark_set {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>,
                     location.to_glib_none().<span class="number">0</span>,
                     mark.to_glib_none().<span class="number">0</span>,
                 )
@@ -826,11 +742,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).modified_changed {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -841,10 +753,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).paste_done {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>,
                     clipboard.to_glib_none().<span class="number">0</span>,
                 )
             }
@@ -856,11 +765,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).redo {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -871,10 +776,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).remove_tag {
                 f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>,
                     tag.to_glib_none().<span class="number">0</span>,
                     start.to_glib_none().<span class="number">0</span>,
                     end.to_glib_none().<span class="number">0</span>,
@@ -888,11 +790,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkTextBufferClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).undo {
-                f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;TextBuffer&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;TextBuffer&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -1094,4 +992,4 @@
     imp.undo()
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

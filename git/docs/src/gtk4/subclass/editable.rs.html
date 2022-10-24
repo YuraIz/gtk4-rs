@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -485,35 +485,6 @@
 <span id="412">412</span>
 <span id="413">413</span>
 <span id="414">414</span>
-<span id="415">415</span>
-<span id="416">416</span>
-<span id="417">417</span>
-<span id="418">418</span>
-<span id="419">419</span>
-<span id="420">420</span>
-<span id="421">421</span>
-<span id="422">422</span>
-<span id="423">423</span>
-<span id="424">424</span>
-<span id="425">425</span>
-<span id="426">426</span>
-<span id="427">427</span>
-<span id="428">428</span>
-<span id="429">429</span>
-<span id="430">430</span>
-<span id="431">431</span>
-<span id="432">432</span>
-<span id="433">433</span>
-<span id="434">434</span>
-<span id="435">435</span>
-<span id="436">436</span>
-<span id="437">437</span>
-<span id="438">438</span>
-<span id="439">439</span>
-<span id="440">440</span>
-<span id="441">441</span>
-<span id="442">442</span>
-<span id="443">443</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -578,7 +549,7 @@
             <span class="kw">let </span><span class="kw-2">mut </span>value = glib::Value::from_type(pspec.value_type());
 
             <span class="kw">if </span>from_glib(ffi::gtk_editable_delegate_get_property(
-                <span class="self">self</span>.instance()
+                <span class="self">self</span>.obj()
                     .unsafe_cast_ref::&lt;glib::Object&gt;()
                     .to_glib_none()
                     .<span class="number">0</span>,
@@ -602,7 +573,7 @@
     ) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_editable_delegate_set_property(
-                <span class="self">self</span>.instance()
+                <span class="self">self</span>.obj()
                     .unsafe_cast_ref::&lt;glib::Object&gt;()
                     .to_glib_none()
                     .<span class="number">0</span>,
@@ -633,10 +604,7 @@
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(func) = (<span class="kw-2">*</span>parent_iface).insert_text {
                 func(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;Editable&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Editable&gt;().to_glib_none().<span class="number">0</span>,
                     text.to_glib_none().<span class="number">0</span>,
                     length,
                     position,
@@ -653,10 +621,7 @@
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(func) = (<span class="kw-2">*</span>parent_iface).delete_text {
                 func(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;Editable&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Editable&gt;().to_glib_none().<span class="number">0</span>,
                     start_position,
                     end_position,
                 );
@@ -674,10 +639,7 @@
                 .expect(<span class="string">&quot;no parent \&quot;get_text\&quot; implementation&quot;</span>);
 
             from_glib_none(func(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;Editable&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Editable&gt;().to_glib_none().<span class="number">0</span>,
             ))
         }
     }
@@ -691,10 +653,7 @@
                 .get_delegate
                 .expect(<span class="string">&quot;no parent \&quot;get_delegate\&quot; implementation&quot;</span>);
             from_glib_none(func(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;Editable&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Editable&gt;().to_glib_none().<span class="number">0</span>,
             ))
         }
     }
@@ -706,12 +665,7 @@
                 <span class="kw">as </span><span class="kw-2">*const </span>ffi::GtkEditableInterface;
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(func) = (<span class="kw-2">*</span>parent_iface).changed {
-                func(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;Editable&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
-                );
+                func(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Editable&gt;().to_glib_none().<span class="number">0</span>);
             }
         }
     }
@@ -724,10 +678,7 @@
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(func) = (<span class="kw-2">*</span>parent_iface).do_insert_text {
                 func(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;Editable&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Editable&gt;().to_glib_none().<span class="number">0</span>,
                     text.to_glib_none().<span class="number">0</span>,
                     length,
                     position,
@@ -744,10 +695,7 @@
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(func) = (<span class="kw-2">*</span>parent_iface).do_delete_text {
                 func(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;Editable&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Editable&gt;().to_glib_none().<span class="number">0</span>,
                     start_position,
                     end_position,
                 );
@@ -765,10 +713,7 @@
                 <span class="kw">let </span><span class="kw-2">mut </span>start_position = std::mem::MaybeUninit::uninit();
                 <span class="kw">let </span><span class="kw-2">mut </span>end_position = std::mem::MaybeUninit::uninit();
                 <span class="kw">if </span>from_glib(func(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;Editable&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Editable&gt;().to_glib_none().<span class="number">0</span>,
                     start_position.as_mut_ptr(),
                     end_position.as_mut_ptr(),
                 )) {
@@ -787,10 +732,7 @@
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(func) = (<span class="kw-2">*</span>parent_iface).set_selection_bounds {
                 func(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;Editable&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Editable&gt;().to_glib_none().<span class="number">0</span>,
                     start_position,
                     end_position,
                 );
@@ -882,7 +824,7 @@
     <span class="kw">let </span>delegate = imp.delegate();
 
     <span class="kw">match </span>imp
-        .instance()
+        .obj()
         .qdata::&lt;<span class="prelude-ty">Option</span>&lt;Editable&gt;&gt;(<span class="kw-2">*</span>EDITABLE_GET_DELEGATE_QUARK)
     {
         <span class="prelude-val">Some</span>(delegate_data) =&gt; {
@@ -893,7 +835,7 @@
             </span>);
         }
         <span class="prelude-val">None </span>=&gt; {
-            imp.instance()
+            imp.obj()
                 .set_qdata(<span class="kw-2">*</span>EDITABLE_GET_DELEGATE_QUARK, delegate.clone());
         }
     };
@@ -958,4 +900,4 @@
     imp.set_selection_bounds(start_position, end_position)
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>
