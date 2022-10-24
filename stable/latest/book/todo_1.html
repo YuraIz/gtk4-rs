@@ -357,10 +357,10 @@ impl ObjectSubclass for Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_tasks();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_factory();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_tasks();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_factory();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -741,10 +741,10 @@ impl ObjectImpl for Window {
         self.parent_constructed();
 
         // Setup
-        let instance = self.instance();
-        instance.setup_tasks();
-        instance.setup_callbacks();
-        instance.setup_factory();
+        let obj = self.obj();
+        obj.setup_tasks();
+        obj.setup_callbacks();
+        obj.setup_factory();
     }
 }
 <span class="boring">

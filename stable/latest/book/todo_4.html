@@ -327,12 +327,12 @@ impl ObjectSubclass for Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_tasks();
-</span><span class="boring">        instance.restore_data();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_tasks();
+</span><span class="boring">        obj.restore_data();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -344,7 +344,7 @@ impl ObjectSubclass for Window {
 </span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
 </span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
-</span><span class="boring">            .instance()
+</span><span class="boring">            .obj()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -423,12 +423,12 @@ impl ObjectSubclass for Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_tasks();
-</span><span class="boring">        instance.restore_data();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_tasks();
+</span><span class="boring">        obj.restore_data();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -440,7 +440,7 @@ impl ObjectSubclass for Window {
 </span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
 </span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
-</span><span class="boring">            .instance()
+</span><span class="boring">            .obj()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -1058,12 +1058,12 @@ pub struct Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_collections();
-</span><span class="boring">        instance.restore_data();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_collections();
+</span><span class="boring">        obj.restore_data();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -1075,7 +1075,7 @@ pub struct Window {
 </span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
 </span><span class="boring">        let backup_data: Vec&lt;CollectionData&gt; = self
-</span><span class="boring">            .instance()
+</span><span class="boring">            .obj()
 </span><span class="boring">            .collections()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -1626,12 +1626,12 @@ Since most of the implementation is in the method <code>CollectionObject::to_col
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_collections();
-</span><span class="boring">        instance.restore_data();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_collections();
+</span><span class="boring">        obj.restore_data();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -1643,7 +1643,7 @@ impl WindowImpl for Window {
     fn close_request(&amp;self) -&gt; Inhibit {
         // Store task data in vector
         let backup_data: Vec&lt;CollectionData&gt; = self
-            .instance()
+            .obj()
             .collections()
             .snapshot()
             .iter()
@@ -1736,12 +1736,12 @@ impl ObjectImpl for Window {
         self.parent_constructed();
 
         // Setup
-        let instance = self.instance();
-        instance.setup_settings();
-        instance.setup_collections();
-        instance.restore_data();
-        instance.setup_callbacks();
-        instance.setup_actions();
+        let obj = self.obj();
+        obj.setup_settings();
+        obj.setup_collections();
+        obj.restore_data();
+        obj.setup_callbacks();
+        obj.setup_actions();
     }
 }
 <span class="boring">
@@ -1753,7 +1753,7 @@ impl ObjectImpl for Window {
 </span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
 </span><span class="boring">        let backup_data: Vec&lt;CollectionData&gt; = self
-</span><span class="boring">            .instance()
+</span><span class="boring">            .obj()
 </span><span class="boring">            .collections()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()

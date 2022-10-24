@@ -438,9 +438,8 @@ impl ObjectImpl for CustomButton {
 
         // Bind label to number
         // `SYNC_CREATE` ensures that the label will be immediately set
-        let instance = self.instance();
-        instance
-            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
+        let obj = self.obj();
+        obj.bind_property(&quot;number&quot;, obj.as_ref(), &quot;label&quot;)
             .flags(BindingFlags::SYNC_CREATE)
             .build();
     }
@@ -453,7 +452,7 @@ impl ObjectImpl for CustomButton {
 </span><span class="boring">impl ButtonImpl for CustomButton {
 </span><span class="boring">    fn clicked(&amp;self) {
 </span><span class="boring">        let incremented_number = self.number.get() + 1;
-</span><span class="boring">        self.instance().set_property(&quot;number&quot;, &amp;incremented_number);
+</span><span class="boring">        self.obj().set_property(&quot;number&quot;, &amp;incremented_number);
 </span><span class="boring">    }
 </span><span class="boring">}
 </span></code></pre>
@@ -516,9 +515,8 @@ This way the &quot;notify&quot; signal will be emitted which bindings work as ex
 </span><span class="boring">
 </span><span class="boring">        // Bind label to number
 </span><span class="boring">        // `SYNC_CREATE` ensures that the label will be immediately set
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance
-</span><span class="boring">            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.bind_property(&quot;number&quot;, obj.as_ref(), &quot;label&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
 </span><span class="boring">            .build();
 </span><span class="boring">    }
@@ -531,7 +529,7 @@ This way the &quot;notify&quot; signal will be emitted which bindings work as ex
 impl ButtonImpl for CustomButton {
     fn clicked(&amp;self) {
         let incremented_number = self.number.get() + 1;
-        self.instance().set_property(&quot;number&quot;, &amp;incremented_number);
+        self.obj().set_property(&quot;number&quot;, &amp;incremented_number);
     }
 }
 </code></pre>

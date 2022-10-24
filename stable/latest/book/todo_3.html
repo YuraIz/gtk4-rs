@@ -539,12 +539,12 @@ impl ObjectSubclass for Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_tasks();
-</span><span class="boring">        instance.restore_data();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_tasks();
+</span><span class="boring">        obj.restore_data();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -556,7 +556,7 @@ impl ObjectSubclass for Window {
 </span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
 </span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
-</span><span class="boring">            .instance()
+</span><span class="boring">            .obj()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()

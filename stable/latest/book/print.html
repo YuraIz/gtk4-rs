@@ -1221,7 +1221,7 @@ impl ObjectSubclass for CustomButton {
 impl ObjectImpl for CustomButton {
     fn constructed(&amp;self) {
         self.parent_constructed();
-        self.instance().set_label(&amp;self.number.get().to_string());
+        self.obj().set_label(&amp;self.number.get().to_string());
     }
 }
 
@@ -1232,7 +1232,7 @@ impl WidgetImpl for CustomButton {}
 impl ButtonImpl for CustomButton {
     fn clicked(&amp;self) {
         self.number.set(self.number.get() + 1);
-        self.instance().set_label(&amp;self.number.get().to_string())
+        self.obj().set_label(&amp;self.number.get().to_string())
     }
 }
 </code></pre>
@@ -1805,9 +1805,8 @@ impl ObjectImpl for CustomButton {
 
         // Bind label to number
         // `SYNC_CREATE` ensures that the label will be immediately set
-        let instance = self.instance();
-        instance
-            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
+        let obj = self.obj();
+        obj.bind_property(&quot;number&quot;, obj.as_ref(), &quot;label&quot;)
             .flags(BindingFlags::SYNC_CREATE)
             .build();
     }
@@ -1820,7 +1819,7 @@ impl ObjectImpl for CustomButton {
 </span><span class="boring">impl ButtonImpl for CustomButton {
 </span><span class="boring">    fn clicked(&amp;self) {
 </span><span class="boring">        let incremented_number = self.number.get() + 1;
-</span><span class="boring">        self.instance().set_property(&quot;number&quot;, &amp;incremented_number);
+</span><span class="boring">        self.obj().set_property(&quot;number&quot;, &amp;incremented_number);
 </span><span class="boring">    }
 </span><span class="boring">}
 </span></code></pre>
@@ -1883,9 +1882,8 @@ This way the &quot;notify&quot; signal will be emitted which bindings work as ex
 </span><span class="boring">
 </span><span class="boring">        // Bind label to number
 </span><span class="boring">        // `SYNC_CREATE` ensures that the label will be immediately set
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance
-</span><span class="boring">            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.bind_property(&quot;number&quot;, obj.as_ref(), &quot;label&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
 </span><span class="boring">            .build();
 </span><span class="boring">    }
@@ -1898,7 +1896,7 @@ This way the &quot;notify&quot; signal will be emitted which bindings work as ex
 impl ButtonImpl for CustomButton {
     fn clicked(&amp;self) {
         let incremented_number = self.number.get() + 1;
-        self.instance().set_property(&quot;number&quot;, &amp;incremented_number);
+        self.obj().set_property(&quot;number&quot;, &amp;incremented_number);
     }
 }
 </code></pre>
@@ -2317,9 +2315,8 @@ impl ObjectImpl for CustomButton {
 </span><span class="boring">
 </span><span class="boring">        // Bind label to number
 </span><span class="boring">        // `SYNC_CREATE` ensures that the label will be immediately set
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance
-</span><span class="boring">            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.bind_property(&quot;number&quot;, obj.as_ref(), &quot;label&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
 </span><span class="boring">            .build();
 </span><span class="boring">    }
@@ -2334,14 +2331,14 @@ impl ObjectImpl for CustomButton {
 </span><span class="boring">impl ButtonImpl for CustomButton {
 </span><span class="boring">    fn clicked(&amp;self) {
 </span><span class="boring">        let incremented_number = self.number.get() + 1;
-</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        let obj = self.obj();
 </span><span class="boring">        // If `number` reached `MAX_NUMBER`,
 </span><span class="boring">        // emit &quot;max-number-reached&quot; signal and set `number` back to 0
 </span><span class="boring">        if incremented_number == MAX_NUMBER {
-</span><span class="boring">            instance.emit_by_name::&lt;()&gt;(&quot;max-number-reached&quot;, &amp;[&amp;incremented_number]);
-</span><span class="boring">            instance.set_property(&quot;number&quot;, &amp;0);
+</span><span class="boring">            obj.emit_by_name::&lt;()&gt;(&quot;max-number-reached&quot;, &amp;[&amp;incremented_number]);
+</span><span class="boring">            obj.set_property(&quot;number&quot;, &amp;0);
 </span><span class="boring">        } else {
-</span><span class="boring">            instance.set_property(&quot;number&quot;, &amp;incremented_number);
+</span><span class="boring">            obj.set_property(&quot;number&quot;, &amp;incremented_number);
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">}
@@ -2417,9 +2414,8 @@ After we did that, we set <code>number</code> back to 0.</p>
 </span><span class="boring">
 </span><span class="boring">        // Bind label to number
 </span><span class="boring">        // `SYNC_CREATE` ensures that the label will be immediately set
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance
-</span><span class="boring">            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.bind_property(&quot;number&quot;, obj.as_ref(), &quot;label&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
 </span><span class="boring">            .build();
 </span><span class="boring">    }
@@ -2434,14 +2430,14 @@ After we did that, we set <code>number</code> back to 0.</p>
 impl ButtonImpl for CustomButton {
     fn clicked(&amp;self) {
         let incremented_number = self.number.get() + 1;
-        let instance = self.instance();
+        let obj = self.obj();
         // If `number` reached `MAX_NUMBER`,
         // emit &quot;max-number-reached&quot; signal and set `number` back to 0
         if incremented_number == MAX_NUMBER {
-            instance.emit_by_name::&lt;()&gt;(&quot;max-number-reached&quot;, &amp;[&amp;incremented_number]);
-            instance.set_property(&quot;number&quot;, &amp;0);
+            obj.emit_by_name::&lt;()&gt;(&quot;max-number-reached&quot;, &amp;[&amp;incremented_number]);
+            obj.set_property(&quot;number&quot;, &amp;0);
         } else {
-            instance.set_property(&quot;number&quot;, &amp;incremented_number);
+            obj.set_property(&quot;number&quot;, &amp;incremented_number);
         }
     }
 }
@@ -3356,9 +3352,9 @@ impl ObjectImpl for Window {
     fn constructed(&amp;self) {
         self.parent_constructed();
         // Load latest window state
-        let instance = self.instance();
-        instance.setup_settings();
-        instance.load_window_size();
+        let obj = self.obj();
+        obj.setup_settings();
+        obj.load_window_size();
     }
 }
 impl WidgetImpl for Window {}
@@ -3366,7 +3362,7 @@ impl WindowImpl for Window {
     // Save window state right before the window will be closed
     fn close_request(&amp;self) -&gt; Inhibit {
         // Save window size
-        self.instance()
+        self.obj()
             .save_window_size()
             .expect(&quot;Failed to save window state&quot;);
 
@@ -5943,10 +5939,10 @@ impl ObjectSubclass for Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_tasks();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_factory();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_tasks();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_factory();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -6327,10 +6323,10 @@ impl ObjectImpl for Window {
         self.parent_constructed();
 
         // Setup
-        let instance = self.instance();
-        instance.setup_tasks();
-        instance.setup_callbacks();
-        instance.setup_factory();
+        let obj = self.obj();
+        obj.setup_tasks();
+        obj.setup_callbacks();
+        obj.setup_factory();
     }
 }
 <span class="boring">
@@ -7383,7 +7379,7 @@ impl ObjectImpl for Window {
         self.parent_constructed();
 
         // Add actions
-        self.instance().setup_actions();
+        self.obj().setup_actions();
     }
 }
 <span class="boring">
@@ -7749,10 +7745,10 @@ pub struct Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_actions();
-</span><span class="boring">        instance.bind_settings();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_actions();
+</span><span class="boring">        obj.bind_settings();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -8181,10 +8177,10 @@ impl ObjectImpl for Window {
         self.parent_constructed();
 
         // Setup
-        let instance = self.instance();
-        instance.setup_settings();
-        instance.setup_actions();
-        instance.bind_settings();
+        let obj = self.obj();
+        obj.setup_settings();
+        obj.setup_actions();
+        obj.bind_settings();
     }
 }
 <span class="boring">
@@ -8333,13 +8329,13 @@ pub struct Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_tasks();
-</span><span class="boring">        instance.restore_data();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_factory();
-</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_tasks();
+</span><span class="boring">        obj.restore_data();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_factory();
+</span><span class="boring">        obj.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -8351,7 +8347,7 @@ pub struct Window {
 </span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
 </span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
-</span><span class="boring">            .instance()
+</span><span class="boring">            .obj()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -9616,13 +9612,13 @@ Then we serialize the <code>Vec</code> and store the data as a json file.</p>
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_tasks();
-</span><span class="boring">        instance.restore_data();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_factory();
-</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_tasks();
+</span><span class="boring">        obj.restore_data();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_factory();
+</span><span class="boring">        obj.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -9634,7 +9630,7 @@ impl WindowImpl for Window {
     fn close_request(&amp;self) -&gt; Inhibit {
         // Store task data in vector
         let backup_data: Vec&lt;TaskData&gt; = self
-            .instance()
+            .obj()
             .tasks()
             .snapshot()
             .iter()
@@ -9976,13 +9972,13 @@ impl ObjectImpl for Window {
         self.parent_constructed();
 
         // Setup
-        let instance = self.instance();
-        instance.setup_settings();
-        instance.setup_tasks();
-        instance.restore_data();
-        instance.setup_callbacks();
-        instance.setup_factory();
-        instance.setup_actions();
+        let obj = self.obj();
+        obj.setup_settings();
+        obj.setup_tasks();
+        obj.restore_data();
+        obj.setup_callbacks();
+        obj.setup_factory();
+        obj.setup_actions();
     }
 }
 <span class="boring">
@@ -9994,7 +9990,7 @@ impl ObjectImpl for Window {
 </span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
 </span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
-</span><span class="boring">            .instance()
+</span><span class="boring">            .obj()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -10965,12 +10961,12 @@ impl ObjectSubclass for Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_tasks();
-</span><span class="boring">        instance.restore_data();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_tasks();
+</span><span class="boring">        obj.restore_data();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -10982,7 +10978,7 @@ impl ObjectSubclass for Window {
 </span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
 </span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
-</span><span class="boring">            .instance()
+</span><span class="boring">            .obj()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -12137,12 +12133,12 @@ impl ObjectSubclass for Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_tasks();
-</span><span class="boring">        instance.restore_data();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_tasks();
+</span><span class="boring">        obj.restore_data();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -12154,7 +12150,7 @@ impl ObjectSubclass for Window {
 </span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
 </span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
-</span><span class="boring">            .instance()
+</span><span class="boring">            .obj()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -12233,12 +12229,12 @@ impl ObjectSubclass for Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_tasks();
-</span><span class="boring">        instance.restore_data();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_tasks();
+</span><span class="boring">        obj.restore_data();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -12250,7 +12246,7 @@ impl ObjectSubclass for Window {
 </span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
 </span><span class="boring">        let backup_data: Vec&lt;TaskData&gt; = self
-</span><span class="boring">            .instance()
+</span><span class="boring">            .obj()
 </span><span class="boring">            .tasks()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -12868,12 +12864,12 @@ pub struct Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_collections();
-</span><span class="boring">        instance.restore_data();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_collections();
+</span><span class="boring">        obj.restore_data();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -12885,7 +12881,7 @@ pub struct Window {
 </span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
 </span><span class="boring">        let backup_data: Vec&lt;CollectionData&gt; = self
-</span><span class="boring">            .instance()
+</span><span class="boring">            .obj()
 </span><span class="boring">            .collections()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()
@@ -13436,12 +13432,12 @@ Since most of the implementation is in the method <code>CollectionObject::to_col
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_collections();
-</span><span class="boring">        instance.restore_data();
-</span><span class="boring">        instance.setup_callbacks();
-</span><span class="boring">        instance.setup_actions();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_collections();
+</span><span class="boring">        obj.restore_data();
+</span><span class="boring">        obj.setup_callbacks();
+</span><span class="boring">        obj.setup_actions();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -13453,7 +13449,7 @@ impl WindowImpl for Window {
     fn close_request(&amp;self) -&gt; Inhibit {
         // Store task data in vector
         let backup_data: Vec&lt;CollectionData&gt; = self
-            .instance()
+            .obj()
             .collections()
             .snapshot()
             .iter()
@@ -13546,12 +13542,12 @@ impl ObjectImpl for Window {
         self.parent_constructed();
 
         // Setup
-        let instance = self.instance();
-        instance.setup_settings();
-        instance.setup_collections();
-        instance.restore_data();
-        instance.setup_callbacks();
-        instance.setup_actions();
+        let obj = self.obj();
+        obj.setup_settings();
+        obj.setup_collections();
+        obj.restore_data();
+        obj.setup_callbacks();
+        obj.setup_actions();
     }
 }
 <span class="boring">
@@ -13563,7 +13559,7 @@ impl ObjectImpl for Window {
 </span><span class="boring">    fn close_request(&amp;self) -&gt; Inhibit {
 </span><span class="boring">        // Store task data in vector
 </span><span class="boring">        let backup_data: Vec&lt;CollectionData&gt; = self
-</span><span class="boring">            .instance()
+</span><span class="boring">            .obj()
 </span><span class="boring">            .collections()
 </span><span class="boring">            .snapshot()
 </span><span class="boring">            .iter()

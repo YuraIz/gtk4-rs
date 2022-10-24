@@ -311,9 +311,8 @@ impl ObjectImpl for CustomButton {
 </span><span class="boring">
 </span><span class="boring">        // Bind label to number
 </span><span class="boring">        // `SYNC_CREATE` ensures that the label will be immediately set
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance
-</span><span class="boring">            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.bind_property(&quot;number&quot;, obj.as_ref(), &quot;label&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
 </span><span class="boring">            .build();
 </span><span class="boring">    }
@@ -328,14 +327,14 @@ impl ObjectImpl for CustomButton {
 </span><span class="boring">impl ButtonImpl for CustomButton {
 </span><span class="boring">    fn clicked(&amp;self) {
 </span><span class="boring">        let incremented_number = self.number.get() + 1;
-</span><span class="boring">        let instance = self.instance();
+</span><span class="boring">        let obj = self.obj();
 </span><span class="boring">        // If `number` reached `MAX_NUMBER`,
 </span><span class="boring">        // emit &quot;max-number-reached&quot; signal and set `number` back to 0
 </span><span class="boring">        if incremented_number == MAX_NUMBER {
-</span><span class="boring">            instance.emit_by_name::&lt;()&gt;(&quot;max-number-reached&quot;, &amp;[&amp;incremented_number]);
-</span><span class="boring">            instance.set_property(&quot;number&quot;, &amp;0);
+</span><span class="boring">            obj.emit_by_name::&lt;()&gt;(&quot;max-number-reached&quot;, &amp;[&amp;incremented_number]);
+</span><span class="boring">            obj.set_property(&quot;number&quot;, &amp;0);
 </span><span class="boring">        } else {
-</span><span class="boring">            instance.set_property(&quot;number&quot;, &amp;incremented_number);
+</span><span class="boring">            obj.set_property(&quot;number&quot;, &amp;incremented_number);
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">}
@@ -411,9 +410,8 @@ After we did that, we set <code>number</code> back to 0.</p>
 </span><span class="boring">
 </span><span class="boring">        // Bind label to number
 </span><span class="boring">        // `SYNC_CREATE` ensures that the label will be immediately set
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance
-</span><span class="boring">            .bind_property(&quot;number&quot;, &amp;*instance, &quot;label&quot;)
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.bind_property(&quot;number&quot;, obj.as_ref(), &quot;label&quot;)
 </span><span class="boring">            .flags(BindingFlags::SYNC_CREATE)
 </span><span class="boring">            .build();
 </span><span class="boring">    }
@@ -428,14 +426,14 @@ After we did that, we set <code>number</code> back to 0.</p>
 impl ButtonImpl for CustomButton {
     fn clicked(&amp;self) {
         let incremented_number = self.number.get() + 1;
-        let instance = self.instance();
+        let obj = self.obj();
         // If `number` reached `MAX_NUMBER`,
         // emit &quot;max-number-reached&quot; signal and set `number` back to 0
         if incremented_number == MAX_NUMBER {
-            instance.emit_by_name::&lt;()&gt;(&quot;max-number-reached&quot;, &amp;[&amp;incremented_number]);
-            instance.set_property(&quot;number&quot;, &amp;0);
+            obj.emit_by_name::&lt;()&gt;(&quot;max-number-reached&quot;, &amp;[&amp;incremented_number]);
+            obj.set_property(&quot;number&quot;, &amp;0);
         } else {
-            instance.set_property(&quot;number&quot;, &amp;incremented_number);
+            obj.set_property(&quot;number&quot;, &amp;incremented_number);
         }
     }
 }

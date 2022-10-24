@@ -627,7 +627,7 @@ impl ObjectImpl for Window {
         self.parent_constructed();
 
         // Add actions
-        self.instance().setup_actions();
+        self.obj().setup_actions();
     }
 }
 <span class="boring">
@@ -993,10 +993,10 @@ pub struct Window {
 </span><span class="boring">        self.parent_constructed();
 </span><span class="boring">
 </span><span class="boring">        // Setup
-</span><span class="boring">        let instance = self.instance();
-</span><span class="boring">        instance.setup_settings();
-</span><span class="boring">        instance.setup_actions();
-</span><span class="boring">        instance.bind_settings();
+</span><span class="boring">        let obj = self.obj();
+</span><span class="boring">        obj.setup_settings();
+</span><span class="boring">        obj.setup_actions();
+</span><span class="boring">        obj.bind_settings();
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -1425,10 +1425,10 @@ impl ObjectImpl for Window {
         self.parent_constructed();
 
         // Setup
-        let instance = self.instance();
-        instance.setup_settings();
-        instance.setup_actions();
-        instance.bind_settings();
+        let obj = self.obj();
+        obj.setup_settings();
+        obj.setup_actions();
+        obj.bind_settings();
     }
 }
 <span class="boring">
