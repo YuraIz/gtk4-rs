@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -329,6 +329,7 @@
 <span id="256">256</span>
 <span id="257">257</span>
 <span id="258">258</span>
+<span id="259">259</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attribute">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
@@ -372,35 +373,35 @@
 /// override styling provided at this priority with
 /// catch-all `* {...}` rules.
 </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_STYLE_PROVIDER_PRIORITY_FALLBACK&quot;</span>)]
-</span><span class="kw">pub const </span>STYLE_PROVIDER_PRIORITY_FALLBACK: u32 = ffi::GTK_STYLE_PROVIDER_PRIORITY_FALLBACK <span class="kw">as </span>u32;
+</span><span class="kw">pub const </span>STYLE_PROVIDER_PRIORITY_FALLBACK: u32 = ffi::GTK_STYLE_PROVIDER_PRIORITY_FALLBACK <span class="kw">as _</span>;
 <span class="doccomment">/// The priority used for style information provided
 /// by themes.
 </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_STYLE_PROVIDER_PRIORITY_THEME&quot;</span>)]
-</span><span class="kw">pub const </span>STYLE_PROVIDER_PRIORITY_THEME: u32 = ffi::GTK_STYLE_PROVIDER_PRIORITY_THEME <span class="kw">as </span>u32;
+</span><span class="kw">pub const </span>STYLE_PROVIDER_PRIORITY_THEME: u32 = ffi::GTK_STYLE_PROVIDER_PRIORITY_THEME <span class="kw">as _</span>;
 <span class="doccomment">/// The priority used for style information provided
 /// via [`Settings`][crate::Settings].
 ///
 /// This priority is higher than `GTK_STYLE_PROVIDER_PRIORITY_THEME`
 /// to let settings override themes.
 </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_STYLE_PROVIDER_PRIORITY_SETTINGS&quot;</span>)]
-</span><span class="kw">pub const </span>STYLE_PROVIDER_PRIORITY_SETTINGS: u32 = ffi::GTK_STYLE_PROVIDER_PRIORITY_SETTINGS <span class="kw">as </span>u32;
+</span><span class="kw">pub const </span>STYLE_PROVIDER_PRIORITY_SETTINGS: u32 = ffi::GTK_STYLE_PROVIDER_PRIORITY_SETTINGS <span class="kw">as _</span>;
 <span class="doccomment">/// A priority that can be used when adding a [`StyleProvider`][crate::StyleProvider]
 /// for application-specific style information.
 </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_STYLE_PROVIDER_PRIORITY_APPLICATION&quot;</span>)]
 </span><span class="kw">pub const </span>STYLE_PROVIDER_PRIORITY_APPLICATION: u32 =
-    ffi::GTK_STYLE_PROVIDER_PRIORITY_APPLICATION <span class="kw">as </span>u32;
+    ffi::GTK_STYLE_PROVIDER_PRIORITY_APPLICATION <span class="kw">as _</span>;
 <span class="doccomment">/// The priority used for the style information from
 /// `$XDG_CONFIG_HOME/gtk-4.0/gtk.css`.
 ///
 /// You should not use priorities higher than this, to
 /// give the user the last word.
 </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_STYLE_PROVIDER_PRIORITY_USER&quot;</span>)]
-</span><span class="kw">pub const </span>STYLE_PROVIDER_PRIORITY_USER: u32 = ffi::GTK_STYLE_PROVIDER_PRIORITY_USER <span class="kw">as </span>u32;
+</span><span class="kw">pub const </span>STYLE_PROVIDER_PRIORITY_USER: u32 = ffi::GTK_STYLE_PROVIDER_PRIORITY_USER <span class="kw">as _</span>;
 
 <span class="doccomment">/// An undefined value. The accessible attribute is either unset, or its
 /// value is undefined.
 </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_ACCESSIBLE_VALUE_UNDEFINED&quot;</span>)]
-</span><span class="kw">pub const </span>ACCESSIBLE_VALUE_UNDEFINED: i32 = ffi::GTK_ACCESSIBLE_VALUE_UNDEFINED <span class="kw">as </span>i32;
+</span><span class="kw">pub const </span>ACCESSIBLE_VALUE_UNDEFINED: i32 = ffi::GTK_ACCESSIBLE_VALUE_UNDEFINED <span class="kw">as _</span>;
 
 <span class="doccomment">/// The value used to refer to a guaranteed invalid position
 /// in a `GListModel`.
@@ -412,7 +413,7 @@
 /// Refer to each function&#39;s documentation for if this value is
 /// allowed and what it does.
 </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_INVALID_LIST_POSITION&quot;</span>)]
-</span><span class="kw">pub const </span>INVALID_LIST_POSITION: u32 = ffi::GTK_INVALID_LIST_POSITION <span class="kw">as </span>u32;
+</span><span class="kw">pub const </span>INVALID_LIST_POSITION: u32 = ffi::GTK_INVALID_LIST_POSITION <span class="kw">as _</span>;
 
 <span class="doccomment">/// Use this priority for functionality related to size allocation.
 ///
@@ -420,11 +421,11 @@
 /// This priority is higher than `GDK_PRIORITY_REDRAW` to avoid
 /// resizing a widget which was just redrawn.
 </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRIORITY_RESIZE&quot;</span>)]
-</span><span class="kw">pub const </span>PRIORITY_RESIZE: u32 = ffi::GTK_PRIORITY_RESIZE <span class="kw">as </span>u32;
+</span><span class="kw">pub const </span>PRIORITY_RESIZE: u32 = ffi::GTK_PRIORITY_RESIZE <span class="kw">as _</span>;
 <span class="doccomment">/// The priority at which the text view validates onscreen lines
 /// in an idle job in the background.
 </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_TEXT_VIEW_PRIORITY_VALIDATE&quot;</span>)]
-</span><span class="kw">pub const </span>TEXT_VIEW_PRIORITY_VALIDATE: u32 = ffi::GTK_TEXT_VIEW_PRIORITY_VALIDATE <span class="kw">as </span>u32;
+</span><span class="kw">pub const </span>TEXT_VIEW_PRIORITY_VALIDATE: u32 = ffi::GTK_TEXT_VIEW_PRIORITY_VALIDATE <span class="kw">as _</span>;
 
 <span class="attribute">#[macro_use]
 </span><span class="kw">mod </span>rt;
@@ -468,6 +469,7 @@
 #[allow(clippy::many_single_char_names)]
 #[allow(clippy::upper_case_acronyms)]
 #[allow(clippy::type_complexity)]
+#[allow(clippy::should_implement_trait)]
 #[allow(unused_imports)]
 </span><span class="kw">mod </span>auto;
 
@@ -588,4 +590,4 @@
 <span class="kw">pub use </span>tree_sortable::SortColumn;
 <span class="kw">pub use </span>widget::TickCallbackId;
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (758f19645 2022-10-24)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (bed4ad65b 2022-10-25)" ></div></body></html>

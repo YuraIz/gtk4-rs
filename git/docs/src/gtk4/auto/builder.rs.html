@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1225,7 +1225,7 @@
     #[doc(alias = <span class="string">&quot;new_from_string&quot;</span>)]
     </span><span class="kw">pub fn </span>from_string(string: <span class="kw-2">&amp;</span>str) -&gt; Builder {
         <span class="macro">assert_initialized_main_thread!</span>();
-        <span class="kw">let </span>length = string.len() <span class="kw">as </span>isize;
+        <span class="kw">let </span>length = string.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_builder_new_from_string(
                 string.to_glib_none().<span class="number">0</span>,
@@ -1298,7 +1298,7 @@
     /// [`true`] on success, [`false`] if an error occurred
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_add_from_string&quot;</span>)]
     </span><span class="kw">pub fn </span>add_from_string(<span class="kw-2">&amp;</span><span class="self">self</span>, buffer: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
-        <span class="kw">let </span>length = buffer.len() <span class="kw">as </span>isize;
+        <span class="kw">let </span>length = buffer.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
             <span class="kw">let </span>is_ok = ffi::gtk_builder_add_from_string(
@@ -1426,7 +1426,7 @@
         buffer: <span class="kw-2">&amp;</span>str,
         object_ids: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>str],
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
-        <span class="kw">let </span>length = buffer.len() <span class="kw">as </span>isize;
+        <span class="kw">let </span>length = buffer.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
             <span class="kw">let </span>is_ok = ffi::gtk_builder_add_objects_from_string(
@@ -1532,7 +1532,7 @@
         template_type: glib::types::Type,
         buffer: <span class="kw-2">&amp;</span>str,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
-        <span class="kw">let </span>length = buffer.len() <span class="kw">as </span>isize;
+        <span class="kw">let </span>length = buffer.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
             <span class="kw">let </span>is_ok = ffi::gtk_builder_extend_with_template(
@@ -1846,4 +1846,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (758f19645 2022-10-24)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (bed4ad65b 2022-10-25)" ></div></body></html>

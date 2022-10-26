@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -740,7 +740,7 @@
             <span class="kw">let </span><span class="kw-2">mut </span>n_ranges = mem::MaybeUninit::uninit();
             <span class="kw">let </span>ret = FromGlibContainer::from_glib_none_num(
                 ffi::gtk_print_job_get_page_ranges(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, n_ranges.as_mut_ptr()),
-                n_ranges.assume_init() <span class="kw">as </span>usize,
+                n_ranges.assume_init() <span class="kw">as _</span>,
             );
             ret
         }
@@ -928,7 +928,7 @@
     ///    [`PageRange`][crate::PageRange] structs
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_job_set_page_ranges&quot;</span>)]
     </span><span class="kw">pub fn </span>set_page_ranges(<span class="kw-2">&amp;</span><span class="self">self</span>, ranges: <span class="kw-2">&amp;</span>[PageRange]) {
-        <span class="kw">let </span>n_ranges = ranges.len() <span class="kw">as </span>i32;
+        <span class="kw">let </span>n_ranges = ranges.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             ffi::gtk_print_job_set_page_ranges(
                 <span class="self">self</span>.to_glib_none().<span class="number">0</span>,
@@ -1140,4 +1140,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (758f19645 2022-10-24)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (bed4ad65b 2022-10-25)" ></div></body></html>

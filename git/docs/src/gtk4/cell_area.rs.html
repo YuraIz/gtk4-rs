@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -197,8 +197,6 @@
 <span id="124">124</span>
 <span id="125">125</span>
 <span id="126">126</span>
-<span id="127">127</span>
-<span id="128">128</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
@@ -269,9 +267,8 @@
                     cell_class.as_ref() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass,
                     property_name.to_glib_none().<span class="number">0</span>,
                 ));
-            <span class="kw">let </span>pspec = pspec.unwrap_or_else(|| {
-                <span class="macro">panic!</span>(<span class="string">&quot;The CellArea property {} doesn&#39;t exists&quot;</span>, property_name)
-            });
+            <span class="kw">let </span>pspec = pspec
+                .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;The CellArea property {property_name} doesn&#39;t exists&quot;</span>));
             <span class="kw">let </span><span class="kw-2">mut </span>value = glib::Value::from_type(pspec.value_type());
             ffi::gtk_cell_area_cell_get_property(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -307,9 +304,8 @@
                     cell_class.as_ref() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass,
                     property_name.to_glib_none().<span class="number">0</span>,
                 ));
-            <span class="kw">let </span>pspec = pspec.unwrap_or_else(|| {
-                <span class="macro">panic!</span>(<span class="string">&quot;The CellArea property {} doesn&#39;t exists&quot;</span>, property_name)
-            });
+            <span class="kw">let </span>pspec = pspec
+                .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;The CellArea property {property_name} doesn&#39;t exists&quot;</span>));
 
             <span class="macro">assert!</span>(
                 pspec.value_type().is_a(value.value_type()),
@@ -328,4 +324,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (758f19645 2022-10-24)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (bed4ad65b 2022-10-25)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../gdk4_wayland_sys/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gdk4_wayland_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gdk4_wayland_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -409,7 +409,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GdkWaylandDevice {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandDevice @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandDevice @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -422,7 +422,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GdkWaylandDisplay {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandDisplay @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandDisplay @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -435,7 +435,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GdkWaylandGLContext {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandGLContext @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandGLContext @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -448,7 +448,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GdkWaylandMonitor {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandMonitor @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandMonitor @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -461,7 +461,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GdkWaylandPopup {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandPopup @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandPopup @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -474,7 +474,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GdkWaylandSeat {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandSeat @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandSeat @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -487,7 +487,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GdkWaylandSurface {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandSurface @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandSurface @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -500,7 +500,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GdkWaylandToplevel {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandToplevel @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GdkWaylandToplevel @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -596,4 +596,4 @@
 
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gdk4_wayland_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (758f19645 2022-10-24)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gdk4_wayland_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (bed4ad65b 2022-10-25)" ></div></body></html>
