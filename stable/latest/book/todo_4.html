@@ -492,7 +492,7 @@ impl AdwApplicationWindowImpl for Window {}
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
+</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -871,8 +871,11 @@ impl ObjectSubclass for CollectionObject {
 </span><span class="boring">}
 </span><span class="boring">
 </span><span class="boring">impl CollectionObject {
-</span><span class="boring">    pub fn new(title: String, tasks: gio::ListStore) -&gt; Self {
-</span><span class="boring">        Object::new(&amp;[(&quot;title&quot;, &amp;title), (&quot;tasks&quot;, &amp;tasks)])
+</span><span class="boring">    pub fn new(title: &amp;str, tasks: gio::ListStore) -&gt; Self {
+</span><span class="boring">        Object::builder()
+</span><span class="boring">            .property(&quot;title&quot;, title)
+</span><span class="boring">            .property(&quot;tasks&quot;, tasks)
+</span><span class="boring">            .build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    pub fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -907,7 +910,7 @@ impl ObjectSubclass for CollectionObject {
 </span><span class="boring">        let tasks = gio::ListStore::new(TaskObject::static_type());
 </span><span class="boring">        tasks.extend_from_slice(&amp;tasks_to_extend);
 </span><span class="boring">
-</span><span class="boring">        Self::new(title, tasks)
+</span><span class="boring">        Self::new(&amp;title, tasks)
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -939,8 +942,11 @@ pub struct CollectionData {
 </span><span class="boring">}
 </span><span class="boring">
 </span>impl CollectionObject {
-    pub fn new(title: String, tasks: gio::ListStore) -&gt; Self {
-        Object::new(&amp;[(&quot;title&quot;, &amp;title), (&quot;tasks&quot;, &amp;tasks)])
+    pub fn new(title: &amp;str, tasks: gio::ListStore) -&gt; Self {
+        Object::builder()
+            .property(&quot;title&quot;, title)
+            .property(&quot;tasks&quot;, tasks)
+            .build()
     }
 
     pub fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -975,7 +981,7 @@ pub struct CollectionData {
         let tasks = gio::ListStore::new(TaskObject::static_type());
         tasks.extend_from_slice(&amp;tasks_to_extend);
 
-        Self::new(title, tasks)
+        Self::new(&amp;title, tasks)
     }
 }
 <span class="boring">
@@ -1131,7 +1137,7 @@ pub struct Window {
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
+</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -1542,8 +1548,8 @@ pub struct Window {
 </span><span class="boring">                let tasks = gio::ListStore::new(TaskObject::static_type());
 </span><span class="boring">
 </span><span class="boring">                // Create a new collection object from the title the user provided
-</span><span class="boring">                let title = entry.text().into();
-</span><span class="boring">                let collection = CollectionObject::new(title, tasks);
+</span><span class="boring">                let title = entry.text().to_string();
+</span><span class="boring">                let collection = CollectionObject::new(&amp;title, tasks);
 </span><span class="boring">
 </span><span class="boring">                // Add new collection object and set current tasks
 </span><span class="boring">                window.collections().append(&amp;collection);
@@ -1810,7 +1816,7 @@ To do that it uses the method <code>create_collection_row</code>.</p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
+</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -2221,8 +2227,8 @@ To do that it uses the method <code>create_collection_row</code>.</p>
 </span><span class="boring">                let tasks = gio::ListStore::new(TaskObject::static_type());
 </span><span class="boring">
 </span><span class="boring">                // Create a new collection object from the title the user provided
-</span><span class="boring">                let title = entry.text().into();
-</span><span class="boring">                let collection = CollectionObject::new(title, tasks);
+</span><span class="boring">                let title = entry.text().to_string();
+</span><span class="boring">                let collection = CollectionObject::new(&amp;title, tasks);
 </span><span class="boring">
 </span><span class="boring">                // Add new collection object and set current tasks
 </span><span class="boring">                window.collections().append(&amp;collection);
@@ -2268,7 +2274,7 @@ To do that it uses the method <code>create_collection_row</code>.</p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
+</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -2679,8 +2685,8 @@ To do that it uses the method <code>create_collection_row</code>.</p>
 </span><span class="boring">                let tasks = gio::ListStore::new(TaskObject::static_type());
 </span><span class="boring">
 </span><span class="boring">                // Create a new collection object from the title the user provided
-</span><span class="boring">                let title = entry.text().into();
-</span><span class="boring">                let collection = CollectionObject::new(title, tasks);
+</span><span class="boring">                let title = entry.text().to_string();
+</span><span class="boring">                let collection = CollectionObject::new(&amp;title, tasks);
 </span><span class="boring">
 </span><span class="boring">                // Add new collection object and set current tasks
 </span><span class="boring">                window.collections().append(&amp;collection);
@@ -2729,7 +2735,7 @@ We choose the first one and let the method <code>set_current_collection</code> d
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
+</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -3140,8 +3146,8 @@ We choose the first one and let the method <code>set_current_collection</code> d
 </span><span class="boring">                let tasks = gio::ListStore::new(TaskObject::static_type());
 </span><span class="boring">
 </span><span class="boring">                // Create a new collection object from the title the user provided
-</span><span class="boring">                let title = entry.text().into();
-</span><span class="boring">                let collection = CollectionObject::new(title, tasks);
+</span><span class="boring">                let title = entry.text().to_string();
+</span><span class="boring">                let collection = CollectionObject::new(&amp;title, tasks);
 </span><span class="boring">
 </span><span class="boring">                // Add new collection object and set current tasks
 </span><span class="boring">                window.collections().append(&amp;collection);
@@ -3193,7 +3199,7 @@ Finally, we select the collection row.</p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
+</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -3604,8 +3610,8 @@ Finally, we select the collection row.</p>
 </span><span class="boring">                let tasks = gio::ListStore::new(TaskObject::static_type());
 </span><span class="boring">
 </span><span class="boring">                // Create a new collection object from the title the user provided
-</span><span class="boring">                let title = entry.text().into();
-</span><span class="boring">                let collection = CollectionObject::new(title, tasks);
+</span><span class="boring">                let title = entry.text().to_string();
+</span><span class="boring">                let collection = CollectionObject::new(&amp;title, tasks);
 </span><span class="boring">
 </span><span class="boring">                // Add new collection object and set current tasks
 </span><span class="boring">                window.collections().append(&amp;collection);
@@ -3652,7 +3658,7 @@ It assures that <code>tasks_list</code> is only visible if the number of tasks i
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
+</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -4063,8 +4069,8 @@ It assures that <code>tasks_list</code> is only visible if the number of tasks i
 </span><span class="boring">                let tasks = gio::ListStore::new(TaskObject::static_type());
 </span><span class="boring">
 </span><span class="boring">                // Create a new collection object from the title the user provided
-</span><span class="boring">                let title = entry.text().into();
-</span><span class="boring">                let collection = CollectionObject::new(title, tasks);
+</span><span class="boring">                let title = entry.text().to_string();
+</span><span class="boring">                let collection = CollectionObject::new(&amp;title, tasks);
 </span><span class="boring">
 </span><span class="boring">                // Add new collection object and set current tasks
 </span><span class="boring">                window.collections().append(&amp;collection);
@@ -4110,7 +4116,7 @@ It assures that <code>tasks_list</code> is only visible if the number of tasks i
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
+</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -4521,8 +4527,8 @@ It assures that <code>tasks_list</code> is only visible if the number of tasks i
 </span><span class="boring">                let tasks = gio::ListStore::new(TaskObject::static_type());
 </span><span class="boring">
 </span><span class="boring">                // Create a new collection object from the title the user provided
-</span><span class="boring">                let title = entry.text().into();
-</span><span class="boring">                let collection = CollectionObject::new(title, tasks);
+</span><span class="boring">                let title = entry.text().to_string();
+</span><span class="boring">                let collection = CollectionObject::new(&amp;title, tasks);
 </span><span class="boring">
 </span><span class="boring">                // Add new collection object and set current tasks
 </span><span class="boring">                window.collections().append(&amp;collection);
@@ -4585,7 +4591,7 @@ This action will be activated by a click on the <code>+</code> button as well as
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
+</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -4996,8 +5002,8 @@ This action will be activated by a click on the <code>+</code> button as well as
 </span><span class="boring">                let tasks = gio::ListStore::new(TaskObject::static_type());
 </span><span class="boring">
 </span><span class="boring">                // Create a new collection object from the title the user provided
-</span><span class="boring">                let title = entry.text().into();
-</span><span class="boring">                let collection = CollectionObject::new(title, tasks);
+</span><span class="boring">                let title = entry.text().to_string();
+</span><span class="boring">                let collection = CollectionObject::new(&amp;title, tasks);
 </span><span class="boring">
 </span><span class="boring">                // Add new collection object and set current tasks
 </span><span class="boring">                window.collections().append(&amp;collection);
@@ -5049,7 +5055,7 @@ Afterwards we navigate forward on our leaflet, which means we navigate to the ta
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
+</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -5460,8 +5466,8 @@ Afterwards we navigate forward on our leaflet, which means we navigate to the ta
                 let tasks = gio::ListStore::new(TaskObject::static_type());
 
                 // Create a new collection object from the title the user provided
-                let title = entry.text().into();
-                let collection = CollectionObject::new(title, tasks);
+                let title = entry.text().to_string();
+                let collection = CollectionObject::new(&amp;title, tasks);
 
                 // Add new collection object and set current tasks
                 window.collections().append(&amp;collection);
@@ -5513,7 +5519,7 @@ Finally, we connect to a click of the <code>back_button</code> in the task view 
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
+</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -5924,8 +5930,8 @@ Finally, we connect to a click of the <code>back_button</code> in the task view 
 </span><span class="boring">                let tasks = gio::ListStore::new(TaskObject::static_type());
 </span><span class="boring">
 </span><span class="boring">                // Create a new collection object from the title the user provided
-</span><span class="boring">                let title = entry.text().into();
-</span><span class="boring">                let collection = CollectionObject::new(title, tasks);
+</span><span class="boring">                let title = entry.text().to_string();
+</span><span class="boring">                let collection = CollectionObject::new(&amp;title, tasks);
 </span><span class="boring">
 </span><span class="boring">                // Add new collection object and set current tasks
 </span><span class="boring">                window.collections().append(&amp;collection);
@@ -5972,7 +5978,7 @@ This method ensure when there is at least one collection, the &quot;main&quot; p
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;adw::Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
+</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn setup_settings(&amp;self) {
@@ -6383,8 +6389,8 @@ This method ensure when there is at least one collection, the &quot;main&quot; p
 </span><span class="boring">                let tasks = gio::ListStore::new(TaskObject::static_type());
 </span><span class="boring">
 </span><span class="boring">                // Create a new collection object from the title the user provided
-</span><span class="boring">                let title = entry.text().into();
-</span><span class="boring">                let collection = CollectionObject::new(title, tasks);
+</span><span class="boring">                let title = entry.text().to_string();
+</span><span class="boring">                let collection = CollectionObject::new(&amp;title, tasks);
 </span><span class="boring">
 </span><span class="boring">                // Add new collection object and set current tasks
 </span><span class="boring">                window.collections().append(&amp;collection);
