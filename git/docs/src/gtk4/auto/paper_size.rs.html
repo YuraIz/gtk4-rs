@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -581,7 +581,7 @@
     /// The [`PaperSize`][crate::PaperSize] object stores not only the dimensions (width
     /// and height) of a paper size and its name, it also provides
     /// default print margins.
-    </span><span class="attribute">#[derive(Debug, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>PaperSize(Boxed&lt;ffi::GtkPaperSize&gt;);
 
     <span class="kw">match fn </span>{
@@ -605,7 +605,7 @@
     ///
     /// a new [`PaperSize`][crate::PaperSize], use `Gtk::PaperSize::free()`
     /// to free it
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; PaperSize {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gtk_paper_size_new(name.to_glib_none().<span class="number">0</span>)) }
@@ -628,7 +628,7 @@
     ///
     /// a new [`PaperSize`][crate::PaperSize] object, use `Gtk::PaperSize::free()`
     /// to free it
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_new_custom&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_new_custom&quot;</span>)]
     </span><span class="kw">pub fn </span>new_custom(
         name: <span class="kw-2">&amp;</span>str,
         display_name: <span class="kw-2">&amp;</span>str,
@@ -658,7 +658,7 @@
     /// # Returns
     ///
     /// a new [`PaperSize`][crate::PaperSize] object
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_new_from_gvariant&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_new_from_gvariant&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_gvariant&quot;</span>)]
     </span><span class="kw">pub fn </span>from_gvariant(variant: <span class="kw-2">&amp;</span>glib::Variant) -&gt; PaperSize {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -686,7 +686,7 @@
     ///
     /// a new [`PaperSize`][crate::PaperSize], use `Gtk::PaperSize::free()`
     /// to free it
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_new_from_ipp&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_new_from_ipp&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_ipp&quot;</span>)]
     </span><span class="kw">pub fn </span>from_ipp(ipp_name: <span class="kw-2">&amp;</span>str, width: f64, height: f64) -&gt; PaperSize {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -710,7 +710,7 @@
     /// # Returns
     ///
     /// a new [`PaperSize`][crate::PaperSize] object with the restored paper size
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_new_from_key_file&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_new_from_key_file&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_key_file&quot;</span>)]
     </span><span class="kw">pub fn </span>from_key_file(
         key_file: <span class="kw-2">&amp;</span>glib::KeyFile,
@@ -751,7 +751,7 @@
     ///
     /// a new [`PaperSize`][crate::PaperSize], use `Gtk::PaperSize::free()`
     /// to free it
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_new_from_ppd&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_new_from_ppd&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_ppd&quot;</span>)]
     </span><span class="kw">pub fn </span>from_ppd(ppd_name: <span class="kw-2">&amp;</span>str, ppd_display_name: <span class="kw-2">&amp;</span>str, width: f64, height: f64) -&gt; PaperSize {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -772,7 +772,7 @@
     /// # Returns
     ///
     /// the default bottom margin
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_default_bottom_margin&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_default_bottom_margin&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default_bottom_margin&quot;</span>)]
     </span><span class="kw">pub fn </span>default_bottom_margin(<span class="kw-2">&amp;</span><span class="self">self</span>, unit: Unit) -&gt; f64 {
         <span class="kw">unsafe </span>{
@@ -790,7 +790,7 @@
     /// # Returns
     ///
     /// the default left margin
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_default_left_margin&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_default_left_margin&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default_left_margin&quot;</span>)]
     </span><span class="kw">pub fn </span>default_left_margin(<span class="kw-2">&amp;</span><span class="self">self</span>, unit: Unit) -&gt; f64 {
         <span class="kw">unsafe </span>{
@@ -808,7 +808,7 @@
     /// # Returns
     ///
     /// the default right margin
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_default_right_margin&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_default_right_margin&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default_right_margin&quot;</span>)]
     </span><span class="kw">pub fn </span>default_right_margin(<span class="kw-2">&amp;</span><span class="self">self</span>, unit: Unit) -&gt; f64 {
         <span class="kw">unsafe </span>{
@@ -826,7 +826,7 @@
     /// # Returns
     ///
     /// the default top margin
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_default_top_margin&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_default_top_margin&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default_top_margin&quot;</span>)]
     </span><span class="kw">pub fn </span>default_top_margin(<span class="kw-2">&amp;</span><span class="self">self</span>, unit: Unit) -&gt; f64 {
         <span class="kw">unsafe </span>{
@@ -842,7 +842,7 @@
     /// # Returns
     ///
     /// the human-readable name of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_display_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_display_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display_name&quot;</span>)]
     </span><span class="kw">pub fn </span>display_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{
@@ -860,7 +860,7 @@
     /// # Returns
     ///
     /// the paper height
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_height&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_height&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_height&quot;</span>)]
     </span><span class="kw">pub fn </span>height(<span class="kw-2">&amp;</span><span class="self">self</span>, unit: Unit) -&gt; f64 {
         <span class="kw">unsafe </span>{
@@ -873,7 +873,7 @@
     /// # Returns
     ///
     /// the name of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">pub fn </span>name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{
@@ -889,7 +889,7 @@
     /// # Returns
     ///
     /// the PPD name of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_ppd_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_ppd_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_ppd_name&quot;</span>)]
     </span><span class="kw">pub fn </span>ppd_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{
@@ -907,7 +907,7 @@
     /// # Returns
     ///
     /// the paper width
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_width&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_width&quot;</span>)]
     </span><span class="kw">pub fn </span>width(<span class="kw-2">&amp;</span><span class="self">self</span>, unit: Unit) -&gt; f64 {
         <span class="kw">unsafe </span>{
@@ -920,7 +920,7 @@
     /// # Returns
     ///
     /// whether @self is a custom paper size.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_is_custom&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_is_custom&quot;</span>)]
     </span><span class="kw">pub fn </span>is_custom(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_paper_size_is_custom(mut_override(
@@ -929,7 +929,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_is_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_is_equal&quot;</span>)]
     </span><span class="kw">fn </span>is_equal(<span class="kw-2">&amp;</span><span class="self">self</span>, size2: <span class="kw-2">&amp;</span>PaperSize) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_paper_size_is_equal(
@@ -944,7 +944,7 @@
     /// # Returns
     ///
     /// whether @self is not an IPP custom paper size.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_is_ipp&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_is_ipp&quot;</span>)]
     </span><span class="kw">pub fn </span>is_ipp(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_paper_size_is_ipp(mut_override(
@@ -960,7 +960,7 @@
     /// the new height in units of @unit
     /// ## `unit`
     /// the unit for @width and @height
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_set_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_set_size&quot;</span>)]
     </span><span class="kw">pub fn </span>set_size(<span class="kw-2">&amp;mut </span><span class="self">self</span>, width: f64, height: f64, unit: Unit) {
         <span class="kw">unsafe </span>{
             ffi::gtk_paper_size_set_size(
@@ -977,7 +977,7 @@
     /// # Returns
     ///
     /// a new, floating, `GVariant`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_to_gvariant&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_to_gvariant&quot;</span>)]
     </span><span class="kw">pub fn </span>to_gvariant(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; glib::Variant {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_paper_size_to_gvariant(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>)) }
     }
@@ -987,7 +987,7 @@
     /// the `GKeyFile` to save the paper size to
     /// ## `group_name`
     /// the group to add the settings to in @key_file
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_to_key_file&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_to_key_file&quot;</span>)]
     </span><span class="kw">pub fn </span>to_key_file(<span class="kw-2">&amp;mut </span><span class="self">self</span>, key_file: <span class="kw-2">&amp;</span>glib::KeyFile, group_name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_paper_size_to_key_file(
@@ -1005,7 +1005,7 @@
     ///
     /// the name of the default paper size. The string
     /// is owned by GTK and should not be modified.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_default&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_default&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default&quot;</span>)]
     #[allow(clippy::should_implement_trait)]
     </span><span class="kw">pub fn </span>default() -&gt; glib::GString {
@@ -1022,7 +1022,7 @@
     ///
     /// a newly allocated list of newly
     ///    allocated [`PaperSize`][crate::PaperSize] objects
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_paper_sizes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_paper_size_get_paper_sizes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_paper_sizes&quot;</span>)]
     </span><span class="kw">pub fn </span>paper_sizes(include_custom: bool) -&gt; Vec&lt;PaperSize&gt; {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -1035,7 +1035,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>PaperSize {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.is_equal(other)
     }
@@ -1044,10 +1044,10 @@
 <span class="kw">impl </span>Eq <span class="kw">for </span>PaperSize {}
 
 <span class="kw">impl </span>fmt::Display <span class="kw">for </span>PaperSize {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
         f.write_str(<span class="kw-2">&amp;</span><span class="self">self</span>.name())
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

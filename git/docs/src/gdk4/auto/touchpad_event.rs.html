@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -202,7 +202,7 @@
     /// sequences of begin, update, end events, and leaves gesture
     /// recognition to the clients, touchpad gestures are typically
     /// processed by the system, resulting in these events.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkTouchpadEvent&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkTouchpadEvent&quot;</span>)]
     </span><span class="kw">pub struct </span>TouchpadEvent(Shared&lt;ffi::GdkTouchpadEvent&gt;);
 
     <span class="kw">match fn </span>{
@@ -228,7 +228,7 @@
     ///
     /// ## `dy`
     /// return location for y
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_touchpad_event_get_deltas&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_touchpad_event_get_deltas&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_deltas&quot;</span>)]
     </span><span class="kw">pub fn </span>deltas(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f64, f64) {
         <span class="kw">unsafe </span>{
@@ -248,7 +248,7 @@
     /// # Returns
     ///
     /// the gesture phase of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_touchpad_event_get_gesture_phase&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_touchpad_event_get_gesture_phase&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_gesture_phase&quot;</span>)]
     </span><span class="kw">pub fn </span>gesture_phase(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; TouchpadGesturePhase {
         <span class="kw">unsafe </span>{
@@ -263,7 +263,7 @@
     /// # Returns
     ///
     /// the number of fingers for @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_touchpad_event_get_n_fingers&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_touchpad_event_get_n_fingers&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_n_fingers&quot;</span>)]
     </span><span class="kw">pub fn </span>n_fingers(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gdk_touchpad_event_get_n_fingers(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -274,7 +274,7 @@
     /// # Returns
     ///
     /// the angle delta of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_touchpad_event_get_pinch_angle_delta&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_touchpad_event_get_pinch_angle_delta&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pinch_angle_delta&quot;</span>)]
     </span><span class="kw">pub fn </span>pinch_angle_delta(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::gdk_touchpad_event_get_pinch_angle_delta(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -285,7 +285,7 @@
     /// # Returns
     ///
     /// the scale of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_touchpad_event_get_pinch_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_touchpad_event_get_pinch_scale&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pinch_scale&quot;</span>)]
     </span><span class="kw">pub fn </span>pinch_scale(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::gdk_touchpad_event_get_pinch_scale(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -298,4 +298,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

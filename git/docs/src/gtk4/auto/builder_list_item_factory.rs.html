@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -262,7 +262,7 @@
     /// # Implements
     ///
     /// [`ListItemFactoryExt`][trait@crate::prelude::ListItemFactoryExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkBuilderListItemFactory&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkBuilderListItemFactory&quot;</span>)]
     </span><span class="kw">pub struct </span>BuilderListItemFactory(Object&lt;ffi::GtkBuilderListItemFactory, ffi::GtkBuilderListItemFactoryClass&gt;) @extends ListItemFactory;
 
     <span class="kw">match fn </span>{
@@ -281,7 +281,7 @@
     /// # Returns
     ///
     /// a new [`BuilderListItemFactory`][crate::BuilderListItemFactory]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_list_item_factory_new_from_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_list_item_factory_new_from_bytes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_bytes&quot;</span>)]
     </span><span class="kw">pub fn </span>from_bytes(
         scope: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;BuilderScope&gt;&gt;,
@@ -307,7 +307,7 @@
     /// # Returns
     ///
     /// a new [`BuilderListItemFactory`][crate::BuilderListItemFactory]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_list_item_factory_new_from_resource&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_list_item_factory_new_from_resource&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_resource&quot;</span>)]
     </span><span class="kw">pub fn </span>from_resource(
         scope: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;BuilderScope&gt;&gt;,
@@ -329,7 +329,7 @@
     /// # Returns
     ///
     /// The [`Builder`][crate::Builder] data
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_list_item_factory_get_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_list_item_factory_get_bytes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_bytes&quot;</span>)]
     </span><span class="kw">pub fn </span>bytes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Bytes {
         <span class="kw">unsafe </span>{
@@ -344,7 +344,7 @@
     /// # Returns
     ///
     /// The path to the resource
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_list_item_factory_get_resource&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_list_item_factory_get_resource&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_resource&quot;</span>)]
     </span><span class="kw">pub fn </span>resource(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -359,7 +359,7 @@
     /// # Returns
     ///
     /// The scope used when constructing listitems
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_list_item_factory_get_scope&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_list_item_factory_get_scope&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_scope&quot;</span>)]
     </span><span class="kw">pub fn </span>scope(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;BuilderScope&gt; {
         <span class="kw">unsafe </span>{
@@ -376,4 +376,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

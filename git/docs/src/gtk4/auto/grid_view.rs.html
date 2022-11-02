@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1127,7 +1127,7 @@
     /// # Implements
     ///
     /// [`ListBaseExt`][trait@crate::prelude::ListBaseExt], [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`OrientableExt`][trait@crate::prelude::OrientableExt], [`ScrollableExt`][trait@crate::prelude::ScrollableExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkGridView&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkGridView&quot;</span>)]
     </span><span class="kw">pub struct </span>GridView(Object&lt;ffi::GtkGridView, ffi::GtkGridViewClass&gt;) @extends ListBase, Widget, @implements Accessible, Buildable, ConstraintTarget, Orientable, Scrollable;
 
     <span class="kw">match fn </span>{
@@ -1155,7 +1155,7 @@
     /// # Returns
     ///
     /// a new [`GridView`][crate::GridView] using the given @model and @factory
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;SelectionModel&gt;&gt;,
         factory: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;ListItemFactory&gt;&gt;,
@@ -1183,7 +1183,7 @@
     /// # Returns
     ///
     /// [`true`] if rubberband selection is enabled
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_get_enable_rubberband&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_get_enable_rubberband&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_enable_rubberband&quot;</span>)]
     </span><span class="kw">pub fn </span>enables_rubberband(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -1198,7 +1198,7 @@
     /// # Returns
     ///
     /// The factory in use
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_get_factory&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_get_factory&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_factory&quot;</span>)]
     </span><span class="kw">pub fn </span>factory(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;ListItemFactory&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_grid_view_get_factory(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1209,7 +1209,7 @@
     /// # Returns
     ///
     /// The maximum number of columns
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_get_max_columns&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_get_max_columns&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_max_columns&quot;</span>)]
     </span><span class="kw">pub fn </span>max_columns(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gtk_grid_view_get_max_columns(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1220,7 +1220,7 @@
     /// # Returns
     ///
     /// The minimum number of columns
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_get_min_columns&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_get_min_columns&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_min_columns&quot;</span>)]
     </span><span class="kw">pub fn </span>min_columns(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gtk_grid_view_get_min_columns(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1231,7 +1231,7 @@
     /// # Returns
     ///
     /// The model in use
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_get_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_get_model&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_model&quot;</span>)]
     </span><span class="kw">pub fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;SelectionModel&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_grid_view_get_model(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1243,7 +1243,7 @@
     /// # Returns
     ///
     /// [`true`] if items are activated on single click
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_get_single_click_activate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_get_single_click_activate&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_single_click_activate&quot;</span>)]
     </span><span class="kw">pub fn </span>is_single_click_activate(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -1256,7 +1256,7 @@
     <span class="doccomment">/// Sets whether selections can be changed by dragging with the mouse.
     /// ## `enable_rubberband`
     /// [`true`] to enable rubberband selection
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_set_enable_rubberband&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_set_enable_rubberband&quot;</span>)]
     </span><span class="kw">pub fn </span>set_enable_rubberband(<span class="kw-2">&amp;</span><span class="self">self</span>, enable_rubberband: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_grid_view_set_enable_rubberband(
@@ -1269,7 +1269,7 @@
     <span class="doccomment">/// Sets the [`ListItemFactory`][crate::ListItemFactory] to use for populating list items.
     /// ## `factory`
     /// the factory to use
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_set_factory&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_set_factory&quot;</span>)]
     </span><span class="kw">pub fn </span>set_factory(<span class="kw-2">&amp;</span><span class="self">self</span>, factory: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;ListItemFactory&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_grid_view_set_factory(
@@ -1287,7 +1287,7 @@
     /// [`set_min_columns()`][Self::set_min_columns()], that value is used instead.
     /// ## `max_columns`
     /// The maximum number of columns
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_set_max_columns&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_set_max_columns&quot;</span>)]
     </span><span class="kw">pub fn </span>set_max_columns(<span class="kw-2">&amp;</span><span class="self">self</span>, max_columns: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_grid_view_set_max_columns(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, max_columns);
@@ -1302,7 +1302,7 @@
     /// [`set_max_columns()`][Self::set_max_columns()], that value is ignored.
     /// ## `min_columns`
     /// The minimum number of columns
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_set_min_columns&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_set_min_columns&quot;</span>)]
     </span><span class="kw">pub fn </span>set_min_columns(<span class="kw-2">&amp;</span><span class="self">self</span>, min_columns: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_grid_view_set_min_columns(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, min_columns);
@@ -1314,7 +1314,7 @@
     /// This must be a [`SelectionModel`][crate::SelectionModel].
     /// ## `model`
     /// the model to use
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_set_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_set_model&quot;</span>)]
     </span><span class="kw">pub fn </span>set_model(<span class="kw-2">&amp;</span><span class="self">self</span>, model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;SelectionModel&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_grid_view_set_model(
@@ -1328,7 +1328,7 @@
     /// selected on hover.
     /// ## `single_click_activate`
     /// [`true`] to activate items on single click
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_grid_view_set_single_click_activate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_grid_view_set_single_click_activate&quot;</span>)]
     </span><span class="kw">pub fn </span>set_single_click_activate(<span class="kw-2">&amp;</span><span class="self">self</span>, single_click_activate: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_grid_view_set_single_click_activate(
@@ -1346,7 +1346,7 @@
     /// this signal.
     /// ## `position`
     /// position of item to activate
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;activate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;activate&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_activate&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, u32) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>activate_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>GridView, u32) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkGridView,
@@ -1369,7 +1369,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;enable-rubberband&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;enable-rubberband&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_enable_rubberband_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -1395,7 +1395,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;factory&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;factory&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_factory_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_factory_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>GridView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkGridView,
@@ -1418,7 +1418,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;max-columns&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;max-columns&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_max_columns_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_max_columns_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>GridView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkGridView,
@@ -1441,7 +1441,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;min-columns&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;min-columns&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_min_columns_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_min_columns_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>GridView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkGridView,
@@ -1464,7 +1464,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_model_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_model_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>GridView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkGridView,
@@ -1487,7 +1487,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;single-click-activate&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;single-click-activate&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_single_click_activate_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -1520,12 +1520,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`GridView`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>GridViewBuilder {
     enable_rubberband: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     factory: <span class="prelude-ty">Option</span>&lt;ListItemFactory&gt;,
@@ -1579,7 +1579,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`GridView`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; GridView {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>enable_rubberband) = <span class="self">self</span>.enable_rubberband {
@@ -2040,4 +2040,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

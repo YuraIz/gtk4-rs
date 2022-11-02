@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -424,7 +424,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkListItem&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkListItem&quot;</span>)]
     </span><span class="kw">pub struct </span>ListItem(Object&lt;ffi::GtkListItem, ffi::GtkListItemClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -439,7 +439,7 @@
     /// # Returns
     ///
     /// [`true`] if the item is activatable
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_list_item_get_activatable&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_list_item_get_activatable&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_activatable&quot;</span>)]
     </span><span class="kw">pub fn </span>is_activatable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_list_item_get_activatable(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -451,7 +451,7 @@
     /// # Returns
     ///
     /// The child
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_list_item_get_child&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_list_item_get_child&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_child&quot;</span>)]
     </span><span class="kw">pub fn </span>child(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_list_item_get_child(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -464,7 +464,7 @@
     /// # Returns
     ///
     /// The item displayed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_list_item_get_item&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_list_item_get_item&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_item&quot;</span>)]
     </span><span class="kw">pub fn </span>item(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Object&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_list_item_get_item(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -477,7 +477,7 @@
     /// # Returns
     ///
     /// The position of this item
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_list_item_get_position&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_list_item_get_position&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_position&quot;</span>)]
     </span><span class="kw">pub fn </span>position(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gtk_list_item_get_position(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -491,7 +491,7 @@
     /// # Returns
     ///
     /// [`true`] if the item is selectable
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_list_item_get_selectable&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_list_item_get_selectable&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_selectable&quot;</span>)]
     </span><span class="kw">pub fn </span>is_selectable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_list_item_get_selectable(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -505,7 +505,7 @@
     /// # Returns
     ///
     /// [`true`] if the item is selected.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_list_item_get_selected&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_list_item_get_selected&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_selected&quot;</span>)]
     </span><span class="kw">pub fn </span>is_selected(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_list_item_get_selected(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -522,7 +522,7 @@
     /// By default, list items are activatable.
     /// ## `activatable`
     /// if the item should be activatable
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_list_item_set_activatable&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_list_item_set_activatable&quot;</span>)]
     </span><span class="kw">pub fn </span>set_activatable(<span class="kw-2">&amp;</span><span class="self">self</span>, activatable: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_list_item_set_activatable(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, activatable.into_glib());
@@ -536,7 +536,7 @@
     /// binding it multiple times.
     /// ## `child`
     /// The list item&#39;s child or [`None`] to unset
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_list_item_set_child&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_list_item_set_child&quot;</span>)]
     </span><span class="kw">pub fn </span>set_child(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_list_item_set_child(
@@ -560,14 +560,14 @@
     /// a new item, they will also be reset to be selectable by GTK.
     /// ## `selectable`
     /// if the item should be selectable
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_list_item_set_selectable&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_list_item_set_selectable&quot;</span>)]
     </span><span class="kw">pub fn </span>set_selectable(<span class="kw-2">&amp;</span><span class="self">self</span>, selectable: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_list_item_set_selectable(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, selectable.into_glib());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;activatable&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;activatable&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_activatable_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_activatable_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ListItem) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkListItem,
@@ -590,7 +590,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;child&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;child&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_child_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_child_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ListItem) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkListItem,
@@ -613,7 +613,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;item&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;item&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_item_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_item_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ListItem) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkListItem,
@@ -636,7 +636,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;position&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;position&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_position_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_position_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ListItem) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkListItem,
@@ -659,7 +659,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;selectable&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;selectable&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_selectable_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_selectable_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ListItem) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkListItem,
@@ -682,7 +682,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;selected&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;selected&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_selected_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_selected_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ListItem) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkListItem,
@@ -712,4 +712,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

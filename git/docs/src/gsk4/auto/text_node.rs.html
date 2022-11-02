@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -227,7 +227,7 @@
 
 <span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// A render node drawing a set of glyphs.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GskTextNode&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GskTextNode&quot;</span>)]
     </span><span class="kw">pub struct </span>TextNode(Shared&lt;ffi::GskTextNode&gt;);
 
     <span class="kw">match fn </span>{
@@ -259,7 +259,7 @@
     /// # Returns
     ///
     /// a new [`RenderNode`][crate::RenderNode]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_text_node_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_text_node_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         font: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;pango::Font&gt;,
         glyphs: <span class="kw-2">&amp;</span>pango::GlyphString,
@@ -282,7 +282,7 @@
     /// # Returns
     ///
     /// the text color
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_text_node_get_color&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_text_node_get_color&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_color&quot;</span>)]
     </span><span class="kw">pub fn </span>color(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gdk::RGBA {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gsk_text_node_get_color(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -293,7 +293,7 @@
     /// # Returns
     ///
     /// the font
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_text_node_get_font&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_text_node_get_font&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font&quot;</span>)]
     </span><span class="kw">pub fn </span>font(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; pango::Font {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gsk_text_node_get_font(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -304,7 +304,7 @@
     /// # Returns
     ///
     /// the glyph information
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_text_node_get_glyphs&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_text_node_get_glyphs&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_glyphs&quot;</span>)]
     </span><span class="kw">pub fn </span>glyphs(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;pango::GlyphInfo&gt; {
         <span class="kw">unsafe </span>{
@@ -322,7 +322,7 @@
     /// # Returns
     ///
     /// the number of glyphs
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_text_node_get_num_glyphs&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_text_node_get_num_glyphs&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_num_glyphs&quot;</span>)]
     </span><span class="kw">pub fn </span>num_glyphs(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gsk_text_node_get_num_glyphs(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -333,7 +333,7 @@
     /// # Returns
     ///
     /// a point with the horizontal and vertical offsets
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_text_node_get_offset&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_text_node_get_offset&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_offset&quot;</span>)]
     </span><span class="kw">pub fn </span>offset(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; graphene::Point {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gsk_text_node_get_offset(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -344,7 +344,7 @@
     /// # Returns
     ///
     /// [`true`] if the text node has color glyphs
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gsk_text_node_has_color_glyphs&quot;</span>)]
     </span><span class="kw">pub fn </span>has_color_glyphs(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -358,4 +358,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -272,7 +272,7 @@
     /// # Implements
     ///
     /// [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkAccessible&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkAccessible&quot;</span>)]
     </span><span class="kw">pub struct </span>Accessible(Interface&lt;ffi::GtkAccessible, ffi::GtkAccessibleInterface&gt;);
 
     <span class="kw">match fn </span>{
@@ -295,35 +295,35 @@
     /// # Returns
     ///
     /// a [`AccessibleRole`][crate::AccessibleRole]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accessible_get_accessible_role&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accessible_get_accessible_role&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_accessible_role&quot;</span>)]
     </span><span class="kw">fn </span>accessible_role(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; AccessibleRole;
 
     <span class="doccomment">/// Resets the accessible @property to its default value.
     /// ## `property`
     /// a [`AccessibleProperty`][crate::AccessibleProperty]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accessible_reset_property&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accessible_reset_property&quot;</span>)]
     </span><span class="kw">fn </span>reset_property(<span class="kw-2">&amp;</span><span class="self">self</span>, property: AccessibleProperty);
 
     <span class="doccomment">/// Resets the accessible @relation to its default value.
     /// ## `relation`
     /// a [`AccessibleRelation`][crate::AccessibleRelation]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accessible_reset_relation&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accessible_reset_relation&quot;</span>)]
     </span><span class="kw">fn </span>reset_relation(<span class="kw-2">&amp;</span><span class="self">self</span>, relation: AccessibleRelation);
 
     <span class="doccomment">/// Resets the accessible @state to its default value.
     /// ## `state`
     /// a [`AccessibleState`][crate::AccessibleState]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accessible_reset_state&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accessible_reset_state&quot;</span>)]
     </span><span class="kw">fn </span>reset_state(<span class="kw-2">&amp;</span><span class="self">self</span>, state: AccessibleState);
 
     <span class="doccomment">/// The accessible role of the given [`Accessible`][crate::Accessible] implementation.
     ///
     /// The accessible role cannot be changed once set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;accessible-role&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;accessible-role&quot;</span>)]
     </span><span class="kw">fn </span>set_accessible_role(<span class="kw-2">&amp;</span><span class="self">self</span>, accessible_role: AccessibleRole);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;accessible-role&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;accessible-role&quot;</span>)]
     </span><span class="kw">fn </span>connect_accessible_role_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -396,4 +396,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

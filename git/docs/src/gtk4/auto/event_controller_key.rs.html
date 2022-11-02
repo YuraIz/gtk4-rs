@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -345,7 +345,7 @@
     /// # Implements
     ///
     /// [`EventControllerExt`][trait@crate::prelude::EventControllerExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkEventControllerKey&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkEventControllerKey&quot;</span>)]
     </span><span class="kw">pub struct </span>EventControllerKey(Object&lt;ffi::GtkEventControllerKey, ffi::GtkEventControllerKeyClass&gt;) @extends EventController;
 
     <span class="kw">match fn </span>{
@@ -359,7 +359,7 @@
     /// # Returns
     ///
     /// a new [`EventControllerKey`][crate::EventControllerKey]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_event_controller_key_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_event_controller_key_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; EventControllerKey {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -387,7 +387,7 @@
     /// # Returns
     ///
     /// whether the @widget handled the event
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_event_controller_key_forward&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_event_controller_key_forward&quot;</span>)]
     </span><span class="kw">pub fn </span>forward(<span class="kw-2">&amp;</span><span class="self">self</span>, widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_event_controller_key_forward(
@@ -404,7 +404,7 @@
     /// # Returns
     ///
     /// the key group
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_event_controller_key_get_group&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_event_controller_key_get_group&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_group&quot;</span>)]
     </span><span class="kw">pub fn </span>group(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gtk_event_controller_key_get_group(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -415,7 +415,7 @@
     /// # Returns
     ///
     /// the [`IMContext`][crate::IMContext]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_event_controller_key_get_im_context&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_event_controller_key_get_im_context&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_im_context&quot;</span>)]
     </span><span class="kw">pub fn </span>im_context(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;IMContext&gt; {
         <span class="kw">unsafe </span>{
@@ -428,7 +428,7 @@
     <span class="doccomment">/// Sets the input method context of the key @self.
     /// ## `im_context`
     /// a [`IMContext`][crate::IMContext]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_event_controller_key_set_im_context&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_event_controller_key_set_im_context&quot;</span>)]
     </span><span class="kw">pub fn </span>set_im_context(<span class="kw-2">&amp;</span><span class="self">self</span>, im_context: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;IMContext&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_event_controller_key_set_im_context(
@@ -443,7 +443,7 @@
     ///
     /// See [`set_im_context()`][Self::set_im_context()] and
     /// [`IMContextExt::filter_keypress()`][crate::prelude::IMContextExt::filter_keypress()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;im-update&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;im-update&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_im_update&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>im_update_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>EventControllerKey) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkEventControllerKey,
@@ -468,7 +468,7 @@
     <span class="doccomment">/// Emitted whenever the state of modifier keys and pointer buttons change.
     /// ## `keyval`
     /// the released key.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;modifiers&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;modifiers&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_modifiers&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, gdk::ModifierType) -&gt; glib::signal::Inhibit + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -503,12 +503,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`EventControllerKey`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>EventControllerKeyBuilder {
     name: <span class="prelude-ty">Option</span>&lt;String&gt;,
     propagation_limit: <span class="prelude-ty">Option</span>&lt;PropagationLimit&gt;,
@@ -524,7 +524,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`EventControllerKey`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; EventControllerKey {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>name) = <span class="self">self</span>.name {
@@ -564,4 +564,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -394,7 +394,7 @@
     /// &quot;Drag and Drop&quot; section of the GTK documentation for more information.
     ///
     /// This is an Abstract Base Class, you cannot instantiate it.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkDrop&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkDrop&quot;</span>)]
     </span><span class="kw">pub struct </span>Drop(Object&lt;ffi::GdkDrop&gt;);
 
     <span class="kw">match fn </span>{
@@ -409,7 +409,7 @@
     /// available via [`actions()`][Self::actions()].
     /// ## `action`
     /// the action performed by the destination or 0 if the drop failed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drop_finish&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drop_finish&quot;</span>)]
     </span><span class="kw">pub fn </span>finish(<span class="kw-2">&amp;</span><span class="self">self</span>, action: DragAction) {
         <span class="kw">unsafe </span>{
             ffi::gdk_drop_finish(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, action.into_glib());
@@ -434,7 +434,7 @@
     /// # Returns
     ///
     /// The possible `GdkDragActions`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drop_get_actions&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drop_get_actions&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_actions&quot;</span>)]
     </span><span class="kw">pub fn </span>actions(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DragAction {
         <span class="kw">unsafe </span>{ from_glib(ffi::gdk_drop_get_actions(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -445,7 +445,7 @@
     /// # Returns
     ///
     /// The [`Device`][crate::Device] performing the drop.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drop_get_device&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drop_get_device&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_device&quot;</span>)]
     </span><span class="kw">pub fn </span>device(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Device {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_drop_get_device(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -456,7 +456,7 @@
     /// # Returns
     ///
     /// a [`Display`][crate::Display]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drop_get_display&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drop_get_display&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display&quot;</span>)]
     </span><span class="kw">pub fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Display {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_drop_get_display(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -470,7 +470,7 @@
     /// # Returns
     ///
     /// the corresponding [`Drag`][crate::Drag]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drop_get_drag&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drop_get_drag&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_drag&quot;</span>)]
     </span><span class="kw">pub fn </span>drag(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Drag&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_drop_get_drag(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -482,7 +482,7 @@
     /// # Returns
     ///
     /// The possible [`ContentFormats`][crate::ContentFormats]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drop_get_formats&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drop_get_formats&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_formats&quot;</span>)]
     </span><span class="kw">pub fn </span>formats(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ContentFormats {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_drop_get_formats(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -493,7 +493,7 @@
     /// # Returns
     ///
     /// The [`Surface`][crate::Surface] performing the drop.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drop_get_surface&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drop_get_surface&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_surface&quot;</span>)]
     </span><span class="kw">pub fn </span>surface(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Surface {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_drop_get_surface(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -517,7 +517,7 @@
     /// optional `GCancellable` object, [`None`] to ignore.
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drop_read_value_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drop_read_value_async&quot;</span>)]
     </span><span class="kw">pub fn </span>read_value_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;glib::Value, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         type_: glib::types::Type,
@@ -601,7 +601,7 @@
     /// ## `preferred`
     /// A unique action that&#39;s a member of @actions indicating the
     ///    preferred action
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drop_status&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drop_status&quot;</span>)]
     </span><span class="kw">pub fn </span>status(<span class="kw-2">&amp;</span><span class="self">self</span>, actions: DragAction, preferred: DragAction) {
         <span class="kw">unsafe </span>{
             ffi::gdk_drop_status(
@@ -612,7 +612,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;display&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;display&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_display_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_display_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Drop) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GdkDrop,
@@ -642,4 +642,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

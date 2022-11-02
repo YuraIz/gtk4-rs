@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -272,7 +272,7 @@
     /// # Implements
     ///
     /// [`AppLaunchContextExt`][trait@crate::prelude::AppLaunchContextExt], [`trait@gio::prelude::AppLaunchContextExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkAppLaunchContext&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkAppLaunchContext&quot;</span>)]
     </span><span class="kw">pub struct </span>AppLaunchContext(Object&lt;ffi::GdkAppLaunchContext&gt;) @extends gio::AppLaunchContext;
 
     <span class="kw">match fn </span>{
@@ -295,7 +295,7 @@
     /// # Returns
     ///
     /// the display of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_app_launch_context_get_display&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_app_launch_context_get_display&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display&quot;</span>)]
     </span><span class="kw">fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Display;
 
@@ -314,7 +314,7 @@
     /// be the current workspace.
     /// ## `desktop`
     /// the number of a workspace, or -1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_app_launch_context_set_desktop&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_app_launch_context_set_desktop&quot;</span>)]
     </span><span class="kw">fn </span>set_desktop(<span class="kw-2">&amp;</span><span class="self">self</span>, desktop: i32);
 
     <span class="doccomment">/// Sets the icon for applications that are launched with this
@@ -326,7 +326,7 @@
     /// See also [`set_icon_name()`][Self::set_icon_name()].
     /// ## `icon`
     /// a `GIcon`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_app_launch_context_set_icon&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_app_launch_context_set_icon&quot;</span>)]
     </span><span class="kw">fn </span>set_icon(<span class="kw-2">&amp;</span><span class="self">self</span>, icon: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::Icon&gt;&gt;);
 
     <span class="doccomment">/// Sets the icon for applications that are launched with this context.
@@ -340,7 +340,7 @@
     /// for the launched application itself.
     /// ## `icon_name`
     /// an icon name
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_app_launch_context_set_icon_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_app_launch_context_set_icon_name&quot;</span>)]
     </span><span class="kw">fn </span>set_icon_name(<span class="kw-2">&amp;</span><span class="self">self</span>, icon_name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;);
 
     <span class="doccomment">/// Sets the timestamp of @self.
@@ -354,7 +354,7 @@
     /// prevention&#39;.
     /// ## `timestamp`
     /// a timestamp
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_app_launch_context_set_timestamp&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_app_launch_context_set_timestamp&quot;</span>)]
     </span><span class="kw">fn </span>set_timestamp(<span class="kw-2">&amp;</span><span class="self">self</span>, timestamp: u32);
 }
 
@@ -404,4 +404,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

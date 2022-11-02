@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -259,7 +259,7 @@
     /// # Implements
     ///
     /// [`DrawContextExt`][trait@crate::prelude::DrawContextExt], [`DrawContextExtManual`][trait@crate::prelude::DrawContextExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkDrawContext&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkDrawContext&quot;</span>)]
     </span><span class="kw">pub struct </span>DrawContext(Object&lt;ffi::GdkDrawContext&gt;);
 
     <span class="kw">match fn </span>{
@@ -303,7 +303,7 @@
     /// these functions explicitly.
     /// ## `region`
     /// minimum region that should be drawn
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_draw_context_begin_frame&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_draw_context_begin_frame&quot;</span>)]
     </span><span class="kw">fn </span>begin_frame(<span class="kw-2">&amp;</span><span class="self">self</span>, region: <span class="kw-2">&amp;</span>cairo::Region);
 
     <span class="doccomment">/// Ends a drawing operation started with gdk_draw_context_begin_frame().
@@ -314,7 +314,7 @@
     /// When using a [`GLContext`][crate::GLContext], this function may call `glFlush()`
     /// implicitly before returning; it is not recommended to call `glFlush()`
     /// explicitly before calling this function.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_draw_context_end_frame&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_draw_context_end_frame&quot;</span>)]
     </span><span class="kw">fn </span>end_frame(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Retrieves the [`Display`][crate::Display] the @self is created for
@@ -322,7 +322,7 @@
     /// # Returns
     ///
     /// the [`Display`][crate::Display]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_draw_context_get_display&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_draw_context_get_display&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display&quot;</span>)]
     </span><span class="kw">fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Display&gt;;
 
@@ -331,7 +331,7 @@
     /// # Returns
     ///
     /// a [`Surface`][crate::Surface]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_draw_context_get_surface&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_draw_context_get_surface&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_surface&quot;</span>)]
     </span><span class="kw">fn </span>surface(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Surface&gt;;
 
@@ -345,7 +345,7 @@
     ///
     /// [`true`] if the context is between [`begin_frame()`][Self::begin_frame()]
     ///   and [`end_frame()`][Self::end_frame()] calls.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_draw_context_is_in_frame&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_draw_context_is_in_frame&quot;</span>)]
     </span><span class="kw">fn </span>is_in_frame(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 }
 
@@ -396,4 +396,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

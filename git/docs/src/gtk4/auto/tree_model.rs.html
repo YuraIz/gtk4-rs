@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1320,7 +1320,7 @@
     /// # Implements
     ///
     /// [`TreeModelExt`][trait@crate::prelude::TreeModelExt], [`TreeModelExtManual`][trait@crate::prelude::TreeModelExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkTreeModel&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkTreeModel&quot;</span>)]
     </span><span class="kw">pub struct </span>TreeModel(Interface&lt;ffi::GtkTreeModel, ffi::GtkTreeModelIface&gt;);
 
     <span class="kw">match fn </span>{
@@ -1347,7 +1347,7 @@
     ///
     /// ## `func`
     /// a function to be called on each row
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_foreach&quot;</span>)]
     </span><span class="kw">fn </span>foreach&lt;P: FnMut(<span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreePath, <span class="kw-2">&amp;</span>TreeIter) -&gt; bool&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: P);
 
@@ -1361,7 +1361,7 @@
     /// # Returns
     ///
     /// the type of the column
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_get_column_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_column_type&quot;</span>)]
     </span><span class="kw">fn </span>column_type(<span class="kw-2">&amp;</span><span class="self">self</span>, index_: i32) -&gt; glib::types::Type;
@@ -1378,7 +1378,7 @@
     /// # Returns
     ///
     /// the flags supported by this interface
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_get_flags&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_flags&quot;</span>)]
     </span><span class="kw">fn </span>flags(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; TreeModelFlags;
@@ -1399,7 +1399,7 @@
     ///
     /// ## `iter`
     /// the uninitialized [`TreeIter`][crate::TreeIter]
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_get_iter&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_iter&quot;</span>)]
     </span><span class="kw">fn </span>iter(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath) -&gt; <span class="prelude-ty">Option</span>&lt;TreeIter&gt;;
@@ -1418,7 +1418,7 @@
     ///
     /// ## `iter`
     /// the uninitialized [`TreeIter`][crate::TreeIter]
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_get_iter_first&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_iter_first&quot;</span>)]
     </span><span class="kw">fn </span>iter_first(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;TreeIter&gt;;
@@ -1439,7 +1439,7 @@
     ///
     /// ## `iter`
     /// an uninitialized [`TreeIter`][crate::TreeIter]
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_get_iter_from_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_iter_from_string&quot;</span>)]
     </span><span class="kw">fn </span>iter_from_string(<span class="kw-2">&amp;</span><span class="self">self</span>, path_string: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;TreeIter&gt;;
@@ -1452,7 +1452,7 @@
     /// # Returns
     ///
     /// the number of columns
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_get_n_columns&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_n_columns&quot;</span>)]
     </span><span class="kw">fn </span>n_columns(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
@@ -1469,7 +1469,7 @@
     /// # Returns
     ///
     /// a newly-created [`TreePath`][crate::TreePath]
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_get_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_path&quot;</span>)]
     </span><span class="kw">fn </span>path(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; TreePath;
@@ -1488,7 +1488,7 @@
     /// # Returns
     ///
     /// a newly-allocated string
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_get_string_from_iter&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_string_from_iter&quot;</span>)]
     </span><span class="kw">fn </span>string_from_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
@@ -1513,7 +1513,7 @@
     ///
     /// ## `iter`
     /// the new [`TreeIter`][crate::TreeIter] to be set to the child
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_iter_children&quot;</span>)]
     </span><span class="kw">fn </span>iter_children(<span class="kw-2">&amp;</span><span class="self">self</span>, parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TreeIter&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;TreeIter&gt;;
 
@@ -1527,7 +1527,7 @@
     /// # Returns
     ///
     /// [`true`] if @iter has children
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_iter_has_child&quot;</span>)]
     </span><span class="kw">fn </span>iter_has_child(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; bool;
 
@@ -1544,7 +1544,7 @@
     /// # Returns
     ///
     /// the number of children of @iter
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_iter_n_children&quot;</span>)]
     </span><span class="kw">fn </span>iter_n_children(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TreeIter&gt;) -&gt; i32;
 
@@ -1561,7 +1561,7 @@
     /// # Returns
     ///
     /// [`true`] if @iter has been changed to the next node
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_iter_next&quot;</span>)]
     </span><span class="kw">fn </span>iter_next(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; bool;
 
@@ -1586,7 +1586,7 @@
     ///
     /// ## `iter`
     /// the [`TreeIter`][crate::TreeIter] to set to the nth child
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_iter_nth_child&quot;</span>)]
     </span><span class="kw">fn </span>iter_nth_child(<span class="kw-2">&amp;</span><span class="self">self</span>, parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TreeIter&gt;, n: i32) -&gt; <span class="prelude-ty">Option</span>&lt;TreeIter&gt;;
 
@@ -1611,7 +1611,7 @@
     ///
     /// ## `iter`
     /// the new [`TreeIter`][crate::TreeIter] to set to the parent
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_iter_parent&quot;</span>)]
     </span><span class="kw">fn </span>iter_parent(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="kw-2">&amp;</span>TreeIter) -&gt; <span class="prelude-ty">Option</span>&lt;TreeIter&gt;;
 
@@ -1628,7 +1628,7 @@
     /// # Returns
     ///
     /// [`true`] if @iter has been changed to the previous node
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_iter_previous&quot;</span>)]
     </span><span class="kw">fn </span>iter_previous(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; bool;
 
@@ -1642,7 +1642,7 @@
     /// a [`TreePath`][crate::TreePath] pointing to the changed row
     /// ## `iter`
     /// a valid [`TreeIter`][crate::TreeIter] pointing to the changed row
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_row_changed&quot;</span>)]
     </span><span class="kw">fn </span>row_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath, iter: <span class="kw-2">&amp;</span>TreeIter);
 
@@ -1662,7 +1662,7 @@
     /// ## `path`
     /// a [`TreePath`][crate::TreePath] pointing to the previous location of
     ///   the deleted row
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_row_deleted&quot;</span>)]
     </span><span class="kw">fn </span>row_deleted(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath);
 
@@ -1679,7 +1679,7 @@
     /// a [`TreePath`][crate::TreePath] pointing to the changed row
     /// ## `iter`
     /// a valid [`TreeIter`][crate::TreeIter] pointing to the changed row
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_row_has_child_toggled&quot;</span>)]
     </span><span class="kw">fn </span>row_has_child_toggled(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath, iter: <span class="kw-2">&amp;</span>TreeIter);
 
@@ -1693,7 +1693,7 @@
     /// a [`TreePath`][crate::TreePath] pointing to the inserted row
     /// ## `iter`
     /// a valid [`TreeIter`][crate::TreeIter] pointing to the inserted row
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_row_inserted&quot;</span>)]
     </span><span class="kw">fn </span>row_inserted(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath, iter: <span class="kw-2">&amp;</span>TreeIter);
 
@@ -1702,7 +1702,7 @@
     /// a [`TreePath`][crate::TreePath] identifying the changed row
     /// ## `iter`
     /// a valid [`TreeIter`][crate::TreeIter] pointing to the changed row
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;row-changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;row-changed&quot;</span>)]
     </span><span class="kw">fn </span>connect_row_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>TreePath, <span class="kw-2">&amp;</span>TreeIter) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -1718,7 +1718,7 @@
     /// the row previously was at. It may not be a valid location anymore.
     /// ## `path`
     /// a [`TreePath`][crate::TreePath] identifying the row
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;row-deleted&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;row-deleted&quot;</span>)]
     </span><span class="kw">fn </span>connect_row_deleted&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>TreePath) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// This signal is emitted when a row has gotten the first child
@@ -1727,7 +1727,7 @@
     /// a [`TreePath`][crate::TreePath] identifying the row
     /// ## `iter`
     /// a valid [`TreeIter`][crate::TreeIter] pointing to the row
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;row-has-child-toggled&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;row-has-child-toggled&quot;</span>)]
     </span><span class="kw">fn </span>connect_row_has_child_toggled&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>TreePath, <span class="kw-2">&amp;</span>TreeIter) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -1743,7 +1743,7 @@
     /// a [`TreePath`][crate::TreePath] identifying the new row
     /// ## `iter`
     /// a valid [`TreeIter`][crate::TreeIter] pointing to the new row
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;row-inserted&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;row-inserted&quot;</span>)]
     </span><span class="kw">fn </span>connect_row_inserted&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>TreePath, <span class="kw-2">&amp;</span>TreeIter) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -2128,4 +2128,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -274,7 +274,7 @@
     /// # Implements
     ///
     /// [`PopupExt`][trait@crate::prelude::PopupExt], [`SurfaceExt`][trait@crate::prelude::SurfaceExt], [`SurfaceExtManual`][trait@crate::prelude::SurfaceExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkPopup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkPopup&quot;</span>)]
     </span><span class="kw">pub struct </span>Popup(Interface&lt;ffi::GdkPopup, ffi::GdkPopupInterface&gt;) @requires Surface;
 
     <span class="kw">match fn </span>{
@@ -297,7 +297,7 @@
     /// # Returns
     ///
     /// [`true`] if @self will autohide
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_get_autohide&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_get_autohide&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_autohide&quot;</span>)]
     </span><span class="kw">fn </span>is_autohide(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -306,7 +306,7 @@
     /// # Returns
     ///
     /// the parent surface
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_get_parent&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_get_parent&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_parent&quot;</span>)]
     </span><span class="kw">fn </span>parent(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Surface&gt;;
 
@@ -315,7 +315,7 @@
     /// # Returns
     ///
     /// the X coordinate of @self position
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_get_position_x&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_get_position_x&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_position_x&quot;</span>)]
     </span><span class="kw">fn </span>position_x(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -324,7 +324,7 @@
     /// # Returns
     ///
     /// the Y coordinate of @self position
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_get_position_y&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_get_position_y&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_position_y&quot;</span>)]
     </span><span class="kw">fn </span>position_y(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -336,7 +336,7 @@
     /// # Returns
     ///
     /// the current rectangle anchor value of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_get_rect_anchor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_get_rect_anchor&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_rect_anchor&quot;</span>)]
     </span><span class="kw">fn </span>rect_anchor(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Gravity;
 
@@ -348,7 +348,7 @@
     /// # Returns
     ///
     /// the current surface anchor value of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_get_surface_anchor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_get_surface_anchor&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_surface_anchor&quot;</span>)]
     </span><span class="kw">fn </span>surface_anchor(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Gravity;
 
@@ -377,7 +377,7 @@
     /// # Returns
     ///
     /// [`false`] if it failed to be presented, otherwise [`true`].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_present&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_present&quot;</span>)]
     </span><span class="kw">fn </span>present(<span class="kw-2">&amp;</span><span class="self">self</span>, width: i32, height: i32, layout: <span class="kw-2">&amp;</span>PopupLayout) -&gt; bool;
 }
 
@@ -432,4 +432,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

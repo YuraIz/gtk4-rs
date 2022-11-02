@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -219,7 +219,7 @@
     /// [`FrameTimings`][crate::FrameTimings] is useful for precise synchronization of video with
     /// the event or audio streams, and for measuring quality metrics for the
     /// application’s display, such as latency and jitter.
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>FrameTimings(Shared&lt;ffi::GdkFrameTimings&gt;);
 
     <span class="kw">match fn </span>{
@@ -248,7 +248,7 @@
     ///
     /// [`true`] if all information that will be available
     ///   for the frame has been filled in.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_frame_timings_get_complete&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_frame_timings_get_complete&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_complete&quot;</span>)]
     </span><span class="kw">pub fn </span>is_complete(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gdk_frame_timings_get_complete(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -260,7 +260,7 @@
     /// # Returns
     ///
     /// the frame counter value for this frame
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_frame_timings_get_frame_counter&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_frame_timings_get_frame_counter&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_frame_counter&quot;</span>)]
     </span><span class="kw">pub fn </span>frame_counter(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i64 {
         <span class="kw">unsafe </span>{ ffi::gdk_frame_timings_get_frame_counter(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -275,7 +275,7 @@
     ///
     /// the frame time for the frame, in the timescale
     ///  of g_get_monotonic_time()
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_frame_timings_get_frame_time&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_frame_timings_get_frame_time&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_frame_time&quot;</span>)]
     </span><span class="kw">pub fn </span>frame_time(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i64 {
         <span class="kw">unsafe </span>{ ffi::gdk_frame_timings_get_frame_time(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -299,7 +299,7 @@
     /// The predicted time at which the frame will be presented,
     ///   in the timescale of g_get_monotonic_time(), or 0 if no predicted
     ///   presentation time is available.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_frame_timings_get_predicted_presentation_time&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_frame_timings_get_predicted_presentation_time&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_predicted_presentation_time&quot;</span>)]
     </span><span class="kw">pub fn </span>predicted_presentation_time(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i64 {
         <span class="kw">unsafe </span>{ ffi::gdk_frame_timings_get_predicted_presentation_time(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -314,7 +314,7 @@
     /// the time the frame was displayed to the user, in the
     ///   timescale of g_get_monotonic_time(), or 0 if no presentation
     ///   time is available. See [`is_complete()`][Self::is_complete()]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_frame_timings_get_presentation_time&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_frame_timings_get_presentation_time&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_presentation_time&quot;</span>)]
     </span><span class="kw">pub fn </span>presentation_time(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i64 {
         <span class="kw">unsafe </span>{ ffi::gdk_frame_timings_get_presentation_time(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -331,11 +331,11 @@
     /// the refresh interval of the display, in microseconds,
     ///   or 0 if the refresh interval is not available.
     ///   See [`is_complete()`][Self::is_complete()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_frame_timings_get_refresh_interval&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_frame_timings_get_refresh_interval&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_refresh_interval&quot;</span>)]
     </span><span class="kw">pub fn </span>refresh_interval(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i64 {
         <span class="kw">unsafe </span>{ ffi::gdk_frame_timings_get_refresh_interval(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

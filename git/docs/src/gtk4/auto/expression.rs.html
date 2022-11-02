@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -516,7 +516,7 @@
     /// ```
     ///
     /// This is an Abstract Base Class, you cannot instantiate it.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkExpression&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkExpression&quot;</span>)]
     </span><span class="kw">pub struct </span>Expression(Shared&lt;ffi::GtkExpression&gt;);
 
     <span class="kw">match fn </span>{
@@ -557,7 +557,7 @@
     /// # Returns
     ///
     /// a [`ExpressionWatch`][crate::ExpressionWatch]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_expression_bind&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_expression_bind&quot;</span>)]
     </span><span class="kw">pub fn </span>bind(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         target: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;glib::Object&gt;,
@@ -582,7 +582,7 @@
     /// # Returns
     ///
     /// The type returned from [`evaluate()`][Self::evaluate()]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_expression_get_value_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_expression_get_value_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_value_type&quot;</span>)]
     </span><span class="kw">pub fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::types::Type {
         <span class="kw">unsafe </span>{
@@ -603,7 +603,7 @@
     /// # Returns
     ///
     /// `TRUE` if the expression is static
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_expression_is_static&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_expression_is_static&quot;</span>)]
     </span><span class="kw">pub fn </span>is_static(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_expression_is_static(
@@ -633,7 +633,7 @@
     ///   which can happen automatically, and not just via
     ///   [`ExpressionWatch::unwatch()`][crate::ExpressionWatch::unwatch()]. You should call `Gtk::ExpressionWatch::ref()`
     ///   if you want to keep the watch around.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_expression_watch&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_expression_watch&quot;</span>)]
     </span><span class="kw">pub fn </span>watch&lt;P: Fn() + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         this_: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;glib::Object&gt;&gt;,
@@ -668,4 +668,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -495,7 +495,7 @@
     /// # Implements
     ///
     /// [`NativeDialogExt`][trait@crate::prelude::NativeDialogExt], [`trait@glib::ObjectExt`], [`NativeDialogExtManual`][trait@crate::prelude::NativeDialogExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkNativeDialog&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkNativeDialog&quot;</span>)]
     </span><span class="kw">pub struct </span>NativeDialog(Object&lt;ffi::GtkNativeDialog, ffi::GtkNativeDialogClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -513,7 +513,7 @@
 ///
 /// [`FileChooserNative`][struct@crate::FileChooserNative], [`NativeDialog`][struct@crate::NativeDialog]
 </span><span class="kw">pub trait </span>NativeDialogExt: <span class="lifetime">&#39;static </span>{
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_native_dialog_destroy&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_native_dialog_destroy&quot;</span>)]
     </span><span class="kw">fn </span>destroy(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Returns whether the dialog is modal.
@@ -521,7 +521,7 @@
     /// # Returns
     ///
     /// [`true`] if the dialog is set to be modal
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_native_dialog_get_modal&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_native_dialog_get_modal&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_modal&quot;</span>)]
     </span><span class="kw">fn </span>is_modal(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -532,7 +532,7 @@
     /// the title of the dialog, or [`None`] if none has
     ///    been set explicitly. The returned string is owned by the widget
     ///    and must not be modified or freed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_native_dialog_get_title&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_native_dialog_get_title&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_title&quot;</span>)]
     </span><span class="kw">fn </span>title(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -542,7 +542,7 @@
     ///
     /// the transient parent for this window,
     ///   or [`None`] if no transient parent has been set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_native_dialog_get_transient_for&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_native_dialog_get_transient_for&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_transient_for&quot;</span>)]
     </span><span class="kw">fn </span>transient_for(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Window&gt;;
 
@@ -551,7 +551,7 @@
     /// # Returns
     ///
     /// [`true`] if the dialog is visible
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_native_dialog_get_visible&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_native_dialog_get_visible&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_visible&quot;</span>)]
     </span><span class="kw">fn </span>is_visible(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -562,7 +562,7 @@
     /// [`show()`][Self::show()].
     ///
     /// If the dialog is not visible this does nothing.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_native_dialog_hide&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_native_dialog_hide&quot;</span>)]
     </span><span class="kw">fn </span>hide(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Sets a dialog modal or non-modal.
@@ -574,13 +574,13 @@
     /// then disallow lowering the dialog below the parent.
     /// ## `modal`
     /// whether the window is modal
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_native_dialog_set_modal&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_native_dialog_set_modal&quot;</span>)]
     </span><span class="kw">fn </span>set_modal(<span class="kw-2">&amp;</span><span class="self">self</span>, modal: bool);
 
     <span class="doccomment">/// Sets the title of the [`NativeDialog`][crate::NativeDialog]
     /// ## `title`
     /// title of the dialog
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_native_dialog_set_title&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_native_dialog_set_title&quot;</span>)]
     </span><span class="kw">fn </span>set_title(<span class="kw-2">&amp;</span><span class="self">self</span>, title: <span class="kw-2">&amp;</span>str);
 
     <span class="doccomment">/// Dialog windows should be set transient for the main application
@@ -592,7 +592,7 @@
     /// Passing [`None`] for @parent unsets the current transient window.
     /// ## `parent`
     /// parent window
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_native_dialog_set_transient_for&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_native_dialog_set_transient_for&quot;</span>)]
     </span><span class="kw">fn </span>set_transient_for(<span class="kw-2">&amp;</span><span class="self">self</span>, parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Window&gt;&gt;);
 
     <span class="doccomment">/// Shows the dialog on the display.
@@ -602,7 +602,7 @@
     /// signal will be emitted.
     ///
     /// Multiple calls while the dialog is visible will be ignored.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_native_dialog_show&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_native_dialog_show&quot;</span>)]
     </span><span class="kw">fn </span>show(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Whether the window is currently visible.
@@ -616,19 +616,19 @@
     /// responds to the dialog this signal will not be emitted.
     /// ## `response_id`
     /// the response ID
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;response&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;response&quot;</span>)]
     </span><span class="kw">fn </span>connect_response&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, ResponseType) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;modal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;modal&quot;</span>)]
     </span><span class="kw">fn </span>connect_modal_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;title&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;title&quot;</span>)]
     </span><span class="kw">fn </span>connect_title_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;transient-for&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;transient-for&quot;</span>)]
     </span><span class="kw">fn </span>connect_transient_for_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;visible&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;visible&quot;</span>)]
     </span><span class="kw">fn </span>connect_visible_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -840,4 +840,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

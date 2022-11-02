@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -399,7 +399,7 @@
 
 </span><span class="kw">use </span>std::ffi::CStr;
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_IM_MODULE_EXTENSION_POINT_NAME&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_IM_MODULE_EXTENSION_POINT_NAME&quot;</span>)]
 </span><span class="kw">pub static </span>IM_MODULE_EXTENSION_POINT_NAME: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_IM_MODULE_EXTENSION_POINT_NAME)
@@ -407,7 +407,7 @@
             .unwrap()
     });
 <span class="doccomment">/// The name used for the stock full offset included by [`LevelBar`][crate::LevelBar].
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_LEVEL_BAR_OFFSET_FULL&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_LEVEL_BAR_OFFSET_FULL&quot;</span>)]
 </span><span class="kw">pub static </span>LEVEL_BAR_OFFSET_FULL: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_LEVEL_BAR_OFFSET_FULL)
@@ -415,7 +415,7 @@
             .unwrap()
     });
 <span class="doccomment">/// The name used for the stock high offset included by [`LevelBar`][crate::LevelBar].
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_LEVEL_BAR_OFFSET_HIGH&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_LEVEL_BAR_OFFSET_HIGH&quot;</span>)]
 </span><span class="kw">pub static </span>LEVEL_BAR_OFFSET_HIGH: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_LEVEL_BAR_OFFSET_HIGH)
@@ -423,14 +423,14 @@
             .unwrap()
     });
 <span class="doccomment">/// The name used for the stock low offset included by [`LevelBar`][crate::LevelBar].
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_LEVEL_BAR_OFFSET_LOW&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_LEVEL_BAR_OFFSET_LOW&quot;</span>)]
 </span><span class="kw">pub static </span>LEVEL_BAR_OFFSET_LOW: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_LEVEL_BAR_OFFSET_LOW)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_MEDIA_FILE_EXTENSION_POINT_NAME&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_MEDIA_FILE_EXTENSION_POINT_NAME&quot;</span>)]
 </span><span class="kw">pub static </span>MEDIA_FILE_EXTENSION_POINT_NAME: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_MEDIA_FILE_EXTENSION_POINT_NAME)
@@ -438,31 +438,31 @@
             .unwrap()
     });
 <span class="doccomment">/// Name for the A3 paper size.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_A3&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_A3&quot;</span>)]
 </span><span class="kw">pub static </span>PAPER_NAME_A3: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PAPER_NAME_A3).to_str().unwrap()
     });
 <span class="doccomment">/// Name for the A4 paper size.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_A4&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_A4&quot;</span>)]
 </span><span class="kw">pub static </span>PAPER_NAME_A4: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PAPER_NAME_A4).to_str().unwrap()
     });
 <span class="doccomment">/// Name for the A5 paper size.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_A5&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_A5&quot;</span>)]
 </span><span class="kw">pub static </span>PAPER_NAME_A5: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PAPER_NAME_A5).to_str().unwrap()
     });
 <span class="doccomment">/// Name for the B5 paper size.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_B5&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_B5&quot;</span>)]
 </span><span class="kw">pub static </span>PAPER_NAME_B5: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PAPER_NAME_B5).to_str().unwrap()
     });
 <span class="doccomment">/// Name for the Executive paper size.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_EXECUTIVE&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_EXECUTIVE&quot;</span>)]
 </span><span class="kw">pub static </span>PAPER_NAME_EXECUTIVE: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PAPER_NAME_EXECUTIVE)
@@ -470,81 +470,81 @@
             .unwrap()
     });
 <span class="doccomment">/// Name for the Legal paper size.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_LEGAL&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_LEGAL&quot;</span>)]
 </span><span class="kw">pub static </span>PAPER_NAME_LEGAL: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PAPER_NAME_LEGAL).to_str().unwrap()
     });
 <span class="doccomment">/// Name for the Letter paper size.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_LETTER&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_PAPER_NAME_LETTER&quot;</span>)]
 </span><span class="kw">pub static </span>PAPER_NAME_LETTER: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PAPER_NAME_LETTER).to_str().unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_COLLATE&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_COLLATE&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_COLLATE: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_COLLATE)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_DEFAULT_SOURCE&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_DEFAULT_SOURCE&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_DEFAULT_SOURCE: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_DEFAULT_SOURCE)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_DITHER&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_DITHER&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_DITHER: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_DITHER)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_DUPLEX&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_DUPLEX&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_DUPLEX: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_DUPLEX)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_FINISHINGS&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_FINISHINGS&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_FINISHINGS: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_FINISHINGS)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_MEDIA_TYPE&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_MEDIA_TYPE&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_MEDIA_TYPE: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_MEDIA_TYPE)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_NUMBER_UP&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_NUMBER_UP&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_NUMBER_UP: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_NUMBER_UP)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_NUMBER_UP_LAYOUT: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_NUMBER_UP_LAYOUT)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_N_COPIES&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_N_COPIES&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_N_COPIES: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_N_COPIES)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_ORIENTATION&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_ORIENTATION&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_ORIENTATION: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_ORIENTATION)
@@ -554,14 +554,14 @@
 <span class="doccomment">/// The key used by the “Print to file” printer to store the file
 /// name of the output without the path to the directory and the
 /// file extension.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_OUTPUT_BASENAME&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_OUTPUT_BASENAME&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_OUTPUT_BASENAME: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_OUTPUT_BASENAME)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_OUTPUT_BIN&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_OUTPUT_BIN&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_OUTPUT_BIN: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_OUTPUT_BIN)
@@ -570,7 +570,7 @@
     });
 <span class="doccomment">/// The key used by the “Print to file” printer to store the
 /// directory to which the output should be written.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_OUTPUT_DIR&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_OUTPUT_DIR&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_OUTPUT_DIR: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_OUTPUT_DIR)
@@ -579,7 +579,7 @@
     });
 <span class="doccomment">/// The key used by the “Print to file” printer to store the format
 /// of the output. The supported values are “PS” and “PDF”.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_OUTPUT_FILE_FORMAT: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_OUTPUT_FILE_FORMAT)
@@ -589,126 +589,126 @@
 <span class="doccomment">/// The key used by the “Print to file” printer to store the URI
 /// to which the output should be written. GTK itself supports
 /// only “file://” URIs.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_OUTPUT_URI&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_OUTPUT_URI&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_OUTPUT_URI: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_OUTPUT_URI)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PAGE_RANGES&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PAGE_RANGES&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_PAGE_RANGES: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_PAGE_RANGES)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PAGE_SET&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PAGE_SET&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_PAGE_SET: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_PAGE_SET)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PAPER_FORMAT&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PAPER_FORMAT&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_PAPER_FORMAT: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_PAPER_FORMAT)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PAPER_HEIGHT&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PAPER_HEIGHT&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_PAPER_HEIGHT: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_PAPER_HEIGHT)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PAPER_WIDTH&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PAPER_WIDTH&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_PAPER_WIDTH: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_PAPER_WIDTH)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PRINTER&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PRINTER&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_PRINTER: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_PRINTER)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PRINTER_LPI&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PRINTER_LPI&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_PRINTER_LPI: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_PRINTER_LPI)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PRINT_PAGES&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_PRINT_PAGES&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_PRINT_PAGES: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_PRINT_PAGES)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_QUALITY&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_QUALITY&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_QUALITY: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_QUALITY)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_RESOLUTION&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_RESOLUTION&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_RESOLUTION: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_RESOLUTION)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_RESOLUTION_X&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_RESOLUTION_X&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_RESOLUTION_X: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_RESOLUTION_X)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_RESOLUTION_Y&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_RESOLUTION_Y&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_RESOLUTION_Y: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_RESOLUTION_Y)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_REVERSE&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_REVERSE&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_REVERSE: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_REVERSE)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_SCALE&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_SCALE&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_SCALE: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_SCALE)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_USE_COLOR&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_USE_COLOR&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_USE_COLOR: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_USE_COLOR)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_WIN32_DRIVER_EXTRA: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_WIN32_DRIVER_EXTRA)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION&quot;</span>)]
 </span><span class="kw">pub static </span>PRINT_SETTINGS_WIN32_DRIVER_VERSION: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::GTK_PRINT_SETTINGS_WIN32_DRIVER_VERSION)
@@ -716,4 +716,4 @@
             .unwrap()
     });
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

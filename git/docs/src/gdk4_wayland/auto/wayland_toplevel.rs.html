@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4_wayland/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4_wayland/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -234,7 +234,7 @@
     /// # Implements
     ///
     /// [`WaylandSurfaceExt`][trait@crate::prelude::WaylandSurfaceExt], [`trait@gdk::prelude::SurfaceExt`], [`trait@gdk::prelude::ToplevelExt`], [`WaylandSurfaceExtManual`][trait@crate::prelude::WaylandSurfaceExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkWaylandToplevel&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkWaylandToplevel&quot;</span>)]
     </span><span class="kw">pub struct </span>WaylandToplevel(Object&lt;ffi::GdkWaylandToplevel&gt;) @extends WaylandSurface, gdk::Surface, @implements gdk::Toplevel;
 
     <span class="kw">match fn </span>{
@@ -267,7 +267,7 @@
     ///
     /// [`true`] if the handle has been requested, [`false`] if
     ///   an error occurred.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_wayland_toplevel_export_handle&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_wayland_toplevel_export_handle&quot;</span>)]
     </span><span class="kw">pub fn </span>export_handle&lt;P: Fn(<span class="kw-2">&amp;</span>WaylandToplevel, <span class="kw-2">&amp;</span>str) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, callback: P) -&gt; bool {
         <span class="kw">let </span>callback_data: Box_&lt;P&gt; = Box_::new(callback);
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>callback_func&lt;P: Fn(<span class="kw-2">&amp;</span>WaylandToplevel, <span class="kw-2">&amp;</span>str) + <span class="lifetime">&#39;static</span>&gt;(
@@ -301,7 +301,7 @@
     <span class="doccomment">/// Sets the application id on a [`gdk::Toplevel`][crate::gdk::Toplevel].
     /// ## `application_id`
     /// the application id for the @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_wayland_toplevel_set_application_id&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_wayland_toplevel_set_application_id&quot;</span>)]
     </span><span class="kw">pub fn </span>set_application_id(<span class="kw-2">&amp;</span><span class="self">self</span>, application_id: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gdk_wayland_toplevel_set_application_id(
@@ -326,7 +326,7 @@
     ///
     /// [`true`] if the surface has been marked as transient,
     ///   [`false`] if an error occurred.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_wayland_toplevel_set_transient_for_exported&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_wayland_toplevel_set_transient_for_exported&quot;</span>)]
     </span><span class="kw">pub fn </span>set_transient_for_exported(<span class="kw-2">&amp;</span><span class="self">self</span>, parent_handle_str: <span class="kw-2">&amp;</span>str) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gdk_wayland_toplevel_set_transient_for_exported(
@@ -344,7 +344,7 @@
     ///
     /// Note that this API depends on an unstable Wayland protocol,
     /// and thus may require changes in the future.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_wayland_toplevel_unexport_handle&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_wayland_toplevel_unexport_handle&quot;</span>)]
     </span><span class="kw">pub fn </span>unexport_handle(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gdk_wayland_toplevel_unexport_handle(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -358,4 +358,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4_wayland" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4_wayland" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

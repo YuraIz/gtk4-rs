@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1159,7 +1159,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkBuilder&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkBuilder&quot;</span>)]
     </span><span class="kw">pub struct </span>Builder(Object&lt;ffi::GtkBuilder, ffi::GtkBuilderClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -1178,7 +1178,7 @@
     /// # Returns
     ///
     /// a new (empty) [`Builder`][crate::Builder] object
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; Builder {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gtk_builder_new()) }
@@ -1194,7 +1194,7 @@
     /// # Returns
     ///
     /// a [`Builder`][crate::Builder] containing the described interface
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_new_from_resource&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_new_from_resource&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_resource&quot;</span>)]
     </span><span class="kw">pub fn </span>from_resource(resource_path: <span class="kw-2">&amp;</span>str) -&gt; Builder {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -1221,7 +1221,7 @@
     /// # Returns
     ///
     /// a [`Builder`][crate::Builder] containing the interface described by @string
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_new_from_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_new_from_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_string&quot;</span>)]
     </span><span class="kw">pub fn </span>from_string(string: <span class="kw-2">&amp;</span>str) -&gt; Builder {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -1255,7 +1255,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] if an error occurred
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_add_from_resource&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_add_from_resource&quot;</span>)]
     </span><span class="kw">pub fn </span>add_from_resource(<span class="kw-2">&amp;</span><span class="self">self</span>, resource_path: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -1296,7 +1296,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] if an error occurred
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_add_from_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_add_from_string&quot;</span>)]
     </span><span class="kw">pub fn </span>add_from_string(<span class="kw-2">&amp;</span><span class="self">self</span>, buffer: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
         <span class="kw">let </span>length = buffer.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
@@ -1335,7 +1335,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] if an error occurred
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_add_objects_from_file&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_add_objects_from_file&quot;</span>)]
     </span><span class="kw">pub fn </span>add_objects_from_file(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         filename: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;,
@@ -1377,7 +1377,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] if an error occurred
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_add_objects_from_resource&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_add_objects_from_resource&quot;</span>)]
     </span><span class="kw">pub fn </span>add_objects_from_resource(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         resource_path: <span class="kw-2">&amp;</span>str,
@@ -1420,7 +1420,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] if an error occurred
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_add_objects_from_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_add_objects_from_string&quot;</span>)]
     </span><span class="kw">pub fn </span>add_objects_from_string(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         buffer: <span class="kw-2">&amp;</span>str,
@@ -1462,7 +1462,7 @@
     /// # Returns
     ///
     /// A new closure for invoking @function_name
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_create_closure&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_create_closure&quot;</span>)]
     </span><span class="kw">pub fn </span>create_closure(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         function_name: <span class="kw-2">&amp;</span>str,
@@ -1497,7 +1497,7 @@
     /// the name of the object exposed to the builder
     /// ## `object`
     /// the object to expose
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_expose_object&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_expose_object&quot;</span>)]
     </span><span class="kw">pub fn </span>expose_object(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str, object: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;glib::Object&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_builder_expose_object(
@@ -1525,7 +1525,7 @@
     /// # Returns
     ///
     /// A positive value on success, 0 if an error occurred
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_extend_with_template&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_extend_with_template&quot;</span>)]
     </span><span class="kw">pub fn </span>extend_with_template(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         object: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;glib::Object&gt;,
@@ -1563,7 +1563,7 @@
     ///   newly-allocated `GSList` containing all the objects
     ///   constructed by the `GtkBuilder instance`. It should be
     ///   freed by g_slist_free()
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_get_objects&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_get_objects&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_objects&quot;</span>)]
     </span><span class="kw">pub fn </span>objects(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;glib::Object&gt; {
         <span class="kw">unsafe </span>{
@@ -1578,7 +1578,7 @@
     /// # Returns
     ///
     /// the current scope
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_get_scope&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_get_scope&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_scope&quot;</span>)]
     </span><span class="kw">pub fn </span>scope(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; BuilderScope {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_builder_get_scope(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1589,7 +1589,7 @@
     /// # Returns
     ///
     /// the translation domain
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_get_translation_domain&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_get_translation_domain&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_translation_domain&quot;</span>)]
     </span><span class="kw">pub fn </span>translation_domain(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -1611,7 +1611,7 @@
     ///
     /// the `GType` found for @type_name or `G_TYPE_INVALID`
     ///   if no type was found
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_get_type_from_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_get_type_from_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_type_from_name&quot;</span>)]
     </span><span class="kw">pub fn </span>type_from_name(<span class="kw-2">&amp;</span><span class="self">self</span>, type_name: <span class="kw-2">&amp;</span>str) -&gt; glib::types::Type {
         <span class="kw">unsafe </span>{
@@ -1633,7 +1633,7 @@
     /// [`from_resource()`][Self::from_resource()], the current object will be [`None`].
     /// ## `current_object`
     /// the new current object
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_set_current_object&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_set_current_object&quot;</span>)]
     </span><span class="kw">pub fn </span>set_current_object(<span class="kw-2">&amp;</span><span class="self">self</span>, current_object: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;glib::Object&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_builder_set_current_object(
@@ -1648,7 +1648,7 @@
     /// If @scope is [`None`], a new `Gtk::BuilderCScope` will be created.
     /// ## `scope`
     /// the scope to use
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_set_scope&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_set_scope&quot;</span>)]
     </span><span class="kw">pub fn </span>set_scope(<span class="kw-2">&amp;</span><span class="self">self</span>, scope: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;BuilderScope&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_builder_set_scope(
@@ -1661,7 +1661,7 @@
     <span class="doccomment">/// Sets the translation domain of @self.
     /// ## `domain`
     /// the translation domain
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_set_translation_domain&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_set_translation_domain&quot;</span>)]
     </span><span class="kw">pub fn </span>set_translation_domain(<span class="kw-2">&amp;</span><span class="self">self</span>, domain: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_builder_set_translation_domain(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, domain.to_glib_none().<span class="number">0</span>);
@@ -1690,7 +1690,7 @@
     ///
     /// ## `value`
     /// the `GValue` to store the result in
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_value_from_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_value_from_string&quot;</span>)]
     </span><span class="kw">pub fn </span>value_from_string(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         pspec: <span class="kw">impl </span>AsRef&lt;glib::ParamSpec&gt;,
@@ -1736,7 +1736,7 @@
     ///
     /// ## `value`
     /// the `GValue` to store the result in
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_builder_value_from_string_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_value_from_string_type&quot;</span>)]
     </span><span class="kw">pub fn </span>value_from_string_type(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         type_: glib::types::Type,
@@ -1761,7 +1761,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;current-object&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;current-object&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_current_object_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_current_object_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Builder) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkBuilder,
@@ -1784,7 +1784,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;scope&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;scope&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_scope_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_scope_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Builder) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkBuilder,
@@ -1807,7 +1807,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;translation-domain&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;translation-domain&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_translation_domain_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -1846,4 +1846,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -389,7 +389,7 @@
     /// # Implements
     ///
     /// [`TextMarkExt`][trait@crate::prelude::TextMarkExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkTextMark&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkTextMark&quot;</span>)]
     </span><span class="kw">pub struct </span>TextMark(Object&lt;ffi::GtkTextMark, ffi::GtkTextMarkClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -419,7 +419,7 @@
     /// # Returns
     ///
     /// new [`TextMark`][crate::TextMark]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_text_mark_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_text_mark_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, left_gravity: bool) -&gt; TextMark {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -445,12 +445,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`TextMark`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>TextMarkBuilder {
     left_gravity: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     name: <span class="prelude-ty">Option</span>&lt;String&gt;,
@@ -465,7 +465,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`TextMark`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; TextMark {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>left_gravity) = <span class="self">self</span>.left_gravity {
@@ -507,7 +507,7 @@
     /// # Returns
     ///
     /// the mark’s [`TextBuffer`][crate::TextBuffer]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_text_mark_get_buffer&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_text_mark_get_buffer&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_buffer&quot;</span>)]
     </span><span class="kw">fn </span>buffer(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;TextBuffer&gt;;
 
@@ -519,7 +519,7 @@
     /// # Returns
     ///
     /// whether the mark is deleted
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_text_mark_get_deleted&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_text_mark_get_deleted&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_deleted&quot;</span>)]
     </span><span class="kw">fn </span>is_deleted(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -528,7 +528,7 @@
     /// # Returns
     ///
     /// [`true`] if the mark has left gravity, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_text_mark_get_left_gravity&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_text_mark_get_left_gravity&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_left_gravity&quot;</span>)]
     </span><span class="kw">fn </span>is_left_gravity(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -539,7 +539,7 @@
     /// # Returns
     ///
     /// mark name
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_text_mark_get_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_text_mark_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">fn </span>name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -550,11 +550,11 @@
     /// # Returns
     ///
     /// [`true`] if visible
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_text_mark_get_visible&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_text_mark_get_visible&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_visible&quot;</span>)]
     </span><span class="kw">fn </span>is_visible(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_text_mark_set_visible&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_text_mark_set_visible&quot;</span>)]
     </span><span class="kw">fn </span>set_visible(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool);
 }
 
@@ -608,4 +608,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

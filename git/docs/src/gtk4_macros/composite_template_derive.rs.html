@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4_macros/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4_macros/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -291,12 +291,12 @@
 
 </span><span class="kw">use </span>proc_macro2::TokenStream;
 <span class="kw">use </span>proc_macro_error::{emit_call_site_error, emit_error};
-<span class="attribute">#[cfg(feature = <span class="string">&quot;xml_validation&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;xml_validation&quot;</span>)]
 </span><span class="kw">use </span>quick_xml::name::QName;
 <span class="kw">use </span>quote::quote;
 <span class="kw">use </span>syn::Data;
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;xml_validation&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;xml_validation&quot;</span>)]
 </span><span class="kw">use </span>std::collections::HashMap;
 <span class="kw">use </span>std::string::ToString;
 
@@ -326,9 +326,9 @@
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;xml_validation&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;xml_validation&quot;</span>)]
 </span><span class="kw">fn </span>check_template_fields(source: <span class="kw-2">&amp;</span>TemplateSource, fields: <span class="kw-2">&amp;</span>[AttributedField]) {
-    <span class="attribute">#[allow(unused_assignments)]
+    <span class="attr">#[allow(unused_assignments)]
     </span><span class="kw">let </span>xml = <span class="kw">match </span>source {
         TemplateSource::String(template) =&gt; template,
         <span class="kw">_ </span>=&gt; <span class="kw">return</span>,
@@ -478,7 +478,7 @@
         <span class="prelude-val">None </span>=&gt; <span class="macro">vec!</span>[],
     };
 
-    <span class="attribute">#[cfg(feature = <span class="string">&quot;xml_validation&quot;</span>)]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;xml_validation&quot;</span>)]
     </span>{
         <span class="kw">if let </span><span class="prelude-val">Some</span>(source) = source {
             check_template_fields(source, <span class="kw-2">&amp;</span>attributed_fields);
@@ -504,4 +504,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

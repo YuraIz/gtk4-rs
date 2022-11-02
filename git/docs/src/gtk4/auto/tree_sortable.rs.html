@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -211,7 +211,7 @@
     /// # Implements
     ///
     /// [`TreeSortableExt`][trait@crate::prelude::TreeSortableExt], [`TreeModelExt`][trait@crate::prelude::TreeModelExt], [`TreeSortableExtManual`][trait@crate::prelude::TreeSortableExtManual], [`TreeModelExtManual`][trait@crate::prelude::TreeModelExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkTreeSortable&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkTreeSortable&quot;</span>)]
     </span><span class="kw">pub struct </span>TreeSortable(Interface&lt;ffi::GtkTreeSortable, ffi::GtkTreeSortableIface&gt;) @requires TreeModel;
 
     <span class="kw">match fn </span>{
@@ -239,7 +239,7 @@
     /// # Returns
     ///
     /// [`true`], if the model has a default sort function
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_sortable_has_default_sort_func&quot;</span>)]
     </span><span class="kw">fn </span>has_default_sort_func(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -247,14 +247,14 @@
     ///
     /// # Deprecated since 4.10
     ///
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_sortable_sort_column_changed&quot;</span>)]
     </span><span class="kw">fn </span>sort_column_changed(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// The ::sort-column-changed signal is emitted when the sort column
     /// or sort order of @sortable is changed. The signal is emitted before
     /// the contents of @sortable are resorted.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;sort-column-changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;sort-column-changed&quot;</span>)]
     </span><span class="kw">fn </span>connect_sort_column_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -304,4 +304,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

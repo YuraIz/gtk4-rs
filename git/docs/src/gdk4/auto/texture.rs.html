@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -423,7 +423,7 @@
     /// # Implements
     ///
     /// [`TextureExt`][trait@crate::prelude::TextureExt], [`PaintableExt`][trait@crate::prelude::PaintableExt], [`trait@gio::prelude::IconExt`], [`trait@gio::prelude::LoadableIconExt`], [`TextureExtManual`][trait@crate::prelude::TextureExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkTexture&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkTexture&quot;</span>)]
     </span><span class="kw">pub struct </span>Texture(Object&lt;ffi::GdkTexture, ffi::GdkTextureClass&gt;) @implements Paintable, gio::Icon, gio::LoadableIcon;
 
     <span class="kw">match fn </span>{
@@ -445,7 +445,7 @@
     /// # Returns
     ///
     /// a new [`Texture`][crate::Texture]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_texture_new_for_pixbuf&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_texture_new_for_pixbuf&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_pixbuf&quot;</span>)]
     </span><span class="kw">pub fn </span>for_pixbuf(pixbuf: <span class="kw-2">&amp;</span>gdk_pixbuf::Pixbuf) -&gt; Texture {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -468,7 +468,7 @@
     /// # Returns
     ///
     /// A newly-created [`Texture`][crate::Texture]
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gdk_texture_new_from_bytes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_bytes&quot;</span>)]
@@ -501,7 +501,7 @@
     /// # Returns
     ///
     /// A newly-created [`Texture`][crate::Texture]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_texture_new_from_file&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_texture_new_from_file&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_file&quot;</span>)]
     </span><span class="kw">pub fn </span>from_file(file: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;Texture, glib::Error&gt; {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -532,7 +532,7 @@
     /// # Returns
     ///
     /// A newly-created [`Texture`][crate::Texture]
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gdk_texture_new_from_filename&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_filename&quot;</span>)]
@@ -569,7 +569,7 @@
     /// # Returns
     ///
     /// A newly-created [`Texture`][crate::Texture]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_texture_new_from_resource&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_texture_new_from_resource&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_resource&quot;</span>)]
     </span><span class="kw">pub fn </span>from_resource(resource_path: <span class="kw-2">&amp;</span>str) -&gt; Texture {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -595,7 +595,7 @@
     /// # Returns
     ///
     /// the height of the [`Texture`][crate::Texture]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_texture_get_height&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_texture_get_height&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_height&quot;</span>)]
     </span><span class="kw">fn </span>height(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -604,7 +604,7 @@
     /// # Returns
     ///
     /// the width of the [`Texture`][crate::Texture]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_texture_get_width&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_texture_get_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_width&quot;</span>)]
     </span><span class="kw">fn </span>width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -621,18 +621,18 @@
     /// # Returns
     ///
     /// [`true`] if saving succeeded, [`false`] on failure.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_texture_save_to_png&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_texture_save_to_png&quot;</span>)]
     </span><span class="kw">fn </span>save_to_png(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         filename: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::error::BoolError&gt;;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gdk_texture_save_to_png_bytes&quot;</span>)]
     </span><span class="kw">fn </span>save_to_png_bytes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Bytes;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gdk_texture_save_to_tiff&quot;</span>)]
     </span><span class="kw">fn </span>save_to_tiff(
@@ -640,7 +640,7 @@
         filename: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::error::BoolError&gt;;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gdk_texture_save_to_tiff_bytes&quot;</span>)]
     </span><span class="kw">fn </span>save_to_tiff_bytes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Bytes;
@@ -670,7 +670,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">fn </span>save_to_png_bytes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Bytes {
         <span class="kw">unsafe </span>{
@@ -680,7 +680,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">fn </span>save_to_tiff(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -697,7 +697,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">fn </span>save_to_tiff_bytes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Bytes {
         <span class="kw">unsafe </span>{
@@ -714,4 +714,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

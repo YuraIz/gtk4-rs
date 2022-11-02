@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -326,7 +326,7 @@
     /// # Returns
     ///
     /// A new [`EntryBuffer`][crate::EntryBuffer] object.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(initial_chars: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -360,7 +360,7 @@
     /// # Returns
     ///
     /// The number of characters deleted.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_delete_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_delete_text&quot;</span>)]
     </span><span class="kw">fn </span>delete_text(<span class="kw-2">&amp;</span><span class="self">self</span>, position: u16, n_chars: <span class="prelude-ty">Option</span>&lt;u16&gt;) -&gt; u16;
 
     <span class="doccomment">/// Retrieves the length in bytes of the buffer.
@@ -370,7 +370,7 @@
     /// # Returns
     ///
     /// The byte length of the buffer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_get_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_get_bytes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_bytes&quot;</span>)]
     </span><span class="kw">fn </span>bytes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; usize;
 
@@ -379,7 +379,7 @@
     /// # Returns
     ///
     /// The number of characters in the buffer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_get_length&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_get_length&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_length&quot;</span>)]
     </span><span class="kw">fn </span>length(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u16;
 
@@ -389,7 +389,7 @@
     ///
     /// the maximum allowed number of characters
     ///   in [`EntryBuffer`][crate::EntryBuffer], or 0 if there is no maximum.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_get_max_length&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_get_max_length&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_max_length&quot;</span>)]
     </span><span class="kw">fn </span>max_length(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;u16&gt;;
 
@@ -403,7 +403,7 @@
     /// a pointer to the contents of the widget as a
     ///   string. This string points to internally allocated storage
     ///   in the buffer and must not be freed, modified or stored.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_get_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_get_text&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_text&quot;</span>)]
     </span><span class="kw">fn </span>text(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; String;
 
@@ -426,7 +426,7 @@
     /// # Returns
     ///
     /// The number of characters actually inserted.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_insert_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_insert_text&quot;</span>)]
     </span><span class="kw">fn </span>insert_text(<span class="kw-2">&amp;</span><span class="self">self</span>, position: u16, chars: <span class="kw-2">&amp;</span>str) -&gt; u16;
 
     <span class="doccomment">/// Sets the maximum allowed length of the contents of the buffer.
@@ -437,7 +437,7 @@
     /// the maximum length of the entry buffer, or 0 for no maximum.
     ///   (other than the maximum length of entries.) The value passed in will
     ///   be clamped to the range 0-65536.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_set_max_length&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_set_max_length&quot;</span>)]
     </span><span class="kw">fn </span>set_max_length(<span class="kw-2">&amp;</span><span class="self">self</span>, max_length: <span class="prelude-ty">Option</span>&lt;u16&gt;);
 
     <span class="doccomment">/// Sets the text in the buffer.
@@ -451,7 +451,7 @@
     /// the new text
     /// ## `n_chars`
     /// the number of characters in @text, or -1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_set_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_set_text&quot;</span>)]
     </span><span class="kw">fn </span>set_text(<span class="kw-2">&amp;</span><span class="self">self</span>, chars: <span class="kw-2">&amp;</span>str);
 }
 
@@ -544,4 +544,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

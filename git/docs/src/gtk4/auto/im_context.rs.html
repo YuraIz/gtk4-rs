@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -758,7 +758,7 @@
     /// # Implements
     ///
     /// [`IMContextExt`][trait@crate::prelude::IMContextExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkIMContext&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkIMContext&quot;</span>)]
     </span><span class="kw">pub struct </span>IMContext(Object&lt;ffi::GtkIMContext, ffi::GtkIMContextClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -802,7 +802,7 @@
     /// # Returns
     ///
     /// [`true`] if the signal was handled.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_im_context_delete_surrounding&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_im_context_delete_surrounding&quot;</span>)]
     </span><span class="kw">fn </span>delete_surrounding(<span class="kw-2">&amp;</span><span class="self">self</span>, offset: i32, n_chars: i32) -&gt; bool;
 
     <span class="doccomment">/// Allow an input method to forward key press and release events
@@ -826,7 +826,7 @@
     /// # Returns
     ///
     /// [`true`] if the input method handled the key event.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_im_context_filter_key&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_im_context_filter_key&quot;</span>)]
     </span><span class="kw">fn </span>filter_key(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         press: bool,
@@ -849,89 +849,89 @@
     /// # Returns
     ///
     /// [`true`] if the input method handled the key event.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_im_context_filter_keypress&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_im_context_filter_keypress&quot;</span>)]
     </span><span class="kw">fn </span>filter_keypress(<span class="kw-2">&amp;</span><span class="self">self</span>, event: <span class="kw">impl </span>AsRef&lt;gdk::Event&gt;) -&gt; bool;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_im_context_focus_in&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_im_context_focus_in&quot;</span>)]
     </span><span class="kw">fn </span>focus_in(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_im_context_focus_out&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_im_context_focus_out&quot;</span>)]
     </span><span class="kw">fn </span>focus_out(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_im_context_get_preedit_string&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_im_context_get_preedit_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_preedit_string&quot;</span>)]
     </span><span class="kw">fn </span>preedit_string(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (glib::GString, pango::AttrList, i32);
 
-    <span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_2&quot;</span>, deprecated = <span class="string">&quot;Since 4.2&quot;</span>)]
+    <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_2&quot;</span>, deprecated = <span class="string">&quot;Since 4.2&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_im_context_get_surrounding&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_surrounding&quot;</span>)]
     </span><span class="kw">fn </span>surrounding(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;(glib::GString, i32)&gt;;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_im_context_get_surrounding_with_selection&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_surrounding_with_selection&quot;</span>)]
     </span><span class="kw">fn </span>surrounding_with_selection(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;(glib::GString, i32, i32)&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_im_context_reset&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_im_context_reset&quot;</span>)]
     </span><span class="kw">fn </span>reset(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_im_context_set_client_widget&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_im_context_set_client_widget&quot;</span>)]
     </span><span class="kw">fn </span>set_client_widget(<span class="kw-2">&amp;</span><span class="self">self</span>, widget: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_im_context_set_cursor_location&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_im_context_set_cursor_location&quot;</span>)]
     </span><span class="kw">fn </span>set_cursor_location(<span class="kw-2">&amp;</span><span class="self">self</span>, area: <span class="kw-2">&amp;</span>gdk::Rectangle);
 
-    <span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_2&quot;</span>, deprecated = <span class="string">&quot;Since 4.2&quot;</span>)]
+    <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_2&quot;</span>, deprecated = <span class="string">&quot;Since 4.2&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_im_context_set_surrounding&quot;</span>)]
     </span><span class="kw">fn </span>set_surrounding(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str, cursor_index: i32);
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_im_context_set_surrounding_with_selection&quot;</span>)]
     </span><span class="kw">fn </span>set_surrounding_with_selection(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str, cursor_index: i32, anchor_index: i32);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_im_context_set_use_preedit&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_im_context_set_use_preedit&quot;</span>)]
     </span><span class="kw">fn </span>set_use_preedit(<span class="kw-2">&amp;</span><span class="self">self</span>, use_preedit: bool);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;input-hints&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;input-hints&quot;</span>)]
     </span><span class="kw">fn </span>input_hints(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; InputHints;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;input-hints&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;input-hints&quot;</span>)]
     </span><span class="kw">fn </span>set_input_hints(<span class="kw-2">&amp;</span><span class="self">self</span>, input_hints: InputHints);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;input-purpose&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;input-purpose&quot;</span>)]
     </span><span class="kw">fn </span>input_purpose(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; InputPurpose;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;input-purpose&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;input-purpose&quot;</span>)]
     </span><span class="kw">fn </span>set_input_purpose(<span class="kw-2">&amp;</span><span class="self">self</span>, input_purpose: InputPurpose);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;commit&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;commit&quot;</span>)]
     </span><span class="kw">fn </span>connect_commit&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>str) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;delete-surrounding&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;delete-surrounding&quot;</span>)]
     </span><span class="kw">fn </span>connect_delete_surrounding&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, i32, i32) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;preedit-changed&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;preedit-changed&quot;</span>)]
     </span><span class="kw">fn </span>connect_preedit_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;preedit-end&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;preedit-end&quot;</span>)]
     </span><span class="kw">fn </span>connect_preedit_end&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;preedit-start&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;preedit-start&quot;</span>)]
     </span><span class="kw">fn </span>connect_preedit_start&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;retrieve-surrounding&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;retrieve-surrounding&quot;</span>)]
     </span><span class="kw">fn </span>connect_retrieve_surrounding&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F)
         -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;input-hints&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;input-hints&quot;</span>)]
     </span><span class="kw">fn </span>connect_input_hints_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;input-purpose&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;input-purpose&quot;</span>)]
     </span><span class="kw">fn </span>connect_input_purpose_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -1027,7 +1027,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">fn </span>surrounding_with_selection(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;(glib::GString, i32, i32)&gt; {
         <span class="kw">unsafe </span>{
@@ -1088,7 +1088,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">fn </span>set_surrounding_with_selection(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str, cursor_index: i32, anchor_index: i32) {
         <span class="kw">let </span>len = text.len() <span class="kw">as _</span>;
@@ -1334,4 +1334,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

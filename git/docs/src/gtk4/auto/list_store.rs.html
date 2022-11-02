@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -667,7 +667,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`TreeDragDestExt`][trait@crate::prelude::TreeDragDestExt], [`TreeDragSourceExt`][trait@crate::prelude::TreeDragSourceExt], [`TreeModelExt`][trait@crate::prelude::TreeModelExt], [`TreeSortableExt`][trait@crate::prelude::TreeSortableExt], [`TreeModelExtManual`][trait@crate::prelude::TreeModelExtManual], [`TreeSortableExtManual`][trait@crate::prelude::TreeSortableExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkListStore&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkListStore&quot;</span>)]
     </span><span class="kw">pub struct </span>ListStore(Object&lt;ffi::GtkListStore, ffi::GtkListStoreClass&gt;) @implements Buildable, TreeDragDest, TreeDragSource, TreeModel, TreeSortable;
 
     <span class="kw">match fn </span>{
@@ -689,7 +689,7 @@
     ///
     /// ## `iter`
     /// An unset [`TreeIter`][crate::TreeIter] to set to the appended row
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_list_store_append&quot;</span>)]
     </span><span class="kw">pub fn </span>append(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; TreeIter {
         <span class="kw">unsafe </span>{
@@ -704,7 +704,7 @@
     /// # Deprecated since 4.10
     ///
     /// Use list models
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_list_store_clear&quot;</span>)]
     </span><span class="kw">pub fn </span>clear(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
@@ -729,7 +729,7 @@
     ///
     /// ## `iter`
     /// An unset [`TreeIter`][crate::TreeIter] to set to the new row
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_list_store_insert&quot;</span>)]
     </span><span class="kw">pub fn </span>insert(<span class="kw-2">&amp;</span><span class="self">self</span>, position: i32) -&gt; TreeIter {
         <span class="kw">unsafe </span>{
@@ -755,7 +755,7 @@
     ///
     /// ## `iter`
     /// An unset [`TreeIter`][crate::TreeIter] to set to the new row
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_list_store_insert_after&quot;</span>)]
     </span><span class="kw">pub fn </span>insert_after(<span class="kw-2">&amp;</span><span class="self">self</span>, sibling: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TreeIter&gt;) -&gt; TreeIter {
         <span class="kw">unsafe </span>{
@@ -785,7 +785,7 @@
     ///
     /// ## `iter`
     /// An unset [`TreeIter`][crate::TreeIter] to set to the new row
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_list_store_insert_before&quot;</span>)]
     </span><span class="kw">pub fn </span>insert_before(<span class="kw-2">&amp;</span><span class="self">self</span>, sibling: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TreeIter&gt;) -&gt; TreeIter {
         <span class="kw">unsafe </span>{
@@ -813,7 +813,7 @@
     /// # Returns
     ///
     /// [`true`] if the iter is valid, [`false`] if the iter is invalid.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_list_store_iter_is_valid&quot;</span>)]
     </span><span class="kw">pub fn </span>iter_is_valid(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -835,7 +835,7 @@
     /// A [`TreeIter`][crate::TreeIter]
     /// ## `position`
     /// A [`TreeIter`][crate::TreeIter]
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_list_store_move_after&quot;</span>)]
     </span><span class="kw">pub fn </span>move_after(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="kw-2">&amp;</span>TreeIter, position: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TreeIter&gt;) {
         <span class="kw">unsafe </span>{
@@ -858,7 +858,7 @@
     /// A [`TreeIter`][crate::TreeIter]
     /// ## `position`
     /// A [`TreeIter`][crate::TreeIter]
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_list_store_move_before&quot;</span>)]
     </span><span class="kw">pub fn </span>move_before(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="kw-2">&amp;</span>TreeIter, position: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TreeIter&gt;) {
         <span class="kw">unsafe </span>{
@@ -883,7 +883,7 @@
     ///
     /// ## `iter`
     /// An unset [`TreeIter`][crate::TreeIter] to set to the prepend row
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_list_store_prepend&quot;</span>)]
     </span><span class="kw">pub fn </span>prepend(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; TreeIter {
         <span class="kw">unsafe </span>{
@@ -906,7 +906,7 @@
     /// # Returns
     ///
     /// [`true`] if @iter is valid, [`false`] if not.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_list_store_remove&quot;</span>)]
     </span><span class="kw">pub fn </span>remove(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -927,7 +927,7 @@
     /// A [`TreeIter`][crate::TreeIter]
     /// ## `b`
     /// Another [`TreeIter`][crate::TreeIter]
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_list_store_swap&quot;</span>)]
     </span><span class="kw">pub fn </span>swap(<span class="kw-2">&amp;</span><span class="self">self</span>, a: <span class="kw-2">&amp;</span>TreeIter, b: <span class="kw-2">&amp;</span>TreeIter) {
         <span class="kw">unsafe </span>{
@@ -946,4 +946,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

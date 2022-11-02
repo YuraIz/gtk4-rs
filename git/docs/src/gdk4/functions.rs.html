@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gdk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gdk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -515,7 +515,7 @@
 <span class="kw">use </span>std::pin::Pin;
 <span class="kw">use </span>std::ptr;
 
-<span class="attribute">#[repr(packed)]
+<span class="attr">#[repr(packed)]
 </span><span class="kw">pub struct </span>GRange(<span class="kw">pub </span>i32, <span class="kw">pub </span>i32);
 
 <span class="doccomment">/// Obtains a clip region which contains the areas where the given ranges
@@ -540,7 +540,7 @@
 /// # Returns
 ///
 /// a clip region containing the given ranges
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pango_layout_get_clip_region&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pango_layout_get_clip_region&quot;</span>)]
 </span><span class="kw">pub fn </span>pango_layout_get_clip_region(
     layout: <span class="kw-2">&amp;</span>pango::Layout,
     x_origin: i32,
@@ -580,7 +580,7 @@
 /// optional `GCancellable` object
 /// ## `callback`
 /// callback to call when the operation is done
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_deserialize_async&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_deserialize_async&quot;</span>)]
 </span><span class="kw">pub fn </span>content_deserialize_async&lt;R: FnOnce(<span class="prelude-ty">Result</span>&lt;glib::Value, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
     stream: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::InputStream&gt;,
     mime_type: <span class="kw-2">&amp;</span>str,
@@ -668,7 +668,7 @@
 /// the callback
 /// ## `notify`
 /// destroy notify for @data
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_register_deserializer&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_register_deserializer&quot;</span>)]
 </span><span class="kw">pub fn </span>content_register_deserializer&lt;
     T: <span class="lifetime">&#39;static</span>,
     P: Fn(<span class="kw-2">&amp;</span>ContentDeserializer, <span class="kw-2">&amp;mut </span><span class="prelude-ty">Option</span>&lt;T&gt;) + <span class="lifetime">&#39;static</span>,
@@ -737,7 +737,7 @@
 /// the callback
 /// ## `notify`
 /// destroy notify for @data
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_register_serializer&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_register_serializer&quot;</span>)]
 </span><span class="kw">pub fn </span>content_register_serializer&lt;
     T: <span class="lifetime">&#39;static</span>,
     P: Fn(<span class="kw-2">&amp;</span>ContentSerializer, <span class="kw-2">&amp;mut </span><span class="prelude-ty">Option</span>&lt;T&gt;) + <span class="lifetime">&#39;static</span>,
@@ -815,7 +815,7 @@
 /// optional `GCancellable` object
 /// ## `callback`
 /// callback to call when the operation is done
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_serialize_async&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_serialize_async&quot;</span>)]
 </span><span class="kw">pub fn </span>content_serialize_async&lt;R: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
     stream: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::OutputStream&gt;,
     mime_type: <span class="kw-2">&amp;</span>str,
@@ -921,7 +921,7 @@
 /// # Returns
 ///
 /// a clip region containing the given ranges
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pango_layout_line_get_clip_region&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pango_layout_line_get_clip_region&quot;</span>)]
 </span><span class="kw">pub fn </span>pango_layout_line_get_clip_region(
     line: <span class="kw-2">&amp;</span>pango::LayoutLine,
     x_origin: i32,
@@ -942,4 +942,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

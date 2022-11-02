@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -788,7 +788,7 @@
     /// # Implements
     ///
     /// [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkOverlay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkOverlay&quot;</span>)]
     </span><span class="kw">pub struct </span>Overlay(Object&lt;ffi::GtkOverlay&gt;) @extends Widget, @implements Accessible, Buildable, ConstraintTarget;
 
     <span class="kw">match fn </span>{
@@ -802,7 +802,7 @@
     /// # Returns
     ///
     /// a new [`Overlay`][crate::Overlay] object.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; Overlay {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ Widget::from_glib_none(ffi::gtk_overlay_new()).unsafe_cast() }
@@ -826,7 +826,7 @@
     /// `property::Widget::valign` properties.
     /// ## `widget`
     /// a [`Widget`][crate::Widget] to be added to the container
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_add_overlay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_add_overlay&quot;</span>)]
     </span><span class="kw">pub fn </span>add_overlay(<span class="kw-2">&amp;</span><span class="self">self</span>, widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_overlay_add_overlay(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, widget.as_ref().to_glib_none().<span class="number">0</span>);
@@ -838,7 +838,7 @@
     /// # Returns
     ///
     /// the child widget of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_get_child&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_get_child&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_child&quot;</span>)]
     </span><span class="kw">pub fn </span>child(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_overlay_get_child(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -851,7 +851,7 @@
     /// # Returns
     ///
     /// whether the widget is clipped within the parent.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_get_clip_overlay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_get_clip_overlay&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_clip_overlay&quot;</span>)]
     </span><span class="kw">pub fn </span>is_clip_overlay(<span class="kw-2">&amp;</span><span class="self">self</span>, widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -870,7 +870,7 @@
     /// # Returns
     ///
     /// whether the widget is measured
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_get_measure_overlay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_get_measure_overlay&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_measure_overlay&quot;</span>)]
     </span><span class="kw">pub fn </span>is_measure_overlay(<span class="kw-2">&amp;</span><span class="self">self</span>, widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -884,7 +884,7 @@
     <span class="doccomment">/// Removes an overlay that was added with gtk_overlay_add_overlay().
     /// ## `widget`
     /// a [`Widget`][crate::Widget] to be removed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_remove_overlay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_remove_overlay&quot;</span>)]
     </span><span class="kw">pub fn </span>remove_overlay(<span class="kw-2">&amp;</span><span class="self">self</span>, widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_overlay_remove_overlay(
@@ -897,7 +897,7 @@
     <span class="doccomment">/// Sets the child widget of @self.
     /// ## `child`
     /// the child widget
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_set_child&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_set_child&quot;</span>)]
     </span><span class="kw">pub fn </span>set_child(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_overlay_set_child(
@@ -912,7 +912,7 @@
     /// an overlay child of [`Overlay`][crate::Overlay]
     /// ## `clip_overlay`
     /// whether the child should be clipped
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_set_clip_overlay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_set_clip_overlay&quot;</span>)]
     </span><span class="kw">pub fn </span>set_clip_overlay(<span class="kw-2">&amp;</span><span class="self">self</span>, widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;, clip_overlay: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_overlay_set_clip_overlay(
@@ -932,7 +932,7 @@
     /// an overlay child of [`Overlay`][crate::Overlay]
     /// ## `measure`
     /// whether the child should be measured
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_set_measure_overlay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_set_measure_overlay&quot;</span>)]
     </span><span class="kw">pub fn </span>set_measure_overlay(<span class="kw-2">&amp;</span><span class="self">self</span>, widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;, measure: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_overlay_set_measure_overlay(
@@ -943,7 +943,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;child&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;child&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_child_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_child_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Overlay) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkOverlay,
@@ -973,12 +973,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`Overlay`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>OverlayBuilder {
     child: <span class="prelude-ty">Option</span>&lt;Widget&gt;,
     can_focus: <span class="prelude-ty">Option</span>&lt;bool&gt;,
@@ -1022,7 +1022,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`Overlay`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; Overlay {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>child) = <span class="self">self</span>.child {
@@ -1384,4 +1384,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

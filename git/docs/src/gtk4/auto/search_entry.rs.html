@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1108,7 +1108,7 @@
     /// # Implements
     ///
     /// [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`EditableExt`][trait@crate::prelude::EditableExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual], [`EditableExtManual`][trait@crate::prelude::EditableExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkSearchEntry&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkSearchEntry&quot;</span>)]
     </span><span class="kw">pub struct </span>SearchEntry(Object&lt;ffi::GtkSearchEntry&gt;) @extends Widget, @implements Accessible, Buildable, ConstraintTarget, Editable;
 
     <span class="kw">match fn </span>{
@@ -1122,7 +1122,7 @@
     /// # Returns
     ///
     /// a new [`SearchEntry`][crate::SearchEntry]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_search_entry_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_search_entry_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; SearchEntry {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ Widget::from_glib_none(ffi::gtk_search_entry_new()).unsafe_cast() }
@@ -1141,7 +1141,7 @@
     /// # Returns
     ///
     /// The key capture widget.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_search_entry_get_key_capture_widget&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_search_entry_get_key_capture_widget&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_key_capture_widget&quot;</span>)]
     </span><span class="kw">pub fn </span>key_capture_widget(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt; {
         <span class="kw">unsafe </span>{
@@ -1157,7 +1157,7 @@
     /// # Returns
     ///
     /// a delay in milliseconds.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_search_entry_get_search_delay&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_search_delay&quot;</span>)]
@@ -1184,7 +1184,7 @@
     /// [`EventControllerKey::forward()`][crate::EventControllerKey::forward()].
     /// ## `widget`
     /// a [`Widget`][crate::Widget]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_search_entry_set_key_capture_widget&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_search_entry_set_key_capture_widget&quot;</span>)]
     </span><span class="kw">pub fn </span>set_key_capture_widget(<span class="kw-2">&amp;</span><span class="self">self</span>, widget: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_search_entry_set_key_capture_widget(
@@ -1198,7 +1198,7 @@
     /// `signal::SearchEntry::search-changed` signal being emitted.
     /// ## `delay`
     /// a delay in milliseconds
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_search_entry_set_search_delay&quot;</span>)]
     </span><span class="kw">pub fn </span>set_search_delay(<span class="kw-2">&amp;</span><span class="self">self</span>, delay: u32) {
@@ -1208,27 +1208,27 @@
     }
 
     <span class="doccomment">/// Whether to activate the default widget when Enter is pressed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;activates-default&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;activates-default&quot;</span>)]
     </span><span class="kw">pub fn </span>activates_default(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;activates-default&quot;</span>)
     }
 
     <span class="doccomment">/// Whether to activate the default widget when Enter is pressed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;activates-default&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;activates-default&quot;</span>)]
     </span><span class="kw">pub fn </span>set_activates_default(<span class="kw-2">&amp;</span><span class="self">self</span>, activates_default: bool) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;activates-default&quot;</span>, <span class="kw-2">&amp;</span>activates_default)
     }
 
     <span class="doccomment">/// The text that will be displayed in the [`SearchEntry`][crate::SearchEntry]
     /// when it is empty and unfocused.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;placeholder-text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;placeholder-text&quot;</span>)]
     </span><span class="kw">pub fn </span>placeholder_text(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;placeholder-text&quot;</span>)
     }
 
     <span class="doccomment">/// The text that will be displayed in the [`SearchEntry`][crate::SearchEntry]
     /// when it is empty and unfocused.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;placeholder-text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;placeholder-text&quot;</span>)]
     </span><span class="kw">pub fn </span>set_placeholder_text(<span class="kw-2">&amp;</span><span class="self">self</span>, placeholder_text: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;placeholder-text&quot;</span>, <span class="kw-2">&amp;</span>placeholder_text)
     }
@@ -1236,7 +1236,7 @@
     <span class="doccomment">/// Emitted when the entry is activated.
     ///
     /// The keybindings for this signal are all forms of the Enter key.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;activate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;activate&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_activate&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>activate_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>SearchEntry) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkSearchEntry,
@@ -1271,7 +1271,7 @@
     /// between matches.
     ///
     /// The default bindings for this signal is Ctrl-g.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;next-match&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;next-match&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_next_match&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>next_match_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>SearchEntry) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkSearchEntry,
@@ -1306,7 +1306,7 @@
     /// between matches.
     ///
     /// The default bindings for this signal is Ctrl-Shift-g.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;previous-match&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;previous-match&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_previous_match&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>previous_match_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>SearchEntry) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkSearchEntry,
@@ -1335,7 +1335,7 @@
     <span class="doccomment">/// Emitted with a delay. The length of the delay can be
     /// changed with the `property::SearchEntry::search-delay`
     /// property.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;search-changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;search-changed&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_search_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>search_changed_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>SearchEntry) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkSearchEntry,
@@ -1358,7 +1358,7 @@
     }
 
     <span class="doccomment">/// Emitted when the user initiated a search on the entry.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;search-started&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;search-started&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_search_started&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>search_started_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>SearchEntry) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkSearchEntry,
@@ -1388,7 +1388,7 @@
     /// the search entry in this case.
     ///
     /// The default bindings for this signal is Escape.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;stop-search&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;stop-search&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_stop_search&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>stop_search_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>SearchEntry) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkSearchEntry,
@@ -1414,7 +1414,7 @@
         <span class="self">self</span>.emit_by_name::&lt;()&gt;(<span class="string">&quot;stop-search&quot;</span>, <span class="kw-2">&amp;</span>[]);
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;activates-default&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;activates-default&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_activates_default_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -1440,7 +1440,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;placeholder-text&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;placeholder-text&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_placeholder_text_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_placeholder_text_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>SearchEntry) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkSearchEntry,
@@ -1463,7 +1463,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;search-delay&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_search_delay_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
@@ -1495,16 +1495,16 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`SearchEntry`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>SearchEntryBuilder {
     activates_default: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     placeholder_text: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span>search_delay: <span class="prelude-ty">Option</span>&lt;u32&gt;,
     can_focus: <span class="prelude-ty">Option</span>&lt;bool&gt;,
@@ -1554,7 +1554,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`SearchEntry`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; SearchEntry {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>activates_default) = <span class="self">self</span>.activates_default {
@@ -1563,7 +1563,7 @@
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>placeholder_text) = <span class="self">self</span>.placeholder_text {
             properties.push((<span class="string">&quot;placeholder-text&quot;</span>, placeholder_text));
         }
-        <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+        <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         </span><span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>search_delay) = <span class="self">self</span>.search_delay {
             properties.push((<span class="string">&quot;search-delay&quot;</span>, search_delay));
         }
@@ -1693,7 +1693,7 @@
 
     <span class="doccomment">/// The delay in milliseconds from last keypress to the search
     /// changed signal.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub fn </span>search_delay(<span class="kw-2">mut </span><span class="self">self</span>, search_delay: u32) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.search_delay = <span class="prelude-val">Some</span>(search_delay);
@@ -1996,4 +1996,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

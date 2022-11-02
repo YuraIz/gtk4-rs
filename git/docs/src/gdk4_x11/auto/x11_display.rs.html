@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4_x11/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4_x11/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -495,7 +495,7 @@
     /// # Implements
     ///
     /// [`trait@gdk::prelude::DisplayExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkX11Display&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkX11Display&quot;</span>)]
     </span><span class="kw">pub struct </span>X11Display(Object&lt;ffi::GdkX11Display, ffi::GdkX11DisplayClass&gt;) @extends gdk::Display;
 
     <span class="kw">match fn </span>{
@@ -520,7 +520,7 @@
     /// # Returns
     ///
     /// X error code or 0 on success
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_error_trap_pop&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_error_trap_pop&quot;</span>)]
     </span><span class="kw">pub fn </span>error_trap_pop(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::gdk_x11_display_error_trap_pop(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
@@ -529,7 +529,7 @@
     /// Does not block to see if an error occurred; merely records the
     /// range of requests to ignore errors for, and ignores those errors
     /// if they arrive asynchronously.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_error_trap_pop_ignored&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_error_trap_pop_ignored&quot;</span>)]
     </span><span class="kw">pub fn </span>error_trap_pop_ignored(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gdk_x11_display_error_trap_pop_ignored(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -541,7 +541,7 @@
     /// the application. Use gdk_x11_display_error_trap_pop() or
     /// gdk_x11_display_error_trap_pop_ignored()to lift a trap pushed
     /// with this function.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_error_trap_push&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_error_trap_push&quot;</span>)]
     </span><span class="kw">pub fn </span>error_trap_push(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gdk_x11_display_error_trap_push(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -556,7 +556,7 @@
     ///
     /// The default group leader surface
     /// for @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_get_default_group&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_get_default_group&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default_group&quot;</span>)]
     </span><span class="kw">pub fn </span>default_group(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gdk::Surface {
         <span class="kw">unsafe </span>{
@@ -577,7 +577,7 @@
     ///
     /// ## `minor`
     /// return location for the EGL minor version
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gdk_x11_display_get_egl_version&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_egl_version&quot;</span>)]
@@ -609,7 +609,7 @@
     ///
     /// ## `minor`
     /// return location for the GLX minor version
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_get_glx_version&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_get_glx_version&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_glx_version&quot;</span>)]
     </span><span class="kw">pub fn </span>glx_version(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;(i32, i32)&gt; {
         <span class="kw">unsafe </span>{
@@ -642,7 +642,7 @@
     ///
     /// the primary monitor, or any monitor if no
     ///   primary monitor is configured by the user
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_get_primary_monitor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_get_primary_monitor&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_primary_monitor&quot;</span>)]
     </span><span class="kw">pub fn </span>primary_monitor(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gdk::Monitor {
         <span class="kw">unsafe </span>{
@@ -657,7 +657,7 @@
     /// # Returns
     ///
     /// the [`X11Screen`][crate::X11Screen]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_get_screen&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_get_screen&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_screen&quot;</span>)]
     </span><span class="kw">pub fn </span>screen(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; X11Screen {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_x11_display_get_screen(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -668,7 +668,7 @@
     /// # Returns
     ///
     /// the startup notification ID for @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_get_startup_notification_id&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_get_startup_notification_id&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_startup_notification_id&quot;</span>)]
     </span><span class="kw">pub fn </span>startup_notification_id(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{
@@ -686,7 +686,7 @@
     /// # Returns
     ///
     /// the timestamp of the last user interaction
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_get_user_time&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_get_user_time&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_user_time&quot;</span>)]
     </span><span class="kw">pub fn </span>user_time(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gdk_x11_display_get_user_time(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -696,7 +696,7 @@
     /// To ungrab the display again, use gdk_x11_display_ungrab().
     ///
     /// gdk_x11_display_grab()/gdk_x11_display_ungrab() calls can be nested.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_grab&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_grab&quot;</span>)]
     </span><span class="kw">pub fn </span>grab(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gdk_x11_display_grab(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -717,7 +717,7 @@
     ///   to unset a previously set value
     /// ## `size`
     /// the cursor size to use, or 0 to keep the previous size
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_set_cursor_theme&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_set_cursor_theme&quot;</span>)]
     </span><span class="kw">pub fn </span>set_cursor_theme(<span class="kw-2">&amp;</span><span class="self">self</span>, theme: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, size: i32) {
         <span class="kw">unsafe </span>{
             ffi::gdk_x11_display_set_cursor_theme(
@@ -744,7 +744,7 @@
     /// gdk_display_notify_startup_complete()).
     /// ## `startup_id`
     /// the startup notification ID (must be valid utf8)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_set_startup_notification_id&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_set_startup_notification_id&quot;</span>)]
     </span><span class="kw">pub fn </span>set_startup_notification_id(<span class="kw-2">&amp;</span><span class="self">self</span>, startup_id: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gdk_x11_display_set_startup_notification_id(
@@ -763,7 +763,7 @@
     /// to later user configuration changes.
     /// ## `scale`
     /// The new scale value
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_set_surface_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_set_surface_scale&quot;</span>)]
     </span><span class="kw">pub fn </span>set_surface_scale(<span class="kw-2">&amp;</span><span class="self">self</span>, scale: i32) {
         <span class="kw">unsafe </span>{
             ffi::gdk_x11_display_set_surface_scale(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, scale);
@@ -789,7 +789,7 @@
     /// ## `ctext`
     /// location to store newly
     ///   allocated data for the property
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_string_to_compound_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_string_to_compound_text&quot;</span>)]
     </span><span class="kw">pub fn </span>string_to_compound_text(<span class="kw-2">&amp;</span><span class="self">self</span>, str: <span class="kw-2">&amp;</span>str) -&gt; (i32, glib::GString, i32, Vec&lt;u8&gt;) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>encoding = ptr::null();
@@ -815,7 +815,7 @@
 
     <span class="doccomment">/// Ungrab @self after it has been grabbed with
     /// gdk_x11_display_grab().
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_ungrab&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_ungrab&quot;</span>)]
     </span><span class="kw">pub fn </span>ungrab(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gdk_x11_display_ungrab(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -838,7 +838,7 @@
     ///
     /// ## `ctext`
     /// location to store the data of the result
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_utf8_to_compound_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_utf8_to_compound_text&quot;</span>)]
     </span><span class="kw">pub fn </span>utf8_to_compound_text(<span class="kw-2">&amp;</span><span class="self">self</span>, str: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;(glib::GString, i32, Vec&lt;u8&gt;)&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>encoding = ptr::null();
@@ -875,7 +875,7 @@
     /// # Returns
     ///
     /// The new display
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_x11_display_open&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_x11_display_open&quot;</span>)]
     </span><span class="kw">pub fn </span>open(display_name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;gdk::Display&gt; {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gdk_x11_display_open(display_name.to_glib_none().<span class="number">0</span>)) }
@@ -888,4 +888,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4_x11" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4_x11" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -376,7 +376,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::Gravity;
 <span class="kw">use </span><span class="kw">crate</span>::Rectangle;
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
 </span><span class="kw">use </span>std::mem;
 
@@ -414,7 +414,7 @@
     /// For example, `Gtk::Popover` changes its arrow position accordingly.
     /// But you have to be careful avoid changing the size of the popover, or it
     /// has to be presented again.
-    </span><span class="attribute">#[derive(Debug, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>PopupLayout(Shared&lt;ffi::GdkPopupLayout&gt;);
 
     <span class="kw">match fn </span>{
@@ -447,7 +447,7 @@
     /// # Returns
     ///
     /// newly created instance of [`PopupLayout`][crate::PopupLayout]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_layout_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_layout_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         anchor_rect: <span class="kw-2">&amp;</span>Rectangle,
         rect_anchor: Gravity,
@@ -463,13 +463,13 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_layout_copy&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_layout_copy&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>copy(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; PopupLayout {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gdk_popup_layout_copy(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_layout_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_layout_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>PopupLayout) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gdk_popup_layout_equal(
@@ -484,7 +484,7 @@
     /// # Returns
     ///
     /// the [`AnchorHints`][crate::AnchorHints]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_layout_get_anchor_hints&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_layout_get_anchor_hints&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_anchor_hints&quot;</span>)]
     </span><span class="kw">pub fn </span>anchor_hints(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; AnchorHints {
         <span class="kw">unsafe </span>{
@@ -499,7 +499,7 @@
     /// # Returns
     ///
     /// The anchor rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_layout_get_anchor_rect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_layout_get_anchor_rect&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_anchor_rect&quot;</span>)]
     </span><span class="kw">pub fn </span>anchor_rect(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Rectangle {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_popup_layout_get_anchor_rect(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -510,7 +510,7 @@
     /// # Returns
     ///
     /// the anchor on the anchor rectangle.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_layout_get_rect_anchor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_layout_get_rect_anchor&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_rect_anchor&quot;</span>)]
     </span><span class="kw">pub fn </span>rect_anchor(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Gravity {
         <span class="kw">unsafe </span>{ from_glib(ffi::gdk_popup_layout_get_rect_anchor(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -532,7 +532,7 @@
     ///
     /// ## `bottom`
     /// return location for the bottom shadow width
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gdk_popup_layout_get_shadow_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_shadow_width&quot;</span>)]
@@ -563,7 +563,7 @@
     /// # Returns
     ///
     /// the anchor on the popup surface.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_layout_get_surface_anchor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_layout_get_surface_anchor&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_surface_anchor&quot;</span>)]
     </span><span class="kw">pub fn </span>surface_anchor(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Gravity {
         <span class="kw">unsafe </span>{
@@ -582,7 +582,7 @@
     /// beyond the left or right edges of the monitor.
     /// ## `anchor_hints`
     /// the new [`AnchorHints`][crate::AnchorHints]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_layout_set_anchor_hints&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_layout_set_anchor_hints&quot;</span>)]
     </span><span class="kw">pub fn </span>set_anchor_hints(<span class="kw-2">&amp;</span><span class="self">self</span>, anchor_hints: AnchorHints) {
         <span class="kw">unsafe </span>{
             ffi::gdk_popup_layout_set_anchor_hints(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, anchor_hints.into_glib());
@@ -592,7 +592,7 @@
     <span class="doccomment">/// Set the anchor rectangle.
     /// ## `anchor_rect`
     /// the new anchor rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_layout_set_anchor_rect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_layout_set_anchor_rect&quot;</span>)]
     </span><span class="kw">pub fn </span>set_anchor_rect(<span class="kw-2">&amp;</span><span class="self">self</span>, anchor_rect: <span class="kw-2">&amp;</span>Rectangle) {
         <span class="kw">unsafe </span>{
             ffi::gdk_popup_layout_set_anchor_rect(
@@ -607,7 +607,7 @@
     /// x delta to offset the anchor rectangle with
     /// ## `dy`
     /// y delta to offset the anchor rectangle with
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_layout_set_offset&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_layout_set_offset&quot;</span>)]
     </span><span class="kw">pub fn </span>set_offset(<span class="kw-2">&amp;</span><span class="self">self</span>, dx: i32, dy: i32) {
         <span class="kw">unsafe </span>{
             ffi::gdk_popup_layout_set_offset(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, dx, dy);
@@ -617,7 +617,7 @@
     <span class="doccomment">/// Set the anchor on the anchor rectangle.
     /// ## `anchor`
     /// the new rect anchor
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_layout_set_rect_anchor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_layout_set_rect_anchor&quot;</span>)]
     </span><span class="kw">pub fn </span>set_rect_anchor(<span class="kw-2">&amp;</span><span class="self">self</span>, anchor: Gravity) {
         <span class="kw">unsafe </span>{
             ffi::gdk_popup_layout_set_rect_anchor(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, anchor.into_glib());
@@ -637,7 +637,7 @@
     /// height of the top part of the shadow
     /// ## `bottom`
     /// height of the bottom part of the shadow
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gdk_popup_layout_set_shadow_width&quot;</span>)]
     </span><span class="kw">pub fn </span>set_shadow_width(<span class="kw-2">&amp;</span><span class="self">self</span>, left: i32, right: i32, top: i32, bottom: i32) {
@@ -649,7 +649,7 @@
     <span class="doccomment">/// Set the anchor on the popup surface.
     /// ## `anchor`
     /// the new popup surface anchor
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_popup_layout_set_surface_anchor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_popup_layout_set_surface_anchor&quot;</span>)]
     </span><span class="kw">pub fn </span>set_surface_anchor(<span class="kw-2">&amp;</span><span class="self">self</span>, anchor: Gravity) {
         <span class="kw">unsafe </span>{
             ffi::gdk_popup_layout_set_surface_anchor(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, anchor.into_glib());
@@ -658,7 +658,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>PopupLayout {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -666,4 +666,4 @@
 
 <span class="kw">impl </span>Eq <span class="kw">for </span>PopupLayout {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

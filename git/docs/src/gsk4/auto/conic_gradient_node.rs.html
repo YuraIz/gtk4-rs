@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -235,7 +235,7 @@
 
 <span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// A render node for a conic gradient.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GskConicGradientNode&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GskConicGradientNode&quot;</span>)]
     </span><span class="kw">pub struct </span>ConicGradientNode(Shared&lt;ffi::GskConicGradientNode&gt;);
 
     <span class="kw">match fn </span>{
@@ -271,7 +271,7 @@
     /// # Returns
     ///
     /// A new [`RenderNode`][crate::RenderNode]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_conic_gradient_node_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_conic_gradient_node_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         bounds: <span class="kw-2">&amp;</span>graphene::Rect,
         center: <span class="kw-2">&amp;</span>graphene::Point,
@@ -301,7 +301,7 @@
     /// # Returns
     ///
     /// the angle for the gradient
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gsk_conic_gradient_node_get_angle&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_angle&quot;</span>)]
@@ -314,7 +314,7 @@
     /// # Returns
     ///
     /// the center point for the gradient
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_conic_gradient_node_get_center&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_conic_gradient_node_get_center&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_center&quot;</span>)]
     </span><span class="kw">pub fn </span>center(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; graphene::Point {
         <span class="kw">unsafe </span>{
@@ -329,7 +329,7 @@
     /// # Returns
     ///
     /// the color stops in the gradient
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_conic_gradient_node_get_color_stops&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_conic_gradient_node_get_color_stops&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_color_stops&quot;</span>)]
     </span><span class="kw">pub fn </span>color_stops(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;ColorStop&gt; {
         <span class="kw">unsafe </span>{
@@ -350,7 +350,7 @@
     /// # Returns
     ///
     /// the number of color stops
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_conic_gradient_node_get_n_color_stops&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_conic_gradient_node_get_n_color_stops&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_n_color_stops&quot;</span>)]
     </span><span class="kw">pub fn </span>n_color_stops(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; usize {
         <span class="kw">unsafe </span>{ ffi::gsk_conic_gradient_node_get_n_color_stops(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -361,7 +361,7 @@
     /// # Returns
     ///
     /// the rotation for the gradient
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_conic_gradient_node_get_rotation&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_conic_gradient_node_get_rotation&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_rotation&quot;</span>)]
     </span><span class="kw">pub fn </span>rotation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::gsk_conic_gradient_node_get_rotation(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -374,4 +374,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

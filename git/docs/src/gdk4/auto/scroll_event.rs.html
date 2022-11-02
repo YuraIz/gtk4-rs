@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -191,7 +191,7 @@
 
 </span><span class="kw">use </span><span class="kw">crate</span>::Event;
 <span class="kw">use </span><span class="kw">crate</span>::ScrollDirection;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 </span><span class="kw">use </span><span class="kw">crate</span>::ScrollUnit;
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
@@ -201,7 +201,7 @@
 
 <span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// An event related to a scrolling motion.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkScrollEvent&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkScrollEvent&quot;</span>)]
     </span><span class="kw">pub struct </span>ScrollEvent(Shared&lt;ffi::GdkScrollEvent&gt;);
 
     <span class="kw">match fn </span>{
@@ -233,7 +233,7 @@
     ///
     /// ## `delta_y`
     /// return location for y scroll delta
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_scroll_event_get_deltas&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_scroll_event_get_deltas&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_deltas&quot;</span>)]
     </span><span class="kw">pub fn </span>deltas(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f64, f64) {
         <span class="kw">unsafe </span>{
@@ -253,7 +253,7 @@
     /// # Returns
     ///
     /// the scroll direction of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_scroll_event_get_direction&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_scroll_event_get_direction&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_direction&quot;</span>)]
     </span><span class="kw">pub fn </span>direction(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ScrollDirection {
         <span class="kw">unsafe </span>{ from_glib(ffi::gdk_scroll_event_get_direction(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -267,7 +267,7 @@
     /// # Returns
     ///
     /// the scroll unit.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gdk_scroll_event_get_unit&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_unit&quot;</span>)]
@@ -288,7 +288,7 @@
     /// # Returns
     ///
     /// [`true`] if the event is a scroll stop event
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_scroll_event_is_stop&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_scroll_event_is_stop&quot;</span>)]
     </span><span class="kw">pub fn </span>is_stop(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gdk_scroll_event_is_stop(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
@@ -300,4 +300,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

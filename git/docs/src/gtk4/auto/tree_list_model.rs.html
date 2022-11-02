@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -355,7 +355,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`], [`trait@gio::prelude::ListModelExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkTreeListModel&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkTreeListModel&quot;</span>)]
     </span><span class="kw">pub struct </span>TreeListModel(Object&lt;ffi::GtkTreeListModel, ffi::GtkTreeListModelClass&gt;) @implements gio::ListModel;
 
     <span class="kw">match fn </span>{
@@ -379,7 +379,7 @@
     /// # Returns
     ///
     /// a newly created [`TreeListModel`][crate::TreeListModel].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;P: Fn(<span class="kw-2">&amp;</span>glib::Object) -&gt; <span class="prelude-ty">Option</span>&lt;gio::ListModel&gt; + <span class="lifetime">&#39;static</span>&gt;(
         root: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::ListModel&gt;,
         passthrough: bool,
@@ -430,7 +430,7 @@
     /// # Returns
     ///
     /// [`true`] if the model is set to autoexpand
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_get_autoexpand&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_get_autoexpand&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_autoexpand&quot;</span>)]
     </span><span class="kw">pub fn </span>is_autoexpand(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -453,7 +453,7 @@
     /// # Returns
     ///
     /// the child in @position
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_get_child_row&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_get_child_row&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_child_row&quot;</span>)]
     </span><span class="kw">pub fn </span>child_row(<span class="kw-2">&amp;</span><span class="self">self</span>, position: u32) -&gt; <span class="prelude-ty">Option</span>&lt;TreeListRow&gt; {
         <span class="kw">unsafe </span>{
@@ -469,7 +469,7 @@
     /// # Returns
     ///
     /// the root model
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_get_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_get_model&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_model&quot;</span>)]
     </span><span class="kw">pub fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::ListModel {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_tree_list_model_get_model(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -489,7 +489,7 @@
     /// # Returns
     ///
     /// [`true`] if the model is passing through original row items
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_get_passthrough&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_get_passthrough&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_passthrough&quot;</span>)]
     </span><span class="kw">pub fn </span>is_passthrough(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -522,7 +522,7 @@
     /// # Returns
     ///
     /// The row item
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_get_row&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_get_row&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_row&quot;</span>)]
     </span><span class="kw">pub fn </span>row(<span class="kw-2">&amp;</span><span class="self">self</span>, position: u32) -&gt; <span class="prelude-ty">Option</span>&lt;TreeListRow&gt; {
         <span class="kw">unsafe </span>{
@@ -540,14 +540,14 @@
     /// to the underlying models or via [`TreeListRow::set_expanded()`][crate::TreeListRow::set_expanded()].
     /// ## `autoexpand`
     /// [`true`] to make the model autoexpand its rows
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_set_autoexpand&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_list_model_set_autoexpand&quot;</span>)]
     </span><span class="kw">pub fn </span>set_autoexpand(<span class="kw-2">&amp;</span><span class="self">self</span>, autoexpand: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_tree_list_model_set_autoexpand(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, autoexpand.into_glib());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;autoexpand&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;autoexpand&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_autoexpand_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_autoexpand_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>TreeListModel) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkTreeListModel,
@@ -570,7 +570,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_model_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_model_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>TreeListModel) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkTreeListModel,
@@ -600,4 +600,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

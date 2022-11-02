@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -875,7 +875,7 @@
     /// # Implements
     ///
     /// [`ButtonExt`][trait@crate::prelude::ButtonExt], [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`ActionableExt`][trait@crate::prelude::ActionableExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual], [`ActionableExtManual`][trait@crate::prelude::ActionableExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkLinkButton&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkLinkButton&quot;</span>)]
     </span><span class="kw">pub struct </span>LinkButton(Object&lt;ffi::GtkLinkButton&gt;) @extends Button, Widget, @implements Accessible, Buildable, ConstraintTarget, Actionable;
 
     <span class="kw">match fn </span>{
@@ -891,7 +891,7 @@
     /// # Returns
     ///
     /// a new link button widget.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_link_button_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_link_button_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(uri: <span class="kw-2">&amp;</span>str) -&gt; LinkButton {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -908,7 +908,7 @@
     /// # Returns
     ///
     /// a new link button widget.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_link_button_new_with_label&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_link_button_new_with_label&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_with_label&quot;</span>)]
     </span><span class="kw">pub fn </span>with_label(uri: <span class="kw-2">&amp;</span>str, label: <span class="kw-2">&amp;</span>str) -&gt; LinkButton {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -935,7 +935,7 @@
     ///
     /// a valid URI. The returned string is owned by the link button
     ///   and should not be modified or freed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_link_button_get_uri&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_link_button_get_uri&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_uri&quot;</span>)]
     </span><span class="kw">pub fn </span>uri(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_link_button_get_uri(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -951,7 +951,7 @@
     /// # Returns
     ///
     /// [`true`] if the link has been visited, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_link_button_get_visited&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_link_button_get_visited&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_visited&quot;</span>)]
     </span><span class="kw">pub fn </span>is_visited(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_link_button_get_visited(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -962,7 +962,7 @@
     /// As a side-effect this unsets the “visited” state of the button.
     /// ## `uri`
     /// a valid URI
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_link_button_set_uri&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_link_button_set_uri&quot;</span>)]
     </span><span class="kw">pub fn </span>set_uri(<span class="kw-2">&amp;</span><span class="self">self</span>, uri: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_link_button_set_uri(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, uri.to_glib_none().<span class="number">0</span>);
@@ -974,7 +974,7 @@
     /// See [`is_visited()`][Self::is_visited()] for more details.
     /// ## `visited`
     /// the new “visited” state
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_link_button_set_visited&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_link_button_set_visited&quot;</span>)]
     </span><span class="kw">pub fn </span>set_visited(<span class="kw-2">&amp;</span><span class="self">self</span>, visited: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_link_button_set_visited(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, visited.into_glib());
@@ -993,7 +993,7 @@
     /// # Returns
     ///
     /// [`true`] if the signal has been handled
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;activate-link&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;activate-link&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_activate_link&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; glib::signal::Inhibit + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -1020,7 +1020,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;uri&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;uri&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_uri_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_uri_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>LinkButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkLinkButton,
@@ -1043,7 +1043,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;visited&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;visited&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_visited_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_visited_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>LinkButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkLinkButton,
@@ -1073,12 +1073,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`LinkButton`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>LinkButtonBuilder {
     uri: <span class="prelude-ty">Option</span>&lt;String&gt;,
     visited: <span class="prelude-ty">Option</span>&lt;bool&gt;,
@@ -1130,7 +1130,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`LinkButton`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; LinkButton {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>uri) = <span class="self">self</span>.uri {
@@ -1566,4 +1566,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

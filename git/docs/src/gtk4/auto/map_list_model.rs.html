@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -327,7 +327,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`], [`trait@gio::prelude::ListModelExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkMapListModel&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkMapListModel&quot;</span>)]
     </span><span class="kw">pub struct </span>MapListModel(Object&lt;ffi::GtkMapListModel, ffi::GtkMapListModelClass&gt;) @implements gio::ListModel;
 
     <span class="kw">match fn </span>{
@@ -345,7 +345,7 @@
     /// # Returns
     ///
     /// a new [`MapListModel`][crate::MapListModel]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_map_list_model_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_map_list_model_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;P: Fn(<span class="kw-2">&amp;</span>glib::Object) -&gt; glib::Object + <span class="lifetime">&#39;static</span>&gt;(
         model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::ListModel&gt;&gt;,
         map_func: P,
@@ -384,7 +384,7 @@
     /// # Returns
     ///
     /// The model that gets mapped
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_map_list_model_get_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_map_list_model_get_model&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_model&quot;</span>)]
     </span><span class="kw">pub fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::ListModel&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_map_list_model_get_model(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -395,7 +395,7 @@
     /// # Returns
     ///
     /// [`true`] if a map function is set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_map_list_model_has_map&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_map_list_model_has_map&quot;</span>)]
     </span><span class="kw">pub fn </span>has_map(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_map_list_model_has_map(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
@@ -413,7 +413,7 @@
     /// function returns items of the appropriate type.
     /// ## `map_func`
     /// map function
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_map_list_model_set_map_func&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_map_list_model_set_map_func&quot;</span>)]
     </span><span class="kw">pub fn </span>set_map_func&lt;P: Fn(<span class="kw-2">&amp;</span>glib::Object) -&gt; glib::Object + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, map_func: P) {
         <span class="kw">let </span>map_func_data: Box_&lt;P&gt; = Box_::new(map_func);
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>map_func_func&lt;P: Fn(<span class="kw-2">&amp;</span>glib::Object) -&gt; glib::Object + <span class="lifetime">&#39;static</span>&gt;(
@@ -450,7 +450,7 @@
     /// they are doing and have set up an appropriate map function.
     /// ## `model`
     /// The model to be mapped
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_map_list_model_set_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_map_list_model_set_model&quot;</span>)]
     </span><span class="kw">pub fn </span>set_model(<span class="kw-2">&amp;</span><span class="self">self</span>, model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::ListModel&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_map_list_model_set_model(
@@ -460,7 +460,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;has-map&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;has-map&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_has_map_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_has_map_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>MapListModel) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkMapListModel,
@@ -490,4 +490,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

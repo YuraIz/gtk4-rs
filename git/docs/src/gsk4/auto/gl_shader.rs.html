@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -688,7 +688,7 @@
     ///   fragColor = position * source1 + (1.0 - position) * source2;
     /// }
     /// ```
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GskGLShader&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GskGLShader&quot;</span>)]
     </span><span class="kw">pub struct </span>GLShader(Object&lt;ffi::GskGLShader, ffi::GskGLShaderClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -704,7 +704,7 @@
     /// # Returns
     ///
     /// A new [`GLShader`][crate::GLShader]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_new_from_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_new_from_bytes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_bytes&quot;</span>)]
     </span><span class="kw">pub fn </span>from_bytes(sourcecode: <span class="kw-2">&amp;</span>glib::Bytes) -&gt; GLShader {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -723,7 +723,7 @@
     /// # Returns
     ///
     /// A new [`GLShader`][crate::GLShader]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_new_from_resource&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_new_from_resource&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_resource&quot;</span>)]
     </span><span class="kw">pub fn </span>from_resource(resource_path: <span class="kw-2">&amp;</span>str) -&gt; GLShader {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -760,7 +760,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] if an error occurred
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_compile&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_compile&quot;</span>)]
     </span><span class="kw">pub fn </span>compile(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Renderer&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -786,7 +786,7 @@
     /// # Returns
     ///
     /// The index of the uniform, or -1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_find_uniform_by_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_find_uniform_by_name&quot;</span>)]
     </span><span class="kw">pub fn </span>find_uniform_by_name(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str) -&gt; i32 {
         <span class="kw">unsafe </span>{
             ffi::gsk_gl_shader_find_uniform_by_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, name.to_glib_none().<span class="number">0</span>)
@@ -804,7 +804,7 @@
     /// # Returns
     ///
     /// The value
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_arg_bool&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_arg_bool&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_arg_bool&quot;</span>)]
     </span><span class="kw">pub fn </span>arg_bool(<span class="kw-2">&amp;</span><span class="self">self</span>, args: <span class="kw-2">&amp;</span>glib::Bytes, idx: i32) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -827,7 +827,7 @@
     /// # Returns
     ///
     /// The value
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_arg_float&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_arg_float&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_arg_float&quot;</span>)]
     </span><span class="kw">pub fn </span>arg_float(<span class="kw-2">&amp;</span><span class="self">self</span>, args: <span class="kw-2">&amp;</span>glib::Bytes, idx: i32) -&gt; f32 {
         <span class="kw">unsafe </span>{
@@ -846,7 +846,7 @@
     /// # Returns
     ///
     /// The value
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_arg_int&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_arg_int&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_arg_int&quot;</span>)]
     </span><span class="kw">pub fn </span>arg_int(<span class="kw-2">&amp;</span><span class="self">self</span>, args: <span class="kw-2">&amp;</span>glib::Bytes, idx: i32) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::gsk_gl_shader_get_arg_int(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, args.to_glib_none().<span class="number">0</span>, idx) }
@@ -863,7 +863,7 @@
     /// # Returns
     ///
     /// The value
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_arg_uint&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_arg_uint&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_arg_uint&quot;</span>)]
     </span><span class="kw">pub fn </span>arg_uint(<span class="kw-2">&amp;</span><span class="self">self</span>, args: <span class="kw-2">&amp;</span>glib::Bytes, idx: i32) -&gt; u32 {
         <span class="kw">unsafe </span>{
@@ -876,7 +876,7 @@
     /// # Returns
     ///
     /// The size of the data block
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_args_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_args_size&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_args_size&quot;</span>)]
     </span><span class="kw">pub fn </span>args_size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; usize {
         <span class="kw">unsafe </span>{ ffi::gsk_gl_shader_get_args_size(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -891,7 +891,7 @@
     /// # Returns
     ///
     /// The number of texture inputs required by @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_n_textures&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_n_textures&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_n_textures&quot;</span>)]
     </span><span class="kw">pub fn </span>n_textures(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::gsk_gl_shader_get_n_textures(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -902,7 +902,7 @@
     /// # Returns
     ///
     /// The number of declared uniforms
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_n_uniforms&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_n_uniforms&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_n_uniforms&quot;</span>)]
     </span><span class="kw">pub fn </span>n_uniforms(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::gsk_gl_shader_get_n_uniforms(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -914,7 +914,7 @@
     /// # Returns
     ///
     /// The resource path for the shader
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_resource&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_resource&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_resource&quot;</span>)]
     </span><span class="kw">pub fn </span>resource(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gsk_gl_shader_get_resource(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -925,7 +925,7 @@
     /// # Returns
     ///
     /// The source code for the shader
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_source&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_source&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_source&quot;</span>)]
     </span><span class="kw">pub fn </span>source(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Bytes {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gsk_gl_shader_get_source(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -938,7 +938,7 @@
     /// # Returns
     ///
     /// The name of the declared uniform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_uniform_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_uniform_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_uniform_name&quot;</span>)]
     </span><span class="kw">pub fn </span>uniform_name(<span class="kw-2">&amp;</span><span class="self">self</span>, idx: i32) -&gt; glib::GString {
         <span class="kw">unsafe </span>{
@@ -956,7 +956,7 @@
     /// # Returns
     ///
     /// The data offset
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_uniform_offset&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_uniform_offset&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_uniform_offset&quot;</span>)]
     </span><span class="kw">pub fn </span>uniform_offset(<span class="kw-2">&amp;</span><span class="self">self</span>, idx: i32) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::gsk_gl_shader_get_uniform_offset(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, idx) }
@@ -969,7 +969,7 @@
     /// # Returns
     ///
     /// The type of the declared uniform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_uniform_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_gl_shader_get_uniform_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_uniform_type&quot;</span>)]
     </span><span class="kw">pub fn </span>uniform_type(<span class="kw-2">&amp;</span><span class="self">self</span>, idx: i32) -&gt; GLUniformType {
         <span class="kw">unsafe </span>{
@@ -981,12 +981,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`GLShader`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>GLShaderBuilder {
     resource: <span class="prelude-ty">Option</span>&lt;String&gt;,
     source: <span class="prelude-ty">Option</span>&lt;glib::Bytes&gt;,
@@ -1001,7 +1001,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`GLShader`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; GLShader {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>resource) = <span class="self">self</span>.resource {
@@ -1034,4 +1034,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

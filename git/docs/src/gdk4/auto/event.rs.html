@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -444,7 +444,7 @@
     /// so using [`Event`][crate::Event] and its related API is rarely needed.
     ///
     /// This is an Abstract Base Class, you cannot instantiate it.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkEvent&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkEvent&quot;</span>)]
     </span><span class="kw">pub struct </span>Event(Shared&lt;ffi::GdkEvent&gt;);
 
     <span class="kw">match fn </span>{
@@ -473,7 +473,7 @@
     ///
     /// ## `axes`
     /// the array of values for all axes
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_axes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_axes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_axes&quot;</span>)]
     </span><span class="kw">pub fn </span>axes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Vec&lt;f64&gt;&gt; {
         <span class="kw">unsafe </span>{
@@ -509,7 +509,7 @@
     ///
     /// ## `value`
     /// location to store the value found
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_axis&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_axis&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_axis&quot;</span>)]
     </span><span class="kw">pub fn </span>axis(<span class="kw-2">&amp;</span><span class="self">self</span>, axis_use: AxisUse) -&gt; <span class="prelude-ty">Option</span>&lt;f64&gt; {
         <span class="kw">unsafe </span>{
@@ -532,7 +532,7 @@
     /// # Returns
     ///
     /// a [`Device`][crate::Device]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_device&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_device&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_device&quot;</span>)]
     </span><span class="kw">pub fn </span>device(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Device&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_event_get_device(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>)) }
@@ -552,7 +552,7 @@
     /// # Returns
     ///
     /// The current device tool
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_device_tool&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_device_tool&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_device_tool&quot;</span>)]
     </span><span class="kw">pub fn </span>device_tool(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;DeviceTool&gt; {
         <span class="kw">unsafe </span>{
@@ -567,7 +567,7 @@
     /// # Returns
     ///
     /// a [`Display`][crate::Display]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_display&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_display&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display&quot;</span>)]
     </span><span class="kw">pub fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Display&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_event_get_display(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>)) }
@@ -581,7 +581,7 @@
     /// # Returns
     ///
     /// the event sequence that the event belongs to
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_event_sequence&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_event_sequence&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_event_sequence&quot;</span>)]
     </span><span class="kw">pub fn </span>event_sequence(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; EventSequence {
         <span class="kw">unsafe </span>{
@@ -596,7 +596,7 @@
     /// # Returns
     ///
     /// a [`Event`][crate::Event]Type
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_event_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_event_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_event_type&quot;</span>)]
     </span><span class="kw">pub fn </span>event_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; EventType {
         <span class="kw">unsafe </span>{
@@ -620,7 +620,7 @@
     ///
     /// an
     ///   array of time and coordinates
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_history&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_history&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_history&quot;</span>)]
     </span><span class="kw">pub fn </span>history(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;TimeCoord&gt; {
         <span class="kw">unsafe </span>{
@@ -641,7 +641,7 @@
     /// # Returns
     ///
     /// the modifier state of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_modifier_state&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_modifier_state&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_modifier_state&quot;</span>)]
     </span><span class="kw">pub fn </span>modifier_state(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ModifierType {
         <span class="kw">unsafe </span>{
@@ -658,7 +658,7 @@
     /// # Returns
     ///
     /// [`true`] if this event is emulated
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_pointer_emulated&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_pointer_emulated&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pointer_emulated&quot;</span>)]
     </span><span class="kw">pub fn </span>is_pointer_emulated(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -678,7 +678,7 @@
     ///
     /// ## `y`
     /// location to put event surface y coordinate
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_position&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_position&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_position&quot;</span>)]
     </span><span class="kw">pub fn </span>position(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;(f64, f64)&gt; {
         <span class="kw">unsafe </span>{
@@ -702,7 +702,7 @@
     /// # Returns
     ///
     /// a [`Seat`][crate::Seat].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_seat&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_seat&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_seat&quot;</span>)]
     </span><span class="kw">pub fn </span>seat(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Seat&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_event_get_seat(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>)) }
@@ -713,7 +713,7 @@
     /// # Returns
     ///
     /// The [`Surface`][crate::Surface] associated with the event
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_surface&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_surface&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_surface&quot;</span>)]
     </span><span class="kw">pub fn </span>surface(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Surface&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_event_get_surface(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>)) }
@@ -727,7 +727,7 @@
     /// # Returns
     ///
     /// timestamp field from @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_get_time&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_get_time&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_time&quot;</span>)]
     </span><span class="kw">pub fn </span>time(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gdk_event_get_time(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>) }
@@ -744,7 +744,7 @@
     /// # Returns
     ///
     /// [`true`] if the event should trigger a context menu.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_event_triggers_context_menu&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_event_triggers_context_menu&quot;</span>)]
     </span><span class="kw">pub fn </span>triggers_context_menu(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gdk_event_triggers_context_menu(
@@ -760,4 +760,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

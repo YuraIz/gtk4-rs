@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -255,7 +255,7 @@
 
 <span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// An object to build the uniforms data for a [`GLShader`][crate::GLShader].
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>ShaderArgsBuilder(Shared&lt;ffi::GskShaderArgsBuilder&gt;);
 
     <span class="kw">match fn </span>{
@@ -277,7 +277,7 @@
     ///
     /// The newly allocated builder, free with
     ///     `Gsk::ShaderArgsBuilder::unref()`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(shader: <span class="kw-2">&amp;</span>GLShader, initial_values: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::Bytes&gt;) -&gt; ShaderArgsBuilder {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">unsafe </span>{
@@ -295,7 +295,7 @@
     /// index of the uniform
     /// ## `value`
     /// value to set the uniform to
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_bool&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_bool&quot;</span>)]
     </span><span class="kw">pub fn </span>set_bool(<span class="kw-2">&amp;</span><span class="self">self</span>, idx: i32, value: bool) {
         <span class="kw">unsafe </span>{
             ffi::gsk_shader_args_builder_set_bool(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, idx, value.into_glib());
@@ -309,7 +309,7 @@
     /// index of the uniform
     /// ## `value`
     /// value to set the uniform to
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_float&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_float&quot;</span>)]
     </span><span class="kw">pub fn </span>set_float(<span class="kw-2">&amp;</span><span class="self">self</span>, idx: i32, value: f32) {
         <span class="kw">unsafe </span>{
             ffi::gsk_shader_args_builder_set_float(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, idx, value);
@@ -323,7 +323,7 @@
     /// index of the uniform
     /// ## `value`
     /// value to set the uniform to
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_int&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_int&quot;</span>)]
     </span><span class="kw">pub fn </span>set_int(<span class="kw-2">&amp;</span><span class="self">self</span>, idx: i32, value: i32) {
         <span class="kw">unsafe </span>{
             ffi::gsk_shader_args_builder_set_int(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, idx, value);
@@ -337,7 +337,7 @@
     /// index of the uniform
     /// ## `value`
     /// value to set the uniform to
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_uint&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_uint&quot;</span>)]
     </span><span class="kw">pub fn </span>set_uint(<span class="kw-2">&amp;</span><span class="self">self</span>, idx: i32, value: u32) {
         <span class="kw">unsafe </span>{
             ffi::gsk_shader_args_builder_set_uint(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, idx, value);
@@ -351,7 +351,7 @@
     /// index of the uniform
     /// ## `value`
     /// value to set the uniform too
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_vec2&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_vec2&quot;</span>)]
     </span><span class="kw">pub fn </span>set_vec2(<span class="kw-2">&amp;</span><span class="self">self</span>, idx: i32, value: <span class="kw-2">&amp;</span>graphene::Vec2) {
         <span class="kw">unsafe </span>{
             ffi::gsk_shader_args_builder_set_vec2(
@@ -369,7 +369,7 @@
     /// index of the uniform
     /// ## `value`
     /// value to set the uniform too
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_vec3&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_vec3&quot;</span>)]
     </span><span class="kw">pub fn </span>set_vec3(<span class="kw-2">&amp;</span><span class="self">self</span>, idx: i32, value: <span class="kw-2">&amp;</span>graphene::Vec3) {
         <span class="kw">unsafe </span>{
             ffi::gsk_shader_args_builder_set_vec3(
@@ -387,7 +387,7 @@
     /// index of the uniform
     /// ## `value`
     /// value to set the uniform too
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_vec4&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_set_vec4&quot;</span>)]
     </span><span class="kw">pub fn </span>set_vec4(<span class="kw-2">&amp;</span><span class="self">self</span>, idx: i32, value: <span class="kw-2">&amp;</span>graphene::Vec4) {
         <span class="kw">unsafe </span>{
             ffi::gsk_shader_args_builder_set_vec4(
@@ -414,10 +414,10 @@
     ///
     /// the newly allocated buffer with
     ///   all the args added to @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_to_args&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_shader_args_builder_to_args&quot;</span>)]
     </span><span class="kw">pub fn </span>to_args(<span class="self">self</span>) -&gt; glib::Bytes {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gsk_shader_args_builder_to_args(<span class="self">self</span>.into_glib_ptr())) }
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

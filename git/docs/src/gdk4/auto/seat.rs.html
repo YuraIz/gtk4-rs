@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -387,7 +387,7 @@
     /// # Implements
     ///
     /// [`SeatExt`][trait@crate::prelude::SeatExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkSeat&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkSeat&quot;</span>)]
     </span><span class="kw">pub struct </span>Seat(Object&lt;ffi::GdkSeat&gt;);
 
     <span class="kw">match fn </span>{
@@ -410,7 +410,7 @@
     /// # Returns
     ///
     /// the seat capabilities
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_seat_get_capabilities&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_seat_get_capabilities&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_capabilities&quot;</span>)]
     </span><span class="kw">fn </span>capabilities(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SeatCapabilities;
 
@@ -423,7 +423,7 @@
     /// A list
     ///   of `GdkDevices`. The list must be freed with g_list_free(),
     ///   the elements are owned by GTK and must not be freed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_seat_get_devices&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_seat_get_devices&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_devices&quot;</span>)]
     </span><span class="kw">fn </span>devices(<span class="kw-2">&amp;</span><span class="self">self</span>, capabilities: SeatCapabilities) -&gt; Vec&lt;Device&gt;;
 
@@ -433,7 +433,7 @@
     ///
     /// a [`Display`][crate::Display]. This object
     ///   is owned by GTK and must not be freed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_seat_get_display&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_seat_get_display&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display&quot;</span>)]
     </span><span class="kw">fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Display;
 
@@ -443,7 +443,7 @@
     ///
     /// a [`Device`][crate::Device] with keyboard
     ///   capabilities. This object is owned by GTK and must not be freed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_seat_get_keyboard&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_seat_get_keyboard&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_keyboard&quot;</span>)]
     </span><span class="kw">fn </span>keyboard(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Device&gt;;
 
@@ -453,7 +453,7 @@
     ///
     /// a [`Device`][crate::Device] with pointer
     ///   capabilities. This object is owned by GTK and must not be freed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_seat_get_pointer&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_seat_get_pointer&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pointer&quot;</span>)]
     </span><span class="kw">fn </span>pointer(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Device&gt;;
 
@@ -463,20 +463,20 @@
     ///
     ///
     ///   A list of tools. Free with g_list_free().
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_seat_get_tools&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_seat_get_tools&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_tools&quot;</span>)]
     </span><span class="kw">fn </span>tools(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;DeviceTool&gt;;
 
     <span class="doccomment">/// Emitted when a new input device is related to this seat.
     /// ## `device`
     /// the newly added [`Device`][crate::Device].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;device-added&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;device-added&quot;</span>)]
     </span><span class="kw">fn </span>connect_device_added&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Device) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when an input device is removed (e.g. unplugged).
     /// ## `device`
     /// the just removed [`Device`][crate::Device].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;device-removed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;device-removed&quot;</span>)]
     </span><span class="kw">fn </span>connect_device_removed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Device) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted whenever a new tool is made known to the seat.
@@ -488,13 +488,13 @@
     /// A same tool may be used by several devices.
     /// ## `tool`
     /// the new [`DeviceTool`][crate::DeviceTool] known to the seat
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tool-added&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tool-added&quot;</span>)]
     </span><span class="kw">fn </span>connect_tool_added&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>DeviceTool) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted whenever a tool is no longer known to this @seat.
     /// ## `tool`
     /// the just removed [`DeviceTool`][crate::DeviceTool]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tool-removed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tool-removed&quot;</span>)]
     </span><span class="kw">fn </span>connect_tool_removed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>DeviceTool) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -652,4 +652,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

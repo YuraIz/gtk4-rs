@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -281,7 +281,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`], [`trait@gio::prelude::ListModelExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkBookmarkList&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkBookmarkList&quot;</span>)]
     </span><span class="kw">pub struct </span>BookmarkList(Object&lt;ffi::GtkBookmarkList, ffi::GtkBookmarkListClass&gt;) @implements gio::ListModel;
 
     <span class="kw">match fn </span>{
@@ -299,7 +299,7 @@
     /// # Returns
     ///
     /// a new [`BookmarkList`][crate::BookmarkList]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bookmark_list_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bookmark_list_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         filename: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;std::path::Path&gt;&gt;,
         attributes: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -318,7 +318,7 @@
     /// # Returns
     ///
     /// The queried attributes
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bookmark_list_get_attributes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bookmark_list_get_attributes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attributes&quot;</span>)]
     </span><span class="kw">pub fn </span>attributes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_bookmark_list_get_attributes(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -330,7 +330,7 @@
     /// # Returns
     ///
     /// the filename of the .xbel file
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bookmark_list_get_filename&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bookmark_list_get_filename&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_filename&quot;</span>)]
     </span><span class="kw">pub fn </span>filename(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; std::path::PathBuf {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_bookmark_list_get_filename(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -345,7 +345,7 @@
     /// # Returns
     ///
     /// [`true`] if @self is loading
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bookmark_list_is_loading&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bookmark_list_is_loading&quot;</span>)]
     </span><span class="kw">pub fn </span>is_loading(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_bookmark_list_is_loading(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
@@ -356,7 +356,7 @@
     /// of `GFileInfo`s will still be created.
     /// ## `attributes`
     /// the attributes to enumerate
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bookmark_list_set_attributes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bookmark_list_set_attributes&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attributes(<span class="kw-2">&amp;</span><span class="self">self</span>, attributes: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bookmark_list_set_attributes(
@@ -366,7 +366,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;attributes&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;attributes&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_attributes_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_attributes_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>BookmarkList) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkBookmarkList,
@@ -389,7 +389,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;io-priority&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;io-priority&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_io_priority_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_io_priority_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>BookmarkList) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkBookmarkList,
@@ -412,7 +412,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;loading&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;loading&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_loading_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_loading_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>BookmarkList) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkBookmarkList,
@@ -442,4 +442,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

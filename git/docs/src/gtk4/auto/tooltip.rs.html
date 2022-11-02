@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -273,7 +273,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkTooltip&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkTooltip&quot;</span>)]
     </span><span class="kw">pub struct </span>Tooltip(Object&lt;ffi::GtkTooltip&gt;);
 
     <span class="kw">match fn </span>{
@@ -290,7 +290,7 @@
     /// and gtk_tooltip_set_icon().
     /// ## `custom_widget`
     /// a [`Widget`][crate::Widget], or [`None`] to unset the old custom widget.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_custom&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_custom&quot;</span>)]
     </span><span class="kw">pub fn </span>set_custom(<span class="kw-2">&amp;</span><span class="self">self</span>, custom_widget: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_tooltip_set_custom(
@@ -304,7 +304,7 @@
     /// @paintable.  If @paintable is [`None`], the image will be hidden.
     /// ## `paintable`
     /// a [`gdk::Paintable`][crate::gdk::Paintable]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_icon&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_icon&quot;</span>)]
     </span><span class="kw">pub fn </span>set_icon(<span class="kw-2">&amp;</span><span class="self">self</span>, paintable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gdk::Paintable&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_tooltip_set_icon(
@@ -319,7 +319,7 @@
     /// by @size. If @gicon is [`None`], the image will be hidden.
     /// ## `gicon`
     /// a `GIcon` representing the icon
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_icon_from_gicon&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_icon_from_gicon&quot;</span>)]
     </span><span class="kw">pub fn </span>set_icon_from_gicon(<span class="kw-2">&amp;</span><span class="self">self</span>, gicon: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::Icon&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_tooltip_set_icon_from_gicon(
@@ -334,7 +334,7 @@
     /// by @size.  If @icon_name is [`None`], the image will be hidden.
     /// ## `icon_name`
     /// an icon name
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_icon_from_icon_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_icon_from_icon_name&quot;</span>)]
     </span><span class="kw">pub fn </span>set_icon_from_icon_name(<span class="kw-2">&amp;</span><span class="self">self</span>, icon_name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_tooltip_set_icon_from_icon_name(
@@ -350,7 +350,7 @@
     /// If @markup is [`None`], the label will be hidden.
     /// ## `markup`
     /// a string with Pango markup or `NLL`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_markup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_markup&quot;</span>)]
     </span><span class="kw">pub fn </span>set_markup(<span class="kw-2">&amp;</span><span class="self">self</span>, markup: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_tooltip_set_markup(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, markup.to_glib_none().<span class="number">0</span>);
@@ -363,7 +363,7 @@
     /// See also [`set_markup()`][Self::set_markup()].
     /// ## `text`
     /// a text string
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_text&quot;</span>)]
     </span><span class="kw">pub fn </span>set_text(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_tooltip_set_text(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, text.to_glib_none().<span class="number">0</span>);
@@ -380,7 +380,7 @@
     /// gtk_tree_view_set_tooltip_cell().
     /// ## `rect`
     /// a [`gdk::Rectangle`][crate::gdk::Rectangle]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_tip_area&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tooltip_set_tip_area&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tip_area(<span class="kw-2">&amp;</span><span class="self">self</span>, rect: <span class="kw-2">&amp;</span>gdk::Rectangle) {
         <span class="kw">unsafe </span>{
             ffi::gtk_tooltip_set_tip_area(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, rect.to_glib_none().<span class="number">0</span>);
@@ -394,4 +394,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

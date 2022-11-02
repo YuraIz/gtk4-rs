@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gdk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gdk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -201,7 +201,7 @@
 <span id="128">128</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attribute">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
+</span><span class="attr">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
 #![allow(clippy::type_complexity)]
 #![allow(clippy::derive_hash_xor_eq)]
 #![allow(clippy::non_send_fields_in_send_ty)]
@@ -217,46 +217,46 @@
 
 <span class="doccomment">/// This is the priority that the idle handler processing surface updates
 /// is given in the main loop.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PRIORITY_REDRAW&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PRIORITY_REDRAW&quot;</span>)]
 </span><span class="kw">pub const </span>PRIORITY_REDRAW: u32 = ffi::GDK_PRIORITY_REDRAW <span class="kw">as </span>u32;
 
 <span class="doccomment">/// A mask covering all entries in [`ModifierType`][crate::ModifierType].
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_MODIFIER_MASK&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_MODIFIER_MASK&quot;</span>)]
 </span><span class="kw">pub const </span>MODIFIER_MASK: ModifierType = ModifierType::all();
 
 <span class="doccomment">/// Defines all possible DND actions.
 ///
 /// This can be used in [`Drop::status()`][crate::Drop::status()] messages when any drop
 /// can be accepted or a more specific drop method is not yet known.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_ACTION_ALL&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_ACTION_ALL&quot;</span>)]
 </span><span class="kw">pub const </span>ACTION_ALL: u32 = ffi::GDK_ACTION_ALL <span class="kw">as </span>u32;
 
 <span class="doccomment">/// Represents the current time, and can be used anywhere a time is expected.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_CURRENT_TIME&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_CURRENT_TIME&quot;</span>)]
 </span><span class="kw">pub const </span>CURRENT_TIME: u32 = ffi::GDK_CURRENT_TIME <span class="kw">as </span>u32;
 
 <span class="doccomment">/// The primary button. This is typically the left mouse button, or the
 /// right button in a left-handed setup.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_BUTTON_PRIMARY&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_BUTTON_PRIMARY&quot;</span>)]
 </span><span class="kw">pub const </span>BUTTON_PRIMARY: u32 = ffi::GDK_BUTTON_PRIMARY <span class="kw">as </span>u32;
 
 <span class="doccomment">/// The middle button.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_BUTTON_MIDDLE&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_BUTTON_MIDDLE&quot;</span>)]
 </span><span class="kw">pub const </span>BUTTON_MIDDLE: u32 = ffi::GDK_BUTTON_MIDDLE <span class="kw">as </span>u32;
 
 <span class="doccomment">/// The secondary button. This is typically the right mouse button, or the
 /// left button in a left-handed setup.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_BUTTON_SECONDARY&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_BUTTON_SECONDARY&quot;</span>)]
 </span><span class="kw">pub const </span>BUTTON_SECONDARY: u32 = ffi::GDK_BUTTON_SECONDARY <span class="kw">as </span>u32;
 
 <span class="doccomment">/// Use this macro as the return value for stopping the propagation of
 /// an event handler.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_EVENT_STOP&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_EVENT_STOP&quot;</span>)]
 </span><span class="kw">pub const </span>EVENT_STOP: u32 = ffi::GDK_EVENT_STOP <span class="kw">as </span>u32;
 
 <span class="doccomment">/// Use this macro as the return value for continuing the propagation of
 /// an event handler.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_EVENT_PROPAGATE&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_EVENT_PROPAGATE&quot;</span>)]
 </span><span class="kw">pub const </span>EVENT_PROPAGATE: u32 = ffi::GDK_EVENT_PROPAGATE <span class="kw">as </span>u32;
 
 <span class="comment">// GDK 4 has no runtime to initialize
@@ -269,12 +269,12 @@
     () =&gt; {};
 }
 
-<span class="attribute">#[allow(clippy::wrong_self_convention)]
+<span class="attr">#[allow(clippy::wrong_self_convention)]
 #[allow(clippy::upper_case_acronyms)]
 #[allow(unused_imports)]
 </span><span class="kw">mod </span>auto;
 
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">mod </span>event;
 
 <span class="kw">pub mod </span>builders;
@@ -328,4 +328,4 @@
 <span class="kw">pub use </span>time_coord::TimeCoord;
 <span class="kw">pub use </span>toplevel_size::ToplevelSize;
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

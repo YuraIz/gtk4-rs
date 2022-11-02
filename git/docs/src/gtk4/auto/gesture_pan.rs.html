@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -380,7 +380,7 @@
     /// # Implements
     ///
     /// [`GestureDragExt`][trait@crate::prelude::GestureDragExt], [`GestureSingleExt`][trait@crate::prelude::GestureSingleExt], [`GestureExt`][trait@crate::prelude::GestureExt], [`EventControllerExt`][trait@crate::prelude::EventControllerExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkGesturePan&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkGesturePan&quot;</span>)]
     </span><span class="kw">pub struct </span>GesturePan(Object&lt;ffi::GtkGesturePan, ffi::GtkGesturePanClass&gt;) @extends GestureDrag, GestureSingle, Gesture, EventController;
 
     <span class="kw">match fn </span>{
@@ -396,7 +396,7 @@
     /// # Returns
     ///
     /// a newly created [`GesturePan`][crate::GesturePan]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_gesture_pan_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_gesture_pan_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(orientation: Orientation) -&gt; GesturePan {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -417,7 +417,7 @@
     /// # Returns
     ///
     /// the expected orientation for pan gestures
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_gesture_pan_get_orientation&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_gesture_pan_get_orientation&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_orientation&quot;</span>)]
     </span><span class="kw">pub fn </span>orientation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Orientation {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_gesture_pan_get_orientation(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -426,7 +426,7 @@
     <span class="doccomment">/// Sets the orientation to be expected on pan gestures.
     /// ## `orientation`
     /// expected orientation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_gesture_pan_set_orientation&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_gesture_pan_set_orientation&quot;</span>)]
     </span><span class="kw">pub fn </span>set_orientation(<span class="kw-2">&amp;</span><span class="self">self</span>, orientation: Orientation) {
         <span class="kw">unsafe </span>{
             ffi::gtk_gesture_pan_set_orientation(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, orientation.into_glib());
@@ -438,7 +438,7 @@
     /// current direction of the pan gesture
     /// ## `offset`
     /// Offset along the gesture orientation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pan&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pan&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_pan&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, PanDirection, f64) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>pan_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>GesturePan, PanDirection, f64) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkGesturePan,
@@ -462,7 +462,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;orientation&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;orientation&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_orientation_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_orientation_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>GesturePan) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkGesturePan,
@@ -492,12 +492,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`GesturePan`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>GesturePanBuilder {
     orientation: <span class="prelude-ty">Option</span>&lt;Orientation&gt;,
     button: <span class="prelude-ty">Option</span>&lt;u32&gt;,
@@ -518,7 +518,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`GesturePan`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; GesturePan {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>orientation) = <span class="self">self</span>.orientation {
@@ -606,4 +606,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

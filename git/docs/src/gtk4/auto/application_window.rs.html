@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1142,7 +1142,7 @@
     /// # Implements
     ///
     /// [`ApplicationWindowExt`][trait@crate::prelude::ApplicationWindowExt], [`GtkWindowExt`][trait@crate::prelude::GtkWindowExt], [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`NativeExt`][trait@crate::prelude::NativeExt], [`RootExt`][trait@crate::prelude::RootExt], [`ShortcutManagerExt`][trait@crate::prelude::ShortcutManagerExt], [`trait@gio::prelude::ActionGroupExt`], [`trait@gio::prelude::ActionMapExt`], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkApplicationWindow&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkApplicationWindow&quot;</span>)]
     </span><span class="kw">pub struct </span>ApplicationWindow(Object&lt;ffi::GtkApplicationWindow, ffi::GtkApplicationWindowClass&gt;) @extends Window, Widget, @implements Accessible, Buildable, ConstraintTarget, Native, Root, ShortcutManager, gio::ActionGroup, gio::ActionMap;
 
     <span class="kw">match fn </span>{
@@ -1160,7 +1160,7 @@
     /// # Returns
     ///
     /// a newly created [`ApplicationWindow`][crate::ApplicationWindow]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_application_window_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_application_window_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(application: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Application&gt;) -&gt; ApplicationWindow {
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">unsafe </span>{
@@ -1186,12 +1186,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`ApplicationWindow`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>ApplicationWindowBuilder {
     show_menubar: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     application: <span class="prelude-ty">Option</span>&lt;Application&gt;,
@@ -1206,7 +1206,7 @@
     focus_visible: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     focus_widget: <span class="prelude-ty">Option</span>&lt;Widget&gt;,
     fullscreened: <span class="prelude-ty">Option</span>&lt;bool&gt;,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span>handle_menubar_accel: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     hide_on_close: <span class="prelude-ty">Option</span>&lt;bool&gt;,
@@ -1217,7 +1217,7 @@
     resizable: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     startup_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     title: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span>titlebar: <span class="prelude-ty">Option</span>&lt;Widget&gt;,
     transient_for: <span class="prelude-ty">Option</span>&lt;Window&gt;,
@@ -1262,7 +1262,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`ApplicationWindow`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; ApplicationWindow {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>show_menubar) = <span class="self">self</span>.show_menubar {
@@ -1304,7 +1304,7 @@
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>fullscreened) = <span class="self">self</span>.fullscreened {
             properties.push((<span class="string">&quot;fullscreened&quot;</span>, fullscreened));
         }
-        <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+        <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         </span><span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>handle_menubar_accel) = <span class="self">self</span>.handle_menubar_accel {
             properties.push((<span class="string">&quot;handle-menubar-accel&quot;</span>, handle_menubar_accel));
         }
@@ -1332,7 +1332,7 @@
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>title) = <span class="self">self</span>.title {
             properties.push((<span class="string">&quot;title&quot;</span>, title));
         }
-        <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+        <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         </span><span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>titlebar) = <span class="self">self</span>.titlebar {
             properties.push((<span class="string">&quot;titlebar&quot;</span>, titlebar));
         }
@@ -1535,7 +1535,7 @@
 
     <span class="doccomment">/// Whether the window frame should handle F10 for activating
     /// menubars.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">pub fn </span>handle_menubar_accel(<span class="kw-2">mut </span><span class="self">self</span>, handle_menubar_accel: bool) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.handle_menubar_accel = <span class="prelude-val">Some</span>(handle_menubar_accel);
@@ -1602,7 +1602,7 @@
     </span>}
 
     <span class="doccomment">/// The titlebar widget.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>titlebar(<span class="kw-2">mut </span><span class="self">self</span>, titlebar: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.titlebar = <span class="prelude-val">Some</span>(titlebar.clone().upcast());
@@ -1881,7 +1881,7 @@
     ///
     /// the help overlay associated
     ///   with @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_application_window_get_help_overlay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_application_window_get_help_overlay&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_help_overlay&quot;</span>)]
     </span><span class="kw">fn </span>help_overlay(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;ShortcutsWindow&gt;;
 
@@ -1893,7 +1893,7 @@
     ///
     /// the unique ID for @self, or `0` if the window
     ///   has not yet been added to a [`Application`][crate::Application]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_application_window_get_id&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_application_window_get_id&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_id&quot;</span>)]
     </span><span class="kw">fn </span>id(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32;
 
@@ -1903,7 +1903,7 @@
     /// # Returns
     ///
     /// [`true`] if @self will display a menubar when needed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_application_window_get_show_menubar&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_application_window_get_show_menubar&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_show_menubar&quot;</span>)]
     </span><span class="kw">fn </span>shows_menubar(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -1915,17 +1915,17 @@
     /// @self takes responsibility for destroying @help_overlay.
     /// ## `help_overlay`
     /// a [`ShortcutsWindow`][crate::ShortcutsWindow]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_application_window_set_help_overlay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_application_window_set_help_overlay&quot;</span>)]
     </span><span class="kw">fn </span>set_help_overlay(<span class="kw-2">&amp;</span><span class="self">self</span>, help_overlay: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>ShortcutsWindow&gt;);
 
     <span class="doccomment">/// Sets whether the window will display a menubar for the app menu
     /// and menubar as needed.
     /// ## `show_menubar`
     /// whether to show a menubar when needed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_application_window_set_show_menubar&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_application_window_set_show_menubar&quot;</span>)]
     </span><span class="kw">fn </span>set_show_menubar(<span class="kw-2">&amp;</span><span class="self">self</span>, show_menubar: bool);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;show-menubar&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;show-menubar&quot;</span>)]
     </span><span class="kw">fn </span>connect_show_menubar_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -2000,4 +2000,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

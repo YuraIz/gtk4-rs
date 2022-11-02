@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1006,7 +1006,7 @@
     /// # Implements
     ///
     /// [`ButtonExt`][trait@crate::prelude::ButtonExt], [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`ActionableExt`][trait@crate::prelude::ActionableExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual], [`ActionableExtManual`][trait@crate::prelude::ActionableExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkLockButton&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkLockButton&quot;</span>)]
     </span><span class="kw">pub struct </span>LockButton(Object&lt;ffi::GtkLockButton&gt;) @extends Button, Widget, @implements Accessible, Buildable, ConstraintTarget, Actionable;
 
     <span class="kw">match fn </span>{
@@ -1022,7 +1022,7 @@
     /// # Returns
     ///
     /// a new [`LockButton`][crate::LockButton]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_lock_button_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_lock_button_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(permission: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::Permission&gt;&gt;) -&gt; LockButton {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -1046,7 +1046,7 @@
     /// # Returns
     ///
     /// the `GPermission` of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_lock_button_get_permission&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_lock_button_get_permission&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_permission&quot;</span>)]
     </span><span class="kw">pub fn </span>permission(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::Permission&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_lock_button_get_permission(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1055,7 +1055,7 @@
     <span class="doccomment">/// Sets the `GPermission` object that controls @self.
     /// ## `permission`
     /// a `GPermission` object
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_lock_button_set_permission&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_lock_button_set_permission&quot;</span>)]
     </span><span class="kw">pub fn </span>set_permission(<span class="kw-2">&amp;</span><span class="self">self</span>, permission: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::Permission&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_lock_button_set_permission(
@@ -1066,66 +1066,66 @@
     }
 
     <span class="doccomment">/// The text to display when prompting the user to lock.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;text-lock&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;text-lock&quot;</span>)]
     </span><span class="kw">pub fn </span>text_lock(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;text-lock&quot;</span>)
     }
 
     <span class="doccomment">/// The text to display when prompting the user to lock.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;text-lock&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;text-lock&quot;</span>)]
     </span><span class="kw">pub fn </span>set_text_lock(<span class="kw-2">&amp;</span><span class="self">self</span>, text_lock: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;text-lock&quot;</span>, <span class="kw-2">&amp;</span>text_lock)
     }
 
     <span class="doccomment">/// The text to display when prompting the user to unlock.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;text-unlock&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;text-unlock&quot;</span>)]
     </span><span class="kw">pub fn </span>text_unlock(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;text-unlock&quot;</span>)
     }
 
     <span class="doccomment">/// The text to display when prompting the user to unlock.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;text-unlock&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;text-unlock&quot;</span>)]
     </span><span class="kw">pub fn </span>set_text_unlock(<span class="kw-2">&amp;</span><span class="self">self</span>, text_unlock: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;text-unlock&quot;</span>, <span class="kw-2">&amp;</span>text_unlock)
     }
 
     <span class="doccomment">/// The tooltip to display when prompting the user to lock.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tooltip-lock&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tooltip-lock&quot;</span>)]
     </span><span class="kw">pub fn </span>tooltip_lock(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;tooltip-lock&quot;</span>)
     }
 
     <span class="doccomment">/// The tooltip to display when prompting the user to lock.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tooltip-lock&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tooltip-lock&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tooltip_lock(<span class="kw-2">&amp;</span><span class="self">self</span>, tooltip_lock: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;tooltip-lock&quot;</span>, <span class="kw-2">&amp;</span>tooltip_lock)
     }
 
     <span class="doccomment">/// The tooltip to display when the user cannot obtain authorization.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tooltip-not-authorized&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tooltip-not-authorized&quot;</span>)]
     </span><span class="kw">pub fn </span>tooltip_not_authorized(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;tooltip-not-authorized&quot;</span>)
     }
 
     <span class="doccomment">/// The tooltip to display when the user cannot obtain authorization.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tooltip-not-authorized&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tooltip-not-authorized&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tooltip_not_authorized(<span class="kw-2">&amp;</span><span class="self">self</span>, tooltip_not_authorized: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;tooltip-not-authorized&quot;</span>, <span class="kw-2">&amp;</span>tooltip_not_authorized)
     }
 
     <span class="doccomment">/// The tooltip to display when prompting the user to unlock.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tooltip-unlock&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tooltip-unlock&quot;</span>)]
     </span><span class="kw">pub fn </span>tooltip_unlock(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;tooltip-unlock&quot;</span>)
     }
 
     <span class="doccomment">/// The tooltip to display when prompting the user to unlock.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tooltip-unlock&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tooltip-unlock&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tooltip_unlock(<span class="kw-2">&amp;</span><span class="self">self</span>, tooltip_unlock: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;tooltip-unlock&quot;</span>, <span class="kw-2">&amp;</span>tooltip_unlock)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;permission&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;permission&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_permission_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_permission_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>LockButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkLockButton,
@@ -1148,7 +1148,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;text-lock&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;text-lock&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_text_lock_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_text_lock_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>LockButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkLockButton,
@@ -1171,7 +1171,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;text-unlock&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;text-unlock&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_text_unlock_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_text_unlock_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>LockButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkLockButton,
@@ -1194,7 +1194,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;tooltip-lock&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;tooltip-lock&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_tooltip_lock_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_tooltip_lock_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>LockButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkLockButton,
@@ -1217,7 +1217,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;tooltip-not-authorized&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;tooltip-not-authorized&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_tooltip_not_authorized_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -1245,7 +1245,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;tooltip-unlock&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;tooltip-unlock&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_tooltip_unlock_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_tooltip_unlock_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>LockButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkLockButton,
@@ -1275,12 +1275,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`LockButton`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>LockButtonBuilder {
     permission: <span class="prelude-ty">Option</span>&lt;gio::Permission&gt;,
     text_lock: <span class="prelude-ty">Option</span>&lt;String&gt;,
@@ -1336,7 +1336,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`LockButton`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; LockButton {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>permission) = <span class="self">self</span>.permission {
@@ -1806,4 +1806,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

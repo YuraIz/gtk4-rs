@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -447,7 +447,7 @@
     /// # Implements
     ///
     /// [`FilterExt`][trait@crate::prelude::FilterExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkStringFilter&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkStringFilter&quot;</span>)]
     </span><span class="kw">pub struct </span>StringFilter(Object&lt;ffi::GtkStringFilter, ffi::GtkStringFilterClass&gt;) @extends Filter;
 
     <span class="kw">match fn </span>{
@@ -466,7 +466,7 @@
     /// # Returns
     ///
     /// a new [`StringFilter`][crate::StringFilter]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_string_filter_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_string_filter_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(expression: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;Expression&gt;&gt;) -&gt; StringFilter {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -490,7 +490,7 @@
     /// # Returns
     ///
     /// a [`Expression`][crate::Expression]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_string_filter_get_expression&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_string_filter_get_expression&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_expression&quot;</span>)]
     </span><span class="kw">pub fn </span>expression(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Expression&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_string_filter_get_expression(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -501,7 +501,7 @@
     /// # Returns
     ///
     /// [`true`] if the filter ignores case
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_string_filter_get_ignore_case&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_string_filter_get_ignore_case&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_ignore_case&quot;</span>)]
     </span><span class="kw">pub fn </span>ignores_case(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -516,7 +516,7 @@
     /// # Returns
     ///
     /// the match mode of the filter
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_string_filter_get_match_mode&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_string_filter_get_match_mode&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_match_mode&quot;</span>)]
     </span><span class="kw">pub fn </span>match_mode(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; StringFilterMatchMode {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_string_filter_get_match_mode(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -527,7 +527,7 @@
     /// # Returns
     ///
     /// The search term
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_string_filter_get_search&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_string_filter_get_search&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_search&quot;</span>)]
     </span><span class="kw">pub fn </span>search(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_string_filter_get_search(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -539,7 +539,7 @@
     /// The expression must have a value type of `G_TYPE_STRING`.
     /// ## `expression`
     /// a [`Expression`][crate::Expression]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_string_filter_set_expression&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_string_filter_set_expression&quot;</span>)]
     </span><span class="kw">pub fn </span>set_expression(<span class="kw-2">&amp;</span><span class="self">self</span>, expression: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;Expression&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_string_filter_set_expression(
@@ -552,7 +552,7 @@
     <span class="doccomment">/// Sets whether the filter ignores case differences.
     /// ## `ignore_case`
     /// [`true`] to ignore case
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_string_filter_set_ignore_case&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_string_filter_set_ignore_case&quot;</span>)]
     </span><span class="kw">pub fn </span>set_ignore_case(<span class="kw-2">&amp;</span><span class="self">self</span>, ignore_case: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_string_filter_set_ignore_case(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, ignore_case.into_glib());
@@ -562,7 +562,7 @@
     <span class="doccomment">/// Sets the match mode for the filter.
     /// ## `mode`
     /// the new match mode
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_string_filter_set_match_mode&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_string_filter_set_match_mode&quot;</span>)]
     </span><span class="kw">pub fn </span>set_match_mode(<span class="kw-2">&amp;</span><span class="self">self</span>, mode: StringFilterMatchMode) {
         <span class="kw">unsafe </span>{
             ffi::gtk_string_filter_set_match_mode(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, mode.into_glib());
@@ -573,14 +573,14 @@
     /// ## `search`
     /// The string to search for
     ///   or [`None`] to clear the search
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_string_filter_set_search&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_string_filter_set_search&quot;</span>)]
     </span><span class="kw">pub fn </span>set_search(<span class="kw-2">&amp;</span><span class="self">self</span>, search: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_string_filter_set_search(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, search.to_glib_none().<span class="number">0</span>);
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;expression&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;expression&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_expression_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_expression_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>StringFilter) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkStringFilter,
@@ -603,7 +603,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;ignore-case&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;ignore-case&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_ignore_case_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_ignore_case_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>StringFilter) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkStringFilter,
@@ -626,7 +626,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;match-mode&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;match-mode&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_match_mode_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_match_mode_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>StringFilter) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkStringFilter,
@@ -649,7 +649,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;search&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;search&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_search_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_search_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>StringFilter) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkStringFilter,
@@ -679,12 +679,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`StringFilter`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>StringFilterBuilder {
     expression: <span class="prelude-ty">Option</span>&lt;Expression&gt;,
     ignore_case: <span class="prelude-ty">Option</span>&lt;bool&gt;,
@@ -701,7 +701,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`StringFilter`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; StringFilter {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>expression) = <span class="self">self</span>.expression {
@@ -750,4 +750,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

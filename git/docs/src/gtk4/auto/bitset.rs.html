@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -505,7 +505,7 @@
     ///
     /// The main use case for [`Bitset`][crate::Bitset] is implementing complex selections for
     /// [`SelectionModel`][crate::SelectionModel].
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>Bitset(Shared&lt;ffi::GtkBitset&gt;);
 
     <span class="kw">match fn </span>{
@@ -521,7 +521,7 @@
     /// # Returns
     ///
     /// A new empty bitset
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_new_empty&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_new_empty&quot;</span>)]
     </span><span class="kw">pub fn </span>new_empty() -&gt; Bitset {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gtk_bitset_new_empty()) }
@@ -536,7 +536,7 @@
     /// # Returns
     ///
     /// A new bitset
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_new_range&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_new_range&quot;</span>)]
     </span><span class="kw">pub fn </span>new_range(start: u32, n_items: u32) -&gt; Bitset {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gtk_bitset_new_range(start, n_items)) }
@@ -550,7 +550,7 @@
     ///
     /// [`true`] if @value was not part of @self and @self
     ///   was changed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_add&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_add&quot;</span>)]
     </span><span class="kw">pub fn </span>add(<span class="kw-2">&amp;</span><span class="self">self</span>, value: u32) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_bitset_add(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, value)) }
     }
@@ -561,7 +561,7 @@
     /// first value to add
     /// ## `n_items`
     /// number of consecutive values to add
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_add_range&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_add_range&quot;</span>)]
     </span><span class="kw">pub fn </span>add_range(<span class="kw-2">&amp;</span><span class="self">self</span>, start: u32, n_items: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_add_range(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, start, n_items);
@@ -574,7 +574,7 @@
     /// first value to add
     /// ## `last`
     /// last value to add
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_add_range_closed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_add_range_closed&quot;</span>)]
     </span><span class="kw">pub fn </span>add_range_closed(<span class="kw-2">&amp;</span><span class="self">self</span>, first: u32, last: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_add_range_closed(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, first, last);
@@ -591,7 +591,7 @@
     /// height of the rectangle
     /// ## `stride`
     /// row stride of the grid
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_add_rectangle&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_add_rectangle&quot;</span>)]
     </span><span class="kw">pub fn </span>add_rectangle(<span class="kw-2">&amp;</span><span class="self">self</span>, start: u32, width: u32, height: u32, stride: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_add_rectangle(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, start, width, height, stride);
@@ -605,12 +605,12 @@
     /// # Returns
     ///
     /// [`true`] if @self contains @value
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_contains&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_contains&quot;</span>)]
     </span><span class="kw">pub fn </span>contains(<span class="kw-2">&amp;</span><span class="self">self</span>, value: u32) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_bitset_contains(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, value)) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_copy&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_copy&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>copy(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Bitset {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gtk_bitset_copy(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -626,7 +626,7 @@
     /// will be emptied in that case.
     /// ## `other`
     /// the [`Bitset`][crate::Bitset] to compute the difference from
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_difference&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_difference&quot;</span>)]
     </span><span class="kw">pub fn </span>difference(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>Bitset) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_difference(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, other.to_glib_none().<span class="number">0</span>);
@@ -640,7 +640,7 @@
     /// # Returns
     ///
     /// [`true`] if @self and @other contain the same values
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_equals&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_equals&quot;</span>)]
     </span><span class="kw">pub fn </span>equals(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>Bitset) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_bitset_equals(
@@ -657,7 +657,7 @@
     /// # Returns
     ///
     /// The largest value in @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_get_maximum&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_get_maximum&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_maximum&quot;</span>)]
     </span><span class="kw">pub fn </span>maximum(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gtk_bitset_get_maximum(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -670,7 +670,7 @@
     /// # Returns
     ///
     /// The smallest value in @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_get_minimum&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_get_minimum&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_minimum&quot;</span>)]
     </span><span class="kw">pub fn </span>minimum(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gtk_bitset_get_minimum(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -685,7 +685,7 @@
     /// # Returns
     ///
     /// the value of the @nth item in @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_get_nth&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_get_nth&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_nth&quot;</span>)]
     </span><span class="kw">pub fn </span>nth(<span class="kw-2">&amp;</span><span class="self">self</span>, nth: u32) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gtk_bitset_get_nth(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, nth) }
@@ -703,7 +703,7 @@
     /// # Returns
     ///
     /// The number of values in the set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_get_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_get_size&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_size&quot;</span>)]
     </span><span class="kw">pub fn </span>size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u64 {
         <span class="kw">unsafe </span>{ ffi::gtk_bitset_get_size(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -723,7 +723,7 @@
     /// # Returns
     ///
     /// The number of values in the set from @first to @last.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_get_size_in_range&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_get_size_in_range&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_size_in_range&quot;</span>)]
     </span><span class="kw">pub fn </span>size_in_range(<span class="kw-2">&amp;</span><span class="self">self</span>, first: u32, last: u32) -&gt; u64 {
         <span class="kw">unsafe </span>{ ffi::gtk_bitset_get_size_in_range(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, first, last) }
@@ -737,7 +737,7 @@
     /// happen in that case.
     /// ## `other`
     /// the [`Bitset`][crate::Bitset] to intersect with
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_intersect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_intersect&quot;</span>)]
     </span><span class="kw">pub fn </span>intersect(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>Bitset) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_intersect(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, other.to_glib_none().<span class="number">0</span>);
@@ -749,7 +749,7 @@
     /// # Returns
     ///
     /// [`true`] if @self is empty
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_is_empty&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_is_empty&quot;</span>)]
     </span><span class="kw">pub fn </span>is_empty(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_bitset_is_empty(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
@@ -762,13 +762,13 @@
     ///
     /// [`true`] if @value was part of @self and @self
     ///   was changed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_remove&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_remove&quot;</span>)]
     </span><span class="kw">pub fn </span>remove(<span class="kw-2">&amp;</span><span class="self">self</span>, value: u32) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_bitset_remove(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, value)) }
     }
 
     <span class="doccomment">/// Removes all values from the bitset so that it is empty again.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_remove_all&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_remove_all&quot;</span>)]
     </span><span class="kw">pub fn </span>remove_all(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_remove_all(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -781,7 +781,7 @@
     /// first value to remove
     /// ## `n_items`
     /// number of consecutive values to remove
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_remove_range&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_remove_range&quot;</span>)]
     </span><span class="kw">pub fn </span>remove_range(<span class="kw-2">&amp;</span><span class="self">self</span>, start: u32, n_items: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_remove_range(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, start, n_items);
@@ -794,7 +794,7 @@
     /// first value to remove
     /// ## `last`
     /// last value to remove
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_remove_range_closed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_remove_range_closed&quot;</span>)]
     </span><span class="kw">pub fn </span>remove_range_closed(<span class="kw-2">&amp;</span><span class="self">self</span>, first: u32, last: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_remove_range_closed(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, first, last);
@@ -811,7 +811,7 @@
     /// height of the rectangle
     /// ## `stride`
     /// row stride of the grid
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_remove_rectangle&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_remove_rectangle&quot;</span>)]
     </span><span class="kw">pub fn </span>remove_rectangle(<span class="kw-2">&amp;</span><span class="self">self</span>, start: u32, width: u32, height: u32, stride: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_remove_rectangle(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, start, width, height, stride);
@@ -823,7 +823,7 @@
     /// Values smaller than @amount are discarded.
     /// ## `amount`
     /// amount to shift all values to the left
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_shift_left&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_shift_left&quot;</span>)]
     </span><span class="kw">pub fn </span>shift_left(<span class="kw-2">&amp;</span><span class="self">self</span>, amount: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_shift_left(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, amount);
@@ -835,7 +835,7 @@
     /// Values that end up too large to be held in a #guint are discarded.
     /// ## `amount`
     /// amount to shift all values to the right
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_shift_right&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_shift_right&quot;</span>)]
     </span><span class="kw">pub fn </span>shift_right(<span class="kw-2">&amp;</span><span class="self">self</span>, amount: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_shift_right(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, amount);
@@ -858,7 +858,7 @@
     /// number of values to remove
     /// ## `added`
     /// number of values to add
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_splice&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_splice&quot;</span>)]
     </span><span class="kw">pub fn </span>splice(<span class="kw-2">&amp;</span><span class="self">self</span>, position: u32, removed: u32, added: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_splice(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, position, removed, added);
@@ -873,7 +873,7 @@
     /// will be emptied in that case.
     /// ## `other`
     /// the [`Bitset`][crate::Bitset] to subtract
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_subtract&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_subtract&quot;</span>)]
     </span><span class="kw">pub fn </span>subtract(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>Bitset) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_subtract(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, other.to_glib_none().<span class="number">0</span>);
@@ -888,7 +888,7 @@
     /// happen in that case.
     /// ## `other`
     /// the [`Bitset`][crate::Bitset] to union with
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_bitset_union&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_bitset_union&quot;</span>)]
     </span><span class="kw">pub fn </span>union(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>Bitset) {
         <span class="kw">unsafe </span>{
             ffi::gtk_bitset_union(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, other.to_glib_none().<span class="number">0</span>);
@@ -896,4 +896,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -476,7 +476,7 @@
     /// # Implements
     ///
     /// [`GestureDragExt`][trait@crate::prelude::GestureDragExt], [`GestureSingleExt`][trait@crate::prelude::GestureSingleExt], [`GestureExt`][trait@crate::prelude::GestureExt], [`EventControllerExt`][trait@crate::prelude::EventControllerExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkGestureDrag&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkGestureDrag&quot;</span>)]
     </span><span class="kw">pub struct </span>GestureDrag(Object&lt;ffi::GtkGestureDrag, ffi::GtkGestureDragClass&gt;) @extends GestureSingle, Gesture, EventController;
 
     <span class="kw">match fn </span>{
@@ -492,7 +492,7 @@
     /// # Returns
     ///
     /// a newly created [`GestureDrag`][crate::GestureDrag]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_gesture_drag_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_gesture_drag_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; GestureDrag {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ Gesture::from_glib_full(ffi::gtk_gesture_drag_new()).unsafe_cast() }
@@ -513,12 +513,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`GestureDrag`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>GestureDragBuilder {
     button: <span class="prelude-ty">Option</span>&lt;u32&gt;,
     exclusive: <span class="prelude-ty">Option</span>&lt;bool&gt;,
@@ -538,7 +538,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`GestureDrag`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; GestureDrag {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>button) = <span class="self">self</span>.button {
@@ -632,7 +632,7 @@
     ///
     /// ## `y`
     /// Y offset for the current point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_gesture_drag_get_offset&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_gesture_drag_get_offset&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_offset&quot;</span>)]
     </span><span class="kw">fn </span>offset(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;(f64, f64)&gt;;
 
@@ -651,7 +651,7 @@
     ///
     /// ## `y`
     /// Y coordinate for the drag start point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_gesture_drag_get_start_point&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_gesture_drag_get_start_point&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_start_point&quot;</span>)]
     </span><span class="kw">fn </span>start_point(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;(f64, f64)&gt;;
 
@@ -660,7 +660,7 @@
     /// X coordinate, relative to the widget allocation
     /// ## `start_y`
     /// Y coordinate, relative to the widget allocation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;drag-begin&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;drag-begin&quot;</span>)]
     </span><span class="kw">fn </span>connect_drag_begin&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, f64, f64) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted whenever the dragging is finished.
@@ -668,7 +668,7 @@
     /// X offset, relative to the start point
     /// ## `offset_y`
     /// Y offset, relative to the start point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;drag-end&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;drag-end&quot;</span>)]
     </span><span class="kw">fn </span>connect_drag_end&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, f64, f64) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted whenever the dragging point moves.
@@ -676,7 +676,7 @@
     /// X offset, relative to the start point
     /// ## `offset_y`
     /// Y offset, relative to the start point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;drag-update&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;drag-update&quot;</span>)]
     </span><span class="kw">fn </span>connect_drag_update&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, f64, f64) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -812,4 +812,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

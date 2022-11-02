@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -186,7 +186,7 @@
     /// ids for the options of the choice, or [`None`] for a boolean choice
     /// ## `option_labels`
     /// user-visible labels for the options, must be the same length as @options
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_file_chooser_add_choice&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_file_chooser_add_choice&quot;</span>)]
     </span><span class="kw">fn </span>add_choice(<span class="kw-2">&amp;</span><span class="self">self</span>, id: <span class="kw-2">&amp;</span>str, label: <span class="kw-2">&amp;</span>str, options: <span class="kw-2">&amp;</span>[(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>str)]);
 
     <span class="doccomment">/// Sets the current folder for @self from a `GFile`.
@@ -197,7 +197,7 @@
     ///
     /// [`true`] if the folder could be changed successfully, [`false`]
     ///   otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_file_chooser_set_current_folder&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_file_chooser_set_current_folder&quot;</span>)]
     </span><span class="kw">fn </span>set_current_folder(<span class="kw-2">&amp;</span><span class="self">self</span>, file: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;bool, glib::Error&gt;;
 }
 
@@ -252,4 +252,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

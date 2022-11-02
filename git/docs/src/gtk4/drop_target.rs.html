@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -197,7 +197,7 @@
     /// ## `types`
     /// all supported `GType`s
     ///   that can be dropped on the target
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_target_set_gtypes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_target_set_gtypes&quot;</span>)]
     </span><span class="kw">pub fn </span>set_types(<span class="kw-2">&amp;</span><span class="self">self</span>, types: <span class="kw-2">&amp;</span>[Type]) {
         <span class="kw">let </span>types: Vec&lt;glib::ffi::GType&gt; = types.iter().map(|t| t.into_glib()).collect();
         <span class="kw">unsafe </span>{
@@ -209,7 +209,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_target_get_value&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_target_get_value&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_value&quot;</span>)]
     </span><span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Similar to [`Self::value`] but panics if the value is of a different type.
@@ -229,7 +229,7 @@
     ///
     ///   the `G_TYPE_INVALID`-terminated array of types included in
     ///   formats
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_target_get_gtypes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_target_get_gtypes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_gtypes&quot;</span>)]
     </span><span class="kw">pub fn </span>types(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;Type&gt; {
         <span class="kw">unsafe </span>{
@@ -296,4 +296,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

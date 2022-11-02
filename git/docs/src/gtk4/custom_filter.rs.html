@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -186,7 +186,7 @@
     /// # Returns
     ///
     /// a new [`CustomFilter`][crate::CustomFilter]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_custom_filter_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_custom_filter_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;F&gt;(filter_func: F) -&gt; <span class="self">Self
     </span><span class="kw">where
         </span>F: Fn(<span class="kw-2">&amp;</span>glib::Object) -&gt; bool + <span class="lifetime">&#39;static</span>,
@@ -212,7 +212,7 @@
     /// called now.
     /// ## `match_func`
     /// function to filter items
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_custom_filter_set_filter_func&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_custom_filter_set_filter_func&quot;</span>)]
     </span><span class="kw">pub fn </span>set_filter_func&lt;F&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, filter_func: F)
     <span class="kw">where
         </span>F: Fn(<span class="kw-2">&amp;</span>glib::Object) -&gt; bool + <span class="lifetime">&#39;static</span>,
@@ -227,7 +227,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_custom_filter_set_filter_func&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_custom_filter_set_filter_func&quot;</span>)]
     #[doc(alias = <span class="string">&quot;set_filter_func&quot;</span>)]
     </span><span class="kw">pub fn </span>unset_filter_func(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
@@ -262,4 +262,4 @@
     f(<span class="kw-2">&amp;</span>from_glib_borrow(item)).into_glib()
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

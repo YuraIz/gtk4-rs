@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1313,7 +1313,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::DebugFlags;
 <span class="kw">use </span><span class="kw">crate</span>::PageSetup;
 <span class="kw">use </span><span class="kw">crate</span>::PrintSettings;
-<span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
 </span><span class="kw">use </span><span class="kw">crate</span>::Printer;
 <span class="kw">use </span><span class="kw">crate</span>::StyleContext;
@@ -1337,7 +1337,7 @@
 /// # Returns
 ///
 /// the modifier mask for accelerators
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accelerator_get_default_mod_mask&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accelerator_get_default_mod_mask&quot;</span>)]
 </span><span class="kw">pub fn </span>accelerator_get_default_mod_mask() -&gt; gdk::ModifierType {
     <span class="macro">assert_initialized_main_thread!</span>();
     <span class="kw">unsafe </span>{ from_glib(ffi::gtk_accelerator_get_default_mod_mask()) }
@@ -1379,7 +1379,7 @@
 ///   given version, or a string describing the version mismatch.
 ///   The returned string is owned by GTK and should not be modified
 ///   or freed.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_check_version&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_check_version&quot;</span>)]
 </span><span class="kw">pub fn </span>check_version(
     required_major: u32,
     required_minor: u32,
@@ -1403,7 +1403,7 @@
 /// you wanted to set different values for different locale categories.
 ///
 /// Most programs should not need to call this function.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_disable_setlocale&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_disable_setlocale&quot;</span>)]
 </span><span class="kw">pub fn </span>disable_setlocale() {
     <span class="macro">assert_not_initialized!</span>();
     <span class="kw">unsafe </span>{
@@ -1424,7 +1424,7 @@
 /// ## `wait`
 /// if [`true`], wait in a recursive mainloop until
 ///    all printers are enumerated; otherwise return early
-</span><span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
 #[doc(alias = <span class="string">&quot;gtk_enumerate_printers&quot;</span>)]
 </span><span class="kw">pub fn </span>enumerate_printers&lt;P: Fn(<span class="kw-2">&amp;</span>Printer) -&gt; bool + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(func: P, wait: bool) {
@@ -1464,7 +1464,7 @@
 /// # Returns
 ///
 /// the binary age of the GTK library
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_get_binary_age&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_get_binary_age&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_binary_age&quot;</span>)]
 </span><span class="kw">pub fn </span>binary_age() -&gt; u32 {
     <span class="macro">skip_assert_initialized!</span>();
@@ -1479,7 +1479,7 @@
 /// # Returns
 ///
 /// the GTK debug flags.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_get_debug_flags&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_get_debug_flags&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_debug_flags&quot;</span>)]
 </span><span class="kw">pub fn </span>debug_flags() -&gt; DebugFlags {
     <span class="macro">assert_initialized_main_thread!</span>();
@@ -1504,7 +1504,7 @@
 ///
 /// the default language as a
 ///   [`pango::Language`][crate::pango::Language]
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_get_default_language&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_get_default_language&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_default_language&quot;</span>)]
 </span><span class="kw">pub fn </span>default_language() -&gt; pango::Language {
     <span class="macro">assert_initialized_main_thread!</span>();
@@ -1518,7 +1518,7 @@
 /// # Returns
 ///
 /// the interface age of the GTK library
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_get_interface_age&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_get_interface_age&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_interface_age&quot;</span>)]
 </span><span class="kw">pub fn </span>interface_age() -&gt; u32 {
     <span class="macro">skip_assert_initialized!</span>();
@@ -1560,7 +1560,7 @@
 /// # Returns
 ///
 /// the [`TextDirection`][crate::TextDirection] of the current locale
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_get_locale_direction&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_get_locale_direction&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_locale_direction&quot;</span>)]
 </span><span class="kw">pub fn </span>locale_direction() -&gt; TextDirection {
     <span class="macro">assert_initialized_main_thread!</span>();
@@ -1579,7 +1579,7 @@
 /// # Returns
 ///
 /// the major version number of the GTK library
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_get_major_version&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_get_major_version&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_major_version&quot;</span>)]
 </span><span class="kw">pub fn </span>major_version() -&gt; u32 {
     <span class="macro">skip_assert_initialized!</span>();
@@ -1598,7 +1598,7 @@
 /// # Returns
 ///
 /// the micro version number of the GTK library
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_get_micro_version&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_get_micro_version&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_micro_version&quot;</span>)]
 </span><span class="kw">pub fn </span>micro_version() -&gt; u32 {
     <span class="macro">skip_assert_initialized!</span>();
@@ -1617,7 +1617,7 @@
 /// # Returns
 ///
 /// the minor version number of the GTK library
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_get_minor_version&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_get_minor_version&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_minor_version&quot;</span>)]
 </span><span class="kw">pub fn </span>minor_version() -&gt; u32 {
     <span class="macro">skip_assert_initialized!</span>();
@@ -1646,7 +1646,7 @@
 ///
 /// ## `b`
 /// Return value for the blue component
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_hsv_to_rgb&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_hsv_to_rgb&quot;</span>)]
 </span><span class="kw">pub fn </span>hsv_to_rgb(h: f32, s: f32, v: f32) -&gt; (f32, f32, f32) {
     <span class="macro">assert_initialized_main_thread!</span>();
     <span class="kw">unsafe </span>{
@@ -1676,7 +1676,7 @@
 /// # Returns
 ///
 /// a new [`PageSetup`][crate::PageSetup]
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_run_page_setup_dialog&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_run_page_setup_dialog&quot;</span>)]
 </span><span class="kw">pub fn </span>print_run_page_setup_dialog(
     parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Window&gt;&gt;,
     page_setup: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>PageSetup&gt;,
@@ -1706,7 +1706,7 @@
 /// ## `done_cb`
 /// a function to call when the user saves
 ///    the modified page setup
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_run_page_setup_dialog_async&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_run_page_setup_dialog_async&quot;</span>)]
 </span><span class="kw">pub fn </span>print_run_page_setup_dialog_async&lt;P: FnOnce(<span class="kw-2">&amp;</span>PageSetup) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
     parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Window&gt;&gt;,
     page_setup: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>PageSetup&gt;,
@@ -1754,7 +1754,7 @@
 /// rectangle width
 /// ## `height`
 /// rectangle height
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_render_activity&quot;</span>)]
 </span><span class="kw">pub fn </span>render_activity(
     context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleContext&gt;,
@@ -1797,7 +1797,7 @@
 /// Y origin of the render area
 /// ## `size`
 /// square side for render area
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_render_arrow&quot;</span>)]
 </span><span class="kw">pub fn </span>render_arrow(
     context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleContext&gt;,
@@ -1841,7 +1841,7 @@
 /// rectangle width
 /// ## `height`
 /// rectangle height
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_render_background&quot;</span>)]
 </span><span class="kw">pub fn </span>render_background(
     context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleContext&gt;,
@@ -1888,7 +1888,7 @@
 /// rectangle width
 /// ## `height`
 /// rectangle height
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_render_check&quot;</span>)]
 </span><span class="kw">pub fn </span>render_check(
     context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleContext&gt;,
@@ -1933,7 +1933,7 @@
 /// rectangle width
 /// ## `height`
 /// rectangle height
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_render_expander&quot;</span>)]
 </span><span class="kw">pub fn </span>render_expander(
     context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleContext&gt;,
@@ -1976,7 +1976,7 @@
 /// rectangle width
 /// ## `height`
 /// rectangle height
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_render_focus&quot;</span>)]
 </span><span class="kw">pub fn </span>render_focus(
     context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleContext&gt;,
@@ -2020,7 +2020,7 @@
 /// rectangle width
 /// ## `height`
 /// rectangle height
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_render_frame&quot;</span>)]
 </span><span class="kw">pub fn </span>render_frame(
     context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleContext&gt;,
@@ -2064,7 +2064,7 @@
 /// rectangle width
 /// ## `height`
 /// rectangle height
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_render_handle&quot;</span>)]
 </span><span class="kw">pub fn </span>render_handle(
     context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleContext&gt;,
@@ -2105,7 +2105,7 @@
 /// X position for the @texture
 /// ## `y`
 /// Y position for the @texture
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_render_icon&quot;</span>)]
 </span><span class="kw">pub fn </span>render_icon(
     context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleContext&gt;,
@@ -2140,7 +2140,7 @@
 /// Y origin
 /// ## `layout`
 /// the [`pango::Layout`][crate::pango::Layout] to render
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_render_layout&quot;</span>)]
 </span><span class="kw">pub fn </span>render_layout(
     context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleContext&gt;,
@@ -2177,7 +2177,7 @@
 /// X coordinate for the end of the line
 /// ## `y1`
 /// Y coordinate for the end of the line
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_render_line&quot;</span>)]
 </span><span class="kw">pub fn </span>render_line(
     context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleContext&gt;,
@@ -2222,7 +2222,7 @@
 /// rectangle width
 /// ## `height`
 /// rectangle height
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_render_option&quot;</span>)]
 </span><span class="kw">pub fn </span>render_option(
     context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleContext&gt;,
@@ -2267,7 +2267,7 @@
 ///
 /// ## `v`
 /// Return value for the value component
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_rgb_to_hsv&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_rgb_to_hsv&quot;</span>)]
 </span><span class="kw">pub fn </span>rgb_to_hsv(r: f32, g: f32, b: f32) -&gt; (f32, f32, f32) {
     <span class="macro">assert_initialized_main_thread!</span>();
     <span class="kw">unsafe </span>{
@@ -2282,7 +2282,7 @@
 <span class="doccomment">/// Sets the GTK debug flags.
 /// ## `flags`
 /// the debug flags to set
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_set_debug_flags&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_set_debug_flags&quot;</span>)]
 </span><span class="kw">pub fn </span>set_debug_flags(flags: DebugFlags) {
     <span class="macro">assert_initialized_main_thread!</span>();
     <span class="kw">unsafe </span>{
@@ -2298,7 +2298,7 @@
 /// the uri to show
 /// ## `timestamp`
 /// timestamp from the event that triggered this call, or `GDK_CURRENT_TIME`
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_show_uri&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_show_uri&quot;</span>)]
 </span><span class="kw">pub fn </span>show_uri(parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Window&gt;&gt;, uri: <span class="kw-2">&amp;</span>str, timestamp: u32) {
     <span class="macro">assert_initialized_main_thread!</span>();
     <span class="kw">unsafe </span>{
@@ -2310,7 +2310,7 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;gtk_test_accessible_assertion_message_role&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;gtk_test_accessible_assertion_message_role&quot;</span>)]
 </span><span class="kw">pub fn </span>test_accessible_assertion_message_role(
     domain: <span class="kw-2">&amp;</span>str,
     file: <span class="kw-2">&amp;</span>str,
@@ -2345,7 +2345,7 @@
 /// # Returns
 ///
 /// [`true`] if the @property is set in the @accessible
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_test_accessible_has_property&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_test_accessible_has_property&quot;</span>)]
 </span><span class="kw">pub fn </span>test_accessible_has_property(
     accessible: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Accessible&gt;,
     property: AccessibleProperty,
@@ -2368,7 +2368,7 @@
 /// # Returns
 ///
 /// [`true`] if the @relation is set in the @accessible
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_test_accessible_has_relation&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_test_accessible_has_relation&quot;</span>)]
 </span><span class="kw">pub fn </span>test_accessible_has_relation(
     accessible: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Accessible&gt;,
     relation: AccessibleRelation,
@@ -2392,7 +2392,7 @@
 /// # Returns
 ///
 /// [`true`] if the role matches
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_test_accessible_has_role&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_test_accessible_has_role&quot;</span>)]
 </span><span class="kw">pub fn </span>test_accessible_has_role(accessible: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Accessible&gt;, role: AccessibleRole) -&gt; bool {
     <span class="macro">skip_assert_initialized!</span>();
     <span class="kw">unsafe </span>{
@@ -2412,7 +2412,7 @@
 /// # Returns
 ///
 /// [`true`] if the @state is set in the @accessible
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_test_accessible_has_state&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_test_accessible_has_state&quot;</span>)]
 </span><span class="kw">pub fn </span>test_accessible_has_state(
     accessible: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Accessible&gt;,
     state: AccessibleState,
@@ -2435,7 +2435,7 @@
 ///
 /// This allowes to refer to any of those object types via
 /// g_type_from_name() after calling this function.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_test_register_all_types&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_test_register_all_types&quot;</span>)]
 </span><span class="kw">pub fn </span>test_register_all_types() {
     <span class="macro">assert_initialized_main_thread!</span>();
     <span class="kw">unsafe </span>{
@@ -2453,7 +2453,7 @@
 /// server.
 /// ## `widget`
 /// the widget to wait for
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_test_widget_wait_for_draw&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_test_widget_wait_for_draw&quot;</span>)]
 </span><span class="kw">pub fn </span>test_widget_wait_for_draw(widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;) {
     <span class="macro">skip_assert_initialized!</span>();
     <span class="kw">unsafe </span>{
@@ -2474,7 +2474,7 @@
 /// # Returns
 ///
 /// a new [`gdk::ContentProvider`][crate::gdk::ContentProvider]
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_tree_create_row_drag_content&quot;</span>)]
 </span><span class="kw">pub fn </span>tree_create_row_drag_content(
     tree_model: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TreeModel&gt;,
@@ -2510,7 +2510,7 @@
 ///
 /// ## `path`
 /// row in @tree_model
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_tree_get_row_drag_data&quot;</span>)]
 </span><span class="kw">pub fn </span>tree_get_row_drag_data(
     value: <span class="kw-2">&amp;</span>glib::Value,
@@ -2532,4 +2532,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

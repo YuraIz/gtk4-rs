@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -227,7 +227,7 @@
 
 <span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// A render node for an outset shadow.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GskOutsetShadowNode&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GskOutsetShadowNode&quot;</span>)]
     </span><span class="kw">pub struct </span>OutsetShadowNode(Shared&lt;ffi::GskOutsetShadowNode&gt;);
 
     <span class="kw">match fn </span>{
@@ -261,7 +261,7 @@
     /// # Returns
     ///
     /// A new [`RenderNode`][crate::RenderNode]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         outline: <span class="kw-2">&amp;</span>RoundedRect,
         color: <span class="kw-2">&amp;</span>gdk::RGBA,
@@ -288,7 +288,7 @@
     /// # Returns
     ///
     /// the blur radius, in pixels
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_get_blur_radius&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_get_blur_radius&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_blur_radius&quot;</span>)]
     </span><span class="kw">pub fn </span>blur_radius(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::gsk_outset_shadow_node_get_blur_radius(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -299,7 +299,7 @@
     /// # Returns
     ///
     /// a color
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_get_color&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_get_color&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_color&quot;</span>)]
     </span><span class="kw">pub fn </span>color(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gdk::RGBA {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gsk_outset_shadow_node_get_color(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -310,7 +310,7 @@
     /// # Returns
     ///
     /// an offset, in pixels
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_get_dx&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_get_dx&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_dx&quot;</span>)]
     </span><span class="kw">pub fn </span>dx(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::gsk_outset_shadow_node_get_dx(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -321,7 +321,7 @@
     /// # Returns
     ///
     /// an offset, in pixels
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_get_dy&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_get_dy&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_dy&quot;</span>)]
     </span><span class="kw">pub fn </span>dy(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::gsk_outset_shadow_node_get_dy(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -332,7 +332,7 @@
     /// # Returns
     ///
     /// a rounded rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_get_outline&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_get_outline&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_outline&quot;</span>)]
     </span><span class="kw">pub fn </span>outline(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; RoundedRect {
         <span class="kw">unsafe </span>{
@@ -347,7 +347,7 @@
     /// # Returns
     ///
     /// the size of the shadow, in pixels
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_get_spread&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_outset_shadow_node_get_spread&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_spread&quot;</span>)]
     </span><span class="kw">pub fn </span>spread(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::gsk_outset_shadow_node_get_spread(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -360,4 +360,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

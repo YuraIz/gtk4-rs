@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -629,7 +629,7 @@
     /// # Implements
     ///
     /// [`MonitorExt`][trait@crate::prelude::MonitorExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkMonitor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkMonitor&quot;</span>)]
     </span><span class="kw">pub struct </span>Monitor(Object&lt;ffi::GdkMonitor, ffi::GdkMonitorClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -652,7 +652,7 @@
     /// # Returns
     ///
     /// the name of the connector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_monitor_get_connector&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_monitor_get_connector&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_connector&quot;</span>)]
     </span><span class="kw">fn </span>connector(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -661,7 +661,7 @@
     /// # Returns
     ///
     /// the display
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_monitor_get_display&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_monitor_get_display&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display&quot;</span>)]
     </span><span class="kw">fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Display;
 
@@ -676,7 +676,7 @@
     ///
     /// ## `geometry`
     /// a [`Rectangle`][crate::Rectangle] to be filled with the monitor geometry
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_monitor_get_geometry&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_monitor_get_geometry&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_geometry&quot;</span>)]
     </span><span class="kw">fn </span>geometry(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Rectangle;
 
@@ -685,7 +685,7 @@
     /// # Returns
     ///
     /// the physical height of the monitor
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_monitor_get_height_mm&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_monitor_get_height_mm&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_height_mm&quot;</span>)]
     </span><span class="kw">fn </span>height_mm(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -700,7 +700,7 @@
     /// # Returns
     ///
     /// the name of the manufacturer
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_monitor_get_manufacturer&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_monitor_get_manufacturer&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_manufacturer&quot;</span>)]
     </span><span class="kw">fn </span>manufacturer(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -709,7 +709,7 @@
     /// # Returns
     ///
     /// the monitor model
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_monitor_get_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_monitor_get_model&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_model&quot;</span>)]
     </span><span class="kw">fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -721,7 +721,7 @@
     /// # Returns
     ///
     /// the refresh rate in milli-Hertz, or 0
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_monitor_get_refresh_rate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_monitor_get_refresh_rate&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_refresh_rate&quot;</span>)]
     </span><span class="kw">fn </span>refresh_rate(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -738,7 +738,7 @@
     /// # Returns
     ///
     /// the scale factor
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_monitor_get_scale_factor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_monitor_get_scale_factor&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_scale_factor&quot;</span>)]
     </span><span class="kw">fn </span>scale_factor(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -748,7 +748,7 @@
     /// # Returns
     ///
     /// the subpixel layout
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_monitor_get_subpixel_layout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_monitor_get_subpixel_layout&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_subpixel_layout&quot;</span>)]
     </span><span class="kw">fn </span>subpixel_layout(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SubpixelLayout;
 
@@ -757,7 +757,7 @@
     /// # Returns
     ///
     /// the physical width of the monitor
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_monitor_get_width_mm&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_monitor_get_width_mm&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_width_mm&quot;</span>)]
     </span><span class="kw">fn </span>width_mm(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -770,41 +770,41 @@
     /// # Returns
     ///
     /// [`true`] if the object corresponds to a physical monitor
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_monitor_is_valid&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_monitor_is_valid&quot;</span>)]
     </span><span class="kw">fn </span>is_valid(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Emitted when the output represented by @monitor gets disconnected.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;invalidate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;invalidate&quot;</span>)]
     </span><span class="kw">fn </span>connect_invalidate&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;connector&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;connector&quot;</span>)]
     </span><span class="kw">fn </span>connect_connector_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;geometry&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;geometry&quot;</span>)]
     </span><span class="kw">fn </span>connect_geometry_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;height-mm&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;height-mm&quot;</span>)]
     </span><span class="kw">fn </span>connect_height_mm_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;manufacturer&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;manufacturer&quot;</span>)]
     </span><span class="kw">fn </span>connect_manufacturer_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
     </span><span class="kw">fn </span>connect_model_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;refresh-rate&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;refresh-rate&quot;</span>)]
     </span><span class="kw">fn </span>connect_refresh_rate_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;scale-factor&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;scale-factor&quot;</span>)]
     </span><span class="kw">fn </span>connect_scale_factor_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;subpixel-layout&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;subpixel-layout&quot;</span>)]
     </span><span class="kw">fn </span>connect_subpixel_layout_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;valid&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;valid&quot;</span>)]
     </span><span class="kw">fn </span>connect_valid_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;width-mm&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;width-mm&quot;</span>)]
     </span><span class="kw">fn </span>connect_width_mm_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -1132,4 +1132,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

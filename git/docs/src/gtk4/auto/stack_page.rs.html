@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -409,7 +409,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkStackPage&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkStackPage&quot;</span>)]
     </span><span class="kw">pub struct </span>StackPage(Object&lt;ffi::GtkStackPage&gt;) @implements Accessible;
 
     <span class="kw">match fn </span>{
@@ -423,7 +423,7 @@
     /// # Returns
     ///
     /// the child to which @self belongs
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_child&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_child&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_child&quot;</span>)]
     </span><span class="kw">pub fn </span>child(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Widget {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_stack_page_get_child(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -434,7 +434,7 @@
     /// # Returns
     ///
     /// The value of the `property::StackPage::icon-name` property
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_icon_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_icon_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_icon_name&quot;</span>)]
     </span><span class="kw">pub fn </span>icon_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_stack_page_get_icon_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -445,7 +445,7 @@
     /// # Returns
     ///
     /// The value of the `property::StackPage::name` property
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">pub fn </span>name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_stack_page_get_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -457,7 +457,7 @@
     ///
     /// The value of the `property::StackPage::needs-attention`
     ///   property.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_needs_attention&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_needs_attention&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_needs_attention&quot;</span>)]
     </span><span class="kw">pub fn </span>needs_attention(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -472,7 +472,7 @@
     /// # Returns
     ///
     /// The value of the `property::StackPage::title` property
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_title&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_title&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_title&quot;</span>)]
     </span><span class="kw">pub fn </span>title(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_stack_page_get_title(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -483,7 +483,7 @@
     /// # Returns
     ///
     /// The value of the `property::StackPage::use-underline` property
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_use_underline&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_use_underline&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_use_underline&quot;</span>)]
     </span><span class="kw">pub fn </span>uses_underline(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_stack_page_get_use_underline(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -497,7 +497,7 @@
     /// # Returns
     ///
     /// [`true`] if @page is visible
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_visible&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_get_visible&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_visible&quot;</span>)]
     </span><span class="kw">pub fn </span>is_visible(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_stack_page_get_visible(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -506,7 +506,7 @@
     <span class="doccomment">/// Sets the icon name of the page.
     /// ## `setting`
     /// the new value to set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_set_icon_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_set_icon_name&quot;</span>)]
     </span><span class="kw">pub fn </span>set_icon_name(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_stack_page_set_icon_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, setting.to_glib_none().<span class="number">0</span>);
@@ -516,7 +516,7 @@
     <span class="doccomment">/// Sets the name of the page.
     /// ## `setting`
     /// the new value to set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_set_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_set_name&quot;</span>)]
     </span><span class="kw">pub fn </span>set_name(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_stack_page_set_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, setting.to_glib_none().<span class="number">0</span>);
@@ -526,7 +526,7 @@
     <span class="doccomment">/// Sets whether the page is marked as “needs attention”.
     /// ## `setting`
     /// the new value to set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_set_needs_attention&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_set_needs_attention&quot;</span>)]
     </span><span class="kw">pub fn </span>set_needs_attention(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_stack_page_set_needs_attention(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, setting.into_glib());
@@ -536,7 +536,7 @@
     <span class="doccomment">/// Sets the page title.
     /// ## `setting`
     /// the new value to set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_set_title&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_set_title&quot;</span>)]
     </span><span class="kw">pub fn </span>set_title(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_stack_page_set_title(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, setting.to_glib_none().<span class="number">0</span>);
@@ -546,7 +546,7 @@
     <span class="doccomment">/// Sets whether underlines in the page title indicate mnemonics.
     /// ## `setting`
     /// the new value to set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_set_use_underline&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_set_use_underline&quot;</span>)]
     </span><span class="kw">pub fn </span>set_use_underline(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_stack_page_set_use_underline(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, setting.into_glib());
@@ -556,14 +556,14 @@
     <span class="doccomment">/// Sets whether @page is visible in its [`Stack`][crate::Stack].
     /// ## `visible`
     /// The new property value
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_stack_page_set_visible&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_stack_page_set_visible&quot;</span>)]
     </span><span class="kw">pub fn </span>set_visible(<span class="kw-2">&amp;</span><span class="self">self</span>, visible: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_stack_page_set_visible(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, visible.into_glib());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;icon-name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;icon-name&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_icon_name_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_icon_name_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>StackPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkStackPage,
@@ -586,7 +586,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;name&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_name_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_name_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>StackPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkStackPage,
@@ -609,7 +609,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;needs-attention&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;needs-attention&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_needs_attention_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_needs_attention_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>StackPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkStackPage,
@@ -632,7 +632,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;title&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;title&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_title_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_title_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>StackPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkStackPage,
@@ -655,7 +655,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;use-underline&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;use-underline&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_use_underline_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_use_underline_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>StackPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkStackPage,
@@ -678,7 +678,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;visible&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;visible&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_visible_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_visible_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>StackPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkStackPage,
@@ -708,4 +708,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

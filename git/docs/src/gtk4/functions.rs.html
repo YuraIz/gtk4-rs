@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -526,7 +526,7 @@
 /// # Returns
 ///
 /// [`true`] if the accelerator is valid
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accelerator_valid&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accelerator_valid&quot;</span>)]
 </span><span class="kw">pub fn </span>accelerator_valid(keyval: gdk::Key, modifiers: gdk::ModifierType) -&gt; bool {
     <span class="macro">assert_initialized_main_thread!</span>();
     <span class="kw">unsafe </span>{
@@ -547,7 +547,7 @@
 /// # Returns
 ///
 /// a newly-allocated string representing the accelerator
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accelerator_get_label&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accelerator_get_label&quot;</span>)]
 </span><span class="kw">pub fn </span>accelerator_get_label(
     accelerator_key: gdk::Key,
     accelerator_mods: gdk::ModifierType,
@@ -582,7 +582,7 @@
 /// # Returns
 ///
 /// a newly-allocated string representing the accelerator
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accelerator_get_label_with_keycode&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accelerator_get_label_with_keycode&quot;</span>)]
 </span><span class="kw">pub fn </span>accelerator_get_label_with_keycode(
     display: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gdk::Display&gt;&gt;,
     accelerator_key: gdk::Key,
@@ -616,7 +616,7 @@
 /// # Returns
 ///
 /// a newly-allocated accelerator name
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accelerator_name&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accelerator_name&quot;</span>)]
 </span><span class="kw">pub fn </span>accelerator_name(
     accelerator_key: gdk::Key,
     accelerator_mods: gdk::ModifierType,
@@ -648,7 +648,7 @@
 /// # Returns
 ///
 /// a newly allocated accelerator name.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accelerator_name_with_keycode&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accelerator_name_with_keycode&quot;</span>)]
 </span><span class="kw">pub fn </span>accelerator_name_with_keycode(
     display: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gdk::Display&gt;&gt;,
     accelerator_key: gdk::Key,
@@ -701,7 +701,7 @@
 /// ## `accelerator_mods`
 /// return location for accelerator
 ///   modifier mask
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accelerator_parse&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accelerator_parse&quot;</span>)]
 </span><span class="kw">pub fn </span>accelerator_parse(accelerator: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;(gdk::Key, gdk::ModifierType)&gt; {
     <span class="macro">assert_initialized_main_thread!</span>();
     <span class="kw">unsafe </span>{
@@ -756,7 +756,7 @@
 /// ## `accelerator_mods`
 /// return location for accelerator
 ///   modifier mask
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accelerator_parse_with_keycode&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accelerator_parse_with_keycode&quot;</span>)]
 </span><span class="kw">pub fn </span>accelerator_parse_with_keycode(
     accelerator: <span class="kw-2">&amp;</span>str,
     display: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gdk::Display&gt;&gt;,
@@ -810,7 +810,7 @@
 /// a `GCancellable` to cancel the launch
 /// ## `callback`
 /// a callback to call when the action is complete
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_show_uri_full&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_show_uri_full&quot;</span>)]
 #[doc(alias = <span class="string">&quot;gtk_show_uri_full_finish&quot;</span>)]
 </span><span class="kw">pub fn </span>show_uri_full&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
     parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Window&gt;&gt;,
@@ -893,7 +893,7 @@
 /// the parent top-level window
 /// ## `first_property_name`
 /// the name of the first property
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_show_about_dialog&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_show_about_dialog&quot;</span>)]
 </span><span class="kw">pub fn </span>show_about_dialog&lt;P: IsA&lt;Window&gt;&gt;(parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>P&gt;, properties: <span class="kw-2">&amp;</span>[(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)]) {
     <span class="macro">assert_initialized_main_thread!</span>();
     <span class="kw">unsafe </span>{
@@ -921,7 +921,7 @@
 ///
 ///
 ///    0-terminated array of type ids
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_test_list_all_types&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_test_list_all_types&quot;</span>)]
 </span><span class="kw">pub fn </span>test_list_all_types() -&gt; Vec&lt;glib::Type&gt; {
     <span class="kw">unsafe </span>{
         <span class="kw">let </span><span class="kw-2">mut </span>n_types = std::mem::MaybeUninit::uninit();
@@ -930,4 +930,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

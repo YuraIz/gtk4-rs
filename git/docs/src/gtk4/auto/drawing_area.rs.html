@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -922,7 +922,7 @@
     /// # Implements
     ///
     /// [`DrawingAreaExt`][trait@crate::prelude::DrawingAreaExt], [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`DrawingAreaExtManual`][trait@crate::prelude::DrawingAreaExtManual], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkDrawingArea&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkDrawingArea&quot;</span>)]
     </span><span class="kw">pub struct </span>DrawingArea(Object&lt;ffi::GtkDrawingArea, ffi::GtkDrawingAreaClass&gt;) @extends Widget, @implements Accessible, Buildable, ConstraintTarget;
 
     <span class="kw">match fn </span>{
@@ -938,7 +938,7 @@
     /// # Returns
     ///
     /// a new [`DrawingArea`][crate::DrawingArea]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drawing_area_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drawing_area_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; DrawingArea {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ Widget::from_glib_none(ffi::gtk_drawing_area_new()).unsafe_cast() }
@@ -959,12 +959,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`DrawingArea`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>DrawingAreaBuilder {
     content_height: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     content_width: <span class="prelude-ty">Option</span>&lt;i32&gt;,
@@ -1009,7 +1009,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`DrawingArea`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; DrawingArea {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>content_height) = <span class="self">self</span>.content_height {
@@ -1386,7 +1386,7 @@
     /// # Returns
     ///
     /// The height requested for content of the drawing area
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drawing_area_get_content_height&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drawing_area_get_content_height&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_content_height&quot;</span>)]
     </span><span class="kw">fn </span>content_height(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -1395,7 +1395,7 @@
     /// # Returns
     ///
     /// The width requested for content of the drawing area
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drawing_area_get_content_width&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drawing_area_get_content_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_content_width&quot;</span>)]
     </span><span class="kw">fn </span>content_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -1409,7 +1409,7 @@
     /// If the height is set to 0 (the default), the drawing area may disappear.
     /// ## `height`
     /// the height of contents
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drawing_area_set_content_height&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drawing_area_set_content_height&quot;</span>)]
     </span><span class="kw">fn </span>set_content_height(<span class="kw-2">&amp;</span><span class="self">self</span>, height: i32);
 
     <span class="doccomment">/// Sets the desired width of the contents of the drawing area.
@@ -1422,7 +1422,7 @@
     /// If the width is set to 0 (the default), the drawing area may disappear.
     /// ## `width`
     /// the width of contents
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drawing_area_set_content_width&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drawing_area_set_content_width&quot;</span>)]
     </span><span class="kw">fn </span>set_content_width(<span class="kw-2">&amp;</span><span class="self">self</span>, width: i32);
 
     <span class="doccomment">/// Emitted once when the widget is realized, and then each time the widget
@@ -1434,13 +1434,13 @@
     /// the width of the viewport
     /// ## `height`
     /// the height of the viewport
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;resize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;resize&quot;</span>)]
     </span><span class="kw">fn </span>connect_resize&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, i32, i32) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;content-height&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;content-height&quot;</span>)]
     </span><span class="kw">fn </span>connect_content_height_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;content-width&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;content-width&quot;</span>)]
     </span><span class="kw">fn </span>connect_content_width_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -1552,4 +1552,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

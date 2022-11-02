@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -236,7 +236,7 @@
 ///
 /// An interned string for the canonicalized
 ///   mime type or [`None`] if the string wasn&#39;t a valid mime type
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_intern_mime_type&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_intern_mime_type&quot;</span>)]
 </span><span class="kw">pub fn </span>intern_mime_type(string: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
     <span class="macro">assert_initialized_main_thread!</span>();
     <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_intern_mime_type(string.to_glib_none().<span class="number">0</span>)) }
@@ -264,7 +264,7 @@
 ///
 /// A newly-created pixbuf with a
 ///   reference count of 1
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_get_from_surface&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_get_from_surface&quot;</span>)]
 </span><span class="kw">pub fn </span>pixbuf_get_from_surface(
     surface: <span class="kw-2">&amp;</span>cairo::Surface,
     src_x: i32,
@@ -295,7 +295,7 @@
 /// # Returns
 ///
 /// a new [`gdk_pixbuf::Pixbuf`][crate::gdk_pixbuf::Pixbuf]
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_get_from_texture&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_get_from_texture&quot;</span>)]
 </span><span class="kw">pub fn </span>pixbuf_get_from_texture(texture: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Texture&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;gdk_pixbuf::Pixbuf&gt; {
     <span class="macro">skip_assert_initialized!</span>();
     <span class="kw">unsafe </span>{
@@ -342,7 +342,7 @@
 /// in order to take effect.
 /// ## `backends`
 /// a comma-separated list of backends
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_set_allowed_backends&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_set_allowed_backends&quot;</span>)]
 </span><span class="kw">pub fn </span>set_allowed_backends(backends: <span class="kw-2">&amp;</span>str) {
     <span class="macro">assert_initialized_main_thread!</span>();
     <span class="kw">unsafe </span>{
@@ -358,10 +358,10 @@
 ///
 /// the corresponding GDK key symbol, if one exists.
 ///   or, if there is no corresponding symbol, wc | 0x01000000
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_unicode_to_keyval&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_unicode_to_keyval&quot;</span>)]
 </span><span class="kw">pub fn </span>unicode_to_keyval(wc: u32) -&gt; u32 {
     <span class="macro">assert_initialized_main_thread!</span>();
     <span class="kw">unsafe </span>{ ffi::gdk_unicode_to_keyval(wc) }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

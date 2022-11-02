@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -205,7 +205,7 @@
     /// serialization functions, use [`content_register_serializer()`][crate::content_register_serializer()].
     ///
     /// Also see [`ContentDeserializer`][crate::ContentDeserializer].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkContentSerializer&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkContentSerializer&quot;</span>)]
     </span><span class="kw">pub struct </span>ContentSerializer(Object&lt;ffi::GdkContentSerializer&gt;);
 
     <span class="kw">match fn </span>{
@@ -221,7 +221,7 @@
     /// # Returns
     ///
     /// the cancellable for the current operation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_serializer_get_cancellable&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_serializer_get_cancellable&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_cancellable&quot;</span>)]
     </span><span class="kw">pub fn </span>cancellable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::Cancellable&gt; {
         <span class="kw">unsafe </span>{
@@ -236,7 +236,7 @@
     /// # Returns
     ///
     /// the `GType` for the current operation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_serializer_get_gtype&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_serializer_get_gtype&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_gtype&quot;</span>)]
     </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::types::Type {
         <span class="kw">unsafe </span>{ from_glib(ffi::gdk_content_serializer_get_gtype(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -247,7 +247,7 @@
     /// # Returns
     ///
     /// the mime type for the current operation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_serializer_get_mime_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_serializer_get_mime_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_mime_type&quot;</span>)]
     </span><span class="kw">pub fn </span>mime_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{
@@ -264,7 +264,7 @@
     /// # Returns
     ///
     /// the output stream for the current operation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_serializer_get_output_stream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_serializer_get_output_stream&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_output_stream&quot;</span>)]
     </span><span class="kw">pub fn </span>output_stream(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::OutputStream {
         <span class="kw">unsafe </span>{
@@ -279,14 +279,14 @@
     /// # Returns
     ///
     /// the `GValue` for the current operation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_serializer_get_value&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_serializer_get_value&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_value&quot;</span>)]
     </span><span class="kw">pub fn </span>value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Value {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_content_serializer_get_value(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
     <span class="doccomment">/// Indicate that the serialization has been successfully completed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_serializer_return_success&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_serializer_return_success&quot;</span>)]
     </span><span class="kw">pub fn </span>return_success(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gdk_content_serializer_return_success(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -300,4 +300,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

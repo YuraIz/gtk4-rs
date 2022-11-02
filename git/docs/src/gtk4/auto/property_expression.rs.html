@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -218,7 +218,7 @@
 
 <span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// A `GObject` property value in a [`Expression`][crate::Expression].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkPropertyExpression&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkPropertyExpression&quot;</span>)]
     </span><span class="kw">pub struct </span>PropertyExpression(Shared&lt;ffi::GtkPropertyExpression&gt;);
 
     <span class="kw">match fn </span>{
@@ -256,7 +256,7 @@
     /// # Returns
     ///
     /// a new [`Expression`][crate::Expression]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_property_expression_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_property_expression_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         this_type: glib::types::Type,
         expression: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;Expression&gt;&gt;,
@@ -290,7 +290,7 @@
     /// # Returns
     ///
     /// a new [`Expression`][crate::Expression]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_property_expression_new_for_pspec&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_property_expression_new_for_pspec&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_pspec&quot;</span>)]
     </span><span class="kw">pub fn </span>for_pspec(
         expression: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;Expression&gt;&gt;,
@@ -311,7 +311,7 @@
     /// # Returns
     ///
     /// the object expression
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_property_expression_get_expression&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_property_expression_get_expression&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_expression&quot;</span>)]
     </span><span class="kw">pub fn </span>expression(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Expression&gt; {
         <span class="kw">unsafe </span>{
@@ -327,7 +327,7 @@
     /// # Returns
     ///
     /// the `GParamSpec` for the property
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_property_expression_get_pspec&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_property_expression_get_pspec&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pspec&quot;</span>)]
     </span><span class="kw">pub fn </span>pspec(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::ParamSpec {
         <span class="kw">unsafe </span>{
@@ -344,4 +344,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

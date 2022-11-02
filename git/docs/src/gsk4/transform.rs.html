@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gsk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gsk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -341,7 +341,7 @@
     ///
     /// ## `out_transform`
     /// The location to put the transform in
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_parse&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_parse&quot;</span>)]
     </span><span class="kw">pub fn </span>parse(string: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, glib::BoolError&gt; {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -369,7 +369,7 @@
     /// # Returns
     ///
     /// The inverted transform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_invert&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_invert&quot;</span>)]
     </span><span class="kw">pub fn </span>invert(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, glib::BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>matrix = <span class="self">self</span>.to_matrix();
@@ -389,7 +389,7 @@
     /// # Returns
     ///
     /// The new transform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_rotate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_rotate&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>rotate(<span class="kw-2">&amp;</span><span class="self">self</span>, angle: f32) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
@@ -410,7 +410,7 @@
     /// # Returns
     ///
     /// The new transform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_rotate_3d&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_rotate_3d&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>rotate_3d(<span class="kw-2">&amp;</span><span class="self">self</span>, angle: f32, axis: <span class="kw-2">&amp;</span>graphene::Vec3) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
@@ -434,7 +434,7 @@
     /// # Returns
     ///
     /// The new transform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_scale&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>scale(<span class="kw-2">&amp;</span><span class="self">self</span>, factor_x: f32, factor_y: f32) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
@@ -458,7 +458,7 @@
     /// # Returns
     ///
     /// The new transform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_scale_3d&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_scale_3d&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>scale_3d(<span class="kw-2">&amp;</span><span class="self">self</span>, factor_x: f32, factor_y: f32, factor_z: f32) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
@@ -481,7 +481,7 @@
     /// # Returns
     ///
     /// The new transform
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gsk_transform_skew&quot;</span>)]
     #[must_use]
@@ -500,7 +500,7 @@
     /// # Returns
     ///
     /// The new transform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_transform&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_transform&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>transform(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
@@ -519,7 +519,7 @@
     /// # Returns
     ///
     /// The new transform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_translate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_translate&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>translate(<span class="kw-2">&amp;</span><span class="self">self</span>, point: <span class="kw-2">&amp;</span>graphene::Point) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
@@ -538,7 +538,7 @@
     /// # Returns
     ///
     /// The new transform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_translate_3d&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_translate_3d&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>translate_3d(<span class="kw-2">&amp;</span><span class="self">self</span>, point: <span class="kw-2">&amp;</span>graphene::Point3D) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
@@ -559,11 +559,11 @@
     }
 }
 
-<span class="attribute">#[test]
+<span class="attr">#[test]
 </span><span class="kw">fn </span>invert_identity_is_identity() {
     <span class="kw">let </span>transform = Transform::new();
     <span class="kw">let </span>output = transform.invert();
     <span class="macro">assert_eq!</span>(output.unwrap(), transform);
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

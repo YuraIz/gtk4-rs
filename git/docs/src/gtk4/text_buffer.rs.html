@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -296,7 +296,7 @@
     /// # Returns
     ///
     /// a new tag
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_text_buffer_create_tag&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_text_buffer_create_tag&quot;</span>)]
     </span><span class="kw">fn </span>create_tag(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         tag_name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -318,7 +318,7 @@
     /// length of @text, or -1
     /// ## `first_tag`
     /// first tag to apply to @text
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_text_buffer_insert_with_tags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_text_buffer_insert_with_tags&quot;</span>)]
     </span><span class="kw">fn </span>insert_with_tags(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="kw-2">&amp;mut </span>TextIter, text: <span class="kw-2">&amp;</span>str, tags: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>TextTag]);
 
     <span class="doccomment">/// Inserts @text into @self at @iter, applying the list of tags to
@@ -334,7 +334,7 @@
     /// length of @text, or -1
     /// ## `first_tag_name`
     /// name of a tag to apply to @text
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_text_buffer_insert_with_tags_by_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_text_buffer_insert_with_tags_by_name&quot;</span>)]
     </span><span class="kw">fn </span>insert_with_tags_by_name(<span class="kw-2">&amp;</span><span class="self">self</span>, iter: <span class="kw-2">&amp;mut </span>TextIter, text: <span class="kw-2">&amp;</span>str, tags_names: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>str]);
 
     <span class="doccomment">/// Emitted to insert text in a [`TextBuffer`][crate::TextBuffer].
@@ -440,4 +440,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1008,7 +1008,7 @@
 // DO NOT EDIT
 
 </span><span class="kw">use </span><span class="kw">crate</span>::Accessible;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
 </span><span class="kw">use </span><span class="kw">crate</span>::AccessibleRange;
 <span class="kw">use </span><span class="kw">crate</span>::AccessibleRole;
@@ -1032,7 +1032,7 @@
 <span class="kw">use </span>std::fmt;
 <span class="kw">use </span>std::mem::transmute;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
 </span><span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// [`ProgressBar`][crate::ProgressBar] is typically used to display the progress of a long
@@ -1085,7 +1085,7 @@
     /// # Implements
     ///
     /// [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`AccessibleRangeExt`][trait@crate::prelude::AccessibleRangeExt], [`OrientableExt`][trait@crate::prelude::OrientableExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkProgressBar&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkProgressBar&quot;</span>)]
     </span><span class="kw">pub struct </span>ProgressBar(Object&lt;ffi::GtkProgressBar&gt;) @extends Widget, @implements Accessible, Buildable, ConstraintTarget, AccessibleRange, Orientable;
 
     <span class="kw">match fn </span>{
@@ -1093,9 +1093,9 @@
     }
 }
 
-<span class="attribute">#[cfg(not(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>)))]
+<span class="attr">#[cfg(not(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>)))]
 </span><span class="macro">glib::wrapper! </span>{
-    <span class="attribute">#[doc(alias = <span class="string">&quot;GtkProgressBar&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;GtkProgressBar&quot;</span>)]
     </span><span class="kw">pub struct </span>ProgressBar(Object&lt;ffi::GtkProgressBar&gt;) @extends Widget, @implements Accessible, Buildable, ConstraintTarget, Orientable;
 
     <span class="kw">match fn </span>{
@@ -1109,7 +1109,7 @@
     /// # Returns
     ///
     /// a [`ProgressBar`][crate::ProgressBar].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; ProgressBar {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ Widget::from_glib_none(ffi::gtk_progress_bar_new()).unsafe_cast() }
@@ -1130,7 +1130,7 @@
     /// # Returns
     ///
     /// [`pango::EllipsizeMode`][crate::pango::EllipsizeMode]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_get_ellipsize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_get_ellipsize&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_ellipsize&quot;</span>)]
     </span><span class="kw">pub fn </span>ellipsize(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; pango::EllipsizeMode {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_progress_bar_get_ellipsize(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1141,7 +1141,7 @@
     /// # Returns
     ///
     /// a fraction from 0.0 to 1.0
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_get_fraction&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_get_fraction&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_fraction&quot;</span>)]
     </span><span class="kw">pub fn </span>fraction(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::gtk_progress_bar_get_fraction(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1152,7 +1152,7 @@
     /// # Returns
     ///
     /// [`true`] if the progress bar is inverted
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_get_inverted&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_get_inverted&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_inverted&quot;</span>)]
     </span><span class="kw">pub fn </span>is_inverted(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_progress_bar_get_inverted(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1165,7 +1165,7 @@
     /// # Returns
     ///
     /// a fraction from 0.0 to 1.0
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_get_pulse_step&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_get_pulse_step&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pulse_step&quot;</span>)]
     </span><span class="kw">pub fn </span>pulse_step(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::gtk_progress_bar_get_pulse_step(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1178,7 +1178,7 @@
     /// # Returns
     ///
     /// [`true`] if text is shown in the progress bar
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_get_show_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_get_show_text&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_show_text&quot;</span>)]
     </span><span class="kw">pub fn </span>shows_text(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_progress_bar_get_show_text(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1192,7 +1192,7 @@
     /// # Returns
     ///
     /// the text
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_get_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_get_text&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_text&quot;</span>)]
     </span><span class="kw">pub fn </span>text(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_progress_bar_get_text(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1204,7 +1204,7 @@
     /// bounces back and forth. Each call to [`pulse()`][Self::pulse()]
     /// causes the block to move by a little bit (the amount of movement
     /// per pulse is determined by [`set_pulse_step()`][Self::set_pulse_step()]).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_pulse&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_pulse&quot;</span>)]
     </span><span class="kw">pub fn </span>pulse(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gtk_progress_bar_pulse(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -1217,7 +1217,7 @@
     /// to render the entire string.
     /// ## `mode`
     /// a [`pango::EllipsizeMode`][crate::pango::EllipsizeMode]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_set_ellipsize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_set_ellipsize&quot;</span>)]
     </span><span class="kw">pub fn </span>set_ellipsize(<span class="kw-2">&amp;</span><span class="self">self</span>, mode: pango::EllipsizeMode) {
         <span class="kw">unsafe </span>{
             ffi::gtk_progress_bar_set_ellipsize(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, mode.into_glib());
@@ -1230,7 +1230,7 @@
     /// The fraction should be between 0.0 and 1.0, inclusive.
     /// ## `fraction`
     /// fraction of the task that’s been completed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_set_fraction&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_set_fraction&quot;</span>)]
     </span><span class="kw">pub fn </span>set_fraction(<span class="kw-2">&amp;</span><span class="self">self</span>, fraction: f64) {
         <span class="kw">unsafe </span>{
             ffi::gtk_progress_bar_set_fraction(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, fraction);
@@ -1243,7 +1243,7 @@
     /// Inverted progress bars grow in the opposite direction.
     /// ## `inverted`
     /// [`true`] to invert the progress bar
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_set_inverted&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_set_inverted&quot;</span>)]
     </span><span class="kw">pub fn </span>set_inverted(<span class="kw-2">&amp;</span><span class="self">self</span>, inverted: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_progress_bar_set_inverted(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, inverted.into_glib());
@@ -1257,7 +1257,7 @@
     /// is called.
     /// ## `fraction`
     /// fraction between 0.0 and 1.0
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_set_pulse_step&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_set_pulse_step&quot;</span>)]
     </span><span class="kw">pub fn </span>set_pulse_step(<span class="kw-2">&amp;</span><span class="self">self</span>, fraction: f64) {
         <span class="kw">unsafe </span>{
             ffi::gtk_progress_bar_set_pulse_step(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, fraction);
@@ -1275,7 +1275,7 @@
     /// to [`true`] and `property::ProgressBar::text` to the empty string (not [`None`]).
     /// ## `show_text`
     /// whether to show text
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_set_show_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_set_show_text&quot;</span>)]
     </span><span class="kw">pub fn </span>set_show_text(<span class="kw-2">&amp;</span><span class="self">self</span>, show_text: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_progress_bar_set_show_text(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, show_text.into_glib());
@@ -1295,14 +1295,14 @@
     /// `property::ProgressBar::show-text` is [`true`].
     /// ## `text`
     /// a UTF-8 string
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_progress_bar_set_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_progress_bar_set_text&quot;</span>)]
     </span><span class="kw">pub fn </span>set_text(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_progress_bar_set_text(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, text.to_glib_none().<span class="number">0</span>);
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;ellipsize&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;ellipsize&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_ellipsize_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_ellipsize_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ProgressBar) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkProgressBar,
@@ -1325,7 +1325,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;fraction&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;fraction&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_fraction_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_fraction_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ProgressBar) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkProgressBar,
@@ -1348,7 +1348,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;inverted&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;inverted&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_inverted_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_inverted_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ProgressBar) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkProgressBar,
@@ -1371,7 +1371,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pulse-step&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pulse-step&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_pulse_step_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_pulse_step_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ProgressBar) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkProgressBar,
@@ -1394,7 +1394,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;show-text&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;show-text&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_show_text_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_show_text_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ProgressBar) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkProgressBar,
@@ -1417,7 +1417,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;text&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;text&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_text_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_text_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ProgressBar) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkProgressBar,
@@ -1447,12 +1447,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`ProgressBar`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>ProgressBarBuilder {
     ellipsize: <span class="prelude-ty">Option</span>&lt;pango::EllipsizeMode&gt;,
     fraction: <span class="prelude-ty">Option</span>&lt;f64&gt;,
@@ -1502,7 +1502,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`ProgressBar`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; ProgressBar {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>ellipsize) = <span class="self">self</span>.ellipsize {
@@ -1936,4 +1936,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1377,7 +1377,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::Widget;
 <span class="kw">use </span>glib::object::Cast;
 <span class="kw">use </span>glib::object::IsA;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 </span><span class="kw">use </span>glib::object::ObjectExt;
 <span class="kw">use </span>glib::object::ObjectType <span class="kw">as </span>ObjectType_;
@@ -1457,7 +1457,7 @@
     /// # Implements
     ///
     /// [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkMenuButton&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkMenuButton&quot;</span>)]
     </span><span class="kw">pub struct </span>MenuButton(Object&lt;ffi::GtkMenuButton&gt;) @extends Widget, @implements Accessible, Buildable, ConstraintTarget;
 
     <span class="kw">match fn </span>{
@@ -1475,7 +1475,7 @@
     /// # Returns
     ///
     /// The newly created [`MenuButton`][crate::MenuButton]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; MenuButton {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ Widget::from_glib_none(ffi::gtk_menu_button_new()).unsafe_cast() }
@@ -1494,7 +1494,7 @@
     /// # Returns
     ///
     /// whether to show a dropdown arrow even when using an icon
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_menu_button_get_always_show_arrow&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_always_show_arrow&quot;</span>)]
@@ -1511,7 +1511,7 @@
     /// # Returns
     ///
     /// the child widget of @self
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_menu_button_get_child&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_child&quot;</span>)]
@@ -1524,7 +1524,7 @@
     /// # Returns
     ///
     /// a [`ArrowType`][crate::ArrowType] value
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_direction&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_direction&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_direction&quot;</span>)]
     </span><span class="kw">pub fn </span>direction(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ArrowType {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_menu_button_get_direction(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1535,7 +1535,7 @@
     /// # Returns
     ///
     /// [`true`] if the button has a frame
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_has_frame&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_has_frame&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_has_frame&quot;</span>)]
     </span><span class="kw">pub fn </span>has_frame(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_menu_button_get_has_frame(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1546,7 +1546,7 @@
     /// # Returns
     ///
     /// the name of the icon shown in the button
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_icon_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_icon_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_icon_name&quot;</span>)]
     </span><span class="kw">pub fn </span>icon_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_menu_button_get_icon_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1557,7 +1557,7 @@
     /// # Returns
     ///
     /// the label shown in the button
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_label&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_label&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_label&quot;</span>)]
     </span><span class="kw">pub fn </span>label(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_menu_button_get_label(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1568,7 +1568,7 @@
     /// # Returns
     ///
     /// a `GMenuModel`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_menu_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_menu_model&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_menu_model&quot;</span>)]
     </span><span class="kw">pub fn </span>menu_model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::MenuModel&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_menu_button_get_menu_model(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1582,7 +1582,7 @@
     /// # Returns
     ///
     /// a [`Popover`][crate::Popover] or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_popover&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_popover&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_popover&quot;</span>)]
     </span><span class="kw">pub fn </span>popover(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Popover&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_menu_button_get_popover(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1593,7 +1593,7 @@
     /// # Returns
     ///
     /// [`true`] if the button is a primary menu
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_menu_button_get_primary&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_primary&quot;</span>)]
@@ -1608,7 +1608,7 @@
     ///
     /// [`true`] whether an embedded underline in the text indicates
     ///   the mnemonic accelerator keys.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_use_underline&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_get_use_underline&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_use_underline&quot;</span>)]
     </span><span class="kw">pub fn </span>uses_underline(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -1619,7 +1619,7 @@
     }
 
     <span class="doccomment">/// Dismiss the menu.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_popdown&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_popdown&quot;</span>)]
     </span><span class="kw">pub fn </span>popdown(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gtk_menu_button_popdown(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -1627,7 +1627,7 @@
     }
 
     <span class="doccomment">/// Pop up the menu.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_popup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_popup&quot;</span>)]
     </span><span class="kw">pub fn </span>popup(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gtk_menu_button_popup(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -1638,7 +1638,7 @@
     /// child.
     /// ## `always_show_arrow`
     /// hether to show a dropdown arrow even when using an icon
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_menu_button_set_always_show_arrow&quot;</span>)]
     </span><span class="kw">pub fn </span>set_always_show_arrow(<span class="kw-2">&amp;</span><span class="self">self</span>, always_show_arrow: bool) {
@@ -1660,7 +1660,7 @@
     /// will be shown next to the child.
     /// ## `child`
     /// the child widget
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_menu_button_set_child&quot;</span>)]
     </span><span class="kw">pub fn </span>set_child(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;) {
@@ -1690,7 +1690,7 @@
     ///   to reset to default behavior.
     /// ## `destroy_notify`
     /// destroy notify for @user_data
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_create_popup_func&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_create_popup_func&quot;</span>)]
     </span><span class="kw">pub fn </span>set_create_popup_func&lt;P: Fn(<span class="kw-2">&amp;</span>MenuButton) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: P) {
         <span class="kw">let </span>func_data: Box_&lt;P&gt; = Box_::new(func);
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>func_func&lt;P: Fn(<span class="kw-2">&amp;</span>MenuButton) + <span class="lifetime">&#39;static</span>&gt;(
@@ -1731,7 +1731,7 @@
     /// as if you passed [`ArrowType::Down`][crate::ArrowType::Down] (although you won’t see any arrows).
     /// ## `direction`
     /// a [`ArrowType`][crate::ArrowType]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_direction&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_direction&quot;</span>)]
     </span><span class="kw">pub fn </span>set_direction(<span class="kw-2">&amp;</span><span class="self">self</span>, direction: ArrowType) {
         <span class="kw">unsafe </span>{
             ffi::gtk_menu_button_set_direction(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, direction.into_glib());
@@ -1741,7 +1741,7 @@
     <span class="doccomment">/// Sets the style of the button.
     /// ## `has_frame`
     /// whether the button should have a visible frame
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_has_frame&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_has_frame&quot;</span>)]
     </span><span class="kw">pub fn </span>set_has_frame(<span class="kw-2">&amp;</span><span class="self">self</span>, has_frame: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_menu_button_set_has_frame(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, has_frame.into_glib());
@@ -1758,7 +1758,7 @@
     /// will be shown next to the icon.
     /// ## `icon_name`
     /// the icon name
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_icon_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_icon_name&quot;</span>)]
     </span><span class="kw">pub fn </span>set_icon_name(<span class="kw-2">&amp;</span><span class="self">self</span>, icon_name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_menu_button_set_icon_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, icon_name.to_glib_none().<span class="number">0</span>);
@@ -1774,7 +1774,7 @@
     /// arrow will be shown next to the label.
     /// ## `label`
     /// the label
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_label&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_label&quot;</span>)]
     </span><span class="kw">pub fn </span>set_label(<span class="kw-2">&amp;</span><span class="self">self</span>, label: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_menu_button_set_label(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, label.to_glib_none().<span class="number">0</span>);
@@ -1794,7 +1794,7 @@
     /// ## `menu_model`
     /// a `GMenuModel`, or [`None`] to unset and disable the
     ///   button
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_menu_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_menu_model&quot;</span>)]
     </span><span class="kw">pub fn </span>set_menu_model(<span class="kw-2">&amp;</span><span class="self">self</span>, menu_model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::MenuModel&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_menu_button_set_menu_model(
@@ -1812,7 +1812,7 @@
     /// from the @self, and the property is set to [`None`].
     /// ## `popover`
     /// a [`Popover`][crate::Popover], or [`None`] to unset and disable the button
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_popover&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_popover&quot;</span>)]
     </span><span class="kw">pub fn </span>set_popover(<span class="kw-2">&amp;</span><span class="self">self</span>, popover: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_menu_button_set_popover(
@@ -1827,7 +1827,7 @@
     /// Primary menus can be opened with the &lt;kbd&gt;F10&lt;/kbd&gt; key.
     /// ## `primary`
     /// whether the menubutton should act as a primary menu
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_menu_button_set_primary&quot;</span>)]
     </span><span class="kw">pub fn </span>set_primary(<span class="kw-2">&amp;</span><span class="self">self</span>, primary: bool) {
@@ -1839,7 +1839,7 @@
     <span class="doccomment">/// If true, an underline in the text indicates a mnemonic.
     /// ## `use_underline`
     /// [`true`] if underlines in the text indicate mnemonics
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_use_underline&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_menu_button_set_use_underline&quot;</span>)]
     </span><span class="kw">pub fn </span>set_use_underline(<span class="kw-2">&amp;</span><span class="self">self</span>, use_underline: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_menu_button_set_use_underline(
@@ -1853,7 +1853,7 @@
     ///
     /// The `::activate` signal on [`MenuButton`][crate::MenuButton] is an action signal and
     /// emitting it causes the button to pop up its menu.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;activate&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_activate&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
@@ -1877,13 +1877,13 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>emit_activate(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="self">self</span>.emit_by_name::&lt;()&gt;(<span class="string">&quot;activate&quot;</span>, <span class="kw-2">&amp;</span>[]);
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;always-show-arrow&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_always_show_arrow_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
@@ -1911,7 +1911,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;child&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_child_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
@@ -1936,7 +1936,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;direction&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;direction&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_direction_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_direction_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>MenuButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkMenuButton,
@@ -1959,7 +1959,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;has-frame&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;has-frame&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_has_frame_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_has_frame_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>MenuButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkMenuButton,
@@ -1982,7 +1982,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;icon-name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;icon-name&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_icon_name_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_icon_name_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>MenuButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkMenuButton,
@@ -2005,7 +2005,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;label&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;label&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_label_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_label_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>MenuButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkMenuButton,
@@ -2028,7 +2028,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;menu-model&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;menu-model&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_menu_model_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_menu_model_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>MenuButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkMenuButton,
@@ -2051,7 +2051,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;popover&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;popover&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_popover_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_popover_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>MenuButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkMenuButton,
@@ -2074,7 +2074,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;primary&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_primary_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
@@ -2099,7 +2099,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;use-underline&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;use-underline&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_use_underline_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_use_underline_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>MenuButton) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkMenuButton,
@@ -2129,17 +2129,17 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`MenuButton`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>MenuButtonBuilder {
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span>always_show_arrow: <span class="prelude-ty">Option</span>&lt;bool&gt;,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span>child: <span class="prelude-ty">Option</span>&lt;Widget&gt;,
     direction: <span class="prelude-ty">Option</span>&lt;ArrowType&gt;,
@@ -2148,7 +2148,7 @@
     label: <span class="prelude-ty">Option</span>&lt;String&gt;,
     menu_model: <span class="prelude-ty">Option</span>&lt;gio::MenuModel&gt;,
     popover: <span class="prelude-ty">Option</span>&lt;Popover&gt;,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span>primary: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     use_underline: <span class="prelude-ty">Option</span>&lt;bool&gt;,
@@ -2193,14 +2193,14 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`MenuButton`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; MenuButton {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
-        <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+        <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         </span><span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>always_show_arrow) = <span class="self">self</span>.always_show_arrow {
             properties.push((<span class="string">&quot;always-show-arrow&quot;</span>, always_show_arrow));
         }
-        <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+        <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         </span><span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>child) = <span class="self">self</span>.child {
             properties.push((<span class="string">&quot;child&quot;</span>, child));
         }
@@ -2222,7 +2222,7 @@
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>popover) = <span class="self">self</span>.popover {
             properties.push((<span class="string">&quot;popover&quot;</span>, popover));
         }
-        <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+        <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         </span><span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>primary) = <span class="self">self</span>.primary {
             properties.push((<span class="string">&quot;primary&quot;</span>, primary));
         }
@@ -2323,7 +2323,7 @@
     }
 
     <span class="doccomment">/// Whether to show a dropdown arrow even when using an icon or a custom child.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>always_show_arrow(<span class="kw-2">mut </span><span class="self">self</span>, always_show_arrow: bool) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.always_show_arrow = <span class="prelude-val">Some</span>(always_show_arrow);
@@ -2331,7 +2331,7 @@
     </span>}
 
     <span class="doccomment">/// The child widget.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>child(<span class="kw-2">mut </span><span class="self">self</span>, child: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.child = <span class="prelude-val">Some</span>(child.clone().upcast());
@@ -2381,7 +2381,7 @@
     <span class="doccomment">/// Whether the menu button acts as a primary menu.
     ///
     /// Primary menus can be opened using the &lt;kbd&gt;F10&lt;/kbd&gt; key
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub fn </span>primary(<span class="kw-2">mut </span><span class="self">self</span>, primary: bool) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.primary = <span class="prelude-val">Some</span>(primary);
@@ -2652,4 +2652,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

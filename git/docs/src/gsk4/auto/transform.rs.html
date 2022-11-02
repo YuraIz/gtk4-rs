@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -527,7 +527,7 @@
     /// [`Transform`][crate::Transform] objects are immutable and cannot be changed after creation.
     /// This means code can safely expose them as properties of objects without
     /// having to worry about others changing them.
-    </span><span class="attribute">#[derive(Debug, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>Transform(Shared&lt;ffi::GskTransform&gt;);
 
     <span class="kw">match fn </span>{
@@ -538,13 +538,13 @@
 }
 
 <span class="kw">impl </span>Transform {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_new&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; Transform {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gsk_transform_new()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, second: <span class="kw-2">&amp;</span>Transform) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gsk_transform_equal(
@@ -559,7 +559,7 @@
     /// # Returns
     ///
     /// The category of the transform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_get_category&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_get_category&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_category&quot;</span>)]
     </span><span class="kw">pub fn </span>category(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; TransformCategory {
         <span class="kw">unsafe </span>{ from_glib(ffi::gsk_transform_get_category(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -572,7 +572,7 @@
     /// # Returns
     ///
     /// The new transform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_matrix&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_matrix&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>matrix(<span class="kw-2">&amp;</span><span class="self">self</span>, matrix: <span class="kw-2">&amp;</span>graphene::Matrix) -&gt; Transform {
         <span class="kw">unsafe </span>{
@@ -597,7 +597,7 @@
     /// # Returns
     ///
     /// The new transform
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_perspective&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_perspective&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>perspective(<span class="kw-2">&amp;</span><span class="self">self</span>, depth: f32) -&gt; Transform {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gsk_transform_perspective(<span class="self">self</span>.to_glib_full(), depth)) }
@@ -641,7 +641,7 @@
     ///
     /// ## `out_dy`
     /// return location for the y0 member
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_to_2d&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_to_2d&quot;</span>)]
     </span><span class="kw">pub fn </span>to_2d(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f32, f32, f32, f32, f32, f32) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>out_xx = mem::MaybeUninit::uninit();
@@ -718,7 +718,7 @@
     /// ## `out_dy`
     /// return location for the translation
     ///   in the y direction
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gsk_transform_to_2d_components&quot;</span>)]
     </span><span class="kw">pub fn </span>to_2d_components(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f32, f32, f32, f32, f32, f32, f32) {
@@ -786,7 +786,7 @@
     /// ## `out_dy`
     /// return location for the translation
     ///   in the y direction
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_to_affine&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_to_affine&quot;</span>)]
     </span><span class="kw">pub fn </span>to_affine(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f32, f32, f32, f32) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>out_scale_x = mem::MaybeUninit::uninit();
@@ -818,7 +818,7 @@
     ///
     /// ## `out_matrix`
     /// The matrix to set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_to_matrix&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_to_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>to_matrix(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; graphene::Matrix {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>out_matrix = graphene::Matrix::uninitialized();
@@ -836,7 +836,7 @@
     /// # Returns
     ///
     /// A new string for @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_to_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_to_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;to_string&quot;</span>)]
     </span><span class="kw">pub fn </span>to_str(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gsk_transform_to_string(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -861,7 +861,7 @@
     /// ## `out_dy`
     /// return location for the translation
     ///   in the y direction
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_to_translate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_to_translate&quot;</span>)]
     </span><span class="kw">pub fn </span>to_translate(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f32, f32) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>out_dx = mem::MaybeUninit::uninit();
@@ -887,7 +887,7 @@
     /// ## `out_rect`
     /// return location for the bounds
     ///   of the transformed rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_transform_bounds&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_transform_bounds&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_bounds(<span class="kw-2">&amp;</span><span class="self">self</span>, rect: <span class="kw-2">&amp;</span>graphene::Rect) -&gt; graphene::Rect {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>out_rect = graphene::Rect::uninitialized();
@@ -910,7 +910,7 @@
     /// ## `out_point`
     /// return location for
     ///   the transformed point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_transform_transform_point&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_transform_transform_point&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_point(<span class="kw-2">&amp;</span><span class="self">self</span>, point: <span class="kw-2">&amp;</span>graphene::Point) -&gt; graphene::Point {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>out_point = graphene::Point::uninitialized();
@@ -931,7 +931,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Transform {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -940,10 +940,10 @@
 <span class="kw">impl </span>Eq <span class="kw">for </span>Transform {}
 
 <span class="kw">impl </span>fmt::Display <span class="kw">for </span>Transform {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
         f.write_str(<span class="kw-2">&amp;</span><span class="self">self</span>.to_str())
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

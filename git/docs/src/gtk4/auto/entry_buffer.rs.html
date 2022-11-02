@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -327,7 +327,7 @@
     /// # Implements
     ///
     /// [`EntryBufferExt`][trait@crate::prelude::EntryBufferExt], [`trait@glib::ObjectExt`], [`EntryBufferExtManual`][trait@crate::prelude::EntryBufferExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkEntryBuffer&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkEntryBuffer&quot;</span>)]
     </span><span class="kw">pub struct </span>EntryBuffer(Object&lt;ffi::GtkEntryBuffer, ffi::GtkEntryBufferClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -347,12 +347,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`EntryBuffer`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>EntryBufferBuilder {
     max_length: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     text: <span class="prelude-ty">Option</span>&lt;String&gt;,
@@ -367,7 +367,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`EntryBuffer`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; EntryBuffer {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>max_length) = <span class="self">self</span>.max_length {
@@ -403,7 +403,7 @@
     /// position at which text was deleted
     /// ## `n_chars`
     /// number of characters deleted
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_emit_deleted_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_emit_deleted_text&quot;</span>)]
     </span><span class="kw">fn </span>emit_deleted_text(<span class="kw-2">&amp;</span><span class="self">self</span>, position: u32, n_chars: u32);
 
     <span class="doccomment">/// Used when subclassing [`EntryBuffer`][crate::EntryBuffer].
@@ -413,16 +413,16 @@
     /// text that was inserted
     /// ## `n_chars`
     /// number of characters inserted
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_emit_inserted_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_entry_buffer_emit_inserted_text&quot;</span>)]
     </span><span class="kw">fn </span>emit_inserted_text(<span class="kw-2">&amp;</span><span class="self">self</span>, position: u32, chars: <span class="kw-2">&amp;</span>str, n_chars: u32);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;length&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;length&quot;</span>)]
     </span><span class="kw">fn </span>connect_length_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;max-length&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;max-length&quot;</span>)]
     </span><span class="kw">fn </span>connect_max_length_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;text&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;text&quot;</span>)]
     </span><span class="kw">fn </span>connect_text_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -524,4 +524,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

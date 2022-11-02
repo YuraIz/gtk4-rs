@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -235,7 +235,7 @@
     /// # Implements
     ///
     /// [`DevicePadExt`][trait@crate::prelude::DevicePadExt], [`DeviceExt`][trait@crate::prelude::DeviceExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkDevicePad&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkDevicePad&quot;</span>)]
     </span><span class="kw">pub struct </span>DevicePad(Interface&lt;ffi::GdkDevicePad, ffi::GdkDevicePadInterface&gt;) @requires Device;
 
     <span class="kw">match fn </span>{
@@ -264,7 +264,7 @@
     /// # Returns
     ///
     /// The group number of the queried pad feature.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_device_pad_get_feature_group&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_device_pad_get_feature_group&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_feature_group&quot;</span>)]
     </span><span class="kw">fn </span>feature_group(<span class="kw-2">&amp;</span><span class="self">self</span>, feature: DevicePadFeature, feature_idx: i32) -&gt; i32;
 
@@ -275,7 +275,7 @@
     /// # Returns
     ///
     /// The number of modes available in @group.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_device_pad_get_group_n_modes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_device_pad_get_group_n_modes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_group_n_modes&quot;</span>)]
     </span><span class="kw">fn </span>group_n_modes(<span class="kw-2">&amp;</span><span class="self">self</span>, group_idx: i32) -&gt; i32;
 
@@ -286,7 +286,7 @@
     /// # Returns
     ///
     /// The amount of elements of type @feature that this pad has.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_device_pad_get_n_features&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_device_pad_get_n_features&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_n_features&quot;</span>)]
     </span><span class="kw">fn </span>n_features(<span class="kw-2">&amp;</span><span class="self">self</span>, feature: DevicePadFeature) -&gt; i32;
 
@@ -299,7 +299,7 @@
     /// # Returns
     ///
     /// The number of button/ring/strip groups in the pad.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_device_pad_get_n_groups&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_device_pad_get_n_groups&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_n_groups&quot;</span>)]
     </span><span class="kw">fn </span>n_groups(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 }
@@ -336,4 +336,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

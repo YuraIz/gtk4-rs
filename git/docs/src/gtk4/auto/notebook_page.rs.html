@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -388,7 +388,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkNotebookPage&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkNotebookPage&quot;</span>)]
     </span><span class="kw">pub struct </span>NotebookPage(Object&lt;ffi::GtkNotebookPage&gt;);
 
     <span class="kw">match fn </span>{
@@ -402,7 +402,7 @@
     /// # Returns
     ///
     /// the child to which @self belongs
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_notebook_page_get_child&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_notebook_page_get_child&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_child&quot;</span>)]
     </span><span class="kw">pub fn </span>child(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Widget {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_notebook_page_get_child(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -424,13 +424,13 @@
     }
 
     <span class="doccomment">/// The text of the menu widget.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;menu-label&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;menu-label&quot;</span>)]
     </span><span class="kw">pub fn </span>menu_label(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;menu-label&quot;</span>)
     }
 
     <span class="doccomment">/// The text of the menu widget.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;menu-label&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;menu-label&quot;</span>)]
     </span><span class="kw">pub fn </span>set_menu_label(<span class="kw-2">&amp;</span><span class="self">self</span>, menu_label: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;menu-label&quot;</span>, <span class="kw-2">&amp;</span>menu_label)
     }
@@ -461,42 +461,42 @@
     }
 
     <span class="doccomment">/// Whether to expand the childs tab.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tab-expand&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tab-expand&quot;</span>)]
     </span><span class="kw">pub fn </span>is_tab_expand(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;tab-expand&quot;</span>)
     }
 
     <span class="doccomment">/// Whether to expand the childs tab.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tab-expand&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tab-expand&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tab_expand(<span class="kw-2">&amp;</span><span class="self">self</span>, tab_expand: bool) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;tab-expand&quot;</span>, <span class="kw-2">&amp;</span>tab_expand)
     }
 
     <span class="doccomment">/// Whether the childs tab should fill the allocated area.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tab-fill&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tab-fill&quot;</span>)]
     </span><span class="kw">pub fn </span>is_tab_fill(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;tab-fill&quot;</span>)
     }
 
     <span class="doccomment">/// Whether the childs tab should fill the allocated area.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tab-fill&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tab-fill&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tab_fill(<span class="kw-2">&amp;</span><span class="self">self</span>, tab_fill: bool) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;tab-fill&quot;</span>, <span class="kw-2">&amp;</span>tab_fill)
     }
 
     <span class="doccomment">/// The text of the tab widget.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tab-label&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tab-label&quot;</span>)]
     </span><span class="kw">pub fn </span>tab_label(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;tab-label&quot;</span>)
     }
 
     <span class="doccomment">/// The text of the tab widget.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;tab-label&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;tab-label&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tab_label(<span class="kw-2">&amp;</span><span class="self">self</span>, tab_label: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;tab-label&quot;</span>, <span class="kw-2">&amp;</span>tab_label)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;detachable&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;detachable&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_detachable_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_detachable_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>NotebookPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkNotebookPage,
@@ -519,7 +519,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;menu-label&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;menu-label&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_menu_label_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_menu_label_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>NotebookPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkNotebookPage,
@@ -542,7 +542,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;position&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;position&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_position_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_position_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>NotebookPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkNotebookPage,
@@ -565,7 +565,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;reorderable&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;reorderable&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_reorderable_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_reorderable_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>NotebookPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkNotebookPage,
@@ -588,7 +588,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;tab-expand&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;tab-expand&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_tab_expand_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_tab_expand_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>NotebookPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkNotebookPage,
@@ -611,7 +611,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;tab-fill&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;tab-fill&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_tab_fill_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_tab_fill_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>NotebookPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkNotebookPage,
@@ -634,7 +634,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;tab-label&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;tab-label&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_tab_label_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_tab_label_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>NotebookPage) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkNotebookPage,
@@ -664,4 +664,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

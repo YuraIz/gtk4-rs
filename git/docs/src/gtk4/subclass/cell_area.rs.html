@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1124,7 +1124,7 @@
 <span class="kw">use </span>glib::{Cast, IsA, ParamSpec, Value};
 <span class="kw">use </span>std::mem;
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 </span><span class="kw">pub struct </span>CellCallback {
     callback: ffi::GtkCellCallback,
     user_data: glib::ffi::gpointer,
@@ -1146,7 +1146,7 @@
     }
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 </span><span class="kw">pub struct </span>CellCallbackAllocate {
     callback: ffi::GtkCellAllocCallback,
     user_data: glib::ffi::gpointer,
@@ -1175,7 +1175,7 @@
     }
 }
 
-<span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+<span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 </span><span class="kw">pub trait </span>CellAreaImpl: CellAreaImplExt + ObjectImpl {
     <span class="kw">fn </span>cell_properties() -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>[ParamSpec] {
         <span class="kw-2">&amp;</span>[]
@@ -1331,7 +1331,7 @@
     }
 }
 
-<span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+<span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 </span><span class="kw">pub trait </span>CellAreaImplExt: ObjectSubclass {
     <span class="kw">fn </span>parent_activate&lt;P: IsA&lt;CellAreaContext&gt;, W: IsA&lt;Widget&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2121,9 +2121,9 @@
     imp.foreach_alloc(<span class="kw-2">&amp;*</span>context, <span class="kw-2">&amp;*</span>widget, <span class="kw-2">&amp;</span>area, <span class="kw-2">&amp;</span>rectangle, <span class="kw-2">&amp;</span>callback)
 }
 
-<span class="attribute">#[allow(clippy::missing_safety_doc)]
+<span class="attr">#[allow(clippy::missing_safety_doc)]
 </span><span class="kw">pub unsafe trait </span>CellAreaClassSubclassExt: ClassStruct {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_cell_area_class_find_cell_property&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_cell_area_class_find_cell_property&quot;</span>)]
     </span><span class="kw">fn </span>find_cell_property(<span class="kw-2">&amp;</span><span class="self">self</span>, property_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;ParamSpec&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>cell_area_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass;
@@ -2134,7 +2134,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_cell_area_class_list_cell_properties&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_cell_area_class_list_cell_properties&quot;</span>)]
     </span><span class="kw">fn </span>list_cell_properties(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;ParamSpec&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>cell_area_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkCellAreaClass;
@@ -2150,4 +2150,4 @@
 
 <span class="kw">unsafe impl</span>&lt;T: ClassStruct&gt; CellAreaClassSubclassExt <span class="kw">for </span>T <span class="kw">where </span>T::Type: CellAreaImpl {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

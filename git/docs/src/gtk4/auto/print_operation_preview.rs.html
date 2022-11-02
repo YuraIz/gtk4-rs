@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -288,7 +288,7 @@
     /// # Implements
     ///
     /// [`PrintOperationPreviewExt`][trait@crate::prelude::PrintOperationPreviewExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkPrintOperationPreview&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkPrintOperationPreview&quot;</span>)]
     </span><span class="kw">pub struct </span>PrintOperationPreview(Interface&lt;ffi::GtkPrintOperationPreview, ffi::GtkPrintOperationPreviewIface&gt;);
 
     <span class="kw">match fn </span>{
@@ -309,7 +309,7 @@
     <span class="doccomment">/// Ends a preview.
     ///
     /// This function must be called to finish a custom print preview.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_operation_preview_end_preview&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_operation_preview_end_preview&quot;</span>)]
     </span><span class="kw">fn </span>end_preview(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Returns whether the given page is included in the set of pages that
@@ -320,7 +320,7 @@
     /// # Returns
     ///
     /// [`true`] if the page has been selected for printing
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_operation_preview_is_selected&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_operation_preview_is_selected&quot;</span>)]
     </span><span class="kw">fn </span>is_selected(<span class="kw-2">&amp;</span><span class="self">self</span>, page_nr: i32) -&gt; bool;
 
     <span class="doccomment">/// Renders a page to the preview.
@@ -336,7 +336,7 @@
     /// be associated with the print context.
     /// ## `page_nr`
     /// the page to render
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_operation_preview_render_page&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_operation_preview_render_page&quot;</span>)]
     </span><span class="kw">fn </span>render_page(<span class="kw-2">&amp;</span><span class="self">self</span>, page_nr: i32);
 
     <span class="doccomment">/// Emitted once for each page that gets rendered to the preview.
@@ -348,7 +348,7 @@
     /// the current [`PrintContext`][crate::PrintContext]
     /// ## `page_setup`
     /// the [`PageSetup`][crate::PageSetup] for the current page
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;got-page-size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;got-page-size&quot;</span>)]
     </span><span class="kw">fn </span>connect_got_page_size&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>PrintContext, <span class="kw-2">&amp;</span>PageSetup) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -360,7 +360,7 @@
     /// A handler for this signal can be used for setup tasks.
     /// ## `context`
     /// the current [`PrintContext`][crate::PrintContext]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;ready&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;ready&quot;</span>)]
     </span><span class="kw">fn </span>connect_ready&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>PrintContext) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -454,4 +454,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

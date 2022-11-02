@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -159,7 +159,7 @@
     ///
     /// The contents of [`ExpressionWatch`][crate::ExpressionWatch] should only be accessed through the
     /// provided API.
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     #[doc(alias = <span class="string">&quot;GtkExpressionWatch&quot;</span>)]
     </span><span class="kw">pub struct </span>ExpressionWatch(Shared&lt;ffi::GtkExpressionWatch&gt;);
 
@@ -181,7 +181,7 @@
     /// # Returns
     ///
     /// `TRUE` if the expression could be evaluated and `value` was set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_expression_watch_evaluate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_expression_watch_evaluate&quot;</span>)]
     </span><span class="kw">pub fn </span>evaluate(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt; {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -200,7 +200,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Similar to [`Self::evaluate`] but panics if the value is of a different type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_expression_evaluate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_expression_evaluate&quot;</span>)]
     </span><span class="kw">pub fn </span>evaluate_as&lt;V: <span class="kw">for</span>&lt;<span class="lifetime">&#39;b</span>&gt; FromValue&lt;<span class="lifetime">&#39;b</span>&gt; + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;V&gt; {
         <span class="self">self</span>.evaluate().map(|v| {
             v.get_owned::&lt;V&gt;()
@@ -212,18 +212,18 @@
     ///
     /// See [`Expression::watch()`][crate::Expression::watch()] for how the watch
     /// was established.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_expression_watch_unwatch&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_expression_watch_unwatch&quot;</span>)]
     </span><span class="kw">pub fn </span>unwatch(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::gtk_expression_watch_unwatch(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">impl </span>glib::StaticType <span class="kw">for </span>ExpressionWatch {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_expression_watch_get_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_expression_watch_get_type&quot;</span>)]
     </span><span class="kw">fn </span>static_type() -&gt; glib::Type {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_expression_watch_get_type()) }
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

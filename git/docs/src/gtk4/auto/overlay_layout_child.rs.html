@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -225,7 +225,7 @@
     /// # Implements
     ///
     /// [`LayoutChildExt`][trait@crate::prelude::LayoutChildExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkOverlayLayoutChild&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkOverlayLayoutChild&quot;</span>)]
     </span><span class="kw">pub struct </span>OverlayLayoutChild(Object&lt;ffi::GtkOverlayLayoutChild, ffi::GtkOverlayLayoutChildClass&gt;) @extends LayoutChild;
 
     <span class="kw">match fn </span>{
@@ -239,7 +239,7 @@
     /// # Returns
     ///
     /// whether the child is clipped
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_layout_child_get_clip_overlay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_layout_child_get_clip_overlay&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_clip_overlay&quot;</span>)]
     </span><span class="kw">pub fn </span>is_clip_overlay(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -254,7 +254,7 @@
     /// # Returns
     ///
     /// whether the child is measured
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_layout_child_get_measure&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_layout_child_get_measure&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_measure&quot;</span>)]
     </span><span class="kw">pub fn </span>is_measure(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -267,7 +267,7 @@
     <span class="doccomment">/// Sets whether to clip this child.
     /// ## `clip_overlay`
     /// whether to clip this child
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_layout_child_set_clip_overlay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_layout_child_set_clip_overlay&quot;</span>)]
     </span><span class="kw">pub fn </span>set_clip_overlay(<span class="kw-2">&amp;</span><span class="self">self</span>, clip_overlay: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_overlay_layout_child_set_clip_overlay(
@@ -280,14 +280,14 @@
     <span class="doccomment">/// Sets whether to measure this child.
     /// ## `measure`
     /// whether to measure this child
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_overlay_layout_child_set_measure&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_overlay_layout_child_set_measure&quot;</span>)]
     </span><span class="kw">pub fn </span>set_measure(<span class="kw-2">&amp;</span><span class="self">self</span>, measure: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_overlay_layout_child_set_measure(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, measure.into_glib());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;clip-overlay&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;clip-overlay&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_clip_overlay_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_clip_overlay_trampoline&lt;
             F: Fn(<span class="kw-2">&amp;</span>OverlayLayoutChild) + <span class="lifetime">&#39;static</span>,
@@ -312,7 +312,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;measure&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;measure&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_measure_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_measure_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>OverlayLayoutChild) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkOverlayLayoutChild,
@@ -342,4 +342,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -396,7 +396,7 @@
     /// # Implements
     ///
     /// [`EventControllerExt`][trait@crate::prelude::EventControllerExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkPadController&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkPadController&quot;</span>)]
     </span><span class="kw">pub struct </span>PadController(Object&lt;ffi::GtkPadController, ffi::GtkPadControllerClass&gt;) @extends EventController;
 
     <span class="kw">match fn </span>{
@@ -427,7 +427,7 @@
     /// # Returns
     ///
     /// A newly created [`PadController`][crate::PadController]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_pad_controller_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_pad_controller_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(group: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::ActionGroup&gt;, pad: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>gdk::Device&gt;) -&gt; PadController {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -466,7 +466,7 @@
     ///   be deemed user-visible.
     /// ## `action_name`
     /// action name that will be activated in the `GActionGroup`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_pad_controller_set_action&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_pad_controller_set_action&quot;</span>)]
     </span><span class="kw">pub fn </span>set_action(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         type_: PadActionType,
@@ -487,7 +487,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;action-group&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;action-group&quot;</span>)]
     </span><span class="kw">pub fn </span>action_group(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::ActionGroup&gt; {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;action-group&quot;</span>)
     }
@@ -503,12 +503,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`PadController`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>PadControllerBuilder {
     action_group: <span class="prelude-ty">Option</span>&lt;gio::ActionGroup&gt;,
     pad: <span class="prelude-ty">Option</span>&lt;gdk::Device&gt;,
@@ -526,7 +526,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`PadController`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; PadController {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>action_group) = <span class="self">self</span>.action_group {
@@ -582,4 +582,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

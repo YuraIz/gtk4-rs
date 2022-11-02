@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -178,7 +178,7 @@
 
 <span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// A render node applying a blending function between its two child nodes.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GskBlendNode&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GskBlendNode&quot;</span>)]
     </span><span class="kw">pub struct </span>BlendNode(Shared&lt;ffi::GskBlendNode&gt;);
 
     <span class="kw">match fn </span>{
@@ -206,7 +206,7 @@
     /// # Returns
     ///
     /// A new [`RenderNode`][crate::RenderNode]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_blend_node_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_blend_node_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         bottom: <span class="kw">impl </span>AsRef&lt;RenderNode&gt;,
         top: <span class="kw">impl </span>AsRef&lt;RenderNode&gt;,
@@ -227,7 +227,7 @@
     /// # Returns
     ///
     /// the blend mode
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_blend_node_get_blend_mode&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_blend_node_get_blend_mode&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_blend_mode&quot;</span>)]
     </span><span class="kw">pub fn </span>blend_mode(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; BlendMode {
         <span class="kw">unsafe </span>{ from_glib(ffi::gsk_blend_node_get_blend_mode(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -238,7 +238,7 @@
     /// # Returns
     ///
     /// the bottom child node
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_blend_node_get_bottom_child&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_blend_node_get_bottom_child&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_bottom_child&quot;</span>)]
     </span><span class="kw">pub fn </span>bottom_child(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; RenderNode {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gsk_blend_node_get_bottom_child(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -249,7 +249,7 @@
     /// # Returns
     ///
     /// the top child node
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_blend_node_get_top_child&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_blend_node_get_top_child&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_top_child&quot;</span>)]
     </span><span class="kw">pub fn </span>top_child(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; RenderNode {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gsk_blend_node_get_top_child(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -262,4 +262,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

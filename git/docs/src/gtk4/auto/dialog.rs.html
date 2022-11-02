@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1405,7 +1405,7 @@
     /// # Implements
     ///
     /// [`DialogExt`][trait@crate::prelude::DialogExt], [`GtkWindowExt`][trait@crate::prelude::GtkWindowExt], [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`NativeExt`][trait@crate::prelude::NativeExt], [`RootExt`][trait@crate::prelude::RootExt], [`ShortcutManagerExt`][trait@crate::prelude::ShortcutManagerExt], [`DialogExtManual`][trait@crate::prelude::DialogExtManual], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkDialog&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkDialog&quot;</span>)]
     </span><span class="kw">pub struct </span>Dialog(Object&lt;ffi::GtkDialog, ffi::GtkDialogClass&gt;) @extends Window, Widget, @implements Accessible, Buildable, ConstraintTarget, Native, Root, ShortcutManager;
 
     <span class="kw">match fn </span>{
@@ -1425,7 +1425,7 @@
     /// # Returns
     ///
     /// the new dialog as a [`Widget`][crate::Widget]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_dialog_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_dialog_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; Dialog {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ Widget::from_glib_none(ffi::gtk_dialog_new()).unsafe_cast() }
@@ -1446,12 +1446,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`Dialog`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>DialogBuilder {
     use_header_bar: <span class="prelude-ty">Option</span>&lt;i32&gt;,
     application: <span class="prelude-ty">Option</span>&lt;Application&gt;,
@@ -1466,7 +1466,7 @@
     focus_visible: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     focus_widget: <span class="prelude-ty">Option</span>&lt;Widget&gt;,
     fullscreened: <span class="prelude-ty">Option</span>&lt;bool&gt;,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span>handle_menubar_accel: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     hide_on_close: <span class="prelude-ty">Option</span>&lt;bool&gt;,
@@ -1477,7 +1477,7 @@
     resizable: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     startup_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
     title: <span class="prelude-ty">Option</span>&lt;String&gt;,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span>titlebar: <span class="prelude-ty">Option</span>&lt;Widget&gt;,
     transient_for: <span class="prelude-ty">Option</span>&lt;Window&gt;,
@@ -1522,7 +1522,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`Dialog`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; Dialog {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>use_header_bar) = <span class="self">self</span>.use_header_bar {
@@ -1564,7 +1564,7 @@
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>fullscreened) = <span class="self">self</span>.fullscreened {
             properties.push((<span class="string">&quot;fullscreened&quot;</span>, fullscreened));
         }
-        <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+        <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         </span><span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>handle_menubar_accel) = <span class="self">self</span>.handle_menubar_accel {
             properties.push((<span class="string">&quot;handle-menubar-accel&quot;</span>, handle_menubar_accel));
         }
@@ -1592,7 +1592,7 @@
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>title) = <span class="self">self</span>.title {
             properties.push((<span class="string">&quot;title&quot;</span>, title));
         }
-        <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+        <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         </span><span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>titlebar) = <span class="self">self</span>.titlebar {
             properties.push((<span class="string">&quot;titlebar&quot;</span>, titlebar));
         }
@@ -1808,7 +1808,7 @@
 
     <span class="doccomment">/// Whether the window frame should handle F10 for activating
     /// menubars.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_2&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_2&quot;</span>)))]
     </span><span class="kw">pub fn </span>handle_menubar_accel(<span class="kw-2">mut </span><span class="self">self</span>, handle_menubar_accel: bool) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.handle_menubar_accel = <span class="prelude-val">Some</span>(handle_menubar_accel);
@@ -1875,7 +1875,7 @@
     </span>}
 
     <span class="doccomment">/// The titlebar widget.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>titlebar(<span class="kw-2">mut </span><span class="self">self</span>, titlebar: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.titlebar = <span class="prelude-val">Some</span>(titlebar.clone().upcast());
@@ -2159,7 +2159,7 @@
     /// an activatable widget
     /// ## `response_id`
     /// response ID for @child
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_dialog_add_action_widget&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_dialog_add_action_widget&quot;</span>)]
     </span><span class="kw">fn </span>add_action_widget(<span class="kw-2">&amp;</span><span class="self">self</span>, child: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;, response_id: ResponseType);
 
     <span class="doccomment">/// Adds a button with the given text.
@@ -2176,7 +2176,7 @@
     /// # Returns
     ///
     /// the [`Button`][crate::Button] widget that was added
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_dialog_add_button&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_dialog_add_button&quot;</span>)]
     </span><span class="kw">fn </span>add_button(<span class="kw-2">&amp;</span><span class="self">self</span>, button_text: <span class="kw-2">&amp;</span>str, response_id: ResponseType) -&gt; Widget;
 
     <span class="doccomment">/// Returns the content area of @self.
@@ -2184,7 +2184,7 @@
     /// # Returns
     ///
     /// the content area [`Box`][crate::Box].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_dialog_get_content_area&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_dialog_get_content_area&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_content_area&quot;</span>)]
     </span><span class="kw">fn </span>content_area(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Box;
 
@@ -2196,7 +2196,7 @@
     /// # Returns
     ///
     /// the header bar
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_dialog_get_header_bar&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_dialog_get_header_bar&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_header_bar&quot;</span>)]
     </span><span class="kw">fn </span>header_bar(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; HeaderBar;
 
@@ -2209,7 +2209,7 @@
     ///
     /// the @widget button that uses the given
     ///   @response_id
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_dialog_get_widget_for_response&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_dialog_get_widget_for_response&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_widget_for_response&quot;</span>)]
     </span><span class="kw">fn </span>widget_for_response(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt;;
 
@@ -2218,7 +2218,7 @@
     /// Used to indicate that the user has responded to the dialog in some way.
     /// ## `response_id`
     /// response ID
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_dialog_response&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_dialog_response&quot;</span>)]
     </span><span class="kw">fn </span>response(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType);
 
     <span class="doccomment">/// Sets the default widget for the dialog based on the response ID.
@@ -2226,7 +2226,7 @@
     /// Pressing “Enter” normally activates the default widget.
     /// ## `response_id`
     /// a response ID
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_dialog_set_default_response&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_dialog_set_default_response&quot;</span>)]
     </span><span class="kw">fn </span>set_default_response(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType);
 
     <span class="doccomment">/// A convenient way to sensitize/desensitize dialog buttons.
@@ -2237,7 +2237,7 @@
     /// a response ID
     /// ## `setting`
     /// [`true`] for sensitive
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_dialog_set_response_sensitive&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_dialog_set_response_sensitive&quot;</span>)]
     </span><span class="kw">fn </span>set_response_sensitive(<span class="kw-2">&amp;</span><span class="self">self</span>, response_id: ResponseType, setting: bool);
 
     <span class="doccomment">/// [`true`] if the dialog uses a headerbar for action buttons
@@ -2260,7 +2260,7 @@
     /// g_object_get (settings, &quot;gtk-dialogs-use-header&quot;, &amp;header, NULL);
     /// dialog = g_object_new (GTK_TYPE_DIALOG, header, TRUE, NULL);
     /// ```
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;use-header-bar&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;use-header-bar&quot;</span>)]
     </span><span class="kw">fn </span>use_header_bar(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
     <span class="doccomment">/// Emitted when the user uses a keybinding to close the dialog.
@@ -2268,7 +2268,7 @@
     /// This is a [keybinding signal](class.SignalAction.html).
     ///
     /// The default binding for this signal is the Escape key.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;close&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;close&quot;</span>)]
     </span><span class="kw">fn </span>connect_close&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="kw">fn </span>emit_close(<span class="kw-2">&amp;</span><span class="self">self</span>);
@@ -2281,7 +2281,7 @@
     /// Otherwise, it depends on which action widget was clicked.
     /// ## `response_id`
     /// the response ID
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;response&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;response&quot;</span>)]
     </span><span class="kw">fn </span>connect_response&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, ResponseType) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -2420,4 +2420,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

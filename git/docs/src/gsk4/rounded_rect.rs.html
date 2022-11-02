@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gsk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gsk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -303,12 +303,12 @@
     ///
     /// The algorithm used for normalizing corner sizes is described in
     /// [the CSS specification](https://drafts.csswg.org/css-backgrounds-3/#border-radius).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GskRoundedRect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GskRoundedRect&quot;</span>)]
     </span><span class="kw">pub struct </span>RoundedRect(BoxedInline&lt;ffi::GskRoundedRect&gt;);
 }
 
 <span class="kw">impl </span>RoundedRect {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_init&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_init&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         bounds: Rect,
         top_left: Size,
@@ -331,7 +331,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_init_from_rect&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_init_from_rect&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_from_rect&quot;</span>)]
     </span><span class="kw">pub fn </span>from_rect(bounds: Rect, radius: f32) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -355,7 +355,7 @@
     /// # Returns
     ///
     /// the normalized rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_normalize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_normalize&quot;</span>)]
     </span><span class="kw">pub fn </span>normalize(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gsk_rounded_rect_normalize(<span class="kw-2">&amp;mut </span><span class="self">self</span>.inner);
@@ -373,7 +373,7 @@
     /// # Returns
     ///
     /// the offset rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_offset&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_offset&quot;</span>)]
     </span><span class="kw">pub fn </span>offset(<span class="kw-2">&amp;mut </span><span class="self">self</span>, dx: f32, dy: f32) {
         <span class="kw">unsafe </span>{
             ffi::gsk_rounded_rect_offset(<span class="kw-2">&amp;mut </span><span class="self">self</span>.inner, dx, dy);
@@ -400,7 +400,7 @@
     /// # Returns
     ///
     /// the resized [`RoundedRect`][crate::RoundedRect]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_shrink&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_shrink&quot;</span>)]
     </span><span class="kw">pub fn </span>shrink(<span class="kw-2">&amp;mut </span><span class="self">self</span>, top: f32, right: f32, bottom: f32, left: f32) {
         <span class="kw">unsafe </span>{
             ffi::gsk_rounded_rect_shrink(<span class="kw-2">&amp;mut </span><span class="self">self</span>.inner, top, right, bottom, left);
@@ -416,7 +416,7 @@
     /// # Returns
     ///
     /// [`true`] if the rectangle is rectilinear
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_is_rectilinear&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_is_rectilinear&quot;</span>)]
     </span><span class="kw">pub fn </span>is_rectilinear(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gsk_rounded_rect_is_rectilinear(<span class="kw-2">&amp;</span><span class="self">self</span>.inner)) }
     }
@@ -428,7 +428,7 @@
     /// # Returns
     ///
     /// [`true`] if the @point is inside the rounded rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_contains_point&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_contains_point&quot;</span>)]
     </span><span class="kw">pub fn </span>contains_point(<span class="kw-2">&amp;</span><span class="self">self</span>, point: Point) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gsk_rounded_rect_contains_point(
@@ -445,7 +445,7 @@
     /// # Returns
     ///
     /// [`true`] if the @rect is fully contained inside the rounded rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_contains_rect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_contains_rect&quot;</span>)]
     </span><span class="kw">pub fn </span>contains_rect(<span class="kw-2">&amp;</span><span class="self">self</span>, rect: Rect) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gsk_rounded_rect_contains_rect(
@@ -462,7 +462,7 @@
     /// # Returns
     ///
     /// [`true`] if the @rect intersects with the rounded rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_intersects_rect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_rounded_rect_intersects_rect&quot;</span>)]
     </span><span class="kw">pub fn </span>intersects_rect(<span class="kw-2">&amp;</span><span class="self">self</span>, rect: Rect) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gsk_rounded_rect_intersects_rect(
@@ -496,4 +496,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

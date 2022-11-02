@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -483,7 +483,7 @@
     /// # Implements
     ///
     /// [`ContentProviderExt`][trait@crate::prelude::ContentProviderExt], [`ContentProviderExtManual`][trait@crate::prelude::ContentProviderExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkContentProvider&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkContentProvider&quot;</span>)]
     </span><span class="kw">pub struct </span>ContentProvider(Object&lt;ffi::GdkContentProvider, ffi::GdkContentProviderClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -504,7 +504,7 @@
     /// # Returns
     ///
     /// a new [`ContentProvider`][crate::ContentProvider]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_provider_new_for_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_provider_new_for_bytes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_bytes&quot;</span>)]
     </span><span class="kw">pub fn </span>for_bytes(mime_type: <span class="kw-2">&amp;</span>str, bytes: <span class="kw-2">&amp;</span>glib::Bytes) -&gt; ContentProvider {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -523,7 +523,7 @@
     /// # Returns
     ///
     /// a new [`ContentProvider`][crate::ContentProvider]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_provider_new_for_value&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_provider_new_for_value&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_value&quot;</span>)]
     </span><span class="kw">pub fn </span>for_value(value: <span class="kw-2">&amp;</span>glib::Value) -&gt; ContentProvider {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -558,7 +558,7 @@
     /// # Returns
     ///
     /// a new [`ContentProvider`][crate::ContentProvider]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_provider_new_union&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_provider_new_union&quot;</span>)]
     </span><span class="kw">pub fn </span>new_union(providers: <span class="kw-2">&amp;</span>[ContentProvider]) -&gt; ContentProvider {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">let </span>n_providers = providers.len() <span class="kw">as _</span>;
@@ -578,7 +578,7 @@
 /// [`ContentProvider`][struct@crate::ContentProvider]
 </span><span class="kw">pub trait </span>ContentProviderExt: <span class="lifetime">&#39;static </span>{
     <span class="doccomment">/// Emits the ::content-changed signal.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_provider_content_changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_provider_content_changed&quot;</span>)]
     </span><span class="kw">fn </span>content_changed(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Gets the formats that the provider can provide its current contents in.
@@ -586,7 +586,7 @@
     /// # Returns
     ///
     /// The formats of the provider
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_provider_ref_formats&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_provider_ref_formats&quot;</span>)]
     #[doc(alias = <span class="string">&quot;ref_formats&quot;</span>)]
     </span><span class="kw">fn </span>formats(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ContentFormats;
 
@@ -600,7 +600,7 @@
     /// # Returns
     ///
     /// The storable formats of the provider
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_provider_ref_storable_formats&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_provider_ref_storable_formats&quot;</span>)]
     #[doc(alias = <span class="string">&quot;ref_storable_formats&quot;</span>)]
     </span><span class="kw">fn </span>storable_formats(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ContentFormats;
 
@@ -626,7 +626,7 @@
     /// optional `GCancellable` object, [`None`] to ignore.
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_content_provider_write_mime_type_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_content_provider_write_mime_type_async&quot;</span>)]
     </span><span class="kw">fn </span>write_mime_type_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         mime_type: <span class="kw-2">&amp;</span>str,
@@ -644,13 +644,13 @@
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
     <span class="doccomment">/// Emitted whenever the content provided by this provider has changed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;content-changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;content-changed&quot;</span>)]
     </span><span class="kw">fn </span>connect_content_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;formats&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;formats&quot;</span>)]
     </span><span class="kw">fn </span>connect_formats_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;storable-formats&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;storable-formats&quot;</span>)]
     </span><span class="kw">fn </span>connect_storable_formats_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -836,4 +836,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

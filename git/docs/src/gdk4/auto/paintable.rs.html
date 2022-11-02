@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -559,7 +559,7 @@
     /// # Implements
     ///
     /// [`PaintableExt`][trait@crate::prelude::PaintableExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkPaintable&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkPaintable&quot;</span>)]
     </span><span class="kw">pub struct </span>Paintable(Interface&lt;ffi::GdkPaintable, ffi::GdkPaintableInterface&gt;);
 
     <span class="kw">match fn </span>{
@@ -584,7 +584,7 @@
     /// # Returns
     ///
     /// a [`Paintable`][crate::Paintable]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_paintable_new_empty&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_paintable_new_empty&quot;</span>)]
     </span><span class="kw">pub fn </span>new_empty(intrinsic_width: i32, intrinsic_height: i32) -&gt; Paintable {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -633,7 +633,7 @@
     ///
     /// ## `concrete_height`
     /// will be set to the concrete height computed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_paintable_compute_concrete_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_paintable_compute_concrete_size&quot;</span>)]
     </span><span class="kw">fn </span>compute_concrete_size(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         specified_width: f64,
@@ -653,7 +653,7 @@
     ///
     /// An immutable paintable for the current
     ///   contents of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_paintable_get_current_image&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_paintable_get_current_image&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_current_image&quot;</span>)]
     #[must_use]
     </span><span class="kw">fn </span>current_image(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Paintable;
@@ -667,7 +667,7 @@
     /// # Returns
     ///
     /// The [`PaintableFlags`][crate::PaintableFlags] for this paintable
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_paintable_get_flags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_paintable_get_flags&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_flags&quot;</span>)]
     </span><span class="kw">fn </span>flags(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; PaintableFlags;
 
@@ -692,7 +692,7 @@
     /// # Returns
     ///
     /// the intrinsic aspect ratio of @self or 0 if none.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_paintable_get_intrinsic_aspect_ratio&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_paintable_get_intrinsic_aspect_ratio&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_intrinsic_aspect_ratio&quot;</span>)]
     </span><span class="kw">fn </span>intrinsic_aspect_ratio(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64;
 
@@ -710,7 +710,7 @@
     /// # Returns
     ///
     /// the intrinsic height of @self or 0 if none.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_paintable_get_intrinsic_height&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_paintable_get_intrinsic_height&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_intrinsic_height&quot;</span>)]
     </span><span class="kw">fn </span>intrinsic_height(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -728,7 +728,7 @@
     /// # Returns
     ///
     /// the intrinsic width of @self or 0 if none.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_paintable_get_intrinsic_width&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_paintable_get_intrinsic_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_intrinsic_width&quot;</span>)]
     </span><span class="kw">fn </span>intrinsic_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -742,7 +742,7 @@
     ///
     /// If a @self reports the [`PaintableFlags::CONTENTS`][crate::PaintableFlags::CONTENTS] flag,
     /// it must not call this function.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_paintable_invalidate_contents&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_paintable_invalidate_contents&quot;</span>)]
     </span><span class="kw">fn </span>invalidate_contents(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Called by implementations of [`Paintable`][crate::Paintable] to invalidate their size.
@@ -755,7 +755,7 @@
     ///
     /// If a @self reports the [`PaintableFlags::SIZE`][crate::PaintableFlags::SIZE] flag,
     /// it must not call this function.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_paintable_invalidate_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_paintable_invalidate_size&quot;</span>)]
     </span><span class="kw">fn </span>invalidate_size(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Snapshots the given paintable with the given @width and @height.
@@ -769,14 +769,14 @@
     /// width to snapshot in
     /// ## `height`
     /// height to snapshot in
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_paintable_snapshot&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_paintable_snapshot&quot;</span>)]
     </span><span class="kw">fn </span>snapshot(<span class="kw-2">&amp;</span><span class="self">self</span>, snapshot: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Snapshot&gt;, width: f64, height: f64);
 
     <span class="doccomment">/// Emitted when the contents of the @paintable change.
     ///
     /// Examples for such an event would be videos changing to the next frame or
     /// the icon theme for an icon changing.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;invalidate-contents&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;invalidate-contents&quot;</span>)]
     </span><span class="kw">fn </span>connect_invalidate_contents&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when the intrinsic size of the @paintable changes.
@@ -789,7 +789,7 @@
     ///
     /// Examples for such an event would be a paintable displaying
     /// the contents of a toplevel surface being resized.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;invalidate-size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;invalidate-size&quot;</span>)]
     </span><span class="kw">fn </span>connect_invalidate_size&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -916,4 +916,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -766,7 +766,7 @@
     /// # Implements
     ///
     /// [`GestureSingleExt`][trait@crate::prelude::GestureSingleExt], [`GestureExt`][trait@crate::prelude::GestureExt], [`EventControllerExt`][trait@crate::prelude::EventControllerExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkDragSource&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkDragSource&quot;</span>)]
     </span><span class="kw">pub struct </span>DragSource(Object&lt;ffi::GtkDragSource, ffi::GtkDragSourceClass&gt;) @extends GestureSingle, Gesture, EventController;
 
     <span class="kw">match fn </span>{
@@ -780,7 +780,7 @@
     /// # Returns
     ///
     /// the new [`DragSource`][crate::DragSource]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drag_source_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drag_source_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; DragSource {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gtk_drag_source_new()) }
@@ -795,7 +795,7 @@
     }
 
     <span class="doccomment">/// Cancels a currently ongoing drag operation.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drag_source_drag_cancel&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drag_source_drag_cancel&quot;</span>)]
     </span><span class="kw">pub fn </span>drag_cancel(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gtk_drag_source_drag_cancel(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -807,7 +807,7 @@
     /// # Returns
     ///
     /// the actions set on @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drag_source_get_actions&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drag_source_get_actions&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_actions&quot;</span>)]
     </span><span class="kw">pub fn </span>actions(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gdk::DragAction {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_drag_source_get_actions(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -818,7 +818,7 @@
     /// # Returns
     ///
     /// the [`gdk::ContentProvider`][crate::gdk::ContentProvider] of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drag_source_get_content&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drag_source_get_content&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_content&quot;</span>)]
     </span><span class="kw">pub fn </span>content(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gdk::ContentProvider&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_drag_source_get_content(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -830,7 +830,7 @@
     ///
     /// the [`gdk::Drag`][crate::gdk::Drag] of the current
     ///   drag operation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drag_source_get_drag&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drag_source_get_drag&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_drag&quot;</span>)]
     </span><span class="kw">pub fn </span>drag(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gdk::Drag&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_drag_source_get_drag(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -847,7 +847,7 @@
     /// or in a handler for the `signal::DragSource::prepare` signal.
     /// ## `actions`
     /// the actions to offer
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drag_source_set_actions&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drag_source_set_actions&quot;</span>)]
     </span><span class="kw">pub fn </span>set_actions(<span class="kw-2">&amp;</span><span class="self">self</span>, actions: gdk::DragAction) {
         <span class="kw">unsafe </span>{
             ffi::gtk_drag_source_set_actions(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, actions.into_glib());
@@ -866,7 +866,7 @@
     /// [`None`] in a `signal::DragSource::drag-end` signal handler.
     /// ## `content`
     /// a [`gdk::ContentProvider`][crate::gdk::ContentProvider]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drag_source_set_content&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drag_source_set_content&quot;</span>)]
     </span><span class="kw">pub fn </span>set_content(<span class="kw-2">&amp;</span><span class="self">self</span>, content: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gdk::ContentProvider&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_drag_source_set_content(
@@ -892,7 +892,7 @@
     /// the hotspot X coordinate on the icon
     /// ## `hot_y`
     /// the hotspot Y coordinate on the icon
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drag_source_set_icon&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drag_source_set_icon&quot;</span>)]
     </span><span class="kw">pub fn </span>set_icon(<span class="kw-2">&amp;</span><span class="self">self</span>, paintable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gdk::Paintable&gt;&gt;, hot_x: i32, hot_y: i32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_drag_source_set_icon(
@@ -910,7 +910,7 @@
     /// [`set_icon()`][Self::set_icon()].
     /// ## `drag`
     /// the [`gdk::Drag`][crate::gdk::Drag] object
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;drag-begin&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;drag-begin&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_drag_begin&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>gdk::Drag) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>drag_begin_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>DragSource, <span class="kw-2">&amp;</span>gdk::Drag) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkDragSource,
@@ -946,7 +946,7 @@
     /// # Returns
     ///
     /// [`true`] if the failed drag operation has been already handled
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;drag-cancel&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;drag-cancel&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_drag_cancel&lt;
         F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>gdk::Drag, gdk::DragCancelReason) -&gt; bool + <span class="lifetime">&#39;static</span>,
     &gt;(
@@ -992,7 +992,7 @@
     /// ## `delete_data`
     /// [`true`] if the drag was performing [`gdk::DragAction::MOVE`][crate::gdk::DragAction::MOVE],
     ///    and the data should be deleted
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;drag-end&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;drag-end&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_drag_end&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>gdk::Drag, bool) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -1037,7 +1037,7 @@
     /// # Returns
     ///
     /// a [`gdk::ContentProvider`][crate::gdk::ContentProvider]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;prepare&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;prepare&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_prepare&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, f64, f64) -&gt; <span class="prelude-ty">Option</span>&lt;gdk::ContentProvider&gt; + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -1066,7 +1066,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;actions&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;actions&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_actions_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_actions_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>DragSource) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkDragSource,
@@ -1089,7 +1089,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;content&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;content&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_content_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_content_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>DragSource) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkDragSource,
@@ -1119,12 +1119,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`DragSource`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>DragSourceBuilder {
     actions: <span class="prelude-ty">Option</span>&lt;gdk::DragAction&gt;,
     content: <span class="prelude-ty">Option</span>&lt;gdk::ContentProvider&gt;,
@@ -1146,7 +1146,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`DragSource`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; DragSource {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>actions) = <span class="self">self</span>.actions {
@@ -1246,4 +1246,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

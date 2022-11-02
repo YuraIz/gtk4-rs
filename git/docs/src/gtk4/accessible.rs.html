@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gtk4/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -475,7 +475,7 @@
     /// an array of [`AccessibleProperty`][crate::AccessibleProperty]
     /// ## `values`
     /// an array of `GValues`, one for each property
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accessible_update_property&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accessible_update_property&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_accessible_update_property_value&quot;</span>)]
     </span><span class="kw">fn </span>update_property(<span class="kw-2">&amp;</span><span class="self">self</span>, properties: <span class="kw-2">&amp;</span>[Property]);
 
@@ -489,7 +489,7 @@
     /// an array of [`AccessibleRelation`][crate::AccessibleRelation]
     /// ## `values`
     /// an array of `GValues`, one for each relation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accessible_update_relation&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accessible_update_relation&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_accessible_update_relation_value&quot;</span>)]
     </span><span class="kw">fn </span>update_relation(<span class="kw-2">&amp;</span><span class="self">self</span>, relations: <span class="kw-2">&amp;</span>[Relation]);
 
@@ -503,7 +503,7 @@
     /// an array of [`AccessibleState`][crate::AccessibleState]
     /// ## `values`
     /// an array of `GValues`, one for each state
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_accessible_update_state&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_accessible_update_state&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_accessible_update_state_value&quot;</span>)]
     </span><span class="kw">fn </span>update_state(<span class="kw-2">&amp;</span><span class="self">self</span>, states: <span class="kw-2">&amp;</span>[State]);
 }
@@ -569,7 +569,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Type-safe enum container for [`AccessibleProperty`](crate::AccessibleProperty) values.
-</span><span class="attribute">#[derive(Debug)]
+</span><span class="attr">#[derive(Debug)]
 #[non_exhaustive]
 </span><span class="kw">pub enum </span>Property&lt;<span class="lifetime">&#39;p</span>&gt; {
     Autocomplete(AccessibleAutocomplete),
@@ -623,7 +623,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Type-safe enum container for [`AccessibleRelation`](crate::AccessibleRelation) values.
-</span><span class="attribute">#[derive(Debug)]
+</span><span class="attr">#[derive(Debug)]
 #[non_exhaustive]
 </span><span class="kw">pub enum </span>Relation&lt;<span class="lifetime">&#39;r</span>&gt; {
     ActiveDescendant(<span class="kw-2">&amp;</span><span class="lifetime">&#39;r </span>Accessible),
@@ -691,7 +691,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Type-safe enum container for [`AccessibleState`](crate::AccessibleState) values.
-</span><span class="attribute">#[derive(Debug)]
+</span><span class="attr">#[derive(Debug)]
 #[non_exhaustive]
 </span><span class="kw">pub enum </span>State {
     Busy(bool),
@@ -726,12 +726,12 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use crate</span>::{<span class="self">self </span><span class="kw">as </span>gtk4, Button};
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_accessible_update_property() {
         <span class="kw">let </span>widget = glib::Object::new::&lt;Button&gt;(<span class="kw-2">&amp;</span>[]);
         widget.update_property(<span class="kw-2">&amp;</span>[
@@ -757,7 +757,7 @@
         ]);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_accessible_update_relation() {
         <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
 
@@ -786,7 +786,7 @@
         ]);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_accessible_update_state() {
         <span class="kw">let </span>widget = glib::Object::new::&lt;Button&gt;(<span class="kw-2">&amp;</span>[]);
         widget.update_state(<span class="kw-2">&amp;</span>[
@@ -802,4 +802,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

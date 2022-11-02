@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -780,7 +780,7 @@
     /// # Implements
     ///
     /// [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkStatusbar&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkStatusbar&quot;</span>)]
     </span><span class="kw">pub struct </span>Statusbar(Object&lt;ffi::GtkStatusbar&gt;) @extends Widget, @implements Accessible, Buildable, ConstraintTarget;
 
     <span class="kw">match fn </span>{
@@ -794,7 +794,7 @@
     /// # Returns
     ///
     /// the new [`Statusbar`][crate::Statusbar]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_statusbar_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_statusbar_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; Statusbar {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ Widget::from_glib_none(ffi::gtk_statusbar_new()).unsafe_cast() }
@@ -819,7 +819,7 @@
     /// # Returns
     ///
     /// an integer id
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_statusbar_get_context_id&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_statusbar_get_context_id&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_context_id&quot;</span>)]
     </span><span class="kw">pub fn </span>context_id(<span class="kw-2">&amp;</span><span class="self">self</span>, context_description: <span class="kw-2">&amp;</span>str) -&gt; u32 {
         <span class="kw">unsafe </span>{
@@ -838,7 +838,7 @@
     /// context id.
     /// ## `context_id`
     /// a context identifier
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_statusbar_pop&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_statusbar_pop&quot;</span>)]
     </span><span class="kw">pub fn </span>pop(<span class="kw-2">&amp;</span><span class="self">self</span>, context_id: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_statusbar_pop(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, context_id);
@@ -856,7 +856,7 @@
     ///
     /// a message id that can be used with
     ///   [`remove()`][Self::remove()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_statusbar_push&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_statusbar_push&quot;</span>)]
     </span><span class="kw">pub fn </span>push(<span class="kw-2">&amp;</span><span class="self">self</span>, context_id: u32, text: <span class="kw-2">&amp;</span>str) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gtk_statusbar_push(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, context_id, text.to_glib_none().<span class="number">0</span>) }
     }
@@ -867,7 +867,7 @@
     /// a context identifier
     /// ## `message_id`
     /// a message identifier, as returned by [`push()`][Self::push()]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_statusbar_remove&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_statusbar_remove&quot;</span>)]
     </span><span class="kw">pub fn </span>remove(<span class="kw-2">&amp;</span><span class="self">self</span>, context_id: u32, message_id: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_statusbar_remove(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, context_id, message_id);
@@ -878,7 +878,7 @@
     /// stack with the exact @context_id.
     /// ## `context_id`
     /// a context identifier
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_statusbar_remove_all&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_statusbar_remove_all&quot;</span>)]
     </span><span class="kw">pub fn </span>remove_all(<span class="kw-2">&amp;</span><span class="self">self</span>, context_id: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_statusbar_remove_all(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, context_id);
@@ -890,7 +890,7 @@
     /// the context id of the relevant message/statusbar
     /// ## `text`
     /// the message that was just popped
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;text-popped&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;text-popped&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_text_popped&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, u32, <span class="kw-2">&amp;</span>str) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>text_popped_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Statusbar, u32, <span class="kw-2">&amp;</span>str) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkStatusbar,
@@ -923,7 +923,7 @@
     /// the context id of the relevant message/statusbar
     /// ## `text`
     /// the message that was pushed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;text-pushed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;text-pushed&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_text_pushed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, u32, <span class="kw-2">&amp;</span>str) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>text_pushed_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Statusbar, u32, <span class="kw-2">&amp;</span>str) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkStatusbar,
@@ -958,12 +958,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`Statusbar`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>StatusbarBuilder {
     can_focus: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     can_target: <span class="prelude-ty">Option</span>&lt;bool&gt;,
@@ -1006,7 +1006,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`Statusbar`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; Statusbar {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>can_focus) = <span class="self">self</span>.can_focus {
@@ -1360,4 +1360,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

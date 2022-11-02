@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -934,7 +934,7 @@
     /// # Implements
     ///
     /// [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkVideo&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkVideo&quot;</span>)]
     </span><span class="kw">pub struct </span>Video(Object&lt;ffi::GtkVideo, ffi::GtkVideoClass&gt;) @extends Widget, @implements Accessible, Buildable, ConstraintTarget;
 
     <span class="kw">match fn </span>{
@@ -948,7 +948,7 @@
     /// # Returns
     ///
     /// a new [`Video`][crate::Video]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; Video {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ Widget::from_glib_none(ffi::gtk_video_new()).unsafe_cast() }
@@ -961,7 +961,7 @@
     /// # Returns
     ///
     /// a new [`Video`][crate::Video]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_new_for_file&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_new_for_file&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_file&quot;</span>)]
     </span><span class="kw">pub fn </span>for_file(file: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;&gt;) -&gt; Video {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -983,7 +983,7 @@
     /// # Returns
     ///
     /// a new [`Video`][crate::Video]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_new_for_filename&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_new_for_filename&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_filename&quot;</span>)]
     </span><span class="kw">pub fn </span>for_filename(filename: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;std::path::Path&gt;&gt;) -&gt; Video {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -1002,7 +1002,7 @@
     /// # Returns
     ///
     /// a new [`Video`][crate::Video]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_new_for_media_stream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_new_for_media_stream&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_media_stream&quot;</span>)]
     </span><span class="kw">pub fn </span>for_media_stream(stream: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;MediaStream&gt;&gt;) -&gt; Video {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -1024,7 +1024,7 @@
     /// # Returns
     ///
     /// a new [`Video`][crate::Video]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_new_for_resource&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_new_for_resource&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_resource&quot;</span>)]
     </span><span class="kw">pub fn </span>for_resource(resource_path: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; Video {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -1049,7 +1049,7 @@
     /// # Returns
     ///
     /// [`true`] if streams should autoplay
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_get_autoplay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_get_autoplay&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_autoplay&quot;</span>)]
     </span><span class="kw">pub fn </span>is_autoplay(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_video_get_autoplay(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1061,7 +1061,7 @@
     /// # Returns
     ///
     /// The file played by @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_get_file&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_get_file&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_file&quot;</span>)]
     </span><span class="kw">pub fn </span>file(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::File&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_video_get_file(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1072,7 +1072,7 @@
     /// # Returns
     ///
     /// [`true`] if streams should loop
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_get_loop&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_get_loop&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_loop&quot;</span>)]
     </span><span class="kw">pub fn </span>is_loop(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_video_get_loop(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1083,7 +1083,7 @@
     /// # Returns
     ///
     /// The media stream managed by @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_get_media_stream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_get_media_stream&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_media_stream&quot;</span>)]
     </span><span class="kw">pub fn </span>media_stream(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;MediaStream&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_video_get_media_stream(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1093,7 +1093,7 @@
     /// becomes visible or when a new file gets loaded.
     /// ## `autoplay`
     /// whether media streams should autoplay
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_set_autoplay&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_set_autoplay&quot;</span>)]
     </span><span class="kw">pub fn </span>set_autoplay(<span class="kw-2">&amp;</span><span class="self">self</span>, autoplay: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_video_set_autoplay(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, autoplay.into_glib());
@@ -1103,7 +1103,7 @@
     <span class="doccomment">/// Makes @self play the given @file.
     /// ## `file`
     /// the file to play
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_set_file&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_set_file&quot;</span>)]
     </span><span class="kw">pub fn </span>set_file(<span class="kw-2">&amp;</span><span class="self">self</span>, file: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_video_set_file(
@@ -1118,7 +1118,7 @@
     /// This is a utility function that calls gtk_video_set_file(),
     /// ## `filename`
     /// the filename to play
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_set_filename&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_set_filename&quot;</span>)]
     </span><span class="kw">pub fn </span>set_filename(<span class="kw-2">&amp;</span><span class="self">self</span>, filename: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;std::path::Path&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_video_set_filename(
@@ -1131,7 +1131,7 @@
     <span class="doccomment">/// Sets whether new files loaded by @self should be set to loop.
     /// ## `loop_`
     /// whether media streams should loop
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_set_loop&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_set_loop&quot;</span>)]
     </span><span class="kw">pub fn </span>set_loop(<span class="kw-2">&amp;</span><span class="self">self</span>, loop_: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_video_set_loop(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, loop_.into_glib());
@@ -1148,7 +1148,7 @@
     /// instead.
     /// ## `stream`
     /// The media stream to play or [`None`] to unset
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_set_media_stream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_set_media_stream&quot;</span>)]
     </span><span class="kw">pub fn </span>set_media_stream(<span class="kw-2">&amp;</span><span class="self">self</span>, stream: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;MediaStream&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_video_set_media_stream(
@@ -1163,14 +1163,14 @@
     /// This is a utility function that calls [`set_file()`][Self::set_file()].
     /// ## `resource_path`
     /// the resource to set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_video_set_resource&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_video_set_resource&quot;</span>)]
     </span><span class="kw">pub fn </span>set_resource(<span class="kw-2">&amp;</span><span class="self">self</span>, resource_path: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_video_set_resource(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, resource_path.to_glib_none().<span class="number">0</span>);
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;autoplay&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;autoplay&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_autoplay_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_autoplay_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Video) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkVideo,
@@ -1193,7 +1193,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;file&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;file&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_file_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_file_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Video) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkVideo,
@@ -1216,7 +1216,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;loop&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;loop&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_loop_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_loop_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Video) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkVideo,
@@ -1239,7 +1239,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;media-stream&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;media-stream&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_media_stream_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_media_stream_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Video) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkVideo,
@@ -1269,12 +1269,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`Video`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>VideoBuilder {
     autoplay: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     file: <span class="prelude-ty">Option</span>&lt;gio::File&gt;,
@@ -1321,7 +1321,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`Video`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; Video {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>autoplay) = <span class="self">self</span>.autoplay {
@@ -1710,4 +1710,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

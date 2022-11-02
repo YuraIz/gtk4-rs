@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1131,7 +1131,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::Widget;
 <span class="kw">use </span>glib::object::Cast;
 <span class="kw">use </span>glib::object::IsA;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">use </span>glib::object::ObjectExt;
 <span class="kw">use </span>glib::object::ObjectType <span class="kw">as </span>ObjectType_;
@@ -1191,7 +1191,7 @@
     /// # Implements
     ///
     /// [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkDropDown&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkDropDown&quot;</span>)]
     </span><span class="kw">pub struct </span>DropDown(Object&lt;ffi::GtkDropDown, ffi::GtkDropDownClass&gt;) @extends Widget, @implements Accessible, Buildable, ConstraintTarget;
 
     <span class="kw">match fn </span>{
@@ -1212,7 +1212,7 @@
     /// # Returns
     ///
     /// a new [`DropDown`][crate::DropDown]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::ListModel&gt;&gt;,
         expression: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;Expression&gt;&gt;,
@@ -1235,7 +1235,7 @@
     /// # Returns
     ///
     /// a new [`DropDown`][crate::DropDown]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_new_from_strings&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_new_from_strings&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_strings&quot;</span>)]
     </span><span class="kw">pub fn </span>from_strings(strings: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>str]) -&gt; DropDown {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -1260,7 +1260,7 @@
     /// # Returns
     ///
     /// [`true`] if the popup includes a search entry
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_enable_search&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_enable_search&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_enable_search&quot;</span>)]
     </span><span class="kw">pub fn </span>enables_search(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gtk_drop_down_get_enable_search(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1273,7 +1273,7 @@
     /// # Returns
     ///
     /// a [`Expression`][crate::Expression]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_expression&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_expression&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_expression&quot;</span>)]
     </span><span class="kw">pub fn </span>expression(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Expression&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_drop_down_get_expression(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1288,7 +1288,7 @@
     /// # Returns
     ///
     /// The factory in use
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_factory&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_factory&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_factory&quot;</span>)]
     </span><span class="kw">pub fn </span>factory(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;ListItemFactory&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_drop_down_get_factory(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1299,7 +1299,7 @@
     /// # Returns
     ///
     /// The factory in use
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_list_factory&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_list_factory&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_list_factory&quot;</span>)]
     </span><span class="kw">pub fn </span>list_factory(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;ListItemFactory&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_drop_down_get_list_factory(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1310,7 +1310,7 @@
     /// # Returns
     ///
     /// The model in use
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_model&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_model&quot;</span>)]
     </span><span class="kw">pub fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::ListModel&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_drop_down_get_model(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1322,7 +1322,7 @@
     ///
     /// the position of the selected item, or `GTK_INVALID_LIST_POSITION`
     ///   if not item is selected
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_selected&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_selected&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_selected&quot;</span>)]
     </span><span class="kw">pub fn </span>selected(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gtk_drop_down_get_selected(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1333,7 +1333,7 @@
     /// # Returns
     ///
     /// The selected item
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_selected_item&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_get_selected_item&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_selected_item&quot;</span>)]
     </span><span class="kw">pub fn </span>selected_item(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Object&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_drop_down_get_selected_item(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1344,7 +1344,7 @@
     /// # Returns
     ///
     /// [`true`] if an arrow will be shown.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_drop_down_get_show_arrow&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_show_arrow&quot;</span>)]
@@ -1359,7 +1359,7 @@
     /// search to work.
     /// ## `enable_search`
     /// whether to enable search
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_set_enable_search&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_set_enable_search&quot;</span>)]
     </span><span class="kw">pub fn </span>set_enable_search(<span class="kw-2">&amp;</span><span class="self">self</span>, enable_search: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_drop_down_set_enable_search(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, enable_search.into_glib());
@@ -1372,7 +1372,7 @@
     /// a value type of `G_TYPE_STRING`.
     /// ## `expression`
     /// a [`Expression`][crate::Expression]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_set_expression&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_set_expression&quot;</span>)]
     </span><span class="kw">pub fn </span>set_expression(<span class="kw-2">&amp;</span><span class="self">self</span>, expression: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;Expression&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_drop_down_set_expression(
@@ -1385,7 +1385,7 @@
     <span class="doccomment">/// Sets the [`ListItemFactory`][crate::ListItemFactory] to use for populating list items.
     /// ## `factory`
     /// the factory to use
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_set_factory&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_set_factory&quot;</span>)]
     </span><span class="kw">pub fn </span>set_factory(<span class="kw-2">&amp;</span><span class="self">self</span>, factory: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;ListItemFactory&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_drop_down_set_factory(
@@ -1398,7 +1398,7 @@
     <span class="doccomment">/// Sets the [`ListItemFactory`][crate::ListItemFactory] to use for populating list items in the popup.
     /// ## `factory`
     /// the factory to use
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_set_list_factory&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_set_list_factory&quot;</span>)]
     </span><span class="kw">pub fn </span>set_list_factory(<span class="kw-2">&amp;</span><span class="self">self</span>, factory: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;ListItemFactory&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_drop_down_set_list_factory(
@@ -1411,7 +1411,7 @@
     <span class="doccomment">/// Sets the `GListModel` to use.
     /// ## `model`
     /// the model to use
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_set_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_set_model&quot;</span>)]
     </span><span class="kw">pub fn </span>set_model(<span class="kw-2">&amp;</span><span class="self">self</span>, model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::ListModel&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_drop_down_set_model(
@@ -1424,7 +1424,7 @@
     <span class="doccomment">/// Selects the item at the given position.
     /// ## `position`
     /// the position of the item to select, or `GTK_INVALID_LIST_POSITION`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_drop_down_set_selected&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_drop_down_set_selected&quot;</span>)]
     </span><span class="kw">pub fn </span>set_selected(<span class="kw-2">&amp;</span><span class="self">self</span>, position: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_drop_down_set_selected(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, position);
@@ -1434,7 +1434,7 @@
     <span class="doccomment">/// Sets whether an arrow will be displayed within the widget.
     /// ## `show_arrow`
     /// whether to show an arrow within the widget
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;gtk_drop_down_set_show_arrow&quot;</span>)]
     </span><span class="kw">pub fn </span>set_show_arrow(<span class="kw-2">&amp;</span><span class="self">self</span>, show_arrow: bool) {
@@ -1447,7 +1447,7 @@
     ///
     /// The `::activate` signal on [`DropDown`][crate::DropDown] is an action signal and
     /// emitting it causes the drop down to pop up its dropdown.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;activate&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_activate&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
@@ -1471,13 +1471,13 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>emit_activate(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="self">self</span>.emit_by_name::&lt;()&gt;(<span class="string">&quot;activate&quot;</span>, <span class="kw-2">&amp;</span>[]);
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;enable-search&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;enable-search&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_enable_search_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_enable_search_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>DropDown) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkDropDown,
@@ -1500,7 +1500,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;expression&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;expression&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_expression_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_expression_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>DropDown) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkDropDown,
@@ -1523,7 +1523,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;factory&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;factory&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_factory_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_factory_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>DropDown) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkDropDown,
@@ -1546,7 +1546,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;list-factory&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;list-factory&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_list_factory_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_list_factory_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>DropDown) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkDropDown,
@@ -1569,7 +1569,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_model_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_model_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>DropDown) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkDropDown,
@@ -1592,7 +1592,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;selected&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;selected&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_selected_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_selected_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>DropDown) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkDropDown,
@@ -1615,7 +1615,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;selected-item&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;selected-item&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_selected_item_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_selected_item_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>DropDown) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkDropDown,
@@ -1638,7 +1638,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;show-arrow&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_show_arrow_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
@@ -1670,12 +1670,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`DropDown`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>DropDownBuilder {
     enable_search: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     expression: <span class="prelude-ty">Option</span>&lt;Expression&gt;,
@@ -1683,7 +1683,7 @@
     list_factory: <span class="prelude-ty">Option</span>&lt;ListItemFactory&gt;,
     model: <span class="prelude-ty">Option</span>&lt;gio::ListModel&gt;,
     selected: <span class="prelude-ty">Option</span>&lt;u32&gt;,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span>show_arrow: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     can_focus: <span class="prelude-ty">Option</span>&lt;bool&gt;,
@@ -1727,7 +1727,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`DropDown`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; DropDown {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>enable_search) = <span class="self">self</span>.enable_search {
@@ -1748,7 +1748,7 @@
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>selected) = <span class="self">self</span>.selected {
             properties.push((<span class="string">&quot;selected&quot;</span>, selected));
         }
-        <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+        <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         </span><span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>show_arrow) = <span class="self">self</span>.show_arrow {
             properties.push((<span class="string">&quot;show-arrow&quot;</span>, show_arrow));
         }
@@ -1895,7 +1895,7 @@
     </span>}
 
     <span class="doccomment">/// Whether to show an arrow within the GtkDropDown widget.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub fn </span>show_arrow(<span class="kw-2">mut </span><span class="self">self</span>, show_arrow: bool) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.show_arrow = <span class="prelude-val">Some</span>(show_arrow);
@@ -2160,4 +2160,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

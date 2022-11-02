@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -353,7 +353,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`], [`StyleProviderExt`][trait@crate::prelude::StyleProviderExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkCssProvider&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkCssProvider&quot;</span>)]
     </span><span class="kw">pub struct </span>CssProvider(Object&lt;ffi::GtkCssProvider, ffi::GtkCssProviderClass&gt;) @implements StyleProvider;
 
     <span class="kw">match fn </span>{
@@ -367,7 +367,7 @@
     /// # Returns
     ///
     /// A new [`CssProvider`][crate::CssProvider]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_css_provider_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_css_provider_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; CssProvider {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gtk_css_provider_new()) }
@@ -378,7 +378,7 @@
     /// This clears any previously loaded information.
     /// ## `data`
     /// CSS data loaded in memory
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_css_provider_load_from_data&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_css_provider_load_from_data&quot;</span>)]
     </span><span class="kw">pub fn </span>load_from_data(<span class="kw-2">&amp;</span><span class="self">self</span>, data: <span class="kw-2">&amp;</span>[u8]) {
         <span class="kw">let </span>length = data.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
@@ -395,7 +395,7 @@
     /// This clears any previously loaded information.
     /// ## `file`
     /// `GFile` pointing to a file to load
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_css_provider_load_from_file&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_css_provider_load_from_file&quot;</span>)]
     </span><span class="kw">pub fn </span>load_from_file(<span class="kw-2">&amp;</span><span class="self">self</span>, file: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_css_provider_load_from_file(
@@ -410,7 +410,7 @@
     /// This clears any previously loaded information.
     /// ## `path`
     /// the path of a filename to load, in the GLib filename encoding
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_css_provider_load_from_path&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_css_provider_load_from_path&quot;</span>)]
     </span><span class="kw">pub fn </span>load_from_path(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_css_provider_load_from_path(
@@ -426,7 +426,7 @@
     /// This clears any previously loaded information.
     /// ## `resource_path`
     /// a `GResource` resource path
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_css_provider_load_from_resource&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_css_provider_load_from_resource&quot;</span>)]
     </span><span class="kw">pub fn </span>load_from_resource(<span class="kw-2">&amp;</span><span class="self">self</span>, resource_path: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_css_provider_load_from_resource(
@@ -446,7 +446,7 @@
     /// ## `variant`
     /// variant to load, for example, &quot;dark&quot;, or
     ///   [`None`] for the default
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_css_provider_load_named&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_css_provider_load_named&quot;</span>)]
     </span><span class="kw">pub fn </span>load_named(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str, variant: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_css_provider_load_named(
@@ -468,7 +468,7 @@
     /// # Returns
     ///
     /// a new string representing the @self.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_css_provider_to_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_css_provider_to_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;to_string&quot;</span>)]
     </span><span class="kw">pub fn </span>to_str(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gtk_css_provider_to_string(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -491,7 +491,7 @@
     /// section the error happened in
     /// ## `error`
     /// The parsing error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;parsing-error&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;parsing-error&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_parsing_error&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>CssSection, <span class="kw-2">&amp;</span>glib::Error) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -532,10 +532,10 @@
 }
 
 <span class="kw">impl </span>fmt::Display <span class="kw">for </span>CssProvider {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
         f.write_str(<span class="kw-2">&amp;</span><span class="self">self</span>.to_str())
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

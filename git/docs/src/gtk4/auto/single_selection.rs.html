@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -492,7 +492,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`], [`trait@gio::prelude::ListModelExt`], [`SelectionModelExt`][trait@crate::prelude::SelectionModelExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkSingleSelection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkSingleSelection&quot;</span>)]
     </span><span class="kw">pub struct </span>SingleSelection(Object&lt;ffi::GtkSingleSelection, ffi::GtkSingleSelectionClass&gt;) @implements gio::ListModel, SelectionModel;
 
     <span class="kw">match fn </span>{
@@ -508,7 +508,7 @@
     /// # Returns
     ///
     /// a new [`SingleSelection`][crate::SingleSelection]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_single_selection_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_single_selection_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::ListModel&gt;&gt;) -&gt; SingleSelection {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -532,7 +532,7 @@
     /// # Returns
     ///
     /// [`true`] if autoselect is enabled
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_single_selection_get_autoselect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_single_selection_get_autoselect&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_autoselect&quot;</span>)]
     </span><span class="kw">pub fn </span>is_autoselect(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -548,7 +548,7 @@
     /// # Returns
     ///
     /// [`true`] to support unselecting
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_single_selection_get_can_unselect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_single_selection_get_can_unselect&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_can_unselect&quot;</span>)]
     </span><span class="kw">pub fn </span>can_unselect(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -563,7 +563,7 @@
     /// # Returns
     ///
     /// The model being wrapped
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_single_selection_get_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_single_selection_get_model&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_model&quot;</span>)]
     </span><span class="kw">pub fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::ListModel&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_single_selection_get_model(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -576,7 +576,7 @@
     /// # Returns
     ///
     /// The position of the selected item
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_single_selection_get_selected&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_single_selection_get_selected&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_selected&quot;</span>)]
     </span><span class="kw">pub fn </span>selected(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::gtk_single_selection_get_selected(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -589,7 +589,7 @@
     /// # Returns
     ///
     /// The selected item
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_single_selection_get_selected_item&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_single_selection_get_selected_item&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_selected_item&quot;</span>)]
     </span><span class="kw">pub fn </span>selected_item(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Object&gt; {
         <span class="kw">unsafe </span>{
@@ -606,7 +606,7 @@
     /// item is deleted and it will disallow unselecting the current item.
     /// ## `autoselect`
     /// [`true`] to always select an item
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_single_selection_set_autoselect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_single_selection_set_autoselect&quot;</span>)]
     </span><span class="kw">pub fn </span>set_autoselect(<span class="kw-2">&amp;</span><span class="self">self</span>, autoselect: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_single_selection_set_autoselect(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, autoselect.into_glib());
@@ -621,7 +621,7 @@
     /// to set both at the same time the same time.
     /// ## `can_unselect`
     /// [`true`] to allow unselecting
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_single_selection_set_can_unselect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_single_selection_set_can_unselect&quot;</span>)]
     </span><span class="kw">pub fn </span>set_can_unselect(<span class="kw-2">&amp;</span><span class="self">self</span>, can_unselect: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_single_selection_set_can_unselect(
@@ -636,7 +636,7 @@
     /// If @model is [`None`], @self will be empty.
     /// ## `model`
     /// A `GListModel` to wrap
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_single_selection_set_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_single_selection_set_model&quot;</span>)]
     </span><span class="kw">pub fn </span>set_model(<span class="kw-2">&amp;</span><span class="self">self</span>, model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::ListModel&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_single_selection_set_model(
@@ -656,14 +656,14 @@
     /// will be selected.
     /// ## `position`
     /// the item to select or `GTK_INVALID_LIST_POSITION`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_single_selection_set_selected&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_single_selection_set_selected&quot;</span>)]
     </span><span class="kw">pub fn </span>set_selected(<span class="kw-2">&amp;</span><span class="self">self</span>, position: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_single_selection_set_selected(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, position);
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;autoselect&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;autoselect&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_autoselect_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_autoselect_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>SingleSelection) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkSingleSelection,
@@ -686,7 +686,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;can-unselect&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;can-unselect&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_can_unselect_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_can_unselect_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>SingleSelection) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkSingleSelection,
@@ -709,7 +709,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_model_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_model_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>SingleSelection) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkSingleSelection,
@@ -732,7 +732,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;selected&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;selected&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_selected_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_selected_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>SingleSelection) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkSingleSelection,
@@ -755,7 +755,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;selected-item&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;selected-item&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_selected_item_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_selected_item_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>SingleSelection) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkSingleSelection,
@@ -785,12 +785,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`SingleSelection`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>SingleSelectionBuilder {
     autoselect: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     can_unselect: <span class="prelude-ty">Option</span>&lt;bool&gt;,
@@ -807,7 +807,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`SingleSelection`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; SingleSelection {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>autoselect) = <span class="self">self</span>.autoselect {
@@ -856,4 +856,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

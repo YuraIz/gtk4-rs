@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -925,7 +925,7 @@
     /// # Implements
     ///
     /// [`CellRendererTextExt`][trait@crate::prelude::CellRendererTextExt], [`CellRendererExt`][trait@crate::prelude::CellRendererExt], [`trait@glib::ObjectExt`], [`CellRendererExtManual`][trait@crate::prelude::CellRendererExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkCellRendererSpin&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkCellRendererSpin&quot;</span>)]
     </span><span class="kw">pub struct </span>CellRendererSpin(Object&lt;ffi::GtkCellRendererSpin&gt;) @extends CellRendererText, CellRenderer;
 
     <span class="kw">match fn </span>{
@@ -942,7 +942,7 @@
     /// # Returns
     ///
     /// a new [`CellRendererSpin`][crate::CellRendererSpin]
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_cell_renderer_spin_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; CellRendererSpin {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -970,13 +970,13 @@
     }
 
     <span class="doccomment">/// The acceleration rate when you hold down a button.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;climb-rate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;climb-rate&quot;</span>)]
     </span><span class="kw">pub fn </span>climb_rate(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;climb-rate&quot;</span>)
     }
 
     <span class="doccomment">/// The acceleration rate when you hold down a button.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;climb-rate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;climb-rate&quot;</span>)]
     </span><span class="kw">pub fn </span>set_climb_rate(<span class="kw-2">&amp;</span><span class="self">self</span>, climb_rate: f64) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;climb-rate&quot;</span>, <span class="kw-2">&amp;</span>climb_rate)
     }
@@ -991,7 +991,7 @@
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;digits&quot;</span>, <span class="kw-2">&amp;</span>digits)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;adjustment&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;adjustment&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_adjustment_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_adjustment_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>CellRendererSpin) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkCellRendererSpin,
@@ -1014,7 +1014,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;climb-rate&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;climb-rate&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_climb_rate_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_climb_rate_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>CellRendererSpin) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkCellRendererSpin,
@@ -1037,7 +1037,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;digits&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;digits&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_digits_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_digits_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>CellRendererSpin) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkCellRendererSpin,
@@ -1067,12 +1067,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`CellRendererSpin`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>CellRendererSpinBuilder {
     adjustment: <span class="prelude-ty">Option</span>&lt;Adjustment&gt;,
     climb_rate: <span class="prelude-ty">Option</span>&lt;f64&gt;,
@@ -1148,7 +1148,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`CellRendererSpin`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; CellRendererSpin {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>adjustment) = <span class="self">self</span>.adjustment {
@@ -1700,4 +1700,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

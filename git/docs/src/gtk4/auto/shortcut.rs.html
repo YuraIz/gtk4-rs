@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -396,7 +396,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkShortcut&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkShortcut&quot;</span>)]
     </span><span class="kw">pub struct </span>Shortcut(Object&lt;ffi::GtkShortcut, ffi::GtkShortcutClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -416,7 +416,7 @@
     /// # Returns
     ///
     /// a new [`Shortcut`][crate::Shortcut]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_shortcut_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_shortcut_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         trigger: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;ShortcutTrigger&gt;&gt;,
         action: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;ShortcutAction&gt;&gt;,
@@ -443,7 +443,7 @@
     /// # Returns
     ///
     /// the action
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_shortcut_get_action&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_shortcut_get_action&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_action&quot;</span>)]
     </span><span class="kw">pub fn </span>action(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;ShortcutAction&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_shortcut_get_action(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -454,7 +454,7 @@
     /// # Returns
     ///
     /// the arguments
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_shortcut_get_arguments&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_shortcut_get_arguments&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_arguments&quot;</span>)]
     </span><span class="kw">pub fn </span>arguments(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Variant&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_shortcut_get_arguments(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -465,7 +465,7 @@
     /// # Returns
     ///
     /// the trigger used
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_shortcut_get_trigger&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_shortcut_get_trigger&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_trigger&quot;</span>)]
     </span><span class="kw">pub fn </span>trigger(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;ShortcutTrigger&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_shortcut_get_trigger(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -475,7 +475,7 @@
     /// ## `action`
     /// The new action.
     ///   If the @action is [`None`], the nothing action will be used.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_shortcut_set_action&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_shortcut_set_action&quot;</span>)]
     </span><span class="kw">pub fn </span>set_action(<span class="kw-2">&amp;</span><span class="self">self</span>, action: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;ShortcutAction&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_shortcut_set_action(
@@ -488,7 +488,7 @@
     <span class="doccomment">/// Sets the arguments to pass when activating the shortcut.
     /// ## `args`
     /// arguments to pass when activating @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_shortcut_set_arguments&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_shortcut_set_arguments&quot;</span>)]
     </span><span class="kw">pub fn </span>set_arguments(<span class="kw-2">&amp;</span><span class="self">self</span>, args: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::Variant&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_shortcut_set_arguments(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, args.to_glib_none().<span class="number">0</span>);
@@ -499,7 +499,7 @@
     /// ## `trigger`
     /// The new trigger.
     ///   If the @trigger is [`None`], the never trigger will be used.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_shortcut_set_trigger&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_shortcut_set_trigger&quot;</span>)]
     </span><span class="kw">pub fn </span>set_trigger(<span class="kw-2">&amp;</span><span class="self">self</span>, trigger: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;ShortcutTrigger&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_shortcut_set_trigger(
@@ -509,7 +509,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;action&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;action&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_action_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_action_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Shortcut) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkShortcut,
@@ -532,7 +532,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;arguments&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;arguments&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_arguments_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_arguments_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Shortcut) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkShortcut,
@@ -555,7 +555,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;trigger&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;trigger&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_trigger_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_trigger_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Shortcut) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkShortcut,
@@ -585,12 +585,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`Shortcut`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>ShortcutBuilder {
     action: <span class="prelude-ty">Option</span>&lt;ShortcutAction&gt;,
     arguments: <span class="prelude-ty">Option</span>&lt;glib::Variant&gt;,
@@ -606,7 +606,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`Shortcut`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; Shortcut {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>action) = <span class="self">self</span>.action {
@@ -646,4 +646,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -561,7 +561,7 @@
     /// # Implements
     ///
     /// [`DragExt`][trait@crate::prelude::DragExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkDrag&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkDrag&quot;</span>)]
     </span><span class="kw">pub struct </span>Drag(Object&lt;ffi::GdkDrag&gt;);
 
     <span class="kw">match fn </span>{
@@ -602,7 +602,7 @@
     /// # Returns
     ///
     /// a newly created [`Drag`][crate::Drag]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drag_begin&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drag_begin&quot;</span>)]
     </span><span class="kw">pub fn </span>begin(
         surface: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Surface&gt;,
         device: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Device&gt;,
@@ -644,7 +644,7 @@
     /// all subsequent calls will be ignored.
     /// ## `success`
     /// whether the drag was ultimatively successful
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drag_drop_done&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drag_drop_done&quot;</span>)]
     </span><span class="kw">fn </span>drop_done(<span class="kw-2">&amp;</span><span class="self">self</span>, success: bool);
 
     <span class="doccomment">/// Determines the bitmask of possible actions proposed by the source.
@@ -652,7 +652,7 @@
     /// # Returns
     ///
     /// the [`DragAction`][crate::DragAction] flags
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drag_get_actions&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drag_get_actions&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_actions&quot;</span>)]
     </span><span class="kw">fn </span>actions(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DragAction;
 
@@ -661,7 +661,7 @@
     /// # Returns
     ///
     /// The [`ContentProvider`][crate::ContentProvider] associated to @self.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drag_get_content&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drag_get_content&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_content&quot;</span>)]
     </span><span class="kw">fn </span>content(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ContentProvider;
 
@@ -670,7 +670,7 @@
     /// # Returns
     ///
     /// The [`Device`][crate::Device] associated to @self.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drag_get_device&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drag_get_device&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_device&quot;</span>)]
     </span><span class="kw">fn </span>device(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Device;
 
@@ -679,7 +679,7 @@
     /// # Returns
     ///
     /// a [`Display`][crate::Display]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drag_get_display&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drag_get_display&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display&quot;</span>)]
     </span><span class="kw">fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Display;
 
@@ -694,7 +694,7 @@
     /// # Returns
     ///
     /// the drag surface
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drag_get_drag_surface&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drag_get_drag_surface&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_drag_surface&quot;</span>)]
     </span><span class="kw">fn </span>drag_surface(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Surface&gt;;
 
@@ -703,7 +703,7 @@
     /// # Returns
     ///
     /// a [`ContentFormats`][crate::ContentFormats]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drag_get_formats&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drag_get_formats&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_formats&quot;</span>)]
     </span><span class="kw">fn </span>formats(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ContentFormats;
 
@@ -712,7 +712,7 @@
     /// # Returns
     ///
     /// a [`DragAction`][crate::DragAction] value
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drag_get_selected_action&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drag_get_selected_action&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_selected_action&quot;</span>)]
     </span><span class="kw">fn </span>selected_action(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DragAction;
 
@@ -721,7 +721,7 @@
     /// # Returns
     ///
     /// The [`Surface`][crate::Surface] where the drag originates
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drag_get_surface&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drag_get_surface&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_surface&quot;</span>)]
     </span><span class="kw">fn </span>surface(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Surface;
 
@@ -733,39 +733,39 @@
     /// x coordinate of the drag surface hotspot
     /// ## `hot_y`
     /// y coordinate of the drag surface hotspot
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_drag_set_hotspot&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_drag_set_hotspot&quot;</span>)]
     </span><span class="kw">fn </span>set_hotspot(<span class="kw-2">&amp;</span><span class="self">self</span>, hot_x: i32, hot_y: i32);
 
     <span class="doccomment">/// The possible actions of this drag.
     </span><span class="kw">fn </span>set_actions(<span class="kw-2">&amp;</span><span class="self">self</span>, actions: DragAction);
 
     <span class="doccomment">/// The currently selected action of the drag.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;selected-action&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;selected-action&quot;</span>)]
     </span><span class="kw">fn </span>set_selected_action(<span class="kw-2">&amp;</span><span class="self">self</span>, selected_action: DragAction);
 
     <span class="doccomment">/// Emitted when the drag operation is cancelled.
     /// ## `reason`
     /// The reason the drag was cancelled
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;cancel&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;cancel&quot;</span>)]
     </span><span class="kw">fn </span>connect_cancel&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, DragCancelReason) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when the destination side has finished reading all data.
     ///
     /// The drag object can now free all miscellaneous data.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;dnd-finished&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;dnd-finished&quot;</span>)]
     </span><span class="kw">fn </span>connect_dnd_finished&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when the drop operation is performed on an accepting client.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;drop-performed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;drop-performed&quot;</span>)]
     </span><span class="kw">fn </span>connect_drop_performed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;actions&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;actions&quot;</span>)]
     </span><span class="kw">fn </span>connect_actions_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;display&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;display&quot;</span>)]
     </span><span class="kw">fn </span>connect_display_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;selected-action&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;selected-action&quot;</span>)]
     </span><span class="kw">fn </span>connect_selected_action_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -976,4 +976,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

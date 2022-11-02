@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -596,7 +596,7 @@
     /// # Implements
     ///
     /// [`RecentManagerExt`][trait@crate::prelude::RecentManagerExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkRecentManager&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkRecentManager&quot;</span>)]
     </span><span class="kw">pub struct </span>RecentManager(Object&lt;ffi::GtkRecentManager, ffi::GtkRecentManagerClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -621,7 +621,7 @@
     /// # Returns
     ///
     /// A newly created [`RecentManager`][crate::RecentManager] object
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_recent_manager_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_recent_manager_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; RecentManager {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gtk_recent_manager_new()) }
@@ -634,7 +634,7 @@
     ///
     /// A unique [`RecentManager`][crate::RecentManager]. Do not ref or
     ///   unref it.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_recent_manager_get_default&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_recent_manager_get_default&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default&quot;</span>)]
     #[allow(clippy::should_implement_trait)]
     </span><span class="kw">pub fn </span>default() -&gt; RecentManager {
@@ -683,7 +683,7 @@
     ///
     /// [`true`] if the new item was successfully added to the
     ///   recently used resources list, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_recent_manager_add_full&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_recent_manager_add_full&quot;</span>)]
     </span><span class="kw">fn </span>add_full(<span class="kw-2">&amp;</span><span class="self">self</span>, uri: <span class="kw-2">&amp;</span>str, recent_data: <span class="kw-2">&amp;</span>RecentData) -&gt; bool;
 
     <span class="doccomment">/// Adds a new resource, pointed by @uri, into the recently used
@@ -702,7 +702,7 @@
     ///
     /// [`true`] if the new item was successfully added
     ///   to the recently used resources list
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_recent_manager_add_item&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_recent_manager_add_item&quot;</span>)]
     </span><span class="kw">fn </span>add_item(<span class="kw-2">&amp;</span><span class="self">self</span>, uri: <span class="kw-2">&amp;</span>str) -&gt; bool;
 
     <span class="doccomment">/// Gets the list of recently used resources.
@@ -713,7 +713,7 @@
     ///   newly allocated `GtkRecentInfo objects`. Use
     ///   `Gtk::RecentInfo::unref()` on each item inside the list, and then
     ///   free the list itself using g_list_free().
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_recent_manager_get_items&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_recent_manager_get_items&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_items&quot;</span>)]
     </span><span class="kw">fn </span>items(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;RecentInfo&gt;;
 
@@ -725,7 +725,7 @@
     /// # Returns
     ///
     /// [`true`] if the resource was found, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_recent_manager_has_item&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_recent_manager_has_item&quot;</span>)]
     </span><span class="kw">fn </span>has_item(<span class="kw-2">&amp;</span><span class="self">self</span>, uri: <span class="kw-2">&amp;</span>str) -&gt; bool;
 
     <span class="doccomment">/// Searches for a URI inside the recently used resources list, and
@@ -740,7 +740,7 @@
     ///   about the resource pointed by @uri, or [`None`] if the URI was
     ///   not registered in the recently used resources list. Free with
     ///   `Gtk::RecentInfo::unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_recent_manager_lookup_item&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_recent_manager_lookup_item&quot;</span>)]
     </span><span class="kw">fn </span>lookup_item(<span class="kw-2">&amp;</span><span class="self">self</span>, uri: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="prelude-ty">Option</span>&lt;RecentInfo&gt;, glib::Error&gt;;
 
     <span class="doccomment">/// Changes the location of a recently used resource from @uri to @new_uri.
@@ -756,7 +756,7 @@
     /// # Returns
     ///
     /// [`true`] on success
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_recent_manager_move_item&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_recent_manager_move_item&quot;</span>)]
     </span><span class="kw">fn </span>move_item(<span class="kw-2">&amp;</span><span class="self">self</span>, uri: <span class="kw-2">&amp;</span>str, new_uri: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Purges every item from the recently used resources list.
@@ -765,7 +765,7 @@
     ///
     /// the number of items that have been removed from the
     ///   recently used resources list
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_recent_manager_purge_items&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_recent_manager_purge_items&quot;</span>)]
     </span><span class="kw">fn </span>purge_items(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;i32, glib::Error&gt;;
 
     <span class="doccomment">/// Removes a resource pointed by @uri from the recently used resources
@@ -777,7 +777,7 @@
     ///
     /// [`true`] if the item pointed by @uri has been successfully
     ///   removed by the recently used resources list, and [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_recent_manager_remove_item&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_recent_manager_remove_item&quot;</span>)]
     </span><span class="kw">fn </span>remove_item(<span class="kw-2">&amp;</span><span class="self">self</span>, uri: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// The full path to the file to be used to store and read the
@@ -792,10 +792,10 @@
     ///
     /// This can happen either by calling [`add_item()`][Self::add_item()]
     /// or by another application.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;changed&quot;</span>)]
     </span><span class="kw">fn </span>connect_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;size&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;size&quot;</span>)]
     </span><span class="kw">fn </span>connect_size_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -958,4 +958,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1399,10 +1399,10 @@
 <span class="kw">mod </span>accessible;
 <span class="kw">pub use </span><span class="self">self</span>::accessible::Accessible;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
 </span><span class="kw">mod </span>accessible_range;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::accessible_range::AccessibleRange;
 
@@ -1793,10 +1793,10 @@
 <span class="kw">mod </span>info_bar;
 <span class="kw">pub use </span><span class="self">self</span>::info_bar::InfoBar;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 </span><span class="kw">mod </span>inscription;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::inscription::Inscription;
 
@@ -1920,10 +1920,10 @@
 <span class="kw">mod </span>page_setup;
 <span class="kw">pub use </span><span class="self">self</span>::page_setup::PageSetup;
 
-<span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
 </span><span class="kw">mod </span>page_setup_unix_dialog;
-<span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::page_setup_unix_dialog::PageSetupUnixDialog;
 
@@ -1936,10 +1936,10 @@
 <span class="kw">mod </span>password_entry;
 <span class="kw">pub use </span><span class="self">self</span>::password_entry::PasswordEntry;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 </span><span class="kw">mod </span>password_entry_buffer;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::password_entry_buffer::PasswordEntryBuffer;
 
@@ -1958,10 +1958,10 @@
 <span class="kw">mod </span>print_context;
 <span class="kw">pub use </span><span class="self">self</span>::print_context::PrintContext;
 
-<span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
 </span><span class="kw">mod </span>print_job;
-<span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::print_job::PrintJob;
 
@@ -1974,17 +1974,17 @@
 <span class="kw">mod </span>print_settings;
 <span class="kw">pub use </span><span class="self">self</span>::print_settings::PrintSettings;
 
-<span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
 </span><span class="kw">mod </span>print_unix_dialog;
-<span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::print_unix_dialog::PrintUnixDialog;
 
-<span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
 </span><span class="kw">mod </span>printer;
-<span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::printer::Printer;
 
@@ -2135,10 +2135,10 @@
 <span class="kw">mod </span>switch;
 <span class="kw">pub use </span><span class="self">self</span>::switch::Switch;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">mod </span>symbolic_paintable;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::symbolic_paintable::SymbolicPaintable;
 
@@ -2283,14 +2283,14 @@
 <span class="kw">pub use </span><span class="self">self</span>::enums::ButtonsType;
 <span class="kw">pub use </span><span class="self">self</span>::enums::CellRendererAccelMode;
 <span class="kw">pub use </span><span class="self">self</span>::enums::CellRendererMode;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::enums::Collation;
 <span class="kw">pub use </span><span class="self">self</span>::enums::ConstraintAttribute;
 <span class="kw">pub use </span><span class="self">self</span>::enums::ConstraintRelation;
 <span class="kw">pub use </span><span class="self">self</span>::enums::ConstraintStrength;
 <span class="kw">pub use </span><span class="self">self</span>::enums::ConstraintVflParserError;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::enums::ContentFit;
 <span class="kw">pub use </span><span class="self">self</span>::enums::CornerType;
@@ -2310,7 +2310,7 @@
 <span class="kw">pub use </span><span class="self">self</span>::enums::IconViewDropPosition;
 <span class="kw">pub use </span><span class="self">self</span>::enums::ImageType;
 <span class="kw">pub use </span><span class="self">self</span>::enums::InputPurpose;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::enums::InscriptionOverflow;
 <span class="kw">pub use </span><span class="self">self</span>::enums::Justification;
@@ -2318,7 +2318,7 @@
 <span class="kw">pub use </span><span class="self">self</span>::enums::License;
 <span class="kw">pub use </span><span class="self">self</span>::enums::MessageType;
 <span class="kw">pub use </span><span class="self">self</span>::enums::MovementStep;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::enums::NaturalWrapMode;
 <span class="kw">pub use </span><span class="self">self</span>::enums::NotebookTab;
@@ -2360,7 +2360,7 @@
 <span class="kw">pub use </span><span class="self">self</span>::enums::SpinType;
 <span class="kw">pub use </span><span class="self">self</span>::enums::StackTransitionType;
 <span class="kw">pub use </span><span class="self">self</span>::enums::StringFilterMatchMode;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::enums::SymbolicColor;
 <span class="kw">pub use </span><span class="self">self</span>::enums::SystemSetting;
@@ -2386,7 +2386,7 @@
 <span class="kw">pub use </span><span class="self">self</span>::flags::InputHints;
 <span class="kw">pub use </span><span class="self">self</span>::flags::PickFlags;
 <span class="kw">pub use </span><span class="self">self</span>::flags::PopoverMenuFlags;
-<span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="self">self</span>::flags::PrintCapabilities;
 <span class="kw">pub use </span><span class="self">self</span>::flags::ShortcutActionFlags;
@@ -2446,10 +2446,10 @@
 <span class="kw">pub use </span><span class="self">self</span>::constants::PRINT_SETTINGS_WIN32_DRIVER_EXTRA;
 <span class="kw">pub use </span><span class="self">self</span>::constants::PRINT_SETTINGS_WIN32_DRIVER_VERSION;
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">pub mod </span>traits {
     <span class="kw">pub use </span><span class="kw">super</span>::accessible::AccessibleExt;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub use </span><span class="kw">super</span>::accessible_range::AccessibleRangeExt;
     <span class="kw">pub use </span><span class="kw">super</span>::actionable::ActionableExt;
@@ -2517,7 +2517,7 @@
     <span class="kw">pub use </span><span class="kw">super</span>::sorter::SorterExt;
     <span class="kw">pub use </span><span class="kw">super</span>::style_context::StyleContextExt;
     <span class="kw">pub use </span><span class="kw">super</span>::style_provider::StyleProviderExt;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_6&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_6&quot;</span>)))]
     </span><span class="kw">pub use </span><span class="kw">super</span>::symbolic_paintable::SymbolicPaintableExt;
     <span class="kw">pub use </span><span class="kw">super</span>::text_buffer::TextBufferExt;
@@ -2537,7 +2537,7 @@
     <span class="kw">pub use </span><span class="kw">super</span>::window::GtkWindowExt;
     <span class="kw">pub use </span><span class="kw">super</span>::window_group::WindowGroupExt;
 }
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">pub mod </span>builders {
     <span class="kw">pub use </span><span class="kw">super</span>::about_dialog::AboutDialogBuilder;
     <span class="kw">pub use </span><span class="kw">super</span>::action_bar::ActionBarBuilder;
@@ -2623,7 +2623,7 @@
     <span class="kw">pub use </span><span class="kw">super</span>::im_multicontext::IMMulticontextBuilder;
     <span class="kw">pub use </span><span class="kw">super</span>::image::ImageBuilder;
     <span class="kw">pub use </span><span class="kw">super</span>::info_bar::InfoBarBuilder;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
     </span><span class="kw">pub use </span><span class="kw">super</span>::inscription::InscriptionBuilder;
     <span class="kw">pub use </span><span class="kw">super</span>::label::LabelBuilder;
@@ -2641,12 +2641,12 @@
     <span class="kw">pub use </span><span class="kw">super</span>::numeric_sorter::NumericSorterBuilder;
     <span class="kw">pub use </span><span class="kw">super</span>::overlay::OverlayBuilder;
     <span class="kw">pub use </span><span class="kw">super</span>::pad_controller::PadControllerBuilder;
-    <span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
     </span><span class="kw">pub use </span><span class="kw">super</span>::page_setup_unix_dialog::PageSetupUnixDialogBuilder;
     <span class="kw">pub use </span><span class="kw">super</span>::paned::PanedBuilder;
     <span class="kw">pub use </span><span class="kw">super</span>::password_entry::PasswordEntryBuilder;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_4&quot;</span>)))]
     </span><span class="kw">pub use </span><span class="kw">super</span>::password_entry_buffer::PasswordEntryBufferBuilder;
     <span class="kw">pub use </span><span class="kw">super</span>::picture::PictureBuilder;
@@ -2654,7 +2654,7 @@
     <span class="kw">pub use </span><span class="kw">super</span>::popover_menu::PopoverMenuBuilder;
     <span class="kw">pub use </span><span class="kw">super</span>::popover_menu_bar::PopoverMenuBarBuilder;
     <span class="kw">pub use </span><span class="kw">super</span>::print_operation::PrintOperationBuilder;
-    <span class="attribute">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(target_os = <span class="string">&quot;linux&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(target_os = <span class="string">&quot;linux&quot;</span>)))]
     </span><span class="kw">pub use </span><span class="kw">super</span>::print_unix_dialog::PrintUnixDialogBuilder;
     <span class="kw">pub use </span><span class="kw">super</span>::progress_bar::ProgressBarBuilder;
@@ -2702,4 +2702,4 @@
     <span class="kw">pub use </span><span class="kw">super</span>::window_handle::WindowHandleBuilder;
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

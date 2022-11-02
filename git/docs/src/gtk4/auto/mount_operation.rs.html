@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -508,7 +508,7 @@
     /// # Implements
     ///
     /// [`MountOperationExt`][trait@crate::prelude::MountOperationExt], [`trait@gio::prelude::MountOperationExt`], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkMountOperation&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkMountOperation&quot;</span>)]
     </span><span class="kw">pub struct </span>MountOperation(Object&lt;ffi::GtkMountOperation, ffi::GtkMountOperationClass&gt;) @extends gio::MountOperation;
 
     <span class="kw">match fn </span>{
@@ -526,7 +526,7 @@
     /// # Returns
     ///
     /// a new [`MountOperation`][crate::MountOperation]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_mount_operation_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_mount_operation_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Window&gt;&gt;) -&gt; MountOperation {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -552,12 +552,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`MountOperation`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>MountOperationBuilder {
     display: <span class="prelude-ty">Option</span>&lt;gdk::Display&gt;,
     parent: <span class="prelude-ty">Option</span>&lt;Window&gt;,
@@ -581,7 +581,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`MountOperation`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; MountOperation {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>display) = <span class="self">self</span>.display {
@@ -708,7 +708,7 @@
     /// # Returns
     ///
     /// the display on which windows of @self are shown
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_mount_operation_get_display&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_mount_operation_get_display&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display&quot;</span>)]
     </span><span class="kw">fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gdk::Display;
 
@@ -717,7 +717,7 @@
     /// # Returns
     ///
     /// the transient parent for windows shown by @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_mount_operation_get_parent&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_mount_operation_get_parent&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_parent&quot;</span>)]
     </span><span class="kw">fn </span>parent(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Window&gt;;
 
@@ -727,29 +727,29 @@
     /// # Returns
     ///
     /// [`true`] if @self is currently displaying a window
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_mount_operation_is_showing&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_mount_operation_is_showing&quot;</span>)]
     </span><span class="kw">fn </span>is_showing(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Sets the display to show windows of the [`MountOperation`][crate::MountOperation] on.
     /// ## `display`
     /// a [`gdk::Display`][crate::gdk::Display]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_mount_operation_set_display&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_mount_operation_set_display&quot;</span>)]
     </span><span class="kw">fn </span>set_display(<span class="kw-2">&amp;</span><span class="self">self</span>, display: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gdk::Display&gt;);
 
     <span class="doccomment">/// Sets the transient parent for windows shown by the
     /// [`MountOperation`][crate::MountOperation].
     /// ## `parent`
     /// transient parent of the window
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_mount_operation_set_parent&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_mount_operation_set_parent&quot;</span>)]
     </span><span class="kw">fn </span>set_parent(<span class="kw-2">&amp;</span><span class="self">self</span>, parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Window&gt;&gt;);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;display&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;display&quot;</span>)]
     </span><span class="kw">fn </span>connect_display_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-showing&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-showing&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_showing_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;parent&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;parent&quot;</span>)]
     </span><span class="kw">fn </span>connect_parent_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -878,4 +878,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

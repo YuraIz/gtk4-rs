@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -646,7 +646,7 @@
     /// # Implements
     ///
     /// [`CellAreaContextExt`][trait@crate::prelude::CellAreaContextExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkCellAreaContext&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkCellAreaContext&quot;</span>)]
     </span><span class="kw">pub struct </span>CellAreaContext(Object&lt;ffi::GtkCellAreaContext, ffi::GtkCellAreaContextClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -683,7 +683,7 @@
     /// ## `height`
     /// the allocated height for all [`TreeModel`][crate::TreeModel] rows rendered
     ///   with @self, or -1
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_context_allocate&quot;</span>)]
     </span><span class="kw">fn </span>allocate(<span class="kw-2">&amp;</span><span class="self">self</span>, width: i32, height: i32);
 
@@ -704,7 +704,7 @@
     ///
     /// ## `height`
     /// location to store the allocated height
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_context_get_allocation&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_allocation&quot;</span>)]
     </span><span class="kw">fn </span>allocation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (i32, i32);
@@ -726,7 +726,7 @@
     /// # Returns
     ///
     /// the [`CellArea`][crate::CellArea] this context was created by.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_context_get_area&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_area&quot;</span>)]
     </span><span class="kw">fn </span>area(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; CellArea;
@@ -748,7 +748,7 @@
     ///
     /// ## `natural_height`
     /// location to store the natural height
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_context_get_preferred_height&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_preferred_height&quot;</span>)]
     </span><span class="kw">fn </span>preferred_height(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (i32, i32);
@@ -772,7 +772,7 @@
     ///
     /// ## `natural_height`
     /// location to store the natural height
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_context_get_preferred_height_for_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_preferred_height_for_width&quot;</span>)]
     </span><span class="kw">fn </span>preferred_height_for_width(<span class="kw-2">&amp;</span><span class="self">self</span>, width: i32) -&gt; (i32, i32);
@@ -794,7 +794,7 @@
     ///
     /// ## `natural_width`
     /// location to store the natural width
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_context_get_preferred_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_preferred_width&quot;</span>)]
     </span><span class="kw">fn </span>preferred_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (i32, i32);
@@ -818,7 +818,7 @@
     ///
     /// ## `natural_width`
     /// location to store the natural width
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_context_get_preferred_width_for_height&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_preferred_width_for_height&quot;</span>)]
     </span><span class="kw">fn </span>preferred_width_for_height(<span class="kw-2">&amp;</span><span class="self">self</span>, height: i32) -&gt; (i32, i32);
@@ -837,7 +837,7 @@
     /// the proposed new minimum height for @self
     /// ## `natural_height`
     /// the proposed new natural height for @self
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_context_push_preferred_height&quot;</span>)]
     </span><span class="kw">fn </span>push_preferred_height(<span class="kw-2">&amp;</span><span class="self">self</span>, minimum_height: i32, natural_height: i32);
 
@@ -855,7 +855,7 @@
     /// the proposed new minimum width for @self
     /// ## `natural_width`
     /// the proposed new natural width for @self
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_context_push_preferred_width&quot;</span>)]
     </span><span class="kw">fn </span>push_preferred_width(<span class="kw-2">&amp;</span><span class="self">self</span>, minimum_width: i32, natural_width: i32);
 
@@ -884,44 +884,44 @@
     ///
     /// # Deprecated since 4.10
     ///
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_context_reset&quot;</span>)]
     </span><span class="kw">fn </span>reset(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// The minimum height for the [`CellArea`][crate::CellArea] in this context
     /// for all [`TreeModel`][crate::TreeModel] rows that this context was requested
     /// for using gtk_cell_area_get_preferred_height().
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;minimum-height&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;minimum-height&quot;</span>)]
     </span><span class="kw">fn </span>minimum_height(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
     <span class="doccomment">/// The minimum width for the [`CellArea`][crate::CellArea] in this context
     /// for all [`TreeModel`][crate::TreeModel] rows that this context was requested
     /// for using gtk_cell_area_get_preferred_width().
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;minimum-width&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;minimum-width&quot;</span>)]
     </span><span class="kw">fn </span>minimum_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
     <span class="doccomment">/// The natural height for the [`CellArea`][crate::CellArea] in this context
     /// for all [`TreeModel`][crate::TreeModel] rows that this context was requested
     /// for using gtk_cell_area_get_preferred_height().
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;natural-height&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;natural-height&quot;</span>)]
     </span><span class="kw">fn </span>natural_height(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
     <span class="doccomment">/// The natural width for the [`CellArea`][crate::CellArea] in this context
     /// for all [`TreeModel`][crate::TreeModel] rows that this context was requested
     /// for using gtk_cell_area_get_preferred_width().
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;natural-width&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;natural-width&quot;</span>)]
     </span><span class="kw">fn </span>natural_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;minimum-height&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;minimum-height&quot;</span>)]
     </span><span class="kw">fn </span>connect_minimum_height_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;minimum-width&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;minimum-width&quot;</span>)]
     </span><span class="kw">fn </span>connect_minimum_width_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;natural-height&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;natural-height&quot;</span>)]
     </span><span class="kw">fn </span>connect_natural_height_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;natural-width&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;natural-width&quot;</span>)]
     </span><span class="kw">fn </span>connect_natural_width_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -1156,4 +1156,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

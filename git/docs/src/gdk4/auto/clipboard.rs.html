@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -673,7 +673,7 @@
     /// [`read_text_async()`][Self::read_text_async()] or
     /// [`read_texture_async()`][Self::read_texture_async()]. For other data, use
     /// [`read_async()`][Self::read_async()], which provides a `GInputStream` object.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkClipboard&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkClipboard&quot;</span>)]
     </span><span class="kw">pub struct </span>Clipboard(Object&lt;ffi::GdkClipboard&gt;);
 
     <span class="kw">match fn </span>{
@@ -691,7 +691,7 @@
     ///
     /// The content of a clipboard
     ///   if the clipboard does not maintain any content
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_clipboard_get_content&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_clipboard_get_content&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_content&quot;</span>)]
     </span><span class="kw">pub fn </span>content(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;ContentProvider&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_clipboard_get_content(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -702,7 +702,7 @@
     /// # Returns
     ///
     /// a [`Display`][crate::Display]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_clipboard_get_display&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_clipboard_get_display&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display&quot;</span>)]
     </span><span class="kw">pub fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Display {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_clipboard_get_display(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -713,7 +713,7 @@
     /// # Returns
     ///
     /// The formats of the clipboard
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_clipboard_get_formats&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_clipboard_get_formats&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_formats&quot;</span>)]
     </span><span class="kw">pub fn </span>formats(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ContentFormats {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gdk_clipboard_get_formats(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -730,7 +730,7 @@
     /// # Returns
     ///
     /// [`true`] if the clipboard is local
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_clipboard_is_local&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_clipboard_is_local&quot;</span>)]
     </span><span class="kw">pub fn </span>is_local(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gdk_clipboard_is_local(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
@@ -747,7 +747,7 @@
     /// optional `GCancellable` object
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_clipboard_read_text_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_clipboard_read_text_async&quot;</span>)]
     </span><span class="kw">pub fn </span>read_text_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;<span class="prelude-ty">Option</span>&lt;glib::GString&gt;, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::Cancellable&gt;&gt;,
@@ -822,7 +822,7 @@
     /// optional `GCancellable` object, [`None`] to ignore.
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_clipboard_read_texture_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_clipboard_read_texture_async&quot;</span>)]
     </span><span class="kw">pub fn </span>read_texture_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;<span class="prelude-ty">Option</span>&lt;Texture&gt;, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::Cancellable&gt;&gt;,
@@ -899,7 +899,7 @@
     /// optional `GCancellable` object
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_clipboard_read_value_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_clipboard_read_value_async&quot;</span>)]
     </span><span class="kw">pub fn </span>read_value_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;glib::Value, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         type_: glib::types::Type,
@@ -984,7 +984,7 @@
     /// # Returns
     ///
     /// [`true`] if setting the clipboard succeeded
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_clipboard_set_content&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_clipboard_set_content&quot;</span>)]
     </span><span class="kw">pub fn </span>set_content(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         provider: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;ContentProvider&gt;&gt;,
@@ -1003,7 +1003,7 @@
     <span class="doccomment">/// Puts the given @text into the clipboard.
     /// ## `text`
     /// Text to put into the clipboard
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_clipboard_set_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_clipboard_set_text&quot;</span>)]
     </span><span class="kw">pub fn </span>set_text(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gdk_clipboard_set_text(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, text.to_glib_none().<span class="number">0</span>);
@@ -1013,7 +1013,7 @@
     <span class="doccomment">/// Puts the given @texture into the clipboard.
     /// ## `texture`
     /// a [`Texture`][crate::Texture] to put into the clipboard
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_clipboard_set_texture&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_clipboard_set_texture&quot;</span>)]
     </span><span class="kw">pub fn </span>set_texture(<span class="kw-2">&amp;</span><span class="self">self</span>, texture: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Texture&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gdk_clipboard_set_texture(
@@ -1042,7 +1042,7 @@
     /// optional `GCancellable` object
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_clipboard_store_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_clipboard_store_async&quot;</span>)]
     </span><span class="kw">pub fn </span>store_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         io_priority: glib::Priority,
@@ -1104,7 +1104,7 @@
     }
 
     <span class="doccomment">/// Emitted when the clipboard changes ownership.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;changed&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>changed_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Clipboard) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GdkClipboard,
@@ -1126,7 +1126,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;content&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;content&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_content_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_content_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Clipboard) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GdkClipboard,
@@ -1149,7 +1149,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;formats&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;formats&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_formats_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_formats_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Clipboard) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GdkClipboard,
@@ -1172,7 +1172,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;local&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;local&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_local_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_local_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>Clipboard) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GdkClipboard,
@@ -1202,4 +1202,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

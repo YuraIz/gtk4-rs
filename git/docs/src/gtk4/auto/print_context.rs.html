@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -446,7 +446,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkPrintContext&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkPrintContext&quot;</span>)]
     </span><span class="kw">pub struct </span>PrintContext(Object&lt;ffi::GtkPrintContext&gt;);
 
     <span class="kw">match fn </span>{
@@ -461,7 +461,7 @@
     /// # Returns
     ///
     /// a new Pango context for @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_context_create_pango_context&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_context_create_pango_context&quot;</span>)]
     </span><span class="kw">pub fn </span>create_pango_context(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; pango::Context {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_print_context_create_pango_context(
@@ -476,7 +476,7 @@
     /// # Returns
     ///
     /// a new Pango layout for @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_context_create_pango_layout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_context_create_pango_layout&quot;</span>)]
     </span><span class="kw">pub fn </span>create_pango_layout(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; pango::Layout {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_print_context_create_pango_layout(
@@ -491,7 +491,7 @@
     /// # Returns
     ///
     /// the cairo context of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_context_get_cairo_context&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_context_get_cairo_context&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_cairo_context&quot;</span>)]
     </span><span class="kw">pub fn </span>cairo_context(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; cairo::Context {
         <span class="kw">unsafe </span>{
@@ -507,7 +507,7 @@
     /// # Returns
     ///
     /// the horizontal resolution of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_context_get_dpi_x&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_context_get_dpi_x&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_dpi_x&quot;</span>)]
     </span><span class="kw">pub fn </span>dpi_x(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::gtk_print_context_get_dpi_x(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -519,7 +519,7 @@
     /// # Returns
     ///
     /// the vertical resolution of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_context_get_dpi_y&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_context_get_dpi_y&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_dpi_y&quot;</span>)]
     </span><span class="kw">pub fn </span>dpi_y(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::gtk_print_context_get_dpi_y(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -543,7 +543,7 @@
     ///
     /// ## `right`
     /// right hardware printer margin
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_context_get_hard_margins&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_context_get_hard_margins&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_hard_margins&quot;</span>)]
     </span><span class="kw">pub fn </span>hard_margins(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;(f64, f64, f64, f64)&gt; {
         <span class="kw">unsafe </span>{
@@ -576,7 +576,7 @@
     /// # Returns
     ///
     /// the height of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_context_get_height&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_context_get_height&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_height&quot;</span>)]
     </span><span class="kw">pub fn </span>height(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::gtk_print_context_get_height(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -588,7 +588,7 @@
     /// # Returns
     ///
     /// the page setup of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_context_get_page_setup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_context_get_page_setup&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_page_setup&quot;</span>)]
     </span><span class="kw">pub fn </span>page_setup(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; PageSetup {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::gtk_print_context_get_page_setup(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -600,7 +600,7 @@
     /// # Returns
     ///
     /// the font map of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_context_get_pango_fontmap&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_context_get_pango_fontmap&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pango_fontmap&quot;</span>)]
     </span><span class="kw">pub fn </span>pango_fontmap(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; pango::FontMap {
         <span class="kw">unsafe </span>{
@@ -615,7 +615,7 @@
     /// # Returns
     ///
     /// the width of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_context_get_width&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_context_get_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_width&quot;</span>)]
     </span><span class="kw">pub fn </span>width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::gtk_print_context_get_width(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -633,7 +633,7 @@
     /// the horizontal resolution to use with @cr
     /// ## `dpi_y`
     /// the vertical resolution to use with @cr
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gtk_print_context_set_cairo_context&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_print_context_set_cairo_context&quot;</span>)]
     </span><span class="kw">pub fn </span>set_cairo_context(<span class="kw-2">&amp;</span><span class="self">self</span>, cr: <span class="kw-2">&amp;</span>cairo::Context, dpi_x: f64, dpi_y: f64) {
         <span class="kw">unsafe </span>{
             ffi::gtk_print_context_set_cairo_context(
@@ -652,4 +652,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gsk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -362,7 +362,7 @@
     /// # Implements
     ///
     /// [`GskRendererExt`][trait@crate::prelude::GskRendererExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GskRenderer&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GskRenderer&quot;</span>)]
     </span><span class="kw">pub struct </span>Renderer(Object&lt;ffi::GskRenderer, ffi::GskRendererClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -386,7 +386,7 @@
     /// # Returns
     ///
     /// a [`Renderer`][crate::Renderer]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_renderer_new_for_surface&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_renderer_new_for_surface&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_surface&quot;</span>)]
     </span><span class="kw">pub fn </span>for_surface(surface: <span class="kw-2">&amp;</span>gdk::Surface) -&gt; <span class="prelude-ty">Option</span>&lt;Renderer&gt; {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -407,7 +407,7 @@
     /// # Returns
     ///
     /// a [`gdk::Surface`][crate::gdk::Surface]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_renderer_get_surface&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_renderer_get_surface&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_surface&quot;</span>)]
     </span><span class="kw">fn </span>surface(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gdk::Surface&gt;;
 
@@ -416,7 +416,7 @@
     /// # Returns
     ///
     /// [`true`] if the [`Renderer`][crate::Renderer] was realized, and [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_renderer_is_realized&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_renderer_is_realized&quot;</span>)]
     </span><span class="kw">fn </span>is_realized(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Creates the resources needed by the @self to render the scene
@@ -433,7 +433,7 @@
     /// # Returns
     ///
     /// Whether the renderer was successfully realized
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_renderer_realize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_renderer_realize&quot;</span>)]
     </span><span class="kw">fn </span>realize(<span class="kw-2">&amp;</span><span class="self">self</span>, surface: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>gdk::Surface&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Renders the scene graph, described by a tree of [`RenderNode`][crate::RenderNode] instances
@@ -453,23 +453,23 @@
     /// ## `region`
     /// the [`cairo::Region`][crate::cairo::Region] that must be redrawn or [`None`]
     ///   for the whole window
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gsk_renderer_render&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gsk_renderer_render&quot;</span>)]
     </span><span class="kw">fn </span>render(<span class="kw-2">&amp;</span><span class="self">self</span>, root: <span class="kw">impl </span>AsRef&lt;RenderNode&gt;, region: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>cairo::Region&gt;);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gsk_renderer_render_texture&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gsk_renderer_render_texture&quot;</span>)]
     </span><span class="kw">fn </span>render_texture(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         root: <span class="kw">impl </span>AsRef&lt;RenderNode&gt;,
         viewport: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>graphene::Rect&gt;,
     ) -&gt; gdk::Texture;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gsk_renderer_unrealize&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gsk_renderer_unrealize&quot;</span>)]
     </span><span class="kw">fn </span>unrealize(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;realized&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;realized&quot;</span>)]
     </span><span class="kw">fn </span>connect_realized_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;surface&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;surface&quot;</span>)]
     </span><span class="kw">fn </span>connect_surface_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -588,4 +588,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gsk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (11ebe6512 2022-11-01)" ></div></body></html>
