@@ -3,7 +3,7 @@ var sourcesIndex = JSON.parse('{\
 "gdk4_sys":["",[],["lib.rs"]],\
 "gdk4_wayland":["",[["auto",[],["mod.rs","wayland_device.rs","wayland_display.rs","wayland_gl_context.rs","wayland_monitor.rs","wayland_popup.rs","wayland_seat.rs","wayland_surface.rs","wayland_toplevel.rs"]]],["lib.rs","prelude.rs","wayland_device.rs","wayland_display.rs","wayland_monitor.rs","wayland_seat.rs","wayland_surface.rs"]],\
 "gdk4_wayland_sys":["",[],["lib.rs"]],\
-"gdk4_win32":["",[["auto",[],["enums.rs","mod.rs","win32_display.rs","win32_display_manager.rs","win32_drag.rs","win32_gl_context.rs","win32_hcursor.rs","win32_monitor.rs","win32_screen.rs","win32_surface.rs"]]],["builders.rs","lib.rs","rt.rs","win32_display.rs","win32_hcursor.rs","win32_surface.rs"]],\
+"gdk4_win32":["",[["auto",[],["enums.rs","mod.rs","win32_display.rs","win32_display_manager.rs","win32_drag.rs","win32_gl_context.rs","win32_hcursor.rs","win32_monitor.rs","win32_screen.rs","win32_surface.rs"]]],["lib.rs","rt.rs","win32_display.rs","win32_hcursor.rs","win32_surface.rs"]],\
 "gdk4_win32_sys":["",[],["lib.rs"]],\
 "gdk4_x11":["",[["auto",[],["enums.rs","functions.rs","mod.rs","x11_app_launch_context.rs","x11_device_manager_xi2.rs","x11_device_xi2.rs","x11_display.rs","x11_drag.rs","x11_monitor.rs","x11_screen.rs","x11_surface.rs","x11gl_context.rs"]]],["builders.rs","functions.rs","lib.rs","rt.rs","x11_display.rs","x11_monitor.rs","x11_screen.rs","x11_surface.rs"]],\
 "gdk4_x11_sys":["",[],["lib.rs"]],\
