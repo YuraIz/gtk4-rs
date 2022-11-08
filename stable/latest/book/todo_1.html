@@ -208,7 +208,7 @@ As usual, we have to list all <a href="https://docs.gtk.org/gtk4/class.Applicati
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -443,10 +443,7 @@ This object will store the state of the task consisting of:</p>
 
 impl TaskObject {
     pub fn new(completed: bool, content: String) -&gt; Self {
-        Object::builder()
-            .property(&quot;completed&quot;, completed)
-            .property(&quot;content&quot;, content)
-            .build()
+        Object::new(&amp;[(&quot;completed&quot;, &amp;completed), (&quot;content&quot;, &amp;content)])
     }
 }
 <span class="boring">
@@ -470,10 +467,7 @@ This will be very convenient when saving the state in one of the following chapt
 </span><span class="boring">
 </span><span class="boring">impl TaskObject {
 </span><span class="boring">    pub fn new(completed: bool, content: String) -&gt; Self {
-</span><span class="boring">        Object::builder()
-</span><span class="boring">            .property(&quot;completed&quot;, completed)
-</span><span class="boring">            .property(&quot;content&quot;, content)
-</span><span class="boring">            .build()
+</span><span class="boring">        Object::new(&amp;[(&quot;completed&quot;, &amp;completed), (&quot;content&quot;, &amp;content)])
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -602,7 +596,7 @@ The row of a task should look like this:</p>
 </span><span class="boring">
 </span><span class="boring">impl TaskRow {
 </span><span class="boring">    pub fn new() -&gt; Self {
-</span><span class="boring">        Object::builder().build()
+</span><span class="boring">        Object::new(&amp;[])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    pub fn bind(&amp;self, task_object: &amp;TaskObject) {
@@ -787,7 +781,7 @@ Then we store a reference to the model in <code>imp::Window</code> as well as in
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span>    fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -913,7 +907,7 @@ Finally, the entry will be cleared.</p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -1045,7 +1039,7 @@ We will need to unbind them manually when they are no longer needed.</p>
 </span><span class="boring">impl Window {
 </span><span class="boring">    pub fn new(app: &amp;Application) -&gt; Self {
 </span><span class="boring">        // Create new window
-</span><span class="boring">        Object::builder().property(&quot;application&quot;, app).build()
+</span><span class="boring">        Object::new(&amp;[(&quot;application&quot;, app)])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    fn tasks(&amp;self) -&gt; gio::ListStore {
@@ -1176,7 +1170,7 @@ Unbinding will only work if it can access the stored <a href="https://gtk-rs.org
 </span><span class="boring">
 </span><span class="boring">impl TaskRow {
 </span><span class="boring">    pub fn new() -&gt; Self {
-</span><span class="boring">        Object::builder().build()
+</span><span class="boring">        Object::new(&amp;[])
 </span><span class="boring">    }
 </span><span class="boring">
 </span>    pub fn bind(&amp;self, task_object: &amp;TaskObject) {
@@ -1255,7 +1249,7 @@ In the end, it clears the vector.</p>
 </span><span class="boring">
 </span><span class="boring">impl TaskRow {
 </span><span class="boring">    pub fn new() -&gt; Self {
-</span><span class="boring">        Object::builder().build()
+</span><span class="boring">        Object::new(&amp;[])
 </span><span class="boring">    }
 </span><span class="boring">
 </span><span class="boring">    pub fn bind(&amp;self, task_object: &amp;TaskObject) {

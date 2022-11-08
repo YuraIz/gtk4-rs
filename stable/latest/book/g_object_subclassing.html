@@ -192,11 +192,11 @@ glib::wrapper! {
 
 impl CustomButton {
     pub fn new() -&gt; Self {
-        Object::builder().build()
+        Object::new(&amp;[])
     }
 
     pub fn with_label(label: &amp;str) -&gt; Self {
-        Object::builder().property(&quot;label&quot;, label).build()
+        Object::new(&amp;[(&quot;label&quot;, &amp;label)])
     }
 }
 <span class="boring">
