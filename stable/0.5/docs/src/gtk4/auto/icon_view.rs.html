@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/icon_view.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>icon_view.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/icon_view.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>icon_view.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ef244fc9943488f7.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-c11f492748536797.css"><link rel="stylesheet" disabled href="../../../static.files/dark-a78f946771c40031.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-70b683d68cb31790.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-0dede64717b247ca.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-201a7e04dc4c6fce.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -2995,7 +2995,7 @@
     /// # Implements
     ///
     /// [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`CellLayoutExt`][trait@crate::prelude::CellLayoutExt], [`ScrollableExt`][trait@crate::prelude::ScrollableExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual], [`CellLayoutExtManual`][trait@crate::prelude::CellLayoutExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GtkIconView&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GtkIconView&quot;</span>)]
     </span><span class="kw">pub struct </span>IconView(Object&lt;ffi::GtkIconView&gt;) @extends Widget, @implements Accessible, Buildable, ConstraintTarget, CellLayout, Scrollable;
 
     <span class="kw">match fn </span>{
@@ -3013,7 +3013,7 @@
     /// # Returns
     ///
     /// A newly created [`IconView`][crate::IconView] widget
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; IconView {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -3032,7 +3032,7 @@
     /// # Returns
     ///
     /// A newly created [`IconView`][crate::IconView] widget
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_new_with_area&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_with_area&quot;</span>)]
     </span><span class="kw">pub fn </span>with_area(area: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellArea&gt;) -&gt; IconView {
@@ -3056,7 +3056,7 @@
     /// # Returns
     ///
     /// A newly created [`IconView`][crate::IconView] widget.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_new_with_model&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_with_model&quot;</span>)]
     </span><span class="kw">pub fn </span>with_model(model: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TreeModel&gt;) -&gt; IconView {
@@ -3089,7 +3089,7 @@
     /// # Returns
     ///
     /// a newly-allocated [`gdk::Paintable`][crate::gdk::Paintable] of the drag icon.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_create_drag_icon&quot;</span>)]
     </span><span class="kw">pub fn </span>create_drag_icon(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath) -&gt; <span class="prelude-ty">Option</span>&lt;gdk::Paintable&gt; {
         <span class="kw">unsafe </span>{
@@ -3111,7 +3111,7 @@
     /// ## `actions`
     /// the bitmask of possible actions for a drag to this
     ///    widget
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_enable_model_drag_dest&quot;</span>)]
     </span><span class="kw">pub fn </span>enable_model_drag_dest(<span class="kw-2">&amp;</span><span class="self">self</span>, formats: <span class="kw-2">&amp;</span>gdk::ContentFormats, actions: gdk::DragAction) {
         <span class="kw">unsafe </span>{
@@ -3136,7 +3136,7 @@
     /// ## `actions`
     /// the bitmask of possible actions for a drag from this
     ///    widget
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_enable_model_drag_source&quot;</span>)]
     </span><span class="kw">pub fn </span>enable_model_drag_source(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -3163,7 +3163,7 @@
     /// # Returns
     ///
     /// [`true`] if item-activated will be emitted on a single click
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_activate_on_single_click&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_activate_on_single_click&quot;</span>)]
     </span><span class="kw">pub fn </span>activates_on_single_click(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -3193,7 +3193,7 @@
     ///
     /// ## `rect`
     /// rectangle to fill with cell rect
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_cell_rect&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_cell_rect&quot;</span>)]
     </span><span class="kw">pub fn </span>cell_rect(
@@ -3226,7 +3226,7 @@
     /// # Returns
     ///
     /// the space between columns
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_column_spacing&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_column_spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>column_spacing(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -3242,7 +3242,7 @@
     /// # Returns
     ///
     /// the number of columns, or -1
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_columns&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_columns&quot;</span>)]
     </span><span class="kw">pub fn </span>columns(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -3270,7 +3270,7 @@
     /// ## `cell`
     /// Return location the current
     ///   focus cell
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_cursor&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_cursor&quot;</span>)]
     </span><span class="kw">pub fn </span>cursor(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;(TreePath, CellRenderer)&gt; {
@@ -3309,7 +3309,7 @@
     ///
     /// ## `pos`
     /// Return location for the drop position
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_dest_item_at_pos&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_dest_item_at_pos&quot;</span>)]
     </span><span class="kw">pub fn </span>dest_item_at_pos(
@@ -3350,7 +3350,7 @@
     ///
     /// ## `pos`
     /// Return location for the drop position
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_drag_dest_item&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_drag_dest_item&quot;</span>)]
     </span><span class="kw">pub fn </span>drag_dest_item(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (<span class="prelude-ty">Option</span>&lt;TreePath&gt;, IconViewDropPosition) {
@@ -3386,7 +3386,7 @@
     /// ## `cell`
     /// Return location for the renderer
     ///   responsible for the cell at (@x, @y)
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_item_at_pos&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_item_at_pos&quot;</span>)]
     </span><span class="kw">pub fn </span>item_at_pos(<span class="kw-2">&amp;</span><span class="self">self</span>, x: i32, y: i32) -&gt; <span class="prelude-ty">Option</span>&lt;(TreePath, CellRenderer)&gt; {
@@ -3420,7 +3420,7 @@
     /// # Returns
     ///
     /// The column in which the item is displayed
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_item_column&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_item_column&quot;</span>)]
     </span><span class="kw">pub fn </span>item_column(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath) -&gt; i32 {
@@ -3442,7 +3442,7 @@
     /// # Returns
     ///
     /// the relative position of texts and icons
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_item_orientation&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_item_orientation&quot;</span>)]
     </span><span class="kw">pub fn </span>item_orientation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Orientation {
@@ -3462,7 +3462,7 @@
     /// # Returns
     ///
     /// the padding around items
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_item_padding&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_item_padding&quot;</span>)]
     </span><span class="kw">pub fn </span>item_padding(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -3481,7 +3481,7 @@
     /// # Returns
     ///
     /// The row in which the item is displayed
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_item_row&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_item_row&quot;</span>)]
     </span><span class="kw">pub fn </span>item_row(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath) -&gt; i32 {
@@ -3502,7 +3502,7 @@
     /// # Returns
     ///
     /// the width of a single item, or -1
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_item_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_item_width&quot;</span>)]
     </span><span class="kw">pub fn </span>item_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -3518,7 +3518,7 @@
     /// # Returns
     ///
     /// the space at the borders
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_margin&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_margin&quot;</span>)]
     </span><span class="kw">pub fn </span>margin(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -3534,7 +3534,7 @@
     /// # Returns
     ///
     /// the markup column, or -1 if it’s unset.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_markup_column&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_markup_column&quot;</span>)]
     </span><span class="kw">pub fn </span>markup_column(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -3551,7 +3551,7 @@
     /// # Returns
     ///
     /// The currently used [`TreeModel`][crate::TreeModel]
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_model&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_model&quot;</span>)]
     </span><span class="kw">pub fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;TreeModel&gt; {
@@ -3572,7 +3572,7 @@
     ///
     /// The [`TreePath`][crate::TreePath] corresponding
     /// to the icon or [`None`] if no icon exists at that position.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_path_at_pos&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_path_at_pos&quot;</span>)]
     </span><span class="kw">pub fn </span>path_at_pos(<span class="kw-2">&amp;</span><span class="self">self</span>, x: i32, y: i32) -&gt; <span class="prelude-ty">Option</span>&lt;TreePath&gt; {
@@ -3594,7 +3594,7 @@
     /// # Returns
     ///
     /// the pixbuf column, or -1 if it’s unset.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_pixbuf_column&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pixbuf_column&quot;</span>)]
     </span><span class="kw">pub fn </span>pixbuf_column(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -3611,7 +3611,7 @@
     /// # Returns
     ///
     /// [`true`] if the list can be reordered.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_reorderable&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_reorderable&quot;</span>)]
     </span><span class="kw">pub fn </span>is_reorderable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -3627,7 +3627,7 @@
     /// # Returns
     ///
     /// the space between rows
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_row_spacing&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_row_spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>row_spacing(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -3662,7 +3662,7 @@
     /// # Returns
     ///
     /// A `GList` containing a [`TreePath`][crate::TreePath] for each selected row.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_selected_items&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_selected_items&quot;</span>)]
     </span><span class="kw">pub fn </span>selected_items(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;TreePath&gt; {
@@ -3682,7 +3682,7 @@
     /// # Returns
     ///
     /// the current selection mode
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_selection_mode&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_selection_mode&quot;</span>)]
     </span><span class="kw">pub fn </span>selection_mode(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SelectionMode {
@@ -3698,7 +3698,7 @@
     /// # Returns
     ///
     /// the space between cells
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_spacing&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>spacing(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -3714,7 +3714,7 @@
     /// # Returns
     ///
     /// the text column, or -1 if it’s unset.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_text_column&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_text_column&quot;</span>)]
     </span><span class="kw">pub fn </span>text_column(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -3732,7 +3732,7 @@
     ///
     /// the index of the tooltip column that is currently being
     /// used, or -1 if this is disabled.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_tooltip_column&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_tooltip_column&quot;</span>)]
     </span><span class="kw">pub fn </span>tooltip_column(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -3772,7 +3772,7 @@
     ///
     /// ## `iter`
     /// a pointer to receive a [`TreeIter`][crate::TreeIter]
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_tooltip_context&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_tooltip_context&quot;</span>)]
     </span><span class="kw">pub fn </span>tooltip_context(
@@ -3820,7 +3820,7 @@
     ///
     /// ## `end_path`
     /// Return location for end of region
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_get_visible_range&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_visible_range&quot;</span>)]
     </span><span class="kw">pub fn </span>visible_range(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;(TreePath, TreePath)&gt; {
@@ -3847,7 +3847,7 @@
     /// Use GtkGridView instead
     /// ## `path`
     /// The [`TreePath`][crate::TreePath] to be activated
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_item_activated&quot;</span>)]
     </span><span class="kw">pub fn </span>item_activated(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath) {
         <span class="kw">unsafe </span>{
@@ -3870,7 +3870,7 @@
     /// # Returns
     ///
     /// [`true`] if @path is selected.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_path_is_selected&quot;</span>)]
     </span><span class="kw">pub fn </span>path_is_selected(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -3907,7 +3907,7 @@
     /// The vertical alignment of the item specified by @path.
     /// ## `col_align`
     /// The horizontal alignment of the item specified by @path.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_scroll_to_path&quot;</span>)]
     </span><span class="kw">pub fn </span>scroll_to_path(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath, use_align: bool, row_align: f32, col_align: f32) {
         <span class="kw">unsafe </span>{
@@ -3927,7 +3927,7 @@
     /// # Deprecated since 4.10
     ///
     /// Use GtkGridView instead
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_select_all&quot;</span>)]
     </span><span class="kw">pub fn </span>select_all(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
@@ -3942,7 +3942,7 @@
     /// Use GtkGridView instead
     /// ## `path`
     /// The [`TreePath`][crate::TreePath] to be selected.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_select_path&quot;</span>)]
     </span><span class="kw">pub fn </span>select_path(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath) {
         <span class="kw">unsafe </span>{
@@ -3961,7 +3961,7 @@
     /// Use GtkGridView instead
     /// ## `func`
     /// The function to call for each selected icon.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_selected_foreach&quot;</span>)]
     </span><span class="kw">pub fn </span>selected_foreach&lt;P: FnMut(<span class="kw-2">&amp;</span>IconView, <span class="kw-2">&amp;</span>TreePath)&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: P) {
         <span class="kw">let </span>func_data: P = func;
@@ -3994,7 +3994,7 @@
     /// Use GtkGridView instead
     /// ## `single`
     /// [`true`] to emit item-activated on a single click
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_activate_on_single_click&quot;</span>)]
     </span><span class="kw">pub fn </span>set_activate_on_single_click(<span class="kw-2">&amp;</span><span class="self">self</span>, single: bool) {
         <span class="kw">unsafe </span>{
@@ -4013,7 +4013,7 @@
     /// Use GtkGridView instead
     /// ## `column_spacing`
     /// the column spacing
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_column_spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>set_column_spacing(<span class="kw-2">&amp;</span><span class="self">self</span>, column_spacing: i32) {
         <span class="kw">unsafe </span>{
@@ -4031,7 +4031,7 @@
     /// Use GtkGridView instead
     /// ## `columns`
     /// the number of columns
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_columns&quot;</span>)]
     </span><span class="kw">pub fn </span>set_columns(<span class="kw-2">&amp;</span><span class="self">self</span>, columns: i32) {
         <span class="kw">unsafe </span>{
@@ -4058,7 +4058,7 @@
     /// One of the cell renderers of @self
     /// ## `start_editing`
     /// [`true`] if the specified cell should start being edited.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_cursor&quot;</span>)]
     </span><span class="kw">pub fn </span>set_cursor(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -4085,7 +4085,7 @@
     /// The path of the item to highlight
     /// ## `pos`
     /// Specifies where to drop, relative to the item
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_drag_dest_item&quot;</span>)]
     </span><span class="kw">pub fn </span>set_drag_dest_item(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TreePath&gt;, pos: IconViewDropPosition) {
         <span class="kw">unsafe </span>{
@@ -4105,7 +4105,7 @@
     /// Use GtkGridView instead
     /// ## `orientation`
     /// the relative position of texts and icons
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_item_orientation&quot;</span>)]
     </span><span class="kw">pub fn </span>set_item_orientation(<span class="kw-2">&amp;</span><span class="self">self</span>, orientation: Orientation) {
         <span class="kw">unsafe </span>{
@@ -4121,7 +4121,7 @@
     /// Use GtkGridView instead
     /// ## `item_padding`
     /// the item padding
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_item_padding&quot;</span>)]
     </span><span class="kw">pub fn </span>set_item_padding(<span class="kw-2">&amp;</span><span class="self">self</span>, item_padding: i32) {
         <span class="kw">unsafe </span>{
@@ -4138,7 +4138,7 @@
     /// Use GtkGridView instead
     /// ## `item_width`
     /// the width for each item
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_item_width&quot;</span>)]
     </span><span class="kw">pub fn </span>set_item_width(<span class="kw-2">&amp;</span><span class="self">self</span>, item_width: i32) {
         <span class="kw">unsafe </span>{
@@ -4155,7 +4155,7 @@
     /// Use GtkGridView instead
     /// ## `margin`
     /// the margin
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_margin&quot;</span>)]
     </span><span class="kw">pub fn </span>set_margin(<span class="kw-2">&amp;</span><span class="self">self</span>, margin: i32) {
         <span class="kw">unsafe </span>{
@@ -4173,7 +4173,7 @@
     /// Use GtkGridView instead
     /// ## `column`
     /// A column in the currently used model, or -1 to display no text
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_markup_column&quot;</span>)]
     </span><span class="kw">pub fn </span>set_markup_column(<span class="kw-2">&amp;</span><span class="self">self</span>, column: i32) {
         <span class="kw">unsafe </span>{
@@ -4191,7 +4191,7 @@
     /// Use GtkGridView instead
     /// ## `model`
     /// The model.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_model&quot;</span>)]
     </span><span class="kw">pub fn </span>set_model(<span class="kw-2">&amp;</span><span class="self">self</span>, model: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TreeModel&gt;&gt;) {
         <span class="kw">unsafe </span>{
@@ -4210,7 +4210,7 @@
     /// Use GtkGridView instead
     /// ## `column`
     /// A column in the currently used model, or -1 to disable
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_pixbuf_column&quot;</span>)]
     </span><span class="kw">pub fn </span>set_pixbuf_column(<span class="kw-2">&amp;</span><span class="self">self</span>, column: i32) {
         <span class="kw">unsafe </span>{
@@ -4236,7 +4236,7 @@
     /// Use GtkGridView instead
     /// ## `reorderable`
     /// [`true`], if the list of items can be reordered.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_reorderable&quot;</span>)]
     </span><span class="kw">pub fn </span>set_reorderable(<span class="kw-2">&amp;</span><span class="self">self</span>, reorderable: bool) {
         <span class="kw">unsafe </span>{
@@ -4252,7 +4252,7 @@
     /// Use GtkGridView instead
     /// ## `row_spacing`
     /// the row spacing
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_row_spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>set_row_spacing(<span class="kw-2">&amp;</span><span class="self">self</span>, row_spacing: i32) {
         <span class="kw">unsafe </span>{
@@ -4267,7 +4267,7 @@
     /// Use GtkGridView instead
     /// ## `mode`
     /// The selection mode
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_selection_mode&quot;</span>)]
     </span><span class="kw">pub fn </span>set_selection_mode(<span class="kw-2">&amp;</span><span class="self">self</span>, mode: SelectionMode) {
         <span class="kw">unsafe </span>{
@@ -4284,7 +4284,7 @@
     /// Use GtkGridView instead
     /// ## `spacing`
     /// the spacing
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>set_spacing(<span class="kw-2">&amp;</span><span class="self">self</span>, spacing: i32) {
         <span class="kw">unsafe </span>{
@@ -4300,7 +4300,7 @@
     /// Use GtkGridView instead
     /// ## `column`
     /// A column in the currently used model, or -1 to display no text
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_text_column&quot;</span>)]
     </span><span class="kw">pub fn </span>set_text_column(<span class="kw-2">&amp;</span><span class="self">self</span>, column: i32) {
         <span class="kw">unsafe </span>{
@@ -4322,7 +4322,7 @@
     /// a [`TreePath`][crate::TreePath]
     /// ## `cell`
     /// a [`CellRenderer`][crate::CellRenderer]
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_tooltip_cell&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tooltip_cell(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -4356,7 +4356,7 @@
     /// Use GtkGridView instead
     /// ## `column`
     /// an integer, which is a valid column number for @self’s model
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_tooltip_column&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tooltip_column(<span class="kw-2">&amp;</span><span class="self">self</span>, column: i32) {
         <span class="kw">unsafe </span>{
@@ -4375,7 +4375,7 @@
     /// a [`Tooltip`][crate::Tooltip]
     /// ## `path`
     /// a [`TreePath`][crate::TreePath]
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_set_tooltip_item&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tooltip_item(<span class="kw-2">&amp;</span><span class="self">self</span>, tooltip: <span class="kw-2">&amp;</span>Tooltip, path: <span class="kw-2">&amp;</span>TreePath) {
         <span class="kw">unsafe </span>{
@@ -4392,7 +4392,7 @@
     /// # Deprecated since 4.10
     ///
     /// Use GtkGridView instead
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_unselect_all&quot;</span>)]
     </span><span class="kw">pub fn </span>unselect_all(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
@@ -4407,7 +4407,7 @@
     /// Use GtkGridView instead
     /// ## `path`
     /// The [`TreePath`][crate::TreePath] to be unselected.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_unselect_path&quot;</span>)]
     </span><span class="kw">pub fn </span>unselect_path(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>TreePath) {
         <span class="kw">unsafe </span>{
@@ -4424,7 +4424,7 @@
     /// # Deprecated since 4.10
     ///
     /// Use GtkGridView instead
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_unset_model_drag_dest&quot;</span>)]
     </span><span class="kw">pub fn </span>unset_model_drag_dest(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
@@ -4438,7 +4438,7 @@
     /// # Deprecated since 4.10
     ///
     /// Use GtkGridView instead
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_unset_model_drag_source&quot;</span>)]
     </span><span class="kw">pub fn </span>unset_model_drag_source(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
@@ -4450,7 +4450,7 @@
     ///
     /// If no area is specified when creating the icon view with gtk_icon_view_new_with_area()
     /// a [`CellAreaBox`][crate::CellAreaBox] will be used.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;cell-area&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;cell-area&quot;</span>)]
     </span><span class="kw">pub fn </span>cell_area(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;CellArea&gt; {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;cell-area&quot;</span>)
     }
@@ -4464,7 +4464,7 @@
     /// programmatically.
     ///
     /// The default bindings for this signal are Space, Return and Enter.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;activate-cursor-item&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;activate-cursor-item&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_activate_cursor_item&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -4502,7 +4502,7 @@
     /// Space, Return or Enter is pressed.
     /// ## `path`
     /// the [`TreePath`][crate::TreePath] for the activated item
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;item-activated&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;item-activated&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_item_activated&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>TreePath) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -4550,7 +4550,7 @@
     /// whether to extend the selection
     /// ## `modify`
     /// whether to modify the selection
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;move-cursor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;move-cursor&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_move_cursor&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, MovementStep, i32, bool, bool) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -4606,7 +4606,7 @@
     /// programmatically.
     ///
     /// The default binding for this signal is Ctrl-a.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;select-all&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;select-all&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_select_all&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>select_all_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4641,7 +4641,7 @@
     /// programmatically.
     ///
     /// There is no default binding for this signal.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;select-cursor-item&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;select-cursor-item&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_select_cursor_item&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>select_cursor_item_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4669,7 +4669,7 @@
 
     <span class="doccomment">/// The ::selection-changed signal is emitted when the selection
     /// (i.e. the set of selected items) changes.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;selection-changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;selection-changed&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_selection_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>selection_changed_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4701,7 +4701,7 @@
     /// programmatically.
     ///
     /// There is no default binding for this signal is Ctrl-Space.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;toggle-cursor-item&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;toggle-cursor-item&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_toggle_cursor_item&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>toggle_cursor_item_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4735,7 +4735,7 @@
     /// programmatically.
     ///
     /// The default binding for this signal is Ctrl-Shift-a.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;unselect-all&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;unselect-all&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_unselect_all&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>unselect_all_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4761,7 +4761,7 @@
         <span class="self">self</span>.emit_by_name::&lt;()&gt;(<span class="string">&quot;unselect-all&quot;</span>, <span class="kw-2">&amp;</span>[]);
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;activate-on-single-click&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;activate-on-single-click&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_activate_on_single_click_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -4789,7 +4789,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;column-spacing&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;column-spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_column_spacing_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_column_spacing_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4812,7 +4812,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;columns&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;columns&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_columns_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_columns_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4835,7 +4835,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;item-orientation&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;item-orientation&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_item_orientation_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_item_orientation_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4858,7 +4858,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;item-padding&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;item-padding&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_item_padding_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_item_padding_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4881,7 +4881,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;item-width&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;item-width&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_item_width_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_item_width_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4904,7 +4904,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;margin&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;margin&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_margin_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_margin_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4927,7 +4927,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;markup-column&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;markup-column&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_markup_column_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_markup_column_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4950,7 +4950,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;model&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_model_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_model_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4973,7 +4973,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pixbuf-column&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pixbuf-column&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_pixbuf_column_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_pixbuf_column_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -4996,7 +4996,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;reorderable&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;reorderable&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_reorderable_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_reorderable_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -5019,7 +5019,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;row-spacing&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;row-spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_row_spacing_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_row_spacing_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -5042,7 +5042,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;selection-mode&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;selection-mode&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_selection_mode_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_selection_mode_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -5065,7 +5065,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;spacing&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_spacing_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_spacing_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -5088,7 +5088,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;text-column&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;text-column&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_text_column_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_text_column_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -5111,7 +5111,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;tooltip-column&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;tooltip-column&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_tooltip_column_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_tooltip_column_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>IconView) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GtkIconView,
@@ -5141,12 +5141,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`IconView`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>IconViewBuilder {
     activate_on_single_click: <span class="prelude-ty">Option</span>&lt;bool&gt;,
     cell_area: <span class="prelude-ty">Option</span>&lt;CellArea&gt;,
@@ -5210,7 +5210,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`IconView`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; IconView {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>activate_on_single_click) = <span class="self">self</span>.activate_on_single_click {
@@ -5782,4 +5782,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (a24a020e6 2022-10-18)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (73c9eaf21 2022-11-07)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-3a0b9947ba1bd99a.js" data-settings-css="settings-a66f7524084a489a.css" ></div></body></html>

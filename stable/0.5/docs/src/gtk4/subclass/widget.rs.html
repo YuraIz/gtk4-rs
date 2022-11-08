@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/subclass/widget.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>widget.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/subclass/widget.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>widget.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ef244fc9943488f7.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-c11f492748536797.css"><link rel="stylesheet" disabled href="../../../static.files/dark-a78f946771c40031.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-70b683d68cb31790.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-0dede64717b247ca.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-201a7e04dc4c6fce.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gtk4/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1485,14 +1485,6 @@
 <span id="1412">1412</span>
 <span id="1413">1413</span>
 <span id="1414">1414</span>
-<span id="1415">1415</span>
-<span id="1416">1416</span>
-<span id="1417">1417</span>
-<span id="1418">1418</span>
-<span id="1419">1419</span>
-<span id="1420">1420</span>
-<span id="1421">1421</span>
-<span id="1422">1422</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -1510,7 +1502,7 @@
 <span class="kw">use </span>std::collections::HashMap;
 <span class="kw">use </span>std::fmt;
 <span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, future::Future};
-<span class="attribute">#[derive(Debug, Default)]
+<span class="attr">#[derive(Debug, Default)]
 </span><span class="kw">struct </span>Internal {
     <span class="kw">pub</span>(<span class="kw">crate</span>) actions: HashMap&lt;String, glib::ffi::gpointer&gt;,
     <span class="kw">pub</span>(<span class="kw">crate</span>) scope: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">*mut </span>&lt;&lt;BuilderRustScope <span class="kw">as </span>glib::object::ObjectSubclassIs&gt;::Subclass <span class="kw">as </span>ObjectSubclass&gt;::Instance&gt;,
@@ -1618,7 +1610,7 @@
         <span class="self">self</span>.parent_focus(direction_type)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_request_mode&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_request_mode&quot;</span>)]
     </span><span class="kw">fn </span>request_mode(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SizeRequestMode {
         <span class="self">self</span>.parent_request_mode()
     }
@@ -1742,7 +1734,7 @@
                 <span class="kw">let </span><span class="kw-2">mut </span>hexpand_glib = hexpand.into_glib();
                 <span class="kw">let </span><span class="kw-2">mut </span>vexpand_glib = vexpand.into_glib();
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     <span class="kw-2">&amp;mut </span>hexpand_glib,
                     <span class="kw-2">&amp;mut </span>vexpand_glib,
                 );
@@ -1758,7 +1750,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).contains {
                 from_glib(f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     x,
                     y,
                 ))
@@ -1774,7 +1766,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).direction_changed {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     previous_direction.into_glib(),
                 )
             }
@@ -1787,7 +1779,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).focus {
                 from_glib(f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     direction_type.into_glib(),
                 ))
             } <span class="kw">else </span>{
@@ -1803,11 +1795,7 @@
             <span class="kw">let </span>f = (<span class="kw-2">*</span>parent_class)
                 .get_request_mode
                 .expect(<span class="string">&quot;No parent class impl for \&quot;get_request_mode\&quot;&quot;</span>);
-            from_glib(f(<span class="self">self
-                </span>.instance()
-                .unsafe_cast_ref::&lt;Widget&gt;()
-                .to_glib_none()
-                .<span class="number">0</span>))
+            from_glib(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>))
         }
     }
 
@@ -1816,11 +1804,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).grab_focus {
-                from_glib(f(<span class="self">self
-                    </span>.instance()
-                    .unsafe_cast_ref::&lt;Widget&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>))
+                from_glib(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>))
             } <span class="kw">else </span>{
                 <span class="bool-val">false
             </span>}
@@ -1832,7 +1816,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).hide {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -1843,7 +1827,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).keynav_failed {
                 from_glib(f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     direction_type.into_glib(),
                 ))
             } <span class="kw">else </span>{
@@ -1857,7 +1841,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).map {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -1876,7 +1860,7 @@
             <span class="kw">let </span><span class="kw-2">mut </span>min_base = -<span class="number">1</span>;
             <span class="kw">let </span><span class="kw-2">mut </span>nat_base = -<span class="number">1</span>;
             f(
-                <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                 orientation.into_glib(),
                 for_size,
                 <span class="kw-2">&amp;mut </span>min,
@@ -1894,7 +1878,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).mnemonic_activate {
                 from_glib(f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     group_cycling.into_glib(),
                 ))
             } <span class="kw">else </span>{
@@ -1909,7 +1893,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).move_focus {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     direction_type.into_glib(),
                 )
             }
@@ -1928,7 +1912,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).query_tooltip {
                 from_glib(f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     x,
                     y,
                     keyboard_tooltip.into_glib(),
@@ -1945,7 +1929,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).realize {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -1955,7 +1939,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).root {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -1966,7 +1950,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).set_focus_child {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     child.to_glib_none().<span class="number">0</span>,
                 )
             }
@@ -1978,7 +1962,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).show {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -1989,7 +1973,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).size_allocate {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     width,
                     height,
                     baseline,
@@ -2004,7 +1988,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).snapshot {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     snapshot.to_glib_none().<span class="number">0</span>,
                 )
             }
@@ -2017,7 +2001,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).state_flags_changed {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     state_flags.into_glib(),
                 )
             }
@@ -2030,7 +2014,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).system_setting_changed {
                 f(
-                    <span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
                     settings.into_glib(),
                 )
             }
@@ -2042,7 +2026,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).unmap {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -2052,7 +2036,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).unrealize {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -2062,7 +2046,7 @@
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).unroot {
-                f(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
+                f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>)
             }
         }
     }
@@ -2120,7 +2104,7 @@
     <span class="kw">let </span>instance = <span class="kw-2">&amp;*</span>(ptr <span class="kw">as </span><span class="kw-2">*mut </span>T::Instance);
     <span class="kw">let </span>imp = instance.imp();
 
-    <span class="kw">let </span>widget = imp.instance();
+    <span class="kw">let </span>widget = imp.obj();
     <span class="kw">let </span>widget = widget.unsafe_cast_ref::&lt;Widget&gt;();
     <span class="kw">let </span><span class="kw-2">mut </span>hexpand: bool = <span class="kw">if </span>widget.is_hexpand_set() {
         widget.hexpands()
@@ -2379,9 +2363,9 @@
     imp.unroot()
 }
 
-<span class="attribute">#[allow(clippy::missing_safety_doc)]
+<span class="attr">#[allow(clippy::missing_safety_doc)]
 </span><span class="kw">pub unsafe trait </span>WidgetClassSubclassExt: ClassStruct {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_template&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_template&quot;</span>)]
     </span><span class="kw">fn </span>set_template_bytes(<span class="kw-2">&amp;mut </span><span class="self">self</span>, template: <span class="kw-2">&amp;</span>glib::Bytes) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
@@ -2399,7 +2383,7 @@
         <span class="self">self</span>.set_template_bytes(<span class="kw-2">&amp;</span>template_bytes);
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_template_from_resource&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_template_from_resource&quot;</span>)]
     </span><span class="kw">fn </span>set_template_from_resource(<span class="kw-2">&amp;mut </span><span class="self">self</span>, resource_name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
@@ -2435,7 +2419,7 @@
         );
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_install_action&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_install_action&quot;</span>)]
     </span><span class="kw">fn </span>install_action&lt;F&gt;(<span class="kw-2">&amp;mut </span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str, parameter_type: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, activate: F)
     <span class="kw">where
         </span>F: Fn(<span class="kw-2">&amp;</span>&lt;&lt;<span class="self">Self </span><span class="kw">as </span>ClassStruct&gt;::Type <span class="kw">as </span>ObjectSubclass&gt;::Type, <span class="kw-2">&amp;</span>str, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Variant&gt;)
@@ -2503,13 +2487,13 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_query_action&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_query_action&quot;</span>)]
     </span><span class="kw">fn </span>query_action(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; WidgetActionIter {
         <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
         WidgetActionIter(widget_class, <span class="number">0</span>)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_template_scope&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_template_scope&quot;</span>)]
     </span><span class="kw">fn </span>set_template_scope&lt;S: IsA&lt;BuilderScope&gt;&gt;(<span class="kw-2">&amp;mut </span><span class="self">self</span>, scope: <span class="kw-2">&amp;</span>S) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
@@ -2517,7 +2501,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_bind_template_child_full&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_bind_template_child_full&quot;</span>)]
     </span><span class="kw">fn </span>bind_template_child(<span class="kw-2">&amp;mut </span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
@@ -2530,7 +2514,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_add_binding&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_add_binding&quot;</span>)]
     </span><span class="kw">fn </span>add_binding&lt;
         F: Fn(<span class="kw-2">&amp;</span>&lt;&lt;<span class="self">Self </span><span class="kw">as </span>ClassStruct&gt;::Type <span class="kw">as </span>ObjectSubclass&gt;::Type, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Variant&gt;) -&gt; bool
             + <span class="lifetime">&#39;static</span>,
@@ -2551,7 +2535,7 @@
         <span class="self">self</span>.add_shortcut(<span class="kw-2">&amp;</span>shortcut);
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_add_binding_action&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_add_binding_action&quot;</span>)]
     </span><span class="kw">fn </span>add_binding_action(
         <span class="kw-2">&amp;mut </span><span class="self">self</span>,
         keyval: gdk::Key,
@@ -2567,7 +2551,7 @@
         <span class="self">self</span>.add_shortcut(<span class="kw-2">&amp;</span>shortcut);
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_add_binding_signal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_add_binding_signal&quot;</span>)]
     </span><span class="kw">fn </span>add_binding_signal(
         <span class="kw-2">&amp;mut </span><span class="self">self</span>,
         keyval: gdk::Key,
@@ -2591,7 +2575,7 @@
         <span class="self">self</span>.add_shortcut(<span class="kw-2">&amp;</span>shortcut);
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_add_shortcut&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_add_shortcut&quot;</span>)]
     </span><span class="kw">fn </span>add_shortcut(<span class="kw-2">&amp;mut </span><span class="self">self</span>, shortcut: <span class="kw-2">&amp;</span>Shortcut) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
@@ -2599,7 +2583,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_install_property_action&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_install_property_action&quot;</span>)]
     </span><span class="kw">fn </span>install_property_action(<span class="kw-2">&amp;mut </span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str, property_name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
@@ -2611,7 +2595,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_get_activate_signal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_get_activate_signal&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_activate_signal&quot;</span>)]
     </span><span class="kw">fn </span>activate_signal(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;SignalId&gt; {
         <span class="kw">unsafe </span>{
@@ -2625,7 +2609,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_activate_signal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_activate_signal&quot;</span>)]
     </span><span class="kw">fn </span>set_activate_signal(<span class="kw-2">&amp;mut </span><span class="self">self</span>, signal_id: SignalId) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
@@ -2633,7 +2617,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_activate_signal_from_name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_activate_signal_from_name&quot;</span>)]
     </span><span class="kw">fn </span>set_activate_signal_from_name(<span class="kw-2">&amp;mut </span><span class="self">self</span>, signal_name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">let </span>type_ = &lt;<span class="self">Self</span>::Type <span class="kw">as </span>ObjectSubclassType&gt;::type_();
         <span class="macro">assert!</span>(
@@ -2652,7 +2636,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_layout_manager_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_layout_manager_type&quot;</span>)]
     </span><span class="kw">fn </span>set_layout_manager_type&lt;T: IsA&lt;LayoutManager&gt;&gt;(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
@@ -2663,7 +2647,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_get_layout_manager_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_get_layout_manager_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_layout_manager_type&quot;</span>)]
     </span><span class="kw">fn </span>layout_manager_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Type {
         <span class="kw">unsafe </span>{
@@ -2672,7 +2656,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_css_name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_css_name&quot;</span>)]
     </span><span class="kw">fn </span>set_css_name(<span class="kw-2">&amp;mut </span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
@@ -2680,7 +2664,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_get_css_name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_get_css_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_css_name&quot;</span>)]
     </span><span class="kw">fn </span>css_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{
@@ -2689,7 +2673,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_accessible_role&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_set_accessible_role&quot;</span>)]
     </span><span class="kw">fn </span>set_accessible_role(<span class="kw-2">&amp;mut </span><span class="self">self</span>, role: AccessibleRole) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
@@ -2697,7 +2681,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gtk_widget_class_get_accessible_role&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_get_accessible_role&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_accessible_role&quot;</span>)]
     </span><span class="kw">fn </span>accessible_role(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; AccessibleRole {
         <span class="kw">unsafe </span>{
@@ -2706,7 +2690,7 @@
         }
     }
 
-    <span class="attribute">#[allow(clippy::missing_safety_doc)]
+    <span class="attr">#[allow(clippy::missing_safety_doc)]
     #[doc(alias = <span class="string">&quot;gtk_widget_class_bind_template_child_full&quot;</span>)]
     </span><span class="kw">unsafe fn </span>bind_template_child_with_offset&lt;T&gt;(
         <span class="kw-2">&amp;mut </span><span class="self">self</span>,
@@ -2747,7 +2731,7 @@
 
 <span class="kw">unsafe impl</span>&lt;T: ClassStruct&gt; WidgetClassSubclassExt <span class="kw">for </span>T <span class="kw">where </span>T::Type: WidgetImpl {}
 
-<span class="attribute">#[derive(Debug, PartialEq, Eq)]
+<span class="attr">#[derive(Debug, PartialEq, Eq)]
 #[repr(transparent)]
 </span><span class="kw">pub struct </span>TemplateChild&lt;T&gt;
 <span class="kw">where
@@ -2789,7 +2773,7 @@
 <span class="kw">where
     </span>T: ObjectType + FromGlibPtrNone&lt;<span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>ObjectType&gt;::GlibType&gt;,
 {
-    <span class="attribute">#[track_caller]
+    <span class="attr">#[track_caller]
     </span><span class="kw">pub fn </span>get(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; T {
         <span class="self">self</span>.try_get()
             .expect(<span class="string">&quot;Failed to retrieve template child. Please check that it has been bound and has a #[template_child] attribute.&quot;</span>)
@@ -2870,7 +2854,7 @@
     /// callback name.
     </span><span class="kw">fn </span>add_callbacks_to_scope_prefixed(scope: <span class="kw-2">&amp;</span>BuilderRustScope, prefix: <span class="kw-2">&amp;</span>str) {
         <span class="kw">for </span>(name, func) <span class="kw">in </span><span class="self">Self</span>::CALLBACKS {
-            scope.add_callback(<span class="macro">format!</span>(<span class="string">&quot;{}{}&quot;</span>, prefix, name), func);
+            scope.add_callback(<span class="macro">format!</span>(<span class="string">&quot;{prefix}{name}&quot;</span>), func);
         }
     }
 }
@@ -2916,4 +2900,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gtk4" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (a24a020e6 2022-10-18)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (73c9eaf21 2022-11-07)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-3a0b9947ba1bd99a.js" data-settings-css="settings-a66f7524084a489a.css" ></div></body></html>
