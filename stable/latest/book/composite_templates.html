@@ -294,7 +294,7 @@ glib::wrapper! {
 impl Window {
     pub fn new(app: &amp;Application) -&gt; Self {
         // Create new window
-        Object::new(&amp;[(&quot;application&quot;, app)])
+        Object::builder().property(&quot;application&quot;, app).build()
     }
 }
 </code></pre>
@@ -516,7 +516,7 @@ glib::wrapper! {
 <span class="boring">
 </span><span class="boring">impl CustomButton {
 </span><span class="boring">    pub fn new() -&gt; Self {
-</span><span class="boring">        Object::new(&amp;[])
+</span><span class="boring">        Object::builder().build()
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
