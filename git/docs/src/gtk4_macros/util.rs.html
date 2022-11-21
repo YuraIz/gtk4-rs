@@ -86,6 +86,8 @@
 <a href="#13" id="13">13</a>
 <a href="#14" id="14">14</a>
 <a href="#15" id="15">15</a>
+<a href="#16" id="16">16</a>
+<a href="#17" id="17">17</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>proc_macro2::{Ident, Span};
@@ -94,9 +96,11 @@
 <span class="kw">pub fn </span>crate_ident_new() -&gt; Ident {
     <span class="kw">use </span>proc_macro_crate::FoundCrate;
 
-    <span class="kw">let </span>crate_name = <span class="kw">match </span>crate_name(<span class="string">&quot;gtk4&quot;</span>).expect(<span class="string">&quot;missing gtk4 dependency in `Cargo.toml`&quot;</span>) {
-        FoundCrate::Name(name) =&gt; name,
-        FoundCrate::Itself =&gt; <span class="string">&quot;gtk4&quot;</span>.to_owned(),
+    <span class="comment">// Use crate name detected from Cargo.toml or &quot;gtk&quot; for use in re-exports
+    </span><span class="kw">let </span>crate_name = <span class="kw">match </span>crate_name(<span class="string">&quot;gtk4&quot;</span>) {
+        <span class="prelude-val">Ok</span>(FoundCrate::Name(name)) =&gt; name,
+        <span class="prelude-val">Ok</span>(FoundCrate::Itself) =&gt; <span class="string">&quot;gtk4&quot;</span>.to_owned(),
+        <span class="prelude-val">Err</span>(<span class="kw">_</span>) =&gt; <span class="string">&quot;gtk&quot;</span>.to_owned(),
     };
 
     Ident::new(<span class="kw-2">&amp;</span>crate_name, Span::call_site())
