@@ -177,7 +177,7 @@ close button is clicked.</p>
 titlebars.</p>
 </div></details><section id="tymethod.destroy" class="method has-srclink"><a class="srclink rightside" href="../../src/gtk4/auto/window.rs.html#923">source</a><h4 class="code-header">fn <a href="#tymethod.destroy" class="fnname">destroy</a>(&amp;self)</h4></section><details class="rustdoc-toggle method-toggle" open><summary><section id="tymethod.fullscreen" class="method has-srclink"><a class="srclink rightside" href="../../src/gtk4/auto/window.rs.html#936">source</a><h4 class="code-header">fn <a href="#tymethod.fullscreen" class="fnname">fullscreen</a>(&amp;self)</h4></section></summary><div class="docblock"><p>Asks to place @self in the fullscreen state.</p>
 <p>Note that you shouldn’t assume the window is definitely fullscreen
-afterward, because other entities (e.g. the user or window manager
+afterward, because other entities (e.g. the user or window manager)
 unfullscreen it again, and not all window managers honor requests
 to fullscreen windows.</p>
 <p>You can track the result of this operation via the
@@ -297,7 +297,7 @@ initial requested state is maximized.</p>
 <p>whether the window has a maximized state.</p>
 </div></details><details class="rustdoc-toggle method-toggle" open><summary><section id="tymethod.maximize" class="method has-srclink"><a class="srclink rightside" href="../../src/gtk4/auto/window.rs.html#1220">source</a><h4 class="code-header">fn <a href="#tymethod.maximize" class="fnname">maximize</a>(&amp;self)</h4></section></summary><div class="docblock"><p>Asks to maximize @self, so that it fills the screen.</p>
 <p>Note that you shouldn’t assume the window is definitely maximized
-afterward, because other entities (e.g. the user or window manager
+afterward, because other entities (e.g. the user or window manager)
 could unmaximize it again, and not all window managers support
 maximization.</p>
 <p>It’s permitted to call this function before showing a window,
@@ -310,7 +310,7 @@ property.</p>
 </div></details><details class="rustdoc-toggle method-toggle" open><summary><section id="tymethod.minimize" class="method has-srclink"><a class="srclink rightside" href="../../src/gtk4/auto/window.rs.html#1237">source</a><h4 class="code-header">fn <a href="#tymethod.minimize" class="fnname">minimize</a>(&amp;self)</h4></section></summary><div class="docblock"><p>Asks to minimize the specified @self.</p>
 <p>Note that you shouldn’t assume the window is definitely minimized
 afterward, because the windowing system might not support this
-functionality; other entities (e.g. the user or the window manager
+functionality; other entities (e.g. the user or the window manager)
 could unminimize it again, or there may not be a window manager in
 which case minimization isn’t possible, etc.</p>
 <p>It’s permitted to call this function before showing a window,
@@ -513,7 +513,7 @@ much as the window manager would have done on X.</p>
 its previous state.</p>
 <p>Note that you shouldn’t assume the window is definitely not
 fullscreen afterward, because other entities (e.g. the user or
-window manager could fullscreen it again, and not all window
+window manager) could fullscreen it again, and not all window
 managers honor requests to unfullscreen windows; normally the
 window will end up restored to its normal state. Just don’t
 write code that crashes if not.</p>
@@ -522,7 +522,7 @@ write code that crashes if not.</p>
 notifications of the <code>property::Window::fullscreened</code> property.</p>
 </div></details><details class="rustdoc-toggle method-toggle" open><summary><section id="tymethod.unmaximize" class="method has-srclink"><a class="srclink rightside" href="../../src/gtk4/auto/window.rs.html#1559">source</a><h4 class="code-header">fn <a href="#tymethod.unmaximize" class="fnname">unmaximize</a>(&amp;self)</h4></section></summary><div class="docblock"><p>Asks to unmaximize @self.</p>
 <p>Note that you shouldn’t assume the window is definitely unmaximized
-afterward, because other entities (e.g. the user or window manager
+afterward, because other entities (e.g. the user or window manager)
 maximize it again, and not all window managers honor requests to
 unmaximize.</p>
 <p>You can track the result of this operation via the
@@ -531,7 +531,7 @@ notifications on the <code>property::Window::maximized</code> property.</p>
 </div></details><details class="rustdoc-toggle method-toggle" open><summary><section id="tymethod.unminimize" class="method has-srclink"><a class="srclink rightside" href="../../src/gtk4/auto/window.rs.html#1572">source</a><h4 class="code-header">fn <a href="#tymethod.unminimize" class="fnname">unminimize</a>(&amp;self)</h4></section></summary><div class="docblock"><p>Asks to unminimize the specified @self.</p>
 <p>Note that you shouldn’t assume the window is definitely unminimized
 afterward, because the windowing system might not support this
-functionality; other entities (e.g. the user or the window manager
+functionality; other entities (e.g. the user or the window manager)
 could minimize it again, or there may not be a window manager in
 which case minimization isn’t possible, etc.</p>
 <p>You can track result of this operation via the

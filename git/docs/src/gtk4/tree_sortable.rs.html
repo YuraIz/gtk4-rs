@@ -313,6 +313,7 @@
 <a href="#240" id="240">240</a>
 <a href="#241" id="241">241</a>
 <a href="#242" id="242">242</a>
+<a href="#243" id="243">243</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::Ordering;
@@ -376,6 +377,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`TreeSortable`](crate::TreeSortable).
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 </span><span class="kw">pub trait </span>TreeSortableExtManual: <span class="lifetime">&#39;static </span>{
     <span class="doccomment">/// Sets the default comparison function used when sorting to be @sort_func.
     /// If the current sort column id of @self is

@@ -127,7 +127,7 @@ if the display could not be opened</p>
 supported GDK backends to use (in case GDK has been compiled
 with multiple backends).</p>
 <p>Applications can use <a href="fn.set_allowed_backends.html" title="crate::set_allowed_backends()"><code>set_allowed_backends()</code></a> to limit what
-backends wil be used.</p>
+backends will be used.</p>
 <h5 id="returns-3"><a href="#returns-3">Returns</a></h5>
 <p>The global <a href="struct.DisplayManager.html" title="crate::DisplayManager"><code>DisplayManager</code></a> singleton</p>
 </div></details><details class="rustdoc-toggle method-toggle" open><summary><section id="method.connect_display_opened" class="method has-srclink"><a class="srclink rightside" href="../src/gdk4/auto/display_manager.rs.html#153-178">source</a><h4 class="code-header">pub fn <a href="#method.connect_display_opened" class="fnname">connect_display_opened</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self, &amp;<a class="struct" href="struct.Display.html" title="struct gdk4::Display">Display</a>) + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self,<br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></h4></section></summary><div class="docblock"><p>Emitted when a display is opened.</p>

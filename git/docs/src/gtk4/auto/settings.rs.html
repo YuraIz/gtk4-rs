@@ -3762,13 +3762,13 @@
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;gtk-font-name&quot;</span>, <span class="kw-2">&amp;</span>gtk_font_name)
     }
 
-    <span class="doccomment">/// Timestamp of the curent fontconfig configuration.
+    <span class="doccomment">/// Timestamp of the current fontconfig configuration.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk-fontconfig-timestamp&quot;</span>)]
     </span><span class="kw">pub fn </span>gtk_fontconfig_timestamp(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;gtk-fontconfig-timestamp&quot;</span>)
     }
 
-    <span class="doccomment">/// Timestamp of the curent fontconfig configuration.
+    <span class="doccomment">/// Timestamp of the current fontconfig configuration.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk-fontconfig-timestamp&quot;</span>)]
     </span><span class="kw">pub fn </span>set_gtk_fontconfig_timestamp(<span class="kw-2">&amp;</span><span class="self">self</span>, gtk_fontconfig_timestamp: u32) {
         glib::ObjectExt::set_property(<span class="self">self</span>, <span class="string">&quot;gtk-fontconfig-timestamp&quot;</span>, <span class="kw-2">&amp;</span>gtk_fontconfig_timestamp)
@@ -6110,7 +6110,7 @@
         <span class="self">self
     </span>}
 
-    <span class="doccomment">/// Timestamp of the curent fontconfig configuration.
+    <span class="doccomment">/// Timestamp of the current fontconfig configuration.
     </span><span class="kw">pub fn </span>gtk_fontconfig_timestamp(<span class="kw-2">mut </span><span class="self">self</span>, gtk_fontconfig_timestamp: u32) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.gtk_fontconfig_timestamp = <span class="prelude-val">Some</span>(gtk_fontconfig_timestamp);
         <span class="self">self

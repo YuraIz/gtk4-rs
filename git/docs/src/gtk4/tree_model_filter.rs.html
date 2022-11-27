@@ -165,6 +165,8 @@
 <a href="#92" id="92">92</a>
 <a href="#93" id="93">93</a>
 <a href="#94" id="94">94</a>
+<a href="#95" id="95">95</a>
+<a href="#96" id="96">96</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>glib::object::{Cast, IsA};
@@ -175,6 +177,7 @@
 
 <span class="kw">impl </span>TreeModelFilter {
     <span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_model_filter_new&quot;</span>)]
+    #[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     </span><span class="kw">pub fn </span>new(child_model: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TreeModel&gt;, root: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TreePath&gt;) -&gt; <span class="self">Self </span>{
         <span class="macro">skip_assert_initialized!</span>();
         <span class="kw">unsafe </span>{
@@ -189,6 +192,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`TreeModelFilter`](crate::TreeModelFilter).
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 </span><span class="kw">pub trait </span>TreeModelFilterExtManual: <span class="lifetime">&#39;static </span>{
     <span class="doccomment">/// With the @n_columns and @types parameters, you give an array of column
     /// types for this model (which will be exposed to the parent model/view).

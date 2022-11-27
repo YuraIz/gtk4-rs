@@ -189,6 +189,8 @@
 <a href="#116" id="116">116</a>
 <a href="#117" id="117">117</a>
 <a href="#118" id="118">118</a>
+<a href="#119" id="119">119</a>
+<a href="#120" id="120">120</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -199,7 +201,8 @@
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>glib::Cast;
 
-<span class="kw">pub trait </span>NativeDialogImpl: NativeDialogImplExt + ObjectImpl {
+<span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="kw">pub trait </span>NativeDialogImpl: NativeDialogImplExt + ObjectImpl {
     <span class="kw">fn </span>response(<span class="kw-2">&amp;</span><span class="self">self</span>, response: ResponseType) {
         <span class="self">self</span>.parent_response(response)
     }
@@ -213,7 +216,8 @@
     }
 }
 
-<span class="kw">pub trait </span>NativeDialogImplExt: ObjectSubclass {
+<span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="kw">pub trait </span>NativeDialogImplExt: ObjectSubclass {
     <span class="kw">fn </span>parent_response(<span class="kw-2">&amp;</span><span class="self">self</span>, response: ResponseType);
     <span class="kw">fn </span>parent_show(<span class="kw-2">&amp;</span><span class="self">self</span>);
     <span class="kw">fn </span>parent_hide(<span class="kw-2">&amp;</span><span class="self">self</span>);

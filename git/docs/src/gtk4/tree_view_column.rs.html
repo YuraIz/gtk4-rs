@@ -167,6 +167,9 @@
 <a href="#94" id="94">94</a>
 <a href="#95" id="95">95</a>
 <a href="#96" id="96">96</a>
+<a href="#97" id="97">97</a>
+<a href="#98" id="98">98</a>
+<a href="#99" id="99">99</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use crate</span>::{CellRenderer, TreeViewColumn};
@@ -212,6 +215,7 @@
     /// A newly created [`TreeViewColumn`][crate::TreeViewColumn].
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_view_column_new_with_attributes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_with_attributes&quot;</span>)]
+    #[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     </span><span class="kw">pub fn </span>with_attributes(
         title: <span class="kw-2">&amp;</span>str,
         cell_renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;,
@@ -238,6 +242,7 @@
     /// ## `cell_renderer`
     /// the [`CellRenderer`][crate::CellRenderer] we’re setting the attributes of
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_attributes&quot;</span>)]
+    #[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attributes(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cell_renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;,
@@ -251,6 +256,7 @@
 
     <span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_cell_data_func&quot;</span>)]
     #[doc(alias = <span class="string">&quot;set_cell_data_func&quot;</span>)]
+    #[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     </span><span class="kw">pub fn </span>unset_cell_data_func(<span class="kw-2">&amp;</span><span class="self">self</span>, cell_renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_tree_view_column_set_cell_data_func(

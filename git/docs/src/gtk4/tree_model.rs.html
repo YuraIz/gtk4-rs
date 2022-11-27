@@ -142,6 +142,7 @@
 <a href="#69" id="69">69</a>
 <a href="#70" id="70">70</a>
 <a href="#71" id="71">71</a>
+<a href="#72" id="72">72</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
@@ -152,6 +153,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`TreeModel`](crate::TreeModel).
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 </span><span class="kw">pub trait </span>TreeModelExtManual: <span class="lifetime">&#39;static </span>{
     <span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_model_get&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_get_value&quot;</span>)]

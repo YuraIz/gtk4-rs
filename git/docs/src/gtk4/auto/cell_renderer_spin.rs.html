@@ -906,7 +906,9 @@
 <span class="kw">use </span>std::mem::transmute;
 
 <span class="macro">glib::wrapper! </span>{
-    <span class="doccomment">/// Renders a spin button in a cell
+    <span class="doccomment">/// List views use widgets to display their contents.
+    ///   You should use [`SpinButton`][crate::SpinButton] instead
+    /// Renders a spin button in a cell
     ///
     /// [`CellRendererSpin`][crate::CellRendererSpin] renders text in a cell like [`CellRendererText`][crate::CellRendererText] from
     /// which it is derived. But while [`CellRendererText`][crate::CellRendererText] offers a simple entry to
@@ -919,8 +921,6 @@
     /// also has properties for the `GtkCellRendererSpin:climb-rate` and the number
     /// of `GtkCellRendererSpin:digits` to display. Other [`SpinButton`][crate::SpinButton] properties
     /// can be set in a handler for the `GtkCellRenderer::editing-started` signal.
-    ///
-    /// The [`CellRendererSpin`][crate::CellRendererSpin] cell renderer was added in GTK 2.10.
     ///
     /// # Implements
     ///

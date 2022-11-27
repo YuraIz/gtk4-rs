@@ -108,6 +108,7 @@
 <a href="#35" id="35">35</a>
 <a href="#36" id="36">36</a>
 <a href="#37" id="37">37</a>
+<a href="#38" id="38">38</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::TreePath;
@@ -130,6 +131,7 @@
     ///   indices
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_path_get_indices_with_depth&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_indices&quot;</span>)]
+    #[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     </span><span class="kw">pub fn </span>indices(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;i32&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>count = <span class="number">0</span>;

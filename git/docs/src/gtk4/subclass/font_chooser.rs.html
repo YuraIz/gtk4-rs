@@ -412,6 +412,8 @@
 <a href="#339" id="339">339</a>
 <a href="#340" id="340">340</a>
 <a href="#341" id="341">341</a>
+<a href="#342" id="342">342</a>
+<a href="#343" id="343">343</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -460,7 +462,8 @@
     }
 }
 
-<span class="kw">pub trait </span>FontChooserImpl: ObjectImpl {
+<span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="kw">pub trait </span>FontChooserImpl: ObjectImpl {
     <span class="kw">fn </span>font_family(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;FontFamily&gt; {
         <span class="self">self</span>.parent_font_family()
     }
@@ -490,7 +493,8 @@
     }
 }
 
-<span class="kw">pub trait </span>FontChooserImplExt: ObjectSubclass {
+<span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+</span><span class="kw">pub trait </span>FontChooserImplExt: ObjectSubclass {
     <span class="kw">fn </span>parent_font_family(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;FontFamily&gt;;
     <span class="kw">fn </span>parent_font_face(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;FontFace&gt;;
     <span class="kw">fn </span>parent_font_size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;

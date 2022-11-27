@@ -144,6 +144,7 @@
 <a href="#71" id="71">71</a>
 <a href="#72" id="72">72</a>
 <a href="#73" id="73">73</a>
+<a href="#74" id="74">74</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::ComboBox;
@@ -152,6 +153,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`ComboBox`](crate::ComboBox).
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 </span><span class="kw">pub trait </span>ComboBoxExtManual: <span class="lifetime">&#39;static </span>{
     <span class="attr">#[doc(alias = <span class="string">&quot;gtk_combo_box_set_row_separator_func&quot;</span>)]
     #[doc(alias = <span class="string">&quot;set_row_separator_func&quot;</span>)]
@@ -161,7 +163,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkDropDown
+    /// Use [`DropDown`][crate::DropDown]
     /// ## `index_`
     /// An index in the model passed during construction,
     ///   or -1 to have no active item
@@ -177,7 +179,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkDropDown
+    /// Use [`DropDown`][crate::DropDown]
     ///
     /// # Returns
     ///

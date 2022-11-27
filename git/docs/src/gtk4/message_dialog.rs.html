@@ -241,6 +241,26 @@
 <a href="#168" id="168">168</a>
 <a href="#169" id="169">169</a>
 <a href="#170" id="170">170</a>
+<a href="#171" id="171">171</a>
+<a href="#172" id="172">172</a>
+<a href="#173" id="173">173</a>
+<a href="#174" id="174">174</a>
+<a href="#175" id="175">175</a>
+<a href="#176" id="176">176</a>
+<a href="#177" id="177">177</a>
+<a href="#178" id="178">178</a>
+<a href="#179" id="179">179</a>
+<a href="#180" id="180">180</a>
+<a href="#181" id="181">181</a>
+<a href="#182" id="182">182</a>
+<a href="#183" id="183">183</a>
+<a href="#184" id="184">184</a>
+<a href="#185" id="185">185</a>
+<a href="#186" id="186">186</a>
+<a href="#187" id="187">187</a>
+<a href="#188" id="188">188</a>
+<a href="#189" id="189">189</a>
+<a href="#190" id="190">190</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>glib::object::{Cast, IsA};
@@ -257,6 +277,10 @@
     /// When the user clicks a button a “response” signal is emitted with
     /// response IDs from [`ResponseType`][crate::ResponseType]. See [`Dialog`][crate::Dialog]
     /// for more details.
+    ///
+    /// # Deprecated since 4.10
+    ///
+    /// Use [`AlertDialog`][crate::AlertDialog] instead
     /// ## `parent`
     /// transient parent
     /// ## `flags`
@@ -272,6 +296,7 @@
     ///
     /// a new [`MessageDialog`][crate::MessageDialog]
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_message_dialog_new&quot;</span>)]
+    #[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Window&gt;&gt;,
         flags: DialogFlags,
@@ -325,6 +350,10 @@
     /// gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (dialog),
     ///                                markup);
     /// ```
+    ///
+    /// # Deprecated since 4.10
+    ///
+    /// Use [`AlertDialog`][crate::AlertDialog] instead
     /// ## `parent`
     /// transient parent
     /// ## `flags`
@@ -341,6 +370,7 @@
     /// a new [`MessageDialog`][crate::MessageDialog]
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_message_dialog_new_with_markup&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_with_markup&quot;</span>)]
+    #[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     </span><span class="kw">pub fn </span>with_markup(
         parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Window&gt;&gt;,
         flags: DialogFlags,
@@ -380,9 +410,14 @@
     ///                                             &quot;%s&quot;, msg);
     /// g_free (msg);
     /// ```
+    ///
+    /// # Deprecated since 4.10
+    ///
+    /// Use [`AlertDialog`][crate::AlertDialog] instead
     /// ## `message_format`
     /// printf()-style string with Pango markup
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_message_dialog_format_secondary_markup&quot;</span>)]
+    #[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     </span><span class="kw">pub fn </span>format_secondary_markup(<span class="kw-2">&amp;</span><span class="self">self</span>, message: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_message_dialog_format_secondary_markup(
@@ -393,9 +428,14 @@
     }
 
     <span class="doccomment">/// Sets the secondary text of the message dialog.
+    ///
+    /// # Deprecated since 4.10
+    ///
+    /// Use [`AlertDialog`][crate::AlertDialog] instead
     /// ## `message_format`
     /// printf()-style format string
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_message_dialog_format_secondary_text&quot;</span>)]
+    #[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     </span><span class="kw">pub fn </span>format_secondary_text(<span class="kw-2">&amp;</span><span class="self">self</span>, message: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_message_dialog_format_secondary_text(

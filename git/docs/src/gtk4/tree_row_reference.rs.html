@@ -117,6 +117,7 @@
 <a href="#44" id="44">44</a>
 <a href="#45" id="45">45</a>
 <a href="#46" id="46">46</a>
+<a href="#47" id="47">47</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
@@ -140,6 +141,7 @@
     /// ## `new_order`
     /// the new order of rows
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_tree_row_reference_reordered&quot;</span>)]
+    #[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     </span><span class="kw">pub fn </span>reordered(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         proxy: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;glib::Object&gt;,

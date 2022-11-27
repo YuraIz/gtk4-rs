@@ -97,6 +97,7 @@
 <a href="#24" id="24">24</a>
 <a href="#25" id="25">25</a>
 <a href="#26" id="26">26</a>
+<a href="#27" id="27">27</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::FontChooser;
@@ -105,6 +106,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`FontChooser`](crate::FontChooser).
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 </span><span class="kw">pub trait </span>FontChooserExtManual: <span class="lifetime">&#39;static </span>{
     <span class="attr">#[doc(alias = <span class="string">&quot;gtk_font_chooser_set_filter_func&quot;</span>)]
     #[doc(alias = <span class="string">&quot;set_filter_func&quot;</span>)]

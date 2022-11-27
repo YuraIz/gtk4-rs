@@ -145,6 +145,7 @@
 <a href="#72" id="72">72</a>
 <a href="#73" id="73">73</a>
 <a href="#74" id="74">74</a>
+<a href="#75" id="75">75</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
@@ -154,6 +155,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`TreeView`](crate::TreeView).
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
 </span><span class="kw">pub trait </span>TreeViewExtManual: <span class="lifetime">&#39;static </span>{
     <span class="doccomment">/// Creates a new [`TreeViewColumn`][crate::TreeViewColumn] and inserts it into the @self at
     /// @position.  If @position is -1, then the newly created column is inserted at
@@ -161,9 +163,9 @@
     /// has “fixed_height” mode enabled, then the new column will have its sizing
     /// property set to be GTK_TREE_VIEW_COLUMN_FIXED.
     ///
-    /// # Deprecated since 4.12
+    /// # Deprecated since 4.10
     ///
-    /// Use GtkListView and GtkColumnView instead
+    /// Use [`ListView`][crate::ListView] or [`ColumnView`][crate::ColumnView] instead
     /// ## `position`
     /// The position to insert the new column in
     /// ## `title`
