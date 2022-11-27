@@ -2703,7 +2703,7 @@
         <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
         <span class="kw">let </span>private_offset = &lt;<span class="self">Self</span>::Type <span class="kw">as </span>ObjectSubclassType&gt;::type_data()
             .as_ref()
-            .private_offset;
+            .impl_offset();
         ffi::gtk_widget_class_bind_template_child_full(
             widget_class,
             name.to_glib_none().<span class="number">0</span>,
