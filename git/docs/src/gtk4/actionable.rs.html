@@ -110,7 +110,7 @@
 
 </span><span class="kw">use </span><span class="kw">crate</span>::Actionable;
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{IsA, ToVariant};
+<span class="kw">use </span>glib::{IsA, Variant};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`Actionable`](crate::Actionable).
@@ -128,18 +128,18 @@
     /// a [`glib::Variant`][struct@crate::glib::Variant] format string
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_actionable_set_action_target&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_actionable_set_action_target_value&quot;</span>)]
-    </span><span class="kw">fn </span>set_action_target(<span class="kw-2">&amp;</span><span class="self">self</span>, target: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>ToVariant&gt;);
+    </span><span class="kw">fn </span>set_action_target(<span class="kw-2">&amp;</span><span class="self">self</span>, target: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>Into&lt;Variant&gt;&gt;);
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;Actionable&gt;&gt; ActionableExtManual <span class="kw">for </span>O {
-    <span class="kw">fn </span>set_action_target(<span class="kw-2">&amp;</span><span class="self">self</span>, target: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>ToVariant&gt;) {
+    <span class="kw">fn </span>set_action_target(<span class="kw-2">&amp;</span><span class="self">self</span>, target: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>Into&lt;Variant&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_actionable_set_action_target_value(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
-                target.map(|v| v.to_variant()).to_glib_none().<span class="number">0</span>,
+                target.map(|v| v.into()).to_glib_none().<span class="number">0</span>,
             );
         }
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (1eb62b123 2022-11-27)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (2585bcea0 2022-11-28)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

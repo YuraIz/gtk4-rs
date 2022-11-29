@@ -364,7 +364,6 @@
 <a href="#291" id="291">291</a>
 <a href="#292" id="292">292</a>
 <a href="#293" id="293">293</a>
-<a href="#294" id="294">294</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::util::<span class="kw-2">*</span>;
@@ -615,9 +614,8 @@
                         (<span class="prelude-val">None</span>, syn::ReturnType::Type(<span class="kw">_</span>, <span class="kw">_</span>)) =&gt; <span class="macro">quote! </span>{
                             #(#value_unpacks)*
                             <span class="kw">let </span>ret = #call;
-                            ::std::option::Option::Some(
-                                #crate_ident::glib::value::ToValue::to_value(<span class="kw-2">&amp;</span>ret)
-                            )
+                            <span class="kw">let </span>ret: #crate_ident::glib::Value = ::std::convert::From::from(ret);
+                            ::std::option::Option::Some(ret)
                         },
                         (<span class="prelude-val">Some</span>(<span class="kw">_</span>), syn::ReturnType::Default) =&gt; <span class="macro">quote! </span>{
                             <span class="kw">let </span>values = values.to_vec();
@@ -660,4 +658,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4_macros" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (1eb62b123 2022-11-27)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4_macros" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (2585bcea0 2022-11-28)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

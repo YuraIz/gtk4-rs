@@ -198,12 +198,18 @@
 <a href="#125" id="125">125</a>
 <a href="#126" id="126">126</a>
 <a href="#127" id="127">127</a>
+<a href="#128" id="128">128</a>
+<a href="#129" id="129">129</a>
+<a href="#130" id="130">130</a>
+<a href="#131" id="131">131</a>
+<a href="#132" id="132">132</a>
+<a href="#133" id="133">133</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
 <span class="kw">use crate</span>::{CellArea, CellRenderer};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{value::FromValue, IsA, ToValue};
+<span class="kw">use </span>glib::{value::FromValue, IsA, Value};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`CellArea`](crate::CellArea).
@@ -242,7 +248,12 @@
 
     <span class="attr">#[doc(alias = <span class="string">&quot;gtk_cell_area_cell_set_valist&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_cell_set_property&quot;</span>)]
-    </span><span class="kw">fn </span>cell_set(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;, property_name: <span class="kw-2">&amp;</span>str, value: <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue);
+    </span><span class="kw">fn </span>cell_set(
+        <span class="kw-2">&amp;</span><span class="self">self</span>,
+        renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;,
+        property_name: <span class="kw-2">&amp;</span>str,
+        value: <span class="kw">impl </span>Into&lt;Value&gt;,
+    );
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;CellArea&gt;&gt; CellAreaExtManual <span class="kw">for </span>O {
@@ -297,7 +308,7 @@
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;,
         property_name: <span class="kw-2">&amp;</span>str,
-        value: <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue,
+        value: <span class="kw">impl </span>Into&lt;Value&gt;,
     ) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>cell_class = glib::Class::&lt;CellArea&gt;::from_type(O::static_type()).unwrap();
@@ -309,21 +320,22 @@
             <span class="kw">let </span>pspec = pspec
                 .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;The CellArea property {property_name} doesn&#39;t exists&quot;</span>));
 
+            <span class="kw">let </span>value = value.into();
             <span class="macro">assert!</span>(
-                pspec.value_type().is_a(value.value_type()),
+                pspec.value_type().is_a(value.type_()),
                 <span class="string">&quot;The CellArea property&#39;s value is of wrong type. Expected &#39;{}&#39; but got &#39;{}&#39;&quot;</span>,
                 pspec.value_type(),
-                value.value_type()
+                value.type_()
             );
 
             ffi::gtk_cell_area_cell_set_property(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
                 renderer.as_ref().to_glib_none().<span class="number">0</span>,
                 property_name.to_glib_none().<span class="number">0</span>,
-                value.to_value().to_glib_none().<span class="number">0</span>,
+                value.to_glib_none().<span class="number">0</span>,
             );
         }
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (1eb62b123 2022-11-27)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (2585bcea0 2022-11-28)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

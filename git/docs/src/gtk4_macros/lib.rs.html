@@ -412,6 +412,7 @@
 <a href="#339" id="339">339</a>
 <a href="#340" id="340">340</a>
 <a href="#341" id="341">341</a>
+<a href="#342" id="342">342</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="doccomment">//! # GTK 4 Macros
@@ -557,18 +558,19 @@
 /// with `swapped=&quot;true&quot;`.
 ///
 /// The `rest` attribute can be placed on the last argument of a template callback. This attribute
-/// must be used on an argument of type `&amp;[glib::Value]` and will pass in the remaining arguments.
-/// The first and last values will be omitted from the slice if this callback is a `function`.
+/// must be used on an argument of type &lt;code&gt;&amp;\[[glib::Value]\]&lt;/code&gt; and will pass in the
+/// remaining arguments. The first and last values will be omitted from the slice if this callback
+/// is a `function`.
 ///
 /// Arguments and return types in template callbacks have some special restrictions, similar to the
-/// restrictions on [`glib::closure`]. Each argument&#39;s type must implement [`glib::ToValue`]. The
-/// last argument can also be `&amp;[glib::Value]` annotated with `#[rest]` as described above. The
-/// return type of a callback, if present, must implement [`glib::FromValue`]. Type-checking of
-/// inputs and outputs is done at run-time; if the argument types or return type do not match the
-/// type of the signal or closure then the callback will panic. To implement your own type checking
-/// or to use dynamic typing, an argument&#39;s type can be left as a [`&amp;glib::Value`].
-/// This can also be used if you need custom unboxing, such as if the target type does not
-/// implement `FromValue`.
+/// restrictions on [`glib::closure`]. Each argument&#39;s type must implement
+/// &lt;code&gt;[From]&amp;lt;Type&gt; for [glib::Value]&lt;/code&gt;. The last argument can also be
+/// &lt;code&gt;&amp;\[[glib::Value]\]&lt;/code&gt; annotated with `#[rest]` as described above. The return type of
+/// a callback, if present, must implement [`glib::FromValue`]. Type-checking of inputs and outputs
+/// is done at run-time; if the argument types or return type do not match the type of the signal
+/// or closure then the callback will panic. To implement your own type checking or to use dynamic
+/// typing, an argument&#39;s type can be left as a &lt;code&gt;&amp;[glib::Value]&lt;/code&gt;. This can also be used
+/// if you need custom unboxing, such as if the target type does not implement `FromValue`.
 ///
 /// [`glib::closure`]: ../glib/macro.closure.html
 /// [`glib::wrapper`]: ../glib/macro.wrapper.html
@@ -579,7 +581,7 @@
 /// [`T::bind_template_callbacks`]: ../gtk4/subclass/widget/trait.CompositeTemplateCallbacks.html#method.bind_template_callbacks
 /// [`glib::FromValue`]: ../glib/value/trait.FromValue.html
 /// [`glib::ToValue`]: ../glib/value/trait.ToValue.html
-/// [`&amp;glib::Value`]: ../glib/value/struct.Value.html
+/// [glib::Value]: ../glib/value/struct.Value.html
 /// [`glib::MainContext::spawn_local`]: ../glib/struct.MainContext.html#method.spawn_local
 /// [`Spinner`]: ../gtk4/struct.Spinner.html
 ///
@@ -754,4 +756,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4_macros" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (1eb62b123 2022-11-27)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4_macros" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (2585bcea0 2022-11-28)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
