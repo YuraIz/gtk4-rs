@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         <title>List Widgets - GUI development with Rust and GTK 4</title>
         <!-- Custom HTML head -->
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
@@ -29,13 +28,13 @@
     </head>
     <body>
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -51,7 +50,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -63,7 +62,7 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
@@ -95,7 +94,7 @@
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
@@ -128,7 +127,7 @@
                     </div>
                 </div>
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -186,8 +185,7 @@ Each label will display an integer starting from 0 and ranging up to 100.</p>
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p>We cannot display so many widgets at once.
 Therefore, we add <code>ListBox</code> to a <a href="../docs/gtk4/struct.ScrolledWindow.html"><code>gtk::ScrolledWindow</code></a>.
 Now we can scroll through our elements.</p>
@@ -233,8 +231,7 @@ Now we can scroll through our elements.</p>
 
     // Present window
     window.present();
-<span class="boring">}
-</span></code></pre>
+<span class="boring">}</span></code></pre>
 <div style="text-align:center"><img src="img/lists_list_box.png"/></div>
 <h2 id="views"><a class="header" href="#views">Views</a></h2>
 <p>That was easy enough.
@@ -272,8 +269,7 @@ impl IntegerObject {
         Object::builder().property(&quot;number&quot;, number).build()
     }
 }
-<span class="boring">
-</span></code></pre>
+<span class="boring"></span></code></pre>
 <p>This number represents the internal state of <code>IntegerObject</code>.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/list_widgets/2/integer_object/imp.rs">listings/list_widgets/2/integer_object/imp.rs</a></p>
 <pre><code class="language-rust  no_run noplayground"><span class="boring">use std::cell::Cell;
@@ -323,8 +319,7 @@ pub struct IntegerObject {
 </span><span class="boring">        }
 </span><span class="boring">    }
 </span><span class="boring">}
-</span><span class="boring">
-</span></code></pre>
+</span><span class="boring"></span></code></pre>
 <p>We now fill the model with integers from 0 to 100 000.
 Please note that models only takes care of the data.
 Neither <code>Label</code> nor any other widget is mentioned here.</p>
@@ -410,8 +405,7 @@ Neither <code>Label</code> nor any other widget is mentioned here.</p>
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p>The <code>ListItemFactory</code> takes care of the widgets as well as their relationship to the model.
 Here, we use the <a href="../docs/gtk4/struct.SignalListItemFactory.html"><code>SignalListItemFactory</code></a> which emits a signal for every relevant step in the life of a <a href="../docs/gtk4/struct.ListItem.html"><code>ListItem</code></a>.
 The &quot;setup&quot; signal will be emitted when new widgets have to be created.
@@ -498,8 +492,7 @@ We connect to it to create a <code>Label</code> for every requested widget.</p>
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p>In the &quot;bind&quot; step we bind the data in our model to the individual list items.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/list_widgets/2/main.rs">listings/list_widgets/2/main.rs</a></p>
 <pre><code class="language-rust  no_run noplayground"><span class="boring">mod integer_object;
@@ -583,8 +576,7 @@ We connect to it to create a <code>Label</code> for every requested widget.</p>
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p>We only want single items to be selectable, so we choose <a href="../docs/gtk4/struct.SingleSelection.html"><code>SingleSelection</code></a>.
 The other options would have been <a href="../docs/gtk4/struct.MultiSelection.html"><code>MultiSelection</code></a> or <a href="../docs/gtk4/struct.NoSelection.html"><code>NoSelection</code></a>.
 Then we pass the model and the factory to the <a href="../docs/gtk4/struct.ListView.html"><code>ListView</code></a>.</p>
@@ -670,8 +662,7 @@ Then we pass the model and the factory to the <a href="../docs/gtk4/struct.ListV
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p>Every <code>ListView</code> has to be a direct child of a <code>ScrolledWindow</code>, so we are adding it to one.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/list_widgets/2/main.rs">listings/list_widgets/2/main.rs</a></p>
 <pre><code class="language-rust  no_run noplayground"><span class="boring">mod integer_object;
@@ -755,8 +746,7 @@ Then we pass the model and the factory to the <a href="../docs/gtk4/struct.ListV
 
     // Present window
     window.present();
-<span class="boring">}
-</span></code></pre>
+<span class="boring">}</span></code></pre>
 <p>We can now easily scroll through our long list of integers.</p>
 <div style="text-align:center"><img src="img/lists_list_view_1.png"/></div>
 <p>Let's see what else we can do.
@@ -782,8 +772,7 @@ For that we first add the method <code>increase_number</code> to our <code>Integ
         let old_number = self.property::&lt;i32&gt;(&quot;number&quot;);
         self.set_property(&quot;number&quot;, old_number + 1);
     }
-}
-</code></pre>
+}</code></pre>
 <p>In order to interact with our <code>ListView</code>, we connect to its &quot;activate&quot; signal.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/list_widgets/3/main.rs">listings/list_widgets/3/main.rs</a></p>
 <pre><code class="language-rust  no_run noplayground"><span class="boring">mod integer_object;
@@ -881,8 +870,7 @@ For that we first add the method <code>increase_number</code> to our <code>Integ
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p>Now every time we activate an element, for example by double-clicking on it,
 the corresponding &quot;number&quot; property of the <code>IntegerObject</code> in the model will be increased by 1.
 However, just because the <code>IntegerObject</code> has been modified the corresponding <code>Label</code> does not immediately change.
@@ -983,8 +971,7 @@ One naive approach would be to bind the properties in the &quot;bind&quot; step 
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p>At first glance, that seems to work.
 However, as you scroll around and activate a few list elements,
 you will notice that sometimes multiple numbers change even though you only activated a single one.
@@ -1075,8 +1062,7 @@ Let's see how the &quot;setup&quot; step now works.</p>
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p>An expression provides a way to describe references to values.
 One interesting part here is that these references can be several steps away.
 This allowed us in the snippet above to bind the property &quot;number&quot; of the property &quot;item&quot; of <code>list_item</code> to the property &quot;label&quot; of <code>label</code>.</p>
@@ -1206,8 +1192,7 @@ We do that by passing it to a <a href="../docs/gtk4/struct.FilterListModel.html"
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p>Additionally, we can reverse the order of our model.
 Now we pass the filtered model to <a href="../docs/gtk4/struct.SortListModel.html"><code>gtk::SortListModel</code></a> together with <a href="../docs/gtk4/struct.CustomSorter.html"><code>gtk::CustomSorter</code></a>.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/list_widgets/5/main.rs">listings/list_widgets/5/main.rs</a></p>
@@ -1327,8 +1312,7 @@ Now we pass the filtered model to <a href="../docs/gtk4/struct.SortListModel.htm
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p>To ensure that our filter and sorter get updated when we modify the numbers, we call the <code>changed</code> method on them.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/list_widgets/5/main.rs">listings/list_widgets/5/main.rs</a></p>
 <pre><code class="language-rust  no_run noplayground"><span class="boring">mod integer_object;
@@ -1447,8 +1431,7 @@ Now we pass the filtered model to <a href="../docs/gtk4/struct.SortListModel.htm
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p>After our changes, the application looks like this:</p>
 <div style="text-align:center"><img src="img/lists_list_view_2.png"/></div>
 <h3 id="string-list"><a class="header" href="#string-list">String List</a></h3>
@@ -1520,8 +1503,7 @@ This is why we will skip this topic here.</p>
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p>Note that we can create a <code>StringList</code> directly from an iterator over strings.
 This means we don't have to create a custom GObject for our model anymore.</p>
 <p>As usual, we connect the label to the list item via an expression.
@@ -1587,8 +1569,7 @@ Here we can use <a href="../docs/gtk4/struct.StringObject.html"><code>StringObje
 </span><span class="boring">
 </span><span class="boring">    // Present window
 </span><span class="boring">    window.present();
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
 <p>We now know how to display a list of data.
 Small amount of elements can be handled by <code>ListBox</code> or <code>FlowBox</code>.
@@ -1622,15 +1603,15 @@ However, if we need the widgets to be scalable, we still need to use <a href="..
 
         </div>
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
     </body>

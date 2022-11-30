@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         <title>Subclassing - GUI development with Rust and GTK 4</title>
         <!-- Custom HTML head -->
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
@@ -29,13 +28,13 @@
     </head>
     <body>
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -51,7 +50,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -63,7 +62,7 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
@@ -95,7 +94,7 @@
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
@@ -128,7 +127,7 @@
                     </div>
                 </div>
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -166,8 +165,7 @@ impl ObjectImpl for CustomButton {}
 impl WidgetImpl for CustomButton {}
 
 // Trait shared by all buttons
-impl ButtonImpl for CustomButton {}
-</code></pre>
+impl ButtonImpl for CustomButton {}</code></pre>
 <p>The description of the subclassing is in <code>ObjectSubclass</code>.</p>
 <ul>
 <li><code>NAME</code> should consist of crate-name and object-name in order to avoid name collisions. Use <a href="https://en.wikipedia.org/wiki/Camel_case">UpperCamelCase</a> here.</li>
@@ -204,8 +202,7 @@ impl CustomButton {
 </span><span class="boring">    fn default() -&gt; Self {
 </span><span class="boring">        Self::new()
 </span><span class="boring">    }
-</span><span class="boring">}
-</span></code></pre>
+</span><span class="boring">}</span></code></pre>
 <p><a href="https://gtk-rs.org/gtk-rs-core/stable/latest/docs/glib/macro.wrapper.html"><code>glib::wrapper!</code></a> implements the same traits that our <code>ParentType</code> implements.
 Theoretically that would mean that the <code>ParentType</code> is also the only thing we have to specify here.
 Unfortunately, nobody found yet a good way to do that.
@@ -255,8 +252,7 @@ fn build_ui(app: &amp;Application) {
 
     // Present window
     window.present();
-}
-</code></pre>
+}</code></pre>
 <blockquote>
 <p>Describing objects with two structs is a peculiarity coming from how GObjects are defined in C.
 <code>imp::CustomButton</code> handles the state of the GObject and the overridden virtual methods.
@@ -306,8 +302,7 @@ impl ButtonImpl for CustomButton {
         self.number.set(self.number.get() + 1);
         self.obj().set_label(&amp;self.number.get().to_string())
     }
-}
-</code></pre>
+}</code></pre>
 <p>We override <code>constructed</code> in <code>ObjectImpl</code> so that the label of the button initializes with <code>number</code>.
 We also override <code>clicked</code> in <code>ButtonImpl</code> so that every click increases <code>number</code> and updates the label.</p>
 <p>Filename: <a class=file-link href="https://github.com/gtk-rs/gtk4-rs/blob/master/book/listings/g_object_subclassing/2/main.rs">listings/g_object_subclassing/2/main.rs</a></p>
@@ -347,8 +342,7 @@ We also override <code>clicked</code> in <code>ButtonImpl</code> so that every c
 
     // Present window
     window.present();
-}
-</code></pre>
+}</code></pre>
 <p>In <code>build_ui</code> we stop calling <code>connect_clicked</code>, and that was it.
 After a rebuild, the app now features our <code>CustomButton</code> with the label &quot;0&quot;.
 Every time we click on the button, the number displayed by the label increases by 1.</p>
@@ -391,15 +385,15 @@ Your browser does not support the video tag.
 
         </div>
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
     </body>
