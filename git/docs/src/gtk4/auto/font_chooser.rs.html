@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/font_chooser.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>font_chooser.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-75894291877b32c0.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-3bcdcab5f4113412.css"><link rel="stylesheet" disabled href="../../../static.files/dark-091ecdca18d5df85.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-45445754dcd01ab2.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-d2f7777684990013.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/font_chooser.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>font_chooser.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e963ab4a0d0c903e.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-046227e470cd3629.css"><link rel="stylesheet" disabled href="../../../static.files/dark-800f2ee593c8e6f7.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-9edae3c387f5a5b3.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -876,9 +876,49 @@
 <a href="#803" id="803">803</a>
 <a href="#804" id="804">804</a>
 <a href="#805" id="805">805</a>
+<a href="#806" id="806">806</a>
+<a href="#807" id="807">807</a>
+<a href="#808" id="808">808</a>
+<a href="#809" id="809">809</a>
+<a href="#810" id="810">810</a>
+<a href="#811" id="811">811</a>
+<a href="#812" id="812">812</a>
+<a href="#813" id="813">813</a>
+<a href="#814" id="814">814</a>
+<a href="#815" id="815">815</a>
+<a href="#816" id="816">816</a>
+<a href="#817" id="817">817</a>
+<a href="#818" id="818">818</a>
+<a href="#819" id="819">819</a>
+<a href="#820" id="820">820</a>
+<a href="#821" id="821">821</a>
+<a href="#822" id="822">822</a>
+<a href="#823" id="823">823</a>
+<a href="#824" id="824">824</a>
+<a href="#825" id="825">825</a>
+<a href="#826" id="826">826</a>
+<a href="#827" id="827">827</a>
+<a href="#828" id="828">828</a>
+<a href="#829" id="829">829</a>
+<a href="#830" id="830">830</a>
+<a href="#831" id="831">831</a>
+<a href="#832" id="832">832</a>
+<a href="#833" id="833">833</a>
+<a href="#834" id="834">834</a>
+<a href="#835" id="835">835</a>
+<a href="#836" id="836">836</a>
+<a href="#837" id="837">837</a>
+<a href="#838" id="838">838</a>
+<a href="#839" id="839">839</a>
+<a href="#840" id="840">840</a>
+<a href="#841" id="841">841</a>
+<a href="#842" id="842">842</a>
+<a href="#843" id="843">843</a>
+<a href="#844" id="844">844</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
+</span><span class="attr">#![allow(deprecated)]
 
 </span><span class="kw">use </span><span class="kw">crate</span>::FontChooserLevel;
 <span class="kw">use </span>glib::object::Cast;
@@ -942,6 +982,7 @@
     /// A string with the name
     ///   of the current font
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_get_font&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font&quot;</span>)]
     </span><span class="kw">fn </span>font(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
@@ -967,6 +1008,7 @@
     /// A [`pango::FontDescription`][crate::pango::FontDescription] for the
     ///   current font
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_get_font_desc&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_desc&quot;</span>)]
     </span><span class="kw">fn </span>font_desc(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontDescription&gt;;
@@ -986,6 +1028,7 @@
     /// A [`pango::FontFace`][crate::pango::FontFace] representing the
     ///   selected font group details
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_get_font_face&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_face&quot;</span>)]
     </span><span class="kw">fn </span>font_face(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontFace&gt;;
@@ -1006,6 +1049,7 @@
     /// A [`pango::FontFamily`][crate::pango::FontFamily] representing the
     ///   selected font family
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_get_font_family&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_family&quot;</span>)]
     </span><span class="kw">fn </span>font_family(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontFamily&gt;;
@@ -1025,6 +1069,7 @@
     ///
     /// the currently selected font features
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_get_font_features&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_features&quot;</span>)]
     </span><span class="kw">fn </span>font_features(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
@@ -1041,6 +1086,7 @@
     ///
     /// a [`pango::FontMap`][crate::pango::FontMap]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_get_font_map&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_map&quot;</span>)]
     </span><span class="kw">fn </span>font_map(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontMap&gt;;
@@ -1057,6 +1103,7 @@
     /// A n integer representing the selected font size,
     ///   or -1 if no font size is selected.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_get_font_size&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_size&quot;</span>)]
     </span><span class="kw">fn </span>font_size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
@@ -1072,6 +1119,7 @@
     ///
     /// the currently selected language
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_get_language&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_language&quot;</span>)]
     </span><span class="kw">fn </span>language(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
@@ -1087,6 +1135,7 @@
     ///
     /// the current granularity level
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_get_level&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_level&quot;</span>)]
     </span><span class="kw">fn </span>level(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FontChooserLevel;
@@ -1102,6 +1151,7 @@
     ///
     /// the text displayed in the preview area
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_get_preview_text&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_preview_text&quot;</span>)]
     </span><span class="kw">fn </span>preview_text(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
@@ -1117,6 +1167,7 @@
     ///
     /// [`true`] if the preview entry is shown or [`false`] if it is hidden.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_get_show_preview_entry&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_show_preview_entry&quot;</span>)]
     </span><span class="kw">fn </span>shows_preview_entry(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
@@ -1131,6 +1182,7 @@
     /// ## `filter`
     /// a `GtkFontFilterFunc`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_set_filter_func&quot;</span>)]
     </span><span class="kw">fn </span>set_filter_func&lt;P: Fn(<span class="kw-2">&amp;</span>pango::FontFamily, <span class="kw-2">&amp;</span>pango::FontFace) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -1146,6 +1198,7 @@
     /// ## `fontname`
     /// a font name like “Helvetica 12” or “Times Bold 18”
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_set_font&quot;</span>)]
     </span><span class="kw">fn </span>set_font(<span class="kw-2">&amp;</span><span class="self">self</span>, fontname: <span class="kw-2">&amp;</span>str);
 
@@ -1158,6 +1211,7 @@
     /// ## `font_desc`
     /// a [`pango::FontDescription`][crate::pango::FontDescription]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_set_font_desc&quot;</span>)]
     </span><span class="kw">fn </span>set_font_desc(<span class="kw-2">&amp;</span><span class="self">self</span>, font_desc: <span class="kw-2">&amp;</span>pango::FontDescription);
 
@@ -1198,6 +1252,7 @@
     /// ## `fontmap`
     /// a [`pango::FontMap`][crate::pango::FontMap]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_set_font_map&quot;</span>)]
     </span><span class="kw">fn </span>set_font_map(<span class="kw-2">&amp;</span><span class="self">self</span>, fontmap: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;pango::FontMap&gt;&gt;);
 
@@ -1210,6 +1265,7 @@
     /// ## `language`
     /// a language
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_set_language&quot;</span>)]
     </span><span class="kw">fn </span>set_language(<span class="kw-2">&amp;</span><span class="self">self</span>, language: <span class="kw-2">&amp;</span>str);
 
@@ -1222,6 +1278,7 @@
     /// ## `level`
     /// the desired level of granularity
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_set_level&quot;</span>)]
     </span><span class="kw">fn </span>set_level(<span class="kw-2">&amp;</span><span class="self">self</span>, level: FontChooserLevel);
 
@@ -1236,6 +1293,7 @@
     /// ## `text`
     /// the text to display in the preview area
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_set_preview_text&quot;</span>)]
     </span><span class="kw">fn </span>set_preview_text(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str);
 
@@ -1248,6 +1306,7 @@
     /// ## `show_preview_entry`
     /// whether to show the editable preview entry or not
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_font_chooser_set_show_preview_entry&quot;</span>)]
     </span><span class="kw">fn </span>set_show_preview_entry(<span class="kw-2">&amp;</span><span class="self">self</span>, show_preview_entry: bool);
 
@@ -1296,7 +1355,8 @@
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;FontChooser&gt;&gt; FontChooserExt <span class="kw">for </span>O {
-    <span class="kw">fn </span>font(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>font(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_font_chooser_get_font(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1304,7 +1364,8 @@
         }
     }
 
-    <span class="kw">fn </span>font_desc(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontDescription&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>font_desc(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontDescription&gt; {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_font_chooser_get_font_desc(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1312,7 +1373,8 @@
         }
     }
 
-    <span class="kw">fn </span>font_face(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontFace&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>font_face(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontFace&gt; {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::gtk_font_chooser_get_font_face(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1320,7 +1382,8 @@
         }
     }
 
-    <span class="kw">fn </span>font_family(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontFamily&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>font_family(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontFamily&gt; {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::gtk_font_chooser_get_font_family(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1328,7 +1391,8 @@
         }
     }
 
-    <span class="kw">fn </span>font_features(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>font_features(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_font_chooser_get_font_features(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1336,7 +1400,8 @@
         }
     }
 
-    <span class="kw">fn </span>font_map(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontMap&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>font_map(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontMap&gt; {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_font_chooser_get_font_map(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1344,11 +1409,13 @@
         }
     }
 
-    <span class="kw">fn </span>font_size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>font_size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::gtk_font_chooser_get_font_size(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="kw">fn </span>language(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>language(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_font_chooser_get_language(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1356,7 +1423,8 @@
         }
     }
 
-    <span class="kw">fn </span>level(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FontChooserLevel {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>level(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FontChooserLevel {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_font_chooser_get_level(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1364,7 +1432,8 @@
         }
     }
 
-    <span class="kw">fn </span>preview_text(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>preview_text(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_font_chooser_get_preview_text(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1372,7 +1441,8 @@
         }
     }
 
-    <span class="kw">fn </span>shows_preview_entry(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>shows_preview_entry(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_font_chooser_get_show_preview_entry(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1380,7 +1450,8 @@
         }
     }
 
-    <span class="kw">fn </span>set_filter_func&lt;P: Fn(<span class="kw-2">&amp;</span>pango::FontFamily, <span class="kw-2">&amp;</span>pango::FontFace) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_filter_func&lt;P: Fn(<span class="kw-2">&amp;</span>pango::FontFamily, <span class="kw-2">&amp;</span>pango::FontFace) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         filter: P,
     ) {
@@ -1418,7 +1489,8 @@
         }
     }
 
-    <span class="kw">fn </span>set_font(<span class="kw-2">&amp;</span><span class="self">self</span>, fontname: <span class="kw-2">&amp;</span>str) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_font(<span class="kw-2">&amp;</span><span class="self">self</span>, fontname: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_font_chooser_set_font(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1427,7 +1499,8 @@
         }
     }
 
-    <span class="kw">fn </span>set_font_desc(<span class="kw-2">&amp;</span><span class="self">self</span>, font_desc: <span class="kw-2">&amp;</span>pango::FontDescription) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_font_desc(<span class="kw-2">&amp;</span><span class="self">self</span>, font_desc: <span class="kw-2">&amp;</span>pango::FontDescription) {
         <span class="kw">unsafe </span>{
             ffi::gtk_font_chooser_set_font_desc(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1436,7 +1509,8 @@
         }
     }
 
-    <span class="kw">fn </span>set_font_map(<span class="kw-2">&amp;</span><span class="self">self</span>, fontmap: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;pango::FontMap&gt;&gt;) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_font_map(<span class="kw-2">&amp;</span><span class="self">self</span>, fontmap: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;pango::FontMap&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_font_chooser_set_font_map(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1445,7 +1519,8 @@
         }
     }
 
-    <span class="kw">fn </span>set_language(<span class="kw-2">&amp;</span><span class="self">self</span>, language: <span class="kw-2">&amp;</span>str) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_language(<span class="kw-2">&amp;</span><span class="self">self</span>, language: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_font_chooser_set_language(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1454,13 +1529,15 @@
         }
     }
 
-    <span class="kw">fn </span>set_level(<span class="kw-2">&amp;</span><span class="self">self</span>, level: FontChooserLevel) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_level(<span class="kw-2">&amp;</span><span class="self">self</span>, level: FontChooserLevel) {
         <span class="kw">unsafe </span>{
             ffi::gtk_font_chooser_set_level(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, level.into_glib());
         }
     }
 
-    <span class="kw">fn </span>set_preview_text(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_preview_text(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_font_chooser_set_preview_text(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1469,7 +1546,8 @@
         }
     }
 
-    <span class="kw">fn </span>set_show_preview_entry(<span class="kw-2">&amp;</span><span class="self">self</span>, show_preview_entry: bool) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_show_preview_entry(<span class="kw-2">&amp;</span><span class="self">self</span>, show_preview_entry: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_font_chooser_set_show_preview_entry(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1682,4 +1760,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (2585bcea0 2022-11-28)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (234151769 2022-12-03)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

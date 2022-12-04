@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/style_context.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>style_context.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-75894291877b32c0.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-3bcdcab5f4113412.css"><link rel="stylesheet" disabled href="../../../static.files/dark-091ecdca18d5df85.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-45445754dcd01ab2.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-d2f7777684990013.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/style_context.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>style_context.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e963ab4a0d0c903e.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-046227e470cd3629.css"><link rel="stylesheet" disabled href="../../../static.files/dark-800f2ee593c8e6f7.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-9edae3c387f5a5b3.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -717,9 +717,47 @@
 <a href="#644" id="644">644</a>
 <a href="#645" id="645">645</a>
 <a href="#646" id="646">646</a>
+<a href="#647" id="647">647</a>
+<a href="#648" id="648">648</a>
+<a href="#649" id="649">649</a>
+<a href="#650" id="650">650</a>
+<a href="#651" id="651">651</a>
+<a href="#652" id="652">652</a>
+<a href="#653" id="653">653</a>
+<a href="#654" id="654">654</a>
+<a href="#655" id="655">655</a>
+<a href="#656" id="656">656</a>
+<a href="#657" id="657">657</a>
+<a href="#658" id="658">658</a>
+<a href="#659" id="659">659</a>
+<a href="#660" id="660">660</a>
+<a href="#661" id="661">661</a>
+<a href="#662" id="662">662</a>
+<a href="#663" id="663">663</a>
+<a href="#664" id="664">664</a>
+<a href="#665" id="665">665</a>
+<a href="#666" id="666">666</a>
+<a href="#667" id="667">667</a>
+<a href="#668" id="668">668</a>
+<a href="#669" id="669">669</a>
+<a href="#670" id="670">670</a>
+<a href="#671" id="671">671</a>
+<a href="#672" id="672">672</a>
+<a href="#673" id="673">673</a>
+<a href="#674" id="674">674</a>
+<a href="#675" id="675">675</a>
+<a href="#676" id="676">676</a>
+<a href="#677" id="677">677</a>
+<a href="#678" id="678">678</a>
+<a href="#679" id="679">679</a>
+<a href="#680" id="680">680</a>
+<a href="#681" id="681">681</a>
+<a href="#682" id="682">682</a>
+<a href="#683" id="683">683</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
+</span><span class="attr">#![allow(deprecated)]
 
 </span><span class="kw">use </span><span class="kw">crate</span>::Border;
 <span class="kw">use </span><span class="kw">crate</span>::StateFlags;
@@ -873,6 +911,7 @@
     /// ## `class_name`
     /// class name to use in styling
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_add_class&quot;</span>)]
     </span><span class="kw">fn </span>add_class(<span class="kw-2">&amp;</span><span class="self">self</span>, class_name: <span class="kw-2">&amp;</span>str);
 
@@ -899,6 +938,7 @@
     ///   `GTK_STYLE_PROVIDER_PRIORITY_FALLBACK` and
     ///   `GTK_STYLE_PROVIDER_PRIORITY_USER`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_add_provider&quot;</span>)]
     </span><span class="kw">fn </span>add_provider(<span class="kw-2">&amp;</span><span class="self">self</span>, provider: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleProvider&gt;, priority: u32);
 
@@ -914,6 +954,7 @@
     /// ## `border`
     /// return value for the border settings
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_get_border&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_border&quot;</span>)]
     </span><span class="kw">fn </span>border(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Border;
@@ -930,6 +971,7 @@
     /// ## `color`
     /// return value for the foreground color
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_get_color&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_color&quot;</span>)]
     </span><span class="kw">fn </span>color(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gdk::RGBA;
@@ -944,6 +986,7 @@
     ///
     /// a [`gdk::Display`][crate::gdk::Display].
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_get_display&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display&quot;</span>)]
     </span><span class="kw">fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gdk::Display;
@@ -960,6 +1003,7 @@
     /// ## `margin`
     /// return value for the margin settings
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_get_margin&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_margin&quot;</span>)]
     </span><span class="kw">fn </span>margin(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Border;
@@ -976,6 +1020,7 @@
     /// ## `padding`
     /// return value for the padding settings
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_get_padding&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_padding&quot;</span>)]
     </span><span class="kw">fn </span>padding(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Border;
@@ -1007,6 +1052,7 @@
     ///
     /// the state flags
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_get_state&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_state&quot;</span>)]
     </span><span class="kw">fn </span>state(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; StateFlags;
@@ -1024,6 +1070,7 @@
     ///
     /// [`true`] if @self has @class_name defined
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_has_class&quot;</span>)]
     </span><span class="kw">fn </span>has_class(<span class="kw-2">&amp;</span><span class="self">self</span>, class_name: <span class="kw-2">&amp;</span>str) -&gt; bool;
 
@@ -1042,6 +1089,7 @@
     /// ## `color`
     /// Return location for the looked up color
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_lookup_color&quot;</span>)]
     </span><span class="kw">fn </span>lookup_color(<span class="kw-2">&amp;</span><span class="self">self</span>, color_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;gdk::RGBA&gt;;
 
@@ -1053,6 +1101,7 @@
     /// ## `class_name`
     /// class name to remove
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_remove_class&quot;</span>)]
     </span><span class="kw">fn </span>remove_class(<span class="kw-2">&amp;</span><span class="self">self</span>, class_name: <span class="kw-2">&amp;</span>str);
 
@@ -1063,6 +1112,7 @@
     /// ## `provider`
     /// a [`StyleProvider`][crate::StyleProvider]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_remove_provider&quot;</span>)]
     </span><span class="kw">fn </span>remove_provider(<span class="kw-2">&amp;</span><span class="self">self</span>, provider: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleProvider&gt;);
 
@@ -1074,6 +1124,7 @@
     ///
     /// This API will be removed in GTK 5
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_restore&quot;</span>)]
     </span><span class="kw">fn </span>restore(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
@@ -1092,6 +1143,7 @@
     ///
     /// This API will be removed in GTK 5
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_save&quot;</span>)]
     </span><span class="kw">fn </span>save(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
@@ -1110,6 +1162,7 @@
     /// ## `display`
     /// a [`gdk::Display`][crate::gdk::Display]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_set_display&quot;</span>)]
     </span><span class="kw">fn </span>set_display(<span class="kw-2">&amp;</span><span class="self">self</span>, display: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gdk::Display&gt;);
 
@@ -1121,6 +1174,7 @@
     /// ## `scale`
     /// scale
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_set_scale&quot;</span>)]
     </span><span class="kw">fn </span>set_scale(<span class="kw-2">&amp;</span><span class="self">self</span>, scale: i32);
 
@@ -1132,6 +1186,7 @@
     /// ## `flags`
     /// state to represent
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_set_state&quot;</span>)]
     </span><span class="kw">fn </span>set_state(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: StateFlags);
 
@@ -1156,6 +1211,7 @@
     ///
     /// a newly allocated string representing @self
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_style_context_to_string&quot;</span>)]
     </span><span class="kw">fn </span>to_string(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: StyleContextPrintFlags) -&gt; glib::GString;
 
@@ -1164,7 +1220,8 @@
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;StyleContext&gt;&gt; StyleContextExt <span class="kw">for </span>O {
-    <span class="kw">fn </span>add_class(<span class="kw-2">&amp;</span><span class="self">self</span>, class_name: <span class="kw-2">&amp;</span>str) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>add_class(<span class="kw-2">&amp;</span><span class="self">self</span>, class_name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_style_context_add_class(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1173,7 +1230,8 @@
         }
     }
 
-    <span class="kw">fn </span>add_provider(<span class="kw-2">&amp;</span><span class="self">self</span>, provider: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleProvider&gt;, priority: u32) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>add_provider(<span class="kw-2">&amp;</span><span class="self">self</span>, provider: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleProvider&gt;, priority: u32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_style_context_add_provider(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1183,7 +1241,8 @@
         }
     }
 
-    <span class="kw">fn </span>border(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Border {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>border(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Border {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>border = Border::uninitialized();
             ffi::gtk_style_context_get_border(
@@ -1194,7 +1253,8 @@
         }
     }
 
-    <span class="kw">fn </span>color(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gdk::RGBA {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>color(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gdk::RGBA {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>color = gdk::RGBA::uninitialized();
             ffi::gtk_style_context_get_color(
@@ -1205,7 +1265,8 @@
         }
     }
 
-    <span class="kw">fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gdk::Display {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gdk::Display {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::gtk_style_context_get_display(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1213,7 +1274,8 @@
         }
     }
 
-    <span class="kw">fn </span>margin(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Border {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>margin(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Border {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>margin = Border::uninitialized();
             ffi::gtk_style_context_get_margin(
@@ -1224,7 +1286,8 @@
         }
     }
 
-    <span class="kw">fn </span>padding(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Border {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>padding(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Border {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>padding = Border::uninitialized();
             ffi::gtk_style_context_get_padding(
@@ -1239,7 +1302,8 @@
         <span class="kw">unsafe </span>{ ffi::gtk_style_context_get_scale(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="kw">fn </span>state(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; StateFlags {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>state(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; StateFlags {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_style_context_get_state(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1247,7 +1311,8 @@
         }
     }
 
-    <span class="kw">fn </span>has_class(<span class="kw-2">&amp;</span><span class="self">self</span>, class_name: <span class="kw-2">&amp;</span>str) -&gt; bool {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>has_class(<span class="kw-2">&amp;</span><span class="self">self</span>, class_name: <span class="kw-2">&amp;</span>str) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_style_context_has_class(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1256,7 +1321,8 @@
         }
     }
 
-    <span class="kw">fn </span>lookup_color(<span class="kw-2">&amp;</span><span class="self">self</span>, color_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;gdk::RGBA&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>lookup_color(<span class="kw-2">&amp;</span><span class="self">self</span>, color_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;gdk::RGBA&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>color = gdk::RGBA::uninitialized();
             <span class="kw">let </span>ret = from_glib(ffi::gtk_style_context_lookup_color(
@@ -1272,7 +1338,8 @@
         }
     }
 
-    <span class="kw">fn </span>remove_class(<span class="kw-2">&amp;</span><span class="self">self</span>, class_name: <span class="kw-2">&amp;</span>str) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>remove_class(<span class="kw-2">&amp;</span><span class="self">self</span>, class_name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_style_context_remove_class(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1281,7 +1348,8 @@
         }
     }
 
-    <span class="kw">fn </span>remove_provider(<span class="kw-2">&amp;</span><span class="self">self</span>, provider: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleProvider&gt;) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>remove_provider(<span class="kw-2">&amp;</span><span class="self">self</span>, provider: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;StyleProvider&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_style_context_remove_provider(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1290,19 +1358,22 @@
         }
     }
 
-    <span class="kw">fn </span>restore(<span class="kw-2">&amp;</span><span class="self">self</span>) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>restore(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gtk_style_context_restore(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>);
         }
     }
 
-    <span class="kw">fn </span>save(<span class="kw-2">&amp;</span><span class="self">self</span>) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>save(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gtk_style_context_save(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>);
         }
     }
 
-    <span class="kw">fn </span>set_display(<span class="kw-2">&amp;</span><span class="self">self</span>, display: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gdk::Display&gt;) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_display(<span class="kw-2">&amp;</span><span class="self">self</span>, display: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gdk::Display&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_style_context_set_display(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1311,19 +1382,22 @@
         }
     }
 
-    <span class="kw">fn </span>set_scale(<span class="kw-2">&amp;</span><span class="self">self</span>, scale: i32) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_scale(<span class="kw-2">&amp;</span><span class="self">self</span>, scale: i32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_style_context_set_scale(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, scale);
         }
     }
 
-    <span class="kw">fn </span>set_state(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: StateFlags) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_state(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: StateFlags) {
         <span class="kw">unsafe </span>{
             ffi::gtk_style_context_set_state(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, flags.into_glib());
         }
     }
 
-    <span class="kw">fn </span>to_string(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: StyleContextPrintFlags) -&gt; glib::GString {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>to_string(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: StyleContextPrintFlags) -&gt; glib::GString {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_style_context_to_string(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1364,4 +1438,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (2585bcea0 2022-11-28)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (234151769 2022-12-03)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

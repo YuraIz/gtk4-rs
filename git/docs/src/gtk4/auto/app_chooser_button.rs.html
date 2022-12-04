@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/app_chooser_button.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>app_chooser_button.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-75894291877b32c0.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-3bcdcab5f4113412.css"><link rel="stylesheet" disabled href="../../../static.files/dark-091ecdca18d5df85.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-45445754dcd01ab2.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-d2f7777684990013.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/app_chooser_button.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>app_chooser_button.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e963ab4a0d0c903e.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-046227e470cd3629.css"><link rel="stylesheet" disabled href="../../../static.files/dark-800f2ee593c8e6f7.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-9edae3c387f5a5b3.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1060,9 +1060,23 @@
 <a href="#987" id="987">987</a>
 <a href="#988" id="988">988</a>
 <a href="#989" id="989">989</a>
+<a href="#990" id="990">990</a>
+<a href="#991" id="991">991</a>
+<a href="#992" id="992">992</a>
+<a href="#993" id="993">993</a>
+<a href="#994" id="994">994</a>
+<a href="#995" id="995">995</a>
+<a href="#996" id="996">996</a>
+<a href="#997" id="997">997</a>
+<a href="#998" id="998">998</a>
+<a href="#999" id="999">999</a>
+<a href="#1000" id="1000">1000</a>
+<a href="#1001" id="1001">1001</a>
+<a href="#1002" id="1002">1002</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
+</span><span class="attr">#![allow(deprecated)]
 
 </span><span class="kw">use </span><span class="kw">crate</span>::Accessible;
 <span class="kw">use </span><span class="kw">crate</span>::AccessibleRole;
@@ -1145,6 +1159,7 @@
     ///
     /// a newly created [`AppChooserButton`][crate::AppChooserButton]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_button_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(content_type: <span class="kw-2">&amp;</span>str) -&gt; AppChooserButton {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -1184,6 +1199,7 @@
     /// ## `icon`
     /// the icon for the custom item
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_button_append_custom_item&quot;</span>)]
     </span><span class="kw">pub fn </span>append_custom_item(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str, label: <span class="kw-2">&amp;</span>str, icon: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::Icon&gt;) {
         <span class="kw">unsafe </span>{
@@ -1203,6 +1219,7 @@
     ///
     /// This widget will be removed in GTK 5
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_button_append_separator&quot;</span>)]
     </span><span class="kw">pub fn </span>append_separator(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
@@ -1221,6 +1238,7 @@
     /// the text to display at the top of the dialog,
     ///   or [`None`], in which case a default text is displayed
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_button_get_heading&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_heading&quot;</span>)]
     </span><span class="kw">pub fn </span>heading(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
@@ -1241,6 +1259,7 @@
     ///
     /// [`true`] if the dialog is modal
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_button_get_modal&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_modal&quot;</span>)]
     </span><span class="kw">pub fn </span>is_modal(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -1258,6 +1277,7 @@
     ///
     /// the value of `property::AppChooserButton::show-default-item`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_button_get_show_default_item&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_show_default_item&quot;</span>)]
     </span><span class="kw">pub fn </span>shows_default_item(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -1279,6 +1299,7 @@
     ///
     /// the value of `property::AppChooserButton::show-dialog-item`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_button_get_show_dialog_item&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_show_dialog_item&quot;</span>)]
     </span><span class="kw">pub fn </span>shows_dialog_item(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -1302,6 +1323,7 @@
     /// ## `name`
     /// the name of the custom item
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_button_set_active_custom_item&quot;</span>)]
     </span><span class="kw">pub fn </span>set_active_custom_item(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
@@ -1322,6 +1344,7 @@
     /// ## `heading`
     /// a string containing Pango markup
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_button_set_heading&quot;</span>)]
     </span><span class="kw">pub fn </span>set_heading(<span class="kw-2">&amp;</span><span class="self">self</span>, heading: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
@@ -1340,6 +1363,7 @@
     /// ## `modal`
     /// [`true`] to make the dialog modal
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_button_set_modal&quot;</span>)]
     </span><span class="kw">pub fn </span>set_modal(<span class="kw-2">&amp;</span><span class="self">self</span>, modal: bool) {
         <span class="kw">unsafe </span>{
@@ -1356,6 +1380,7 @@
     /// ## `setting`
     /// the new value for `property::AppChooserButton::show-default-item`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_button_set_show_default_item&quot;</span>)]
     </span><span class="kw">pub fn </span>set_show_default_item(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
         <span class="kw">unsafe </span>{
@@ -1375,6 +1400,7 @@
     /// ## `setting`
     /// the new value for `property::AppChooserButton::show-dialog-item`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_button_set_show_dialog_item&quot;</span>)]
     </span><span class="kw">pub fn </span>set_show_dialog_item(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
         <span class="kw">unsafe </span>{
@@ -2050,4 +2076,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (2585bcea0 2022-11-28)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (234151769 2022-12-03)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

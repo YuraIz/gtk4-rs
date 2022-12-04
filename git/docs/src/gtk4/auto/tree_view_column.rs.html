@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/tree_view_column.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>tree_view_column.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-75894291877b32c0.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-3bcdcab5f4113412.css"><link rel="stylesheet" disabled href="../../../static.files/dark-091ecdca18d5df85.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-45445754dcd01ab2.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-d2f7777684990013.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/tree_view_column.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>tree_view_column.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e963ab4a0d0c903e.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-046227e470cd3629.css"><link rel="stylesheet" disabled href="../../../static.files/dark-800f2ee593c8e6f7.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-9edae3c387f5a5b3.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1834,9 +1834,62 @@
 <a href="#1761" id="1761">1761</a>
 <a href="#1762" id="1762">1762</a>
 <a href="#1763" id="1763">1763</a>
+<a href="#1764" id="1764">1764</a>
+<a href="#1765" id="1765">1765</a>
+<a href="#1766" id="1766">1766</a>
+<a href="#1767" id="1767">1767</a>
+<a href="#1768" id="1768">1768</a>
+<a href="#1769" id="1769">1769</a>
+<a href="#1770" id="1770">1770</a>
+<a href="#1771" id="1771">1771</a>
+<a href="#1772" id="1772">1772</a>
+<a href="#1773" id="1773">1773</a>
+<a href="#1774" id="1774">1774</a>
+<a href="#1775" id="1775">1775</a>
+<a href="#1776" id="1776">1776</a>
+<a href="#1777" id="1777">1777</a>
+<a href="#1778" id="1778">1778</a>
+<a href="#1779" id="1779">1779</a>
+<a href="#1780" id="1780">1780</a>
+<a href="#1781" id="1781">1781</a>
+<a href="#1782" id="1782">1782</a>
+<a href="#1783" id="1783">1783</a>
+<a href="#1784" id="1784">1784</a>
+<a href="#1785" id="1785">1785</a>
+<a href="#1786" id="1786">1786</a>
+<a href="#1787" id="1787">1787</a>
+<a href="#1788" id="1788">1788</a>
+<a href="#1789" id="1789">1789</a>
+<a href="#1790" id="1790">1790</a>
+<a href="#1791" id="1791">1791</a>
+<a href="#1792" id="1792">1792</a>
+<a href="#1793" id="1793">1793</a>
+<a href="#1794" id="1794">1794</a>
+<a href="#1795" id="1795">1795</a>
+<a href="#1796" id="1796">1796</a>
+<a href="#1797" id="1797">1797</a>
+<a href="#1798" id="1798">1798</a>
+<a href="#1799" id="1799">1799</a>
+<a href="#1800" id="1800">1800</a>
+<a href="#1801" id="1801">1801</a>
+<a href="#1802" id="1802">1802</a>
+<a href="#1803" id="1803">1803</a>
+<a href="#1804" id="1804">1804</a>
+<a href="#1805" id="1805">1805</a>
+<a href="#1806" id="1806">1806</a>
+<a href="#1807" id="1807">1807</a>
+<a href="#1808" id="1808">1808</a>
+<a href="#1809" id="1809">1809</a>
+<a href="#1810" id="1810">1810</a>
+<a href="#1811" id="1811">1811</a>
+<a href="#1812" id="1812">1812</a>
+<a href="#1813" id="1813">1813</a>
+<a href="#1814" id="1814">1814</a>
+<a href="#1815" id="1815">1815</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
+</span><span class="attr">#![allow(deprecated)]
 
 </span><span class="kw">use </span><span class="kw">crate</span>::Buildable;
 <span class="kw">use </span><span class="kw">crate</span>::CellArea;
@@ -1896,6 +1949,7 @@
     ///
     /// A newly created [`TreeViewColumn`][crate::TreeViewColumn].
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; TreeViewColumn {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -1914,6 +1968,7 @@
     ///
     /// A newly created [`TreeViewColumn`][crate::TreeViewColumn].
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_new_with_area&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_with_area&quot;</span>)]
     </span><span class="kw">pub fn </span>with_area(area: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellArea&gt;) -&gt; TreeViewColumn {
@@ -1952,6 +2007,7 @@
     /// ## `column`
     /// The column position on the model to get the attribute from.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_add_attribute&quot;</span>)]
     </span><span class="kw">pub fn </span>add_attribute(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -1991,6 +2047,7 @@
     /// ## `width`
     /// return location for the width of @cell
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_cell_get_position&quot;</span>)]
     </span><span class="kw">pub fn </span>cell_get_position(<span class="kw-2">&amp;</span><span class="self">self</span>, cell_renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;(i32, i32)&gt; {
         <span class="kw">unsafe </span>{
@@ -2032,6 +2089,7 @@
     /// ## `height`
     /// location to return height needed to render a cell
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_cell_get_size&quot;</span>)]
     </span><span class="kw">pub fn </span>cell_get_size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (i32, i32, i32, i32) {
         <span class="kw">unsafe </span>{
@@ -2067,6 +2125,7 @@
     ///
     /// [`true`], if any of the cells packed into the @self are currently visible
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_cell_is_visible&quot;</span>)]
     </span><span class="kw">pub fn </span>cell_is_visible(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -2093,6 +2152,7 @@
     /// ## `is_expanded`
     /// [`true`], if the row has visible children
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_cell_set_cell_data&quot;</span>)]
     </span><span class="kw">pub fn </span>cell_set_cell_data(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2118,6 +2178,7 @@
     ///
     /// Use GtkColumnView instead
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_clear&quot;</span>)]
     </span><span class="kw">pub fn </span>clear(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
@@ -2134,6 +2195,7 @@
     /// ## `cell_renderer`
     /// a [`CellRenderer`][crate::CellRenderer] to clear the attribute mapping on.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_clear_attributes&quot;</span>)]
     </span><span class="kw">pub fn </span>clear_attributes(<span class="kw-2">&amp;</span><span class="self">self</span>, cell_renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) {
         <span class="kw">unsafe </span>{
@@ -2151,6 +2213,7 @@
     ///
     /// Use GtkColumnView instead
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_clicked&quot;</span>)]
     </span><span class="kw">pub fn </span>clicked(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
@@ -2167,6 +2230,7 @@
     /// ## `cell`
     /// A [`CellRenderer`][crate::CellRenderer]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_focus_cell&quot;</span>)]
     </span><span class="kw">pub fn </span>focus_cell(<span class="kw-2">&amp;</span><span class="self">self</span>, cell: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) {
         <span class="kw">unsafe </span>{
@@ -2188,6 +2252,7 @@
     ///
     /// The current alignent of @self.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_alignment&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_alignment&quot;</span>)]
     </span><span class="kw">pub fn </span>alignment(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
@@ -2204,6 +2269,7 @@
     ///
     /// The button for the column header.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_button&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_button&quot;</span>)]
     </span><span class="kw">pub fn </span>button(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Widget {
@@ -2220,6 +2286,7 @@
     ///
     /// [`true`] if user can click the column header.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_clickable&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_clickable&quot;</span>)]
     </span><span class="kw">pub fn </span>is_clickable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -2240,6 +2307,7 @@
     ///
     /// [`true`] if the column expands to fill available space.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_expand&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_expand&quot;</span>)]
     </span><span class="kw">pub fn </span>expands(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -2257,6 +2325,7 @@
     ///
     /// The fixed width of the column.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_fixed_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_fixed_width&quot;</span>)]
     </span><span class="kw">pub fn </span>fixed_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -2274,6 +2343,7 @@
     ///
     /// The maximum width of the @self.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_max_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_max_width&quot;</span>)]
     </span><span class="kw">pub fn </span>max_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -2291,6 +2361,7 @@
     ///
     /// The minimum width of the @self.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_min_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_min_width&quot;</span>)]
     </span><span class="kw">pub fn </span>min_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -2307,6 +2378,7 @@
     ///
     /// [`true`] if the @self can be reordered by the user.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_reorderable&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_reorderable&quot;</span>)]
     </span><span class="kw">pub fn </span>is_reorderable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -2327,6 +2399,7 @@
     ///
     /// [`true`], if the @self can be resized.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_resizable&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_resizable&quot;</span>)]
     </span><span class="kw">pub fn </span>is_resizable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -2347,6 +2420,7 @@
     ///
     /// The type of @self.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_sizing&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_sizing&quot;</span>)]
     </span><span class="kw">pub fn </span>sizing(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; TreeViewColumnSizing {
@@ -2367,6 +2441,7 @@
     /// the current @sort_column_id for this column, or -1 if
     ///   this column can’t be used for sorting
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_sort_column_id&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_sort_column_id&quot;</span>)]
     </span><span class="kw">pub fn </span>sort_column_id(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -2383,6 +2458,7 @@
     ///
     /// whether the sort indicator arrow is displayed
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_sort_indicator&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_sort_indicator&quot;</span>)]
     </span><span class="kw">pub fn </span>is_sort_indicator(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -2403,6 +2479,7 @@
     ///
     /// the sort order the sort indicator is indicating
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_sort_order&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_sort_order&quot;</span>)]
     </span><span class="kw">pub fn </span>sort_order(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SortType {
@@ -2423,6 +2500,7 @@
     ///
     /// the spacing of @self.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_spacing&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>spacing(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -2440,6 +2518,7 @@
     /// the title of the column. This string should not be
     /// modified or freed.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_title&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_title&quot;</span>)]
     </span><span class="kw">pub fn </span>title(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
@@ -2459,6 +2538,7 @@
     /// The tree view wherein @column
     ///   has been inserted
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_tree_view&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_tree_view&quot;</span>)]
     </span><span class="kw">pub fn </span>tree_view(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt; {
@@ -2480,6 +2560,7 @@
     /// whether the column is visible or not.  If it is visible, then
     /// the tree will show the column.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_visible&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_visible&quot;</span>)]
     </span><span class="kw">pub fn </span>is_visible(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -2498,6 +2579,7 @@
     ///
     /// The [`Widget`][crate::Widget] in the column header
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_widget&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_widget&quot;</span>)]
     </span><span class="kw">pub fn </span>widget(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Widget&gt; {
@@ -2514,6 +2596,7 @@
     ///
     /// The current width of @self.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_width&quot;</span>)]
     </span><span class="kw">pub fn </span>width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -2530,6 +2613,7 @@
     ///
     /// The current X offset of @self.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_get_x_offset&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_x_offset&quot;</span>)]
     </span><span class="kw">pub fn </span>x_offset(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
@@ -2548,6 +2632,7 @@
     /// ## `expand`
     /// [`true`] if @cell is to be given extra space allocated to @self.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_pack_end&quot;</span>)]
     </span><span class="kw">pub fn </span>pack_end(<span class="kw-2">&amp;</span><span class="self">self</span>, cell: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;, expand: bool) {
         <span class="kw">unsafe </span>{
@@ -2571,6 +2656,7 @@
     /// ## `expand`
     /// [`true`] if @cell is to be given extra space allocated to @self.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_pack_start&quot;</span>)]
     </span><span class="kw">pub fn </span>pack_start(<span class="kw-2">&amp;</span><span class="self">self</span>, cell: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;, expand: bool) {
         <span class="kw">unsafe </span>{
@@ -2589,6 +2675,7 @@
     ///
     /// Use GtkColumnView instead
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_queue_resize&quot;</span>)]
     </span><span class="kw">pub fn </span>queue_resize(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
@@ -2606,6 +2693,7 @@
     /// ## `xalign`
     /// The alignment, which is between [0.0 and 1.0] inclusive.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_alignment&quot;</span>)]
     </span><span class="kw">pub fn </span>set_alignment(<span class="kw-2">&amp;</span><span class="self">self</span>, xalign: f32) {
         <span class="kw">unsafe </span>{
@@ -2631,6 +2719,7 @@
     /// ## `func_data`
     /// The user data for @func.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_cell_data_func&quot;</span>)]
     </span><span class="kw">pub fn </span>set_cell_data_func&lt;
         P: Fn(<span class="kw-2">&amp;</span>TreeViewColumn, <span class="kw-2">&amp;</span>CellRenderer, <span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreeIter) + <span class="lifetime">&#39;static</span>,
@@ -2686,6 +2775,7 @@
     /// ## `clickable`
     /// [`true`] if the header is active.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_clickable&quot;</span>)]
     </span><span class="kw">pub fn </span>set_clickable(<span class="kw-2">&amp;</span><span class="self">self</span>, clickable: bool) {
         <span class="kw">unsafe </span>{
@@ -2707,6 +2797,7 @@
     /// ## `expand`
     /// [`true`] if the column should expand to fill available space.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_expand&quot;</span>)]
     </span><span class="kw">pub fn </span>set_expand(<span class="kw-2">&amp;</span><span class="self">self</span>, expand: bool) {
         <span class="kw">unsafe </span>{
@@ -2732,6 +2823,7 @@
     /// ## `fixed_width`
     /// The new fixed width, in pixels, or -1.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_fixed_width&quot;</span>)]
     </span><span class="kw">pub fn </span>set_fixed_width(<span class="kw-2">&amp;</span><span class="self">self</span>, fixed_width: i32) {
         <span class="kw">unsafe </span>{
@@ -2750,6 +2842,7 @@
     /// ## `max_width`
     /// The maximum width of the column in pixels, or -1.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_max_width&quot;</span>)]
     </span><span class="kw">pub fn </span>set_max_width(<span class="kw-2">&amp;</span><span class="self">self</span>, max_width: i32) {
         <span class="kw">unsafe </span>{
@@ -2766,6 +2859,7 @@
     /// ## `min_width`
     /// The minimum width of the column in pixels, or -1.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_min_width&quot;</span>)]
     </span><span class="kw">pub fn </span>set_min_width(<span class="kw-2">&amp;</span><span class="self">self</span>, min_width: i32) {
         <span class="kw">unsafe </span>{
@@ -2782,6 +2876,7 @@
     /// ## `reorderable`
     /// [`true`], if the column can be reordered.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_reorderable&quot;</span>)]
     </span><span class="kw">pub fn </span>set_reorderable(<span class="kw-2">&amp;</span><span class="self">self</span>, reorderable: bool) {
         <span class="kw">unsafe </span>{
@@ -2805,6 +2900,7 @@
     /// ## `resizable`
     /// [`true`], if the column can be resized
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_resizable&quot;</span>)]
     </span><span class="kw">pub fn </span>set_resizable(<span class="kw-2">&amp;</span><span class="self">self</span>, resizable: bool) {
         <span class="kw">unsafe </span>{
@@ -2820,6 +2916,7 @@
     /// ## `type_`
     /// The [`TreeViewColumn`][crate::TreeViewColumn]Sizing.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_sizing&quot;</span>)]
     </span><span class="kw">pub fn </span>set_sizing(<span class="kw-2">&amp;</span><span class="self">self</span>, type_: TreeViewColumnSizing) {
         <span class="kw">unsafe </span>{
@@ -2836,6 +2933,7 @@
     /// ## `sort_column_id`
     /// The @sort_column_id of the model to sort on.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_sort_column_id&quot;</span>)]
     </span><span class="kw">pub fn </span>set_sort_column_id(<span class="kw-2">&amp;</span><span class="self">self</span>, sort_column_id: i32) {
         <span class="kw">unsafe </span>{
@@ -2854,6 +2952,7 @@
     /// ## `setting`
     /// [`true`] to display an indicator that the column is sorted
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_sort_indicator&quot;</span>)]
     </span><span class="kw">pub fn </span>set_sort_indicator(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
         <span class="kw">unsafe </span>{
@@ -2882,6 +2981,7 @@
     /// ## `order`
     /// sort order that the sort indicator should indicate
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_sort_order&quot;</span>)]
     </span><span class="kw">pub fn </span>set_sort_order(<span class="kw-2">&amp;</span><span class="self">self</span>, order: SortType) {
         <span class="kw">unsafe </span>{
@@ -2898,6 +2998,7 @@
     /// ## `spacing`
     /// distance between cell renderers in pixels.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>set_spacing(<span class="kw-2">&amp;</span><span class="self">self</span>, spacing: i32) {
         <span class="kw">unsafe </span>{
@@ -2914,6 +3015,7 @@
     /// ## `title`
     /// The title of the @self.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_title&quot;</span>)]
     </span><span class="kw">pub fn </span>set_title(<span class="kw-2">&amp;</span><span class="self">self</span>, title: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
@@ -2929,6 +3031,7 @@
     /// ## `visible`
     /// [`true`] if the @self is visible.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_visible&quot;</span>)]
     </span><span class="kw">pub fn </span>set_visible(<span class="kw-2">&amp;</span><span class="self">self</span>, visible: bool) {
         <span class="kw">unsafe </span>{
@@ -2945,6 +3048,7 @@
     /// ## `widget`
     /// A child [`Widget`][crate::Widget]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_view_column_set_widget&quot;</span>)]
     </span><span class="kw">pub fn </span>set_widget(<span class="kw-2">&amp;</span><span class="self">self</span>, widget: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;&gt;) {
         <span class="kw">unsafe </span>{
@@ -3598,4 +3702,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (2585bcea0 2022-11-28)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (234151769 2022-12-03)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

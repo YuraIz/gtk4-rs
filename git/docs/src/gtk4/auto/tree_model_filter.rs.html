@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/tree_model_filter.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>tree_model_filter.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-75894291877b32c0.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-3bcdcab5f4113412.css"><link rel="stylesheet" disabled href="../../../static.files/dark-091ecdca18d5df85.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-45445754dcd01ab2.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-d2f7777684990013.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/tree_model_filter.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>tree_model_filter.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e963ab4a0d0c903e.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-046227e470cd3629.css"><link rel="stylesheet" disabled href="../../../static.files/dark-800f2ee593c8e6f7.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-9edae3c387f5a5b3.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -465,9 +465,29 @@
 <a href="#392" id="392">392</a>
 <a href="#393" id="393">393</a>
 <a href="#394" id="394">394</a>
+<a href="#395" id="395">395</a>
+<a href="#396" id="396">396</a>
+<a href="#397" id="397">397</a>
+<a href="#398" id="398">398</a>
+<a href="#399" id="399">399</a>
+<a href="#400" id="400">400</a>
+<a href="#401" id="401">401</a>
+<a href="#402" id="402">402</a>
+<a href="#403" id="403">403</a>
+<a href="#404" id="404">404</a>
+<a href="#405" id="405">405</a>
+<a href="#406" id="406">406</a>
+<a href="#407" id="407">407</a>
+<a href="#408" id="408">408</a>
+<a href="#409" id="409">409</a>
+<a href="#410" id="410">410</a>
+<a href="#411" id="411">411</a>
+<a href="#412" id="412">412</a>
+<a href="#413" id="413">413</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
+</span><span class="attr">#![allow(deprecated)]
 
 </span><span class="kw">use </span><span class="kw">crate</span>::TreeDragSource;
 <span class="kw">use </span><span class="kw">crate</span>::TreeIter;
@@ -580,6 +600,7 @@
     /// # Deprecated since 4.10
     ///
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_filter_clear_cache&quot;</span>)]
     </span><span class="kw">fn </span>clear_cache(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
@@ -600,6 +621,7 @@
     /// ## `filter_iter`
     /// An uninitialized [`TreeIter`][crate::TreeIter]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_filter_convert_child_iter_to_iter&quot;</span>)]
     </span><span class="kw">fn </span>convert_child_iter_to_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, child_iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; <span class="prelude-ty">Option</span>&lt;TreeIter&gt;;
 
@@ -618,6 +640,7 @@
     ///
     /// A newly allocated [`TreePath`][crate::TreePath]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_filter_convert_child_path_to_path&quot;</span>)]
     </span><span class="kw">fn </span>convert_child_path_to_path(<span class="kw-2">&amp;</span><span class="self">self</span>, child_path: <span class="kw-2">&amp;</span>TreePath) -&gt; <span class="prelude-ty">Option</span>&lt;TreePath&gt;;
 
@@ -634,6 +657,7 @@
     /// ## `child_iter`
     /// An uninitialized [`TreeIter`][crate::TreeIter]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_filter_convert_iter_to_child_iter&quot;</span>)]
     </span><span class="kw">fn </span>convert_iter_to_child_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter_iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; TreeIter;
 
@@ -651,6 +675,7 @@
     ///
     /// A newly allocated [`TreePath`][crate::TreePath]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_filter_convert_path_to_child_path&quot;</span>)]
     </span><span class="kw">fn </span>convert_path_to_child_path(<span class="kw-2">&amp;</span><span class="self">self</span>, filter_path: <span class="kw-2">&amp;</span>TreePath) -&gt; <span class="prelude-ty">Option</span>&lt;TreePath&gt;;
 
@@ -663,6 +688,7 @@
     ///
     /// A pointer to a [`TreeModel`][crate::TreeModel]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_filter_get_model&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_model&quot;</span>)]
     </span><span class="kw">fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; TreeModel;
@@ -673,6 +699,7 @@
     /// # Deprecated since 4.10
     ///
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_filter_refilter&quot;</span>)]
     </span><span class="kw">fn </span>refilter(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
@@ -690,6 +717,7 @@
     /// ## `column`
     /// A `int` which is the column containing the visible information
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_filter_set_visible_column&quot;</span>)]
     </span><span class="kw">fn </span>set_visible_column(<span class="kw-2">&amp;</span><span class="self">self</span>, column: i32);
 
@@ -738,6 +766,7 @@
     /// ## `func`
     /// A `GtkTreeModelFilterVisibleFunc`, the visible function
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_tree_model_filter_set_visible_func&quot;</span>)]
     </span><span class="kw">fn </span>set_visible_func&lt;P: Fn(<span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreeIter) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: P);
 
@@ -746,13 +775,15 @@
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;TreeModelFilter&gt;&gt; TreeModelFilterExt <span class="kw">for </span>O {
-    <span class="kw">fn </span>clear_cache(<span class="kw-2">&amp;</span><span class="self">self</span>) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>clear_cache(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gtk_tree_model_filter_clear_cache(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>);
         }
     }
 
-    <span class="kw">fn </span>convert_child_iter_to_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, child_iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; <span class="prelude-ty">Option</span>&lt;TreeIter&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>convert_child_iter_to_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, child_iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; <span class="prelude-ty">Option</span>&lt;TreeIter&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>filter_iter = TreeIter::uninitialized();
             <span class="kw">let </span>ret = from_glib(ffi::gtk_tree_model_filter_convert_child_iter_to_iter(
@@ -768,7 +799,8 @@
         }
     }
 
-    <span class="kw">fn </span>convert_child_path_to_path(<span class="kw-2">&amp;</span><span class="self">self</span>, child_path: <span class="kw-2">&amp;</span>TreePath) -&gt; <span class="prelude-ty">Option</span>&lt;TreePath&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>convert_child_path_to_path(<span class="kw-2">&amp;</span><span class="self">self</span>, child_path: <span class="kw-2">&amp;</span>TreePath) -&gt; <span class="prelude-ty">Option</span>&lt;TreePath&gt; {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_tree_model_filter_convert_child_path_to_path(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -777,7 +809,8 @@
         }
     }
 
-    <span class="kw">fn </span>convert_iter_to_child_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter_iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; TreeIter {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>convert_iter_to_child_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter_iter: <span class="kw-2">&amp;</span>TreeIter) -&gt; TreeIter {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>child_iter = TreeIter::uninitialized();
             ffi::gtk_tree_model_filter_convert_iter_to_child_iter(
@@ -789,7 +822,8 @@
         }
     }
 
-    <span class="kw">fn </span>convert_path_to_child_path(<span class="kw-2">&amp;</span><span class="self">self</span>, filter_path: <span class="kw-2">&amp;</span>TreePath) -&gt; <span class="prelude-ty">Option</span>&lt;TreePath&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>convert_path_to_child_path(<span class="kw-2">&amp;</span><span class="self">self</span>, filter_path: <span class="kw-2">&amp;</span>TreePath) -&gt; <span class="prelude-ty">Option</span>&lt;TreePath&gt; {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_tree_model_filter_convert_path_to_child_path(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -798,7 +832,8 @@
         }
     }
 
-    <span class="kw">fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; TreeModel {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>model(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; TreeModel {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::gtk_tree_model_filter_get_model(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -806,19 +841,22 @@
         }
     }
 
-    <span class="kw">fn </span>refilter(<span class="kw-2">&amp;</span><span class="self">self</span>) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>refilter(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::gtk_tree_model_filter_refilter(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>);
         }
     }
 
-    <span class="kw">fn </span>set_visible_column(<span class="kw-2">&amp;</span><span class="self">self</span>, column: i32) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_visible_column(<span class="kw-2">&amp;</span><span class="self">self</span>, column: i32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_tree_model_filter_set_visible_column(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, column);
         }
     }
 
-    <span class="kw">fn </span>set_visible_func&lt;P: Fn(<span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreeIter) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: P) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_visible_func&lt;P: Fn(<span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreeIter) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: P) {
         <span class="kw">let </span>func_data: Box_&lt;P&gt; = Box_::new(func);
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>func_func&lt;P: Fn(<span class="kw-2">&amp;</span>TreeModel, <span class="kw-2">&amp;</span>TreeIter) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
             model: <span class="kw-2">*mut </span>ffi::GtkTreeModel,
@@ -860,4 +898,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (2585bcea0 2022-11-28)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (234151769 2022-12-03)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

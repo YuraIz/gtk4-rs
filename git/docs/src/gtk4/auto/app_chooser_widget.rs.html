@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/app_chooser_widget.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>app_chooser_widget.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-75894291877b32c0.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-3bcdcab5f4113412.css"><link rel="stylesheet" disabled href="../../../static.files/dark-091ecdca18d5df85.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-45445754dcd01ab2.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-d2f7777684990013.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/app_chooser_widget.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>app_chooser_widget.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e963ab4a0d0c903e.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-046227e470cd3629.css"><link rel="stylesheet" disabled href="../../../static.files/dark-800f2ee593c8e6f7.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-9edae3c387f5a5b3.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1104,9 +1104,24 @@
 <a href="#1031" id="1031">1031</a>
 <a href="#1032" id="1032">1032</a>
 <a href="#1033" id="1033">1033</a>
+<a href="#1034" id="1034">1034</a>
+<a href="#1035" id="1035">1035</a>
+<a href="#1036" id="1036">1036</a>
+<a href="#1037" id="1037">1037</a>
+<a href="#1038" id="1038">1038</a>
+<a href="#1039" id="1039">1039</a>
+<a href="#1040" id="1040">1040</a>
+<a href="#1041" id="1041">1041</a>
+<a href="#1042" id="1042">1042</a>
+<a href="#1043" id="1043">1043</a>
+<a href="#1044" id="1044">1044</a>
+<a href="#1045" id="1045">1045</a>
+<a href="#1046" id="1046">1046</a>
+<a href="#1047" id="1047">1047</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
+</span><span class="attr">#![allow(deprecated)]
 
 </span><span class="kw">use </span><span class="kw">crate</span>::Accessible;
 <span class="kw">use </span><span class="kw">crate</span>::AccessibleRole;
@@ -1182,6 +1197,7 @@
     ///
     /// a newly created [`AppChooserWidget`][crate::AppChooserWidget]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(content_type: <span class="kw-2">&amp;</span>str) -&gt; AppChooserWidget {
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -1212,6 +1228,7 @@
     ///
     /// the value of `property::AppChooserWidget::default-text`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_get_default_text&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default_text&quot;</span>)]
     </span><span class="kw">pub fn </span>default_text(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
@@ -1233,6 +1250,7 @@
     ///
     /// the value of `property::AppChooserWidget::show-all`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_get_show_all&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_show_all&quot;</span>)]
     </span><span class="kw">pub fn </span>shows_all(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -1254,6 +1272,7 @@
     ///
     /// the value of `property::AppChooserWidget::show-default`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_get_show_default&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_show_default&quot;</span>)]
     </span><span class="kw">pub fn </span>shows_default(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -1275,6 +1294,7 @@
     ///
     /// the value of `property::AppChooserWidget::show-fallback`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_get_show_fallback&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_show_fallback&quot;</span>)]
     </span><span class="kw">pub fn </span>shows_fallback(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -1296,6 +1316,7 @@
     ///
     /// the value of `property::AppChooserWidget::show-other`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_get_show_other&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_show_other&quot;</span>)]
     </span><span class="kw">pub fn </span>shows_other(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -1317,6 +1338,7 @@
     ///
     /// the value of `property::AppChooserWidget::show-recommended`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_get_show_recommended&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_show_recommended&quot;</span>)]
     </span><span class="kw">pub fn </span>shows_recommended(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
@@ -1336,6 +1358,7 @@
     /// ## `text`
     /// the new value for `property::AppChooserWidget::default-text`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_set_default_text&quot;</span>)]
     </span><span class="kw">pub fn </span>set_default_text(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
@@ -1355,6 +1378,7 @@
     /// ## `setting`
     /// the new value for `property::AppChooserWidget::show-all`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_set_show_all&quot;</span>)]
     </span><span class="kw">pub fn </span>set_show_all(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
         <span class="kw">unsafe </span>{
@@ -1371,6 +1395,7 @@
     /// ## `setting`
     /// the new value for `property::AppChooserWidget::show-default`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_set_show_default&quot;</span>)]
     </span><span class="kw">pub fn </span>set_show_default(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
         <span class="kw">unsafe </span>{
@@ -1390,6 +1415,7 @@
     /// ## `setting`
     /// the new value for `property::AppChooserWidget::show-fallback`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_set_show_fallback&quot;</span>)]
     </span><span class="kw">pub fn </span>set_show_fallback(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
         <span class="kw">unsafe </span>{
@@ -1409,6 +1435,7 @@
     /// ## `setting`
     /// the new value for `property::AppChooserWidget::show-other`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_set_show_other&quot;</span>)]
     </span><span class="kw">pub fn </span>set_show_other(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
         <span class="kw">unsafe </span>{
@@ -1425,6 +1452,7 @@
     /// ## `setting`
     /// the new value for `property::AppChooserWidget::show-recommended`
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_app_chooser_widget_set_show_recommended&quot;</span>)]
     </span><span class="kw">pub fn </span>set_show_recommended(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
         <span class="kw">unsafe </span>{
@@ -2138,4 +2166,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (2585bcea0 2022-11-28)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (234151769 2022-12-03)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

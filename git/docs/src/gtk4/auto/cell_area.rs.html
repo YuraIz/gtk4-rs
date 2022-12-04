@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/cell_area.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>cell_area.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-75894291877b32c0.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-3bcdcab5f4113412.css"><link rel="stylesheet" disabled href="../../../static.files/dark-091ecdca18d5df85.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-45445754dcd01ab2.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-d2f7777684990013.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/cell_area.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>cell_area.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e963ab4a0d0c903e.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-046227e470cd3629.css"><link rel="stylesheet" disabled href="../../../static.files/dark-800f2ee593c8e6f7.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-9edae3c387f5a5b3.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1537,9 +1537,79 @@
 <a href="#1464" id="1464">1464</a>
 <a href="#1465" id="1465">1465</a>
 <a href="#1466" id="1466">1466</a>
+<a href="#1467" id="1467">1467</a>
+<a href="#1468" id="1468">1468</a>
+<a href="#1469" id="1469">1469</a>
+<a href="#1470" id="1470">1470</a>
+<a href="#1471" id="1471">1471</a>
+<a href="#1472" id="1472">1472</a>
+<a href="#1473" id="1473">1473</a>
+<a href="#1474" id="1474">1474</a>
+<a href="#1475" id="1475">1475</a>
+<a href="#1476" id="1476">1476</a>
+<a href="#1477" id="1477">1477</a>
+<a href="#1478" id="1478">1478</a>
+<a href="#1479" id="1479">1479</a>
+<a href="#1480" id="1480">1480</a>
+<a href="#1481" id="1481">1481</a>
+<a href="#1482" id="1482">1482</a>
+<a href="#1483" id="1483">1483</a>
+<a href="#1484" id="1484">1484</a>
+<a href="#1485" id="1485">1485</a>
+<a href="#1486" id="1486">1486</a>
+<a href="#1487" id="1487">1487</a>
+<a href="#1488" id="1488">1488</a>
+<a href="#1489" id="1489">1489</a>
+<a href="#1490" id="1490">1490</a>
+<a href="#1491" id="1491">1491</a>
+<a href="#1492" id="1492">1492</a>
+<a href="#1493" id="1493">1493</a>
+<a href="#1494" id="1494">1494</a>
+<a href="#1495" id="1495">1495</a>
+<a href="#1496" id="1496">1496</a>
+<a href="#1497" id="1497">1497</a>
+<a href="#1498" id="1498">1498</a>
+<a href="#1499" id="1499">1499</a>
+<a href="#1500" id="1500">1500</a>
+<a href="#1501" id="1501">1501</a>
+<a href="#1502" id="1502">1502</a>
+<a href="#1503" id="1503">1503</a>
+<a href="#1504" id="1504">1504</a>
+<a href="#1505" id="1505">1505</a>
+<a href="#1506" id="1506">1506</a>
+<a href="#1507" id="1507">1507</a>
+<a href="#1508" id="1508">1508</a>
+<a href="#1509" id="1509">1509</a>
+<a href="#1510" id="1510">1510</a>
+<a href="#1511" id="1511">1511</a>
+<a href="#1512" id="1512">1512</a>
+<a href="#1513" id="1513">1513</a>
+<a href="#1514" id="1514">1514</a>
+<a href="#1515" id="1515">1515</a>
+<a href="#1516" id="1516">1516</a>
+<a href="#1517" id="1517">1517</a>
+<a href="#1518" id="1518">1518</a>
+<a href="#1519" id="1519">1519</a>
+<a href="#1520" id="1520">1520</a>
+<a href="#1521" id="1521">1521</a>
+<a href="#1522" id="1522">1522</a>
+<a href="#1523" id="1523">1523</a>
+<a href="#1524" id="1524">1524</a>
+<a href="#1525" id="1525">1525</a>
+<a href="#1526" id="1526">1526</a>
+<a href="#1527" id="1527">1527</a>
+<a href="#1528" id="1528">1528</a>
+<a href="#1529" id="1529">1529</a>
+<a href="#1530" id="1530">1530</a>
+<a href="#1531" id="1531">1531</a>
+<a href="#1532" id="1532">1532</a>
+<a href="#1533" id="1533">1533</a>
+<a href="#1534" id="1534">1534</a>
+<a href="#1535" id="1535">1535</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
+</span><span class="attr">#![allow(deprecated)]
 
 </span><span class="kw">use </span><span class="kw">crate</span>::Buildable;
 <span class="kw">use </span><span class="kw">crate</span>::CellAreaContext;
@@ -1935,6 +2005,7 @@
     ///
     /// Whether @self was successfully activated.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_activate&quot;</span>)]
     </span><span class="kw">fn </span>activate(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -1968,6 +2039,7 @@
     ///
     /// whether cell activation was successful
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_activate_cell&quot;</span>)]
     </span><span class="kw">fn </span>activate_cell(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -1979,10 +2051,12 @@
     ) -&gt; bool;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_add&quot;</span>)]
     </span><span class="kw">fn </span>add(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;);
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_add_focus_sibling&quot;</span>)]
     </span><span class="kw">fn </span>add_focus_sibling(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -1991,6 +2065,7 @@
     );
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_apply_attributes&quot;</span>)]
     </span><span class="kw">fn </span>apply_attributes(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2001,26 +2076,32 @@
     );
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_attribute_connect&quot;</span>)]
     </span><span class="kw">fn </span>attribute_connect(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;, attribute: <span class="kw-2">&amp;</span>str, column: i32);
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_attribute_disconnect&quot;</span>)]
     </span><span class="kw">fn </span>attribute_disconnect(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;, attribute: <span class="kw-2">&amp;</span>str);
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_attribute_get_column&quot;</span>)]
     </span><span class="kw">fn </span>attribute_get_column(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;, attribute: <span class="kw-2">&amp;</span>str) -&gt; i32;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_copy_context&quot;</span>)]
     </span><span class="kw">fn </span>copy_context(<span class="kw-2">&amp;</span><span class="self">self</span>, context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellAreaContext&gt;) -&gt; CellAreaContext;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_create_context&quot;</span>)]
     </span><span class="kw">fn </span>create_context(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; CellAreaContext;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_event&quot;</span>)]
     </span><span class="kw">fn </span>event(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2032,10 +2113,12 @@
     ) -&gt; i32;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_focus&quot;</span>)]
     </span><span class="kw">fn </span>focus(<span class="kw-2">&amp;</span><span class="self">self</span>, direction: DirectionType) -&gt; bool;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_foreach&quot;</span>)]
     </span><span class="kw">fn </span>foreach&lt;P: FnMut(<span class="kw-2">&amp;</span>CellRenderer) -&gt; bool&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, callback: P);
 
@@ -2050,6 +2133,7 @@
     );
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_get_cell_allocation&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_cell_allocation&quot;</span>)]
     </span><span class="kw">fn </span>cell_allocation(
@@ -2061,6 +2145,7 @@
     ) -&gt; gdk::Rectangle;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_get_cell_at_position&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_cell_at_position&quot;</span>)]
     </span><span class="kw">fn </span>cell_at_position(
@@ -2077,31 +2162,37 @@
     </span><span class="kw">fn </span>current_path_string(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_get_edit_widget&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_edit_widget&quot;</span>)]
     </span><span class="kw">fn </span>edit_widget(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;CellEditable&gt;;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_get_edited_cell&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_edited_cell&quot;</span>)]
     </span><span class="kw">fn </span>edited_cell(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;CellRenderer&gt;;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_get_focus_cell&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_focus_cell&quot;</span>)]
     </span><span class="kw">fn </span>focus_cell(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;CellRenderer&gt;;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_get_focus_from_sibling&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_focus_from_sibling&quot;</span>)]
     </span><span class="kw">fn </span>focus_from_sibling(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;CellRenderer&gt;;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_get_focus_siblings&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_focus_siblings&quot;</span>)]
     </span><span class="kw">fn </span>focus_siblings(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) -&gt; Vec&lt;CellRenderer&gt;;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_get_preferred_height&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_preferred_height&quot;</span>)]
     </span><span class="kw">fn </span>preferred_height(
@@ -2111,6 +2202,7 @@
     ) -&gt; (i32, i32);
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_get_preferred_height_for_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_preferred_height_for_width&quot;</span>)]
     </span><span class="kw">fn </span>preferred_height_for_width(
@@ -2121,6 +2213,7 @@
     ) -&gt; (i32, i32);
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_get_preferred_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_preferred_width&quot;</span>)]
     </span><span class="kw">fn </span>preferred_width(
@@ -2130,6 +2223,7 @@
     ) -&gt; (i32, i32);
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_get_preferred_width_for_height&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_preferred_width_for_height&quot;</span>)]
     </span><span class="kw">fn </span>preferred_width_for_height(
@@ -2144,10 +2238,12 @@
     </span><span class="kw">fn </span>request_mode(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SizeRequestMode;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_has_renderer&quot;</span>)]
     </span><span class="kw">fn </span>has_renderer(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) -&gt; bool;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_inner_cell_area&quot;</span>)]
     </span><span class="kw">fn </span>inner_cell_area(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2156,10 +2252,12 @@
     ) -&gt; gdk::Rectangle;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_is_activatable&quot;</span>)]
     </span><span class="kw">fn </span>is_activatable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_is_focus_sibling&quot;</span>)]
     </span><span class="kw">fn </span>is_focus_sibling(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2168,10 +2266,12 @@
     ) -&gt; bool;
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_remove&quot;</span>)]
     </span><span class="kw">fn </span>remove(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;);
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_remove_focus_sibling&quot;</span>)]
     </span><span class="kw">fn </span>remove_focus_sibling(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2180,6 +2280,7 @@
     );
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_request_renderer&quot;</span>)]
     </span><span class="kw">fn </span>request_renderer(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2190,10 +2291,12 @@
     ) -&gt; (i32, i32);
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_set_focus_cell&quot;</span>)]
     </span><span class="kw">fn </span>set_focus_cell(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;&gt;);
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_snapshot&quot;</span>)]
     </span><span class="kw">fn </span>snapshot(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2207,6 +2310,7 @@
     );
 
     <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_cell_area_stop_editing&quot;</span>)]
     </span><span class="kw">fn </span>stop_editing(<span class="kw-2">&amp;</span><span class="self">self</span>, canceled: bool);
 
@@ -2247,7 +2351,8 @@
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;CellArea&gt;&gt; CellAreaExt <span class="kw">for </span>O {
-    <span class="kw">fn </span>activate(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>activate(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellAreaContext&gt;,
         widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;,
@@ -2267,7 +2372,8 @@
         }
     }
 
-    <span class="kw">fn </span>activate_cell(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>activate_cell(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;,
         renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;,
@@ -2287,7 +2393,8 @@
         }
     }
 
-    <span class="kw">fn </span>add(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>add(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_cell_area_add(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2296,7 +2403,8 @@
         }
     }
 
-    <span class="kw">fn </span>add_focus_sibling(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>add_focus_sibling(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;,
         sibling: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;,
@@ -2310,7 +2418,8 @@
         }
     }
 
-    <span class="kw">fn </span>apply_attributes(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>apply_attributes(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         tree_model: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TreeModel&gt;,
         iter: <span class="kw-2">&amp;</span>TreeIter,
@@ -2328,7 +2437,8 @@
         }
     }
 
-    <span class="kw">fn </span>attribute_connect(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;, attribute: <span class="kw-2">&amp;</span>str, column: i32) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>attribute_connect(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;, attribute: <span class="kw-2">&amp;</span>str, column: i32) {
         <span class="kw">unsafe </span>{
             ffi::gtk_cell_area_attribute_connect(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2339,7 +2449,8 @@
         }
     }
 
-    <span class="kw">fn </span>attribute_disconnect(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;, attribute: <span class="kw-2">&amp;</span>str) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>attribute_disconnect(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;, attribute: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_cell_area_attribute_disconnect(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2349,7 +2460,8 @@
         }
     }
 
-    <span class="kw">fn </span>attribute_get_column(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;, attribute: <span class="kw-2">&amp;</span>str) -&gt; i32 {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>attribute_get_column(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;, attribute: <span class="kw-2">&amp;</span>str) -&gt; i32 {
         <span class="kw">unsafe </span>{
             ffi::gtk_cell_area_attribute_get_column(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2359,7 +2471,8 @@
         }
     }
 
-    <span class="kw">fn </span>copy_context(<span class="kw-2">&amp;</span><span class="self">self</span>, context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellAreaContext&gt;) -&gt; CellAreaContext {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>copy_context(<span class="kw-2">&amp;</span><span class="self">self</span>, context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellAreaContext&gt;) -&gt; CellAreaContext {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_cell_area_copy_context(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2368,7 +2481,8 @@
         }
     }
 
-    <span class="kw">fn </span>create_context(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; CellAreaContext {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>create_context(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; CellAreaContext {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_cell_area_create_context(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2376,7 +2490,8 @@
         }
     }
 
-    <span class="kw">fn </span>event(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>event(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellAreaContext&gt;,
         widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;,
@@ -2396,7 +2511,8 @@
         }
     }
 
-    <span class="kw">fn </span>focus(<span class="kw-2">&amp;</span><span class="self">self</span>, direction: DirectionType) -&gt; bool {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>focus(<span class="kw-2">&amp;</span><span class="self">self</span>, direction: DirectionType) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_cell_area_focus(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2405,7 +2521,8 @@
         }
     }
 
-    <span class="kw">fn </span>foreach&lt;P: FnMut(<span class="kw-2">&amp;</span>CellRenderer) -&gt; bool&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, callback: P) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>foreach&lt;P: FnMut(<span class="kw-2">&amp;</span>CellRenderer) -&gt; bool&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, callback: P) {
         <span class="kw">let </span>callback_data: P = callback;
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>callback_func&lt;P: FnMut(<span class="kw-2">&amp;</span>CellRenderer) -&gt; bool&gt;(
             renderer: <span class="kw-2">*mut </span>ffi::GtkCellRenderer,
@@ -2466,7 +2583,8 @@
         }
     }
 
-    <span class="kw">fn </span>cell_allocation(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>cell_allocation(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellAreaContext&gt;,
         widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;,
@@ -2487,7 +2605,8 @@
         }
     }
 
-    <span class="kw">fn </span>cell_at_position(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>cell_at_position(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellAreaContext&gt;,
         widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;,
@@ -2518,7 +2637,8 @@
         }
     }
 
-    <span class="kw">fn </span>edit_widget(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;CellEditable&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>edit_widget(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;CellEditable&gt; {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::gtk_cell_area_get_edit_widget(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2526,7 +2646,8 @@
         }
     }
 
-    <span class="kw">fn </span>edited_cell(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;CellRenderer&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>edited_cell(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;CellRenderer&gt; {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::gtk_cell_area_get_edited_cell(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2534,7 +2655,8 @@
         }
     }
 
-    <span class="kw">fn </span>focus_cell(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;CellRenderer&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>focus_cell(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;CellRenderer&gt; {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::gtk_cell_area_get_focus_cell(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2542,7 +2664,8 @@
         }
     }
 
-    <span class="kw">fn </span>focus_from_sibling(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;CellRenderer&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>focus_from_sibling(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;CellRenderer&gt; {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::gtk_cell_area_get_focus_from_sibling(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2551,7 +2674,8 @@
         }
     }
 
-    <span class="kw">fn </span>focus_siblings(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) -&gt; Vec&lt;CellRenderer&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>focus_siblings(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) -&gt; Vec&lt;CellRenderer&gt; {
         <span class="kw">unsafe </span>{
             FromGlibPtrContainer::from_glib_none(ffi::gtk_cell_area_get_focus_siblings(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2560,7 +2684,8 @@
         }
     }
 
-    <span class="kw">fn </span>preferred_height(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>preferred_height(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellAreaContext&gt;,
         widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;,
@@ -2579,7 +2704,8 @@
         }
     }
 
-    <span class="kw">fn </span>preferred_height_for_width(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>preferred_height_for_width(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellAreaContext&gt;,
         widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;,
@@ -2600,7 +2726,8 @@
         }
     }
 
-    <span class="kw">fn </span>preferred_width(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>preferred_width(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellAreaContext&gt;,
         widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;,
@@ -2619,7 +2746,8 @@
         }
     }
 
-    <span class="kw">fn </span>preferred_width_for_height(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>preferred_width_for_height(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellAreaContext&gt;,
         widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;,
@@ -2648,7 +2776,8 @@
         }
     }
 
-    <span class="kw">fn </span>has_renderer(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) -&gt; bool {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>has_renderer(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_cell_area_has_renderer(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2657,7 +2786,8 @@
         }
     }
 
-    <span class="kw">fn </span>inner_cell_area(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>inner_cell_area(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;,
         cell_area: <span class="kw-2">&amp;</span>gdk::Rectangle,
@@ -2674,7 +2804,8 @@
         }
     }
 
-    <span class="kw">fn </span>is_activatable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>is_activatable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_cell_area_is_activatable(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2682,7 +2813,8 @@
         }
     }
 
-    <span class="kw">fn </span>is_focus_sibling(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>is_focus_sibling(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;,
         sibling: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;,
@@ -2696,7 +2828,8 @@
         }
     }
 
-    <span class="kw">fn </span>remove(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>remove(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_cell_area_remove(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2705,7 +2838,8 @@
         }
     }
 
-    <span class="kw">fn </span>remove_focus_sibling(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>remove_focus_sibling(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;,
         sibling: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;,
@@ -2719,7 +2853,8 @@
         }
     }
 
-    <span class="kw">fn </span>request_renderer(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>request_renderer(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         renderer: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;,
         orientation: Orientation,
@@ -2742,7 +2877,8 @@
         }
     }
 
-    <span class="kw">fn </span>set_focus_cell(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;&gt;) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_focus_cell(<span class="kw-2">&amp;</span><span class="self">self</span>, renderer: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellRenderer&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::gtk_cell_area_set_focus_cell(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2751,7 +2887,8 @@
         }
     }
 
-    <span class="kw">fn </span>snapshot(
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>snapshot(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         context: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;CellAreaContext&gt;,
         widget: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Widget&gt;,
@@ -2775,7 +2912,8 @@
         }
     }
 
-    <span class="kw">fn </span>stop_editing(<span class="kw-2">&amp;</span><span class="self">self</span>, canceled: bool) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>stop_editing(<span class="kw-2">&amp;</span><span class="self">self</span>, canceled: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_cell_area_stop_editing(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, canceled.into_glib());
         }
@@ -3004,4 +3142,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (2585bcea0 2022-11-28)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (234151769 2022-12-03)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

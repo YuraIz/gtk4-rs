@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/file_chooser.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>file_chooser.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-75894291877b32c0.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-3bcdcab5f4113412.css"><link rel="stylesheet" disabled href="../../../static.files/dark-091ecdca18d5df85.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-45445754dcd01ab2.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-d2f7777684990013.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/file_chooser.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>file_chooser.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e963ab4a0d0c903e.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-046227e470cd3629.css"><link rel="stylesheet" disabled href="../../../static.files/dark-800f2ee593c8e6f7.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-9edae3c387f5a5b3.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -962,9 +962,57 @@
 <a href="#889" id="889">889</a>
 <a href="#890" id="890">890</a>
 <a href="#891" id="891">891</a>
+<a href="#892" id="892">892</a>
+<a href="#893" id="893">893</a>
+<a href="#894" id="894">894</a>
+<a href="#895" id="895">895</a>
+<a href="#896" id="896">896</a>
+<a href="#897" id="897">897</a>
+<a href="#898" id="898">898</a>
+<a href="#899" id="899">899</a>
+<a href="#900" id="900">900</a>
+<a href="#901" id="901">901</a>
+<a href="#902" id="902">902</a>
+<a href="#903" id="903">903</a>
+<a href="#904" id="904">904</a>
+<a href="#905" id="905">905</a>
+<a href="#906" id="906">906</a>
+<a href="#907" id="907">907</a>
+<a href="#908" id="908">908</a>
+<a href="#909" id="909">909</a>
+<a href="#910" id="910">910</a>
+<a href="#911" id="911">911</a>
+<a href="#912" id="912">912</a>
+<a href="#913" id="913">913</a>
+<a href="#914" id="914">914</a>
+<a href="#915" id="915">915</a>
+<a href="#916" id="916">916</a>
+<a href="#917" id="917">917</a>
+<a href="#918" id="918">918</a>
+<a href="#919" id="919">919</a>
+<a href="#920" id="920">920</a>
+<a href="#921" id="921">921</a>
+<a href="#922" id="922">922</a>
+<a href="#923" id="923">923</a>
+<a href="#924" id="924">924</a>
+<a href="#925" id="925">925</a>
+<a href="#926" id="926">926</a>
+<a href="#927" id="927">927</a>
+<a href="#928" id="928">928</a>
+<a href="#929" id="929">929</a>
+<a href="#930" id="930">930</a>
+<a href="#931" id="931">931</a>
+<a href="#932" id="932">932</a>
+<a href="#933" id="933">933</a>
+<a href="#934" id="934">934</a>
+<a href="#935" id="935">935</a>
+<a href="#936" id="936">936</a>
+<a href="#937" id="937">937</a>
+<a href="#938" id="938">938</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
+</span><span class="attr">#![allow(deprecated)]
 
 </span><span class="kw">use </span><span class="kw">crate</span>::FileChooserAction;
 <span class="kw">use </span><span class="kw">crate</span>::FileFilter;
@@ -1056,6 +1104,7 @@
     /// ## `filter`
     /// a [`FileFilter`][crate::FileFilter]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_add_filter&quot;</span>)]
     </span><span class="kw">fn </span>add_filter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter: <span class="kw-2">&amp;</span>FileFilter);
 
@@ -1073,6 +1122,7 @@
     /// [`true`] if the folder could be added successfully,
     ///   [`false`] otherwise.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_add_shortcut_folder&quot;</span>)]
     </span><span class="kw">fn </span>add_shortcut_folder(<span class="kw-2">&amp;</span><span class="self">self</span>, folder: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
@@ -1086,6 +1136,7 @@
     ///
     /// the action that the file selector is performing
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_get_action&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_action&quot;</span>)]
     </span><span class="kw">fn </span>action(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FileChooserAction;
@@ -1102,6 +1153,7 @@
     ///
     /// the ID of the currently selected option
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_get_choice&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_choice&quot;</span>)]
     </span><span class="kw">fn </span>choice(<span class="kw-2">&amp;</span><span class="self">self</span>, id: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
@@ -1116,6 +1168,7 @@
     ///
     /// [`true`] if the Create Folder button should be displayed.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_get_create_folders&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_create_folders&quot;</span>)]
     </span><span class="kw">fn </span>creates_folders(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
@@ -1130,6 +1183,7 @@
     ///
     /// the `GFile` for the current folder.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_get_current_folder&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_current_folder&quot;</span>)]
     </span><span class="kw">fn </span>current_folder(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::File&gt;;
@@ -1151,6 +1205,7 @@
     ///   in UTF-8 encoding, which is not necessarily the system’s encoding for
     ///   filenames.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_get_current_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_current_name&quot;</span>)]
     </span><span class="kw">fn </span>current_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
@@ -1173,6 +1228,7 @@
     /// a selected `GFile`. You own the
     ///   returned file; use g_object_unref() to release it.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_get_file&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_file&quot;</span>)]
     </span><span class="kw">fn </span>file(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::File&gt;;
@@ -1190,6 +1246,7 @@
     ///   selected file and subfolder in the current folder. Free the returned
     ///   list with g_object_unref().
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_get_files&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_files&quot;</span>)]
     </span><span class="kw">fn </span>files(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::ListModel;
@@ -1204,6 +1261,7 @@
     ///
     /// the current filter
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_get_filter&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_filter&quot;</span>)]
     </span><span class="kw">fn </span>filter(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;FileFilter&gt;;
@@ -1225,6 +1283,7 @@
     /// a `GListModel` containing the current set
     ///   of user-selectable filters.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_get_filters&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_filters&quot;</span>)]
     </span><span class="kw">fn </span>filters(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::ListModel;
@@ -1240,6 +1299,7 @@
     ///
     /// [`true`] if multiple files can be selected.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_get_select_multiple&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_select_multiple&quot;</span>)]
     </span><span class="kw">fn </span>selects_multiple(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
@@ -1257,6 +1317,7 @@
     ///
     /// A list model of `GFile`s
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_get_shortcut_folders&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_shortcut_folders&quot;</span>)]
     </span><span class="kw">fn </span>shortcut_folders(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::ListModel;
@@ -1269,6 +1330,7 @@
     /// ## `id`
     /// the ID of the choice to remove
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_remove_choice&quot;</span>)]
     </span><span class="kw">fn </span>remove_choice(<span class="kw-2">&amp;</span><span class="self">self</span>, id: <span class="kw-2">&amp;</span>str);
 
@@ -1280,6 +1342,7 @@
     /// ## `filter`
     /// a [`FileFilter`][crate::FileFilter]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_remove_filter&quot;</span>)]
     </span><span class="kw">fn </span>remove_filter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter: <span class="kw-2">&amp;</span>FileFilter);
 
@@ -1296,6 +1359,7 @@
     /// [`true`] if the folder could be removed successfully,
     ///   [`false`] otherwise.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_remove_shortcut_folder&quot;</span>)]
     </span><span class="kw">fn </span>remove_shortcut_folder(<span class="kw-2">&amp;</span><span class="self">self</span>, folder: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
@@ -1313,6 +1377,7 @@
     /// ## `action`
     /// the action that the file selector is performing
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_set_action&quot;</span>)]
     </span><span class="kw">fn </span>set_action(<span class="kw-2">&amp;</span><span class="self">self</span>, action: FileChooserAction);
 
@@ -1329,6 +1394,7 @@
     /// ## `option`
     /// the ID of the option to select
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_set_choice&quot;</span>)]
     </span><span class="kw">fn </span>set_choice(<span class="kw-2">&amp;</span><span class="self">self</span>, id: <span class="kw-2">&amp;</span>str, option: <span class="kw-2">&amp;</span>str);
 
@@ -1343,6 +1409,7 @@
     /// ## `create_folders`
     /// [`true`] if the Create Folder button should be displayed
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_set_create_folders&quot;</span>)]
     </span><span class="kw">fn </span>set_create_folders(<span class="kw-2">&amp;</span><span class="self">self</span>, create_folders: bool);
 
@@ -1366,6 +1433,7 @@
     /// ## `name`
     /// the filename to use, as a UTF-8 string
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_set_current_name&quot;</span>)]
     </span><span class="kw">fn </span>set_current_name(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str);
 
@@ -1424,6 +1492,7 @@
     ///
     /// Not useful
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_set_file&quot;</span>)]
     </span><span class="kw">fn </span>set_file(<span class="kw-2">&amp;</span><span class="self">self</span>, file: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
@@ -1443,6 +1512,7 @@
     /// ## `filter`
     /// a [`FileFilter`][crate::FileFilter]
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_set_filter&quot;</span>)]
     </span><span class="kw">fn </span>set_filter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter: <span class="kw-2">&amp;</span>FileFilter);
 
@@ -1458,6 +1528,7 @@
     /// ## `select_multiple`
     /// [`true`] if multiple files can be selected.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
+    #[allow(deprecated)]
     #[doc(alias = <span class="string">&quot;gtk_file_chooser_set_select_multiple&quot;</span>)]
     </span><span class="kw">fn </span>set_select_multiple(<span class="kw-2">&amp;</span><span class="self">self</span>, select_multiple: bool);
 
@@ -1487,7 +1558,8 @@
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;FileChooser&gt;&gt; FileChooserExt <span class="kw">for </span>O {
-    <span class="kw">fn </span>add_filter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter: <span class="kw-2">&amp;</span>FileFilter) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>add_filter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter: <span class="kw-2">&amp;</span>FileFilter) {
         <span class="kw">unsafe </span>{
             ffi::gtk_file_chooser_add_filter(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1496,7 +1568,8 @@
         }
     }
 
-    <span class="kw">fn </span>add_shortcut_folder(<span class="kw-2">&amp;</span><span class="self">self</span>, folder: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>add_shortcut_folder(<span class="kw-2">&amp;</span><span class="self">self</span>, folder: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
             <span class="kw">let </span>is_ok = ffi::gtk_file_chooser_add_shortcut_folder(
@@ -1513,7 +1586,8 @@
         }
     }
 
-    <span class="kw">fn </span>action(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FileChooserAction {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>action(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FileChooserAction {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_file_chooser_get_action(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1521,7 +1595,8 @@
         }
     }
 
-    <span class="kw">fn </span>choice(<span class="kw-2">&amp;</span><span class="self">self</span>, id: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>choice(<span class="kw-2">&amp;</span><span class="self">self</span>, id: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::gtk_file_chooser_get_choice(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1530,7 +1605,8 @@
         }
     }
 
-    <span class="kw">fn </span>creates_folders(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>creates_folders(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_file_chooser_get_create_folders(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1538,7 +1614,8 @@
         }
     }
 
-    <span class="kw">fn </span>current_folder(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::File&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>current_folder(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::File&gt; {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_file_chooser_get_current_folder(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1546,7 +1623,8 @@
         }
     }
 
-    <span class="kw">fn </span>current_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>current_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_file_chooser_get_current_name(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1554,7 +1632,8 @@
         }
     }
 
-    <span class="kw">fn </span>file(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::File&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>file(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;gio::File&gt; {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_file_chooser_get_file(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1562,7 +1641,8 @@
         }
     }
 
-    <span class="kw">fn </span>files(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::ListModel {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>files(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::ListModel {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_file_chooser_get_files(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1570,7 +1650,8 @@
         }
     }
 
-    <span class="kw">fn </span>filter(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;FileFilter&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>filter(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;FileFilter&gt; {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::gtk_file_chooser_get_filter(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1578,7 +1659,8 @@
         }
     }
 
-    <span class="kw">fn </span>filters(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::ListModel {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>filters(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::ListModel {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_file_chooser_get_filters(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1586,7 +1668,8 @@
         }
     }
 
-    <span class="kw">fn </span>selects_multiple(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>selects_multiple(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gtk_file_chooser_get_select_multiple(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1594,7 +1677,8 @@
         }
     }
 
-    <span class="kw">fn </span>shortcut_folders(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::ListModel {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>shortcut_folders(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; gio::ListModel {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gtk_file_chooser_get_shortcut_folders(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1602,7 +1686,8 @@
         }
     }
 
-    <span class="kw">fn </span>remove_choice(<span class="kw-2">&amp;</span><span class="self">self</span>, id: <span class="kw-2">&amp;</span>str) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>remove_choice(<span class="kw-2">&amp;</span><span class="self">self</span>, id: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_file_chooser_remove_choice(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1611,7 +1696,8 @@
         }
     }
 
-    <span class="kw">fn </span>remove_filter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter: <span class="kw-2">&amp;</span>FileFilter) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>remove_filter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter: <span class="kw-2">&amp;</span>FileFilter) {
         <span class="kw">unsafe </span>{
             ffi::gtk_file_chooser_remove_filter(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1620,7 +1706,8 @@
         }
     }
 
-    <span class="kw">fn </span>remove_shortcut_folder(<span class="kw-2">&amp;</span><span class="self">self</span>, folder: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>remove_shortcut_folder(<span class="kw-2">&amp;</span><span class="self">self</span>, folder: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
             <span class="kw">let </span>is_ok = ffi::gtk_file_chooser_remove_shortcut_folder(
@@ -1637,13 +1724,15 @@
         }
     }
 
-    <span class="kw">fn </span>set_action(<span class="kw-2">&amp;</span><span class="self">self</span>, action: FileChooserAction) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_action(<span class="kw-2">&amp;</span><span class="self">self</span>, action: FileChooserAction) {
         <span class="kw">unsafe </span>{
             ffi::gtk_file_chooser_set_action(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, action.into_glib());
         }
     }
 
-    <span class="kw">fn </span>set_choice(<span class="kw-2">&amp;</span><span class="self">self</span>, id: <span class="kw-2">&amp;</span>str, option: <span class="kw-2">&amp;</span>str) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_choice(<span class="kw-2">&amp;</span><span class="self">self</span>, id: <span class="kw-2">&amp;</span>str, option: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_file_chooser_set_choice(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1653,7 +1742,8 @@
         }
     }
 
-    <span class="kw">fn </span>set_create_folders(<span class="kw-2">&amp;</span><span class="self">self</span>, create_folders: bool) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_create_folders(<span class="kw-2">&amp;</span><span class="self">self</span>, create_folders: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_file_chooser_set_create_folders(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1662,7 +1752,8 @@
         }
     }
 
-    <span class="kw">fn </span>set_current_name(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_current_name(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::gtk_file_chooser_set_current_name(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1671,7 +1762,8 @@
         }
     }
 
-    <span class="kw">fn </span>set_file(<span class="kw-2">&amp;</span><span class="self">self</span>, file: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_file(<span class="kw-2">&amp;</span><span class="self">self</span>, file: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;gio::File&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
             <span class="kw">let </span>is_ok = ffi::gtk_file_chooser_set_file(
@@ -1688,7 +1780,8 @@
         }
     }
 
-    <span class="kw">fn </span>set_filter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter: <span class="kw-2">&amp;</span>FileFilter) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_filter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter: <span class="kw-2">&amp;</span>FileFilter) {
         <span class="kw">unsafe </span>{
             ffi::gtk_file_chooser_set_filter(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1697,7 +1790,8 @@
         }
     }
 
-    <span class="kw">fn </span>set_select_multiple(<span class="kw-2">&amp;</span><span class="self">self</span>, select_multiple: bool) {
+    <span class="attr">#[allow(deprecated)]
+    </span><span class="kw">fn </span>set_select_multiple(<span class="kw-2">&amp;</span><span class="self">self</span>, select_multiple: bool) {
         <span class="kw">unsafe </span>{
             ffi::gtk_file_chooser_set_select_multiple(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -1854,4 +1948,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (2585bcea0 2022-11-28)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (234151769 2022-12-03)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
