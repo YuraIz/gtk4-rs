@@ -155,8 +155,6 @@ Make sure to check the box &quot;Desktop development with C++&quot; during the i
 <div style="text-align:center"><img src="img/vs-install.png" /></div>
 <h3 id="git"><a class="header" href="#git">Git</a></h3>
 <p>Download git from <a href="https://gitforwindows.org/">gitforwindows.org</a>.</p>
-<h3 id="cmake"><a class="header" href="#cmake">CMake</a></h3>
-<p>Download CMake from <a href="https://cmake.org/download/">https://cmake.org/download/</a></p>
 <h3 id="python"><a class="header" href="#python">Python</a></h3>
 <p>Download python from <a href="https://www.python.org/downloads">python.org</a>.
 Make sure to opt-in to adding Python to your Path during the installation process.</p>
@@ -164,16 +162,10 @@ Make sure to opt-in to adding Python to your Path during the installation proces
 <p>Install meson by executing:</p>
 <pre><code class="language-powershell">pip install meson ninja
 </code></pre>
-<h3 id="gettext-021"><a class="header" href="#gettext-021">Gettext 0.21</a></h3>
-<blockquote>
-<p><strong>Warning</strong>
-<strong>To avoid any potential problems, we strongly recommend the static version.</strong></p>
-</blockquote>
-<p>Download Gettext 0.21 from <a href="https://mlocati.github.io/articles/gettext-iconv-windows.html">mlocati.github.io</a>.</p>
 <h3 id="pkg-config"><a class="header" href="#pkg-config">Pkg-config</a></h3>
 <p>Download pkg-config-lite from <a href="https://sourceforge.net/projects/pkgconfiglite/">sourceforge.net</a>.
 Then extract and unpack it in <code>C:/</code>, so that the executable is in <code>C:\pkg-config-lite-0.28-1\bin</code>.</p>
-<h3 id="update-environment-variables"><a class="header" href="#update-environment-variables">Update environment variables</a></h3>
+<h3 id="update-path-environment-variable"><a class="header" href="#update-path-environment-variable">Update <code>Path</code> environment variable</a></h3>
 <ol>
 <li>Go to settings -&gt; Search and open <code>Advanced system settings</code> -&gt; Click on <code>Environment variables</code></li>
 <li>Select <code>Path</code> -&gt; Click on <code>Edit</code> -&gt; Add the following entries:</li>
@@ -181,41 +173,25 @@ Then extract and unpack it in <code>C:/</code>, so that the executable is in <co
 <pre><code>C:\pkg-config-lite-0.28-1\bin
 C:\gnome\bin
 </code></pre>
-<ol start="3">
-<li>Go back to <code>Environment variables</code> </li>
-<li>Under <code>User variables</code> click on <code>New</code> and add:</li>
-</ol>
-<ul>
-<li>Variable name: <code>PKG_CONFIG_PATH</code></li>
-<li>Variable value: <code>C:\gnome\lib\pkgconfig</code></li>
-</ul>
 <h3 id="compile-and-install-gtk-4"><a class="header" href="#compile-and-install-gtk-4">Compile and install GTK 4</a></h3>
 <p>From the Windows start menu, search for <code>x64 Native Tools Command Prompt for VS 2019</code>.
 That will open a terminal configured to use MSVC x64 tools.
 From there, run the following commands:</p>
 <pre><code class="language-powershell">cd /
 git clone https://gitlab.gnome.org/GNOME/gtk.git --depth 1
-git clone https://gitlab.gnome.org/GNOME/libxml2.git --depth 1
-git clone https://gitlab.gnome.org/GNOME/librsvg.git --depth 1
-
 cd gtk
 meson setup builddir --prefix=C:/gnome -Dbuild-tests=false -Dmedia-gstreamer=disabled
 meson install -C builddir
-cd /
-
-cd libxml2
-cmake -S . -B build -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=C:\gnome -D LIBXML2_WITH_ICONV=OFF -D LIBXML2_WITH_LZMA=OFF -D LIBXML2_WITH_PYTHON=OFF -D LIBXML2_WITH_ZLIB=OFF
-cmake --build build --config Release
-cmake --install build
-cd /
-
-cd librsvg/win32
-where python
-nmake /f generate-msvc.mak generate-nmake-files PYTHON=&lt;output from last command&gt;
-xcopy /s C:\gnome\include\cairo C:\gnome\include
-nmake /f Makefile.vc CFG=release install PREFIX=C:\gnome
-cd /
 </code></pre>
+<h3 id="set-pkg_config_path-environment-variable"><a class="header" href="#set-pkg_config_path-environment-variable">Set <code>PKG_CONFIG_PATH</code> environment variable</a></h3>
+<ol>
+<li>Go to settings -&gt; Search and open <code>Advanced system settings</code> -&gt; Click on <code>Environment variables</code></li>
+<li>Under <code>User variables</code> click on <code>New</code> and add:</li>
+</ol>
+<ul>
+<li>Variable name: <code>PKG_CONFIG_PATH</code></li>
+<li>Variable value: <code>C:\gnome\lib\pkgconfig</code></li>
+</ul>
 <h2 id="gnu-toolchain"><a class="header" href="#gnu-toolchain">GNU toolchain</a></h2>
 <h3 id="install-rustup-1"><a class="header" href="#install-rustup-1">Install Rustup</a></h3>
 <p>Install the rust toolchain via <a href="https://rustup.rs/">rustup</a>.</p>
@@ -227,9 +203,9 @@ cd /
 <p>From the Windows start menu, search for <code>MSYS2 MinGW 64-bit</code>.
 That will open a terminal configured to use MinGW x64 tools.</p>
 <p>There, execute the following commands to install <code>GTK 4</code>, <code>pkgconf</code> and <code>gcc</code>.</p>
-<pre><code class="language-sh">pacman -S mingw-w64-x86_64-gtk4 mingw-w64-x86_64-gettext mingw-w64-x86_64-libxml2 mingw-w64-x86_64-librsvg mingw-w64-x86_64-pkgconf mingw-w64-x86_64-gcc
+<pre><code class="language-sh">pacman -S mingw-w64-x86_64-gtk4 mingw-w64-x86_64-pkgconf mingw-w64-x86_64-gcc
 </code></pre>
-<h3 id="update-path-environment-variable"><a class="header" href="#update-path-environment-variable">Update <code>Path</code> environment variable</a></h3>
+<h3 id="update-path-environment-variable-1"><a class="header" href="#update-path-environment-variable-1">Update <code>Path</code> environment variable</a></h3>
 <ol>
 <li>Go to settings -&gt; Search and open <code>Advanced system settings</code> -&gt; Click on <code>Environment variables</code></li>
 <li>Select <code>Path</code> -&gt; Click on <code>Edit</code> -&gt; Add the following three entries:</li>

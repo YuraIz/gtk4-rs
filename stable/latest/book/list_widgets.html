@@ -266,7 +266,7 @@ So let's create a custom GObject <code>IntegerObject</code> that which is initia
 
 impl IntegerObject {
     pub fn new(number: i32) -&gt; Self {
-        Object::builder().property(&quot;number&quot;, number).build()
+        Object::new(&amp;[(&quot;number&quot;, &amp;number)])
     }
 }
 <span class="boring"></span></code></pre>
@@ -765,7 +765,7 @@ For that we first add the method <code>increase_number</code> to our <code>Integ
 </span><span class="boring">
 </span>impl IntegerObject {
     pub fn new(number: i32) -&gt; Self {
-        Object::builder().property(&quot;number&quot;, number).build()
+        Object::new(&amp;[(&quot;number&quot;, &amp;number)])
     }
 
     pub fn increase_number(self) {

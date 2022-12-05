@@ -186,7 +186,7 @@ First, we create one and add convenience methods for accessing settings as well 
 impl Window {
     pub fn new(app: &amp;Application) -&gt; Self {
         // Create new window
-        Object::builder().property(&quot;application&quot;, app).build()
+        Object::new(&amp;[(&quot;application&quot;, app)])
     }
 
     fn setup_settings(&amp;self) {

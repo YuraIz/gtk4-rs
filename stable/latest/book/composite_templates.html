@@ -290,7 +290,7 @@ glib::wrapper! {
 impl Window {
     pub fn new(app: &amp;Application) -&gt; Self {
         // Create new window
-        Object::builder().property(&quot;application&quot;, app).build()
+        Object::new(&amp;[(&quot;application&quot;, app)])
     }
 }</code></pre>
 <p>In the implementation struct, we then add the derive macro <a href="../docs/gtk4_macros/derive.CompositeTemplate.html"><code>gtk::CompositeTemplate</code></a>.
@@ -507,7 +507,7 @@ glib::wrapper! {
 <span class="boring">
 </span><span class="boring">impl CustomButton {
 </span><span class="boring">    pub fn new() -&gt; Self {
-</span><span class="boring">        Object::builder().build()
+</span><span class="boring">        Object::new(&amp;[])
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
