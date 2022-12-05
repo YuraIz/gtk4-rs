@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/icon_view.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>icon_view.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ea97c800646ec4c5.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-1469fca9efc07bcb.css"><link rel="stylesheet" disabled href="../../../static.files/dark-e9b7e5d8ba0dc980.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-0c1cf144240c9f40.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-2da75ee0e1909b3a.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/icon_view.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>icon_view.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e963ab4a0d0c903e.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-046227e470cd3629.css"><link rel="stylesheet" disabled href="../../../static.files/dark-800f2ee593c8e6f7.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-9edae3c387f5a5b3.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gtk4/index.html"><img class="rust-logo" src="../../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -2926,6 +2926,7 @@
 <a href="#2853" id="2853">2853</a>
 <a href="#2854" id="2854">2854</a>
 <a href="#2855" id="2855">2855</a>
+<a href="#2856" id="2856">2856</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -2968,7 +2969,8 @@
 <span class="kw">use </span>std::ptr;
 
 <span class="macro">glib::wrapper! </span>{
-    <span class="doccomment">/// [`IconView`][crate::IconView] is a widget which displays data in a grid of icons.
+    <span class="doccomment">/// Use [`GridView`][crate::GridView] instead
+    /// [`IconView`][crate::IconView] is a widget which displays data in a grid of icons.
     ///
     /// [`IconView`][crate::IconView] provides an alternative view on a [`TreeModel`][crate::TreeModel].
     /// It displays the model as a grid of icons with labels. Like
@@ -2982,7 +2984,7 @@
     /// [`IconView`][crate::IconView] will only display the first level of the tree and
     /// ignore the tree’s branches.
     ///
-    /// # CSS nodes
+    /// ## CSS nodes
     ///
     /// ```text
     /// iconview.view
@@ -3008,7 +3010,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3025,7 +3027,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `area`
     /// the [`CellArea`][crate::CellArea] to use to layout cells
     ///
@@ -3049,7 +3051,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `model`
     /// The model.
     ///
@@ -3082,7 +3084,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `path`
     /// a [`TreePath`][crate::TreePath] in @self
     ///
@@ -3105,7 +3107,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `formats`
     /// the formats that the drag will support
     /// ## `actions`
@@ -3128,7 +3130,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `start_button_mask`
     /// Mask of allowed buttons to start drag
     /// ## `formats`
@@ -3158,7 +3160,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3181,7 +3183,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `path`
     /// a [`TreePath`][crate::TreePath]
     /// ## `cell`
@@ -3221,7 +3223,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3237,7 +3239,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3257,7 +3259,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3294,7 +3296,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `drag_x`
     /// the position to determine the destination item for
     /// ## `drag_y`
@@ -3339,7 +3341,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3370,7 +3372,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `x`
     /// The x position to be identified
     /// ## `y`
@@ -3413,7 +3415,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `path`
     /// the [`TreePath`][crate::TreePath] of the item
     ///
@@ -3437,7 +3439,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3457,7 +3459,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3474,7 +3476,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `path`
     /// the [`TreePath`][crate::TreePath] of the item
     ///
@@ -3497,7 +3499,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3513,7 +3515,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3529,7 +3531,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3546,7 +3548,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3562,7 +3564,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `x`
     /// The x position to be identified
     /// ## `y`
@@ -3589,7 +3591,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3606,7 +3608,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3622,7 +3624,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3657,7 +3659,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3677,7 +3679,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3693,7 +3695,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3709,7 +3711,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3726,7 +3728,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3752,7 +3754,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `x`
     /// the x coordinate (relative to widget coordinates)
     /// ## `y`
@@ -3809,7 +3811,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     ///
     /// # Returns
     ///
@@ -3844,7 +3846,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `path`
     /// The [`TreePath`][crate::TreePath] to be activated
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -3863,7 +3865,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `path`
     /// A [`TreePath`][crate::TreePath] to check selection on.
     ///
@@ -3898,7 +3900,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `path`
     /// The path of the item to move to.
     /// ## `use_align`
@@ -3926,7 +3928,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_select_all&quot;</span>)]
     </span><span class="kw">pub fn </span>select_all(<span class="kw-2">&amp;</span><span class="self">self</span>) {
@@ -3939,7 +3941,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `path`
     /// The [`TreePath`][crate::TreePath] to be selected.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -3958,7 +3960,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `func`
     /// The function to call for each selected icon.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -3991,7 +3993,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `single`
     /// [`true`] to emit item-activated on a single click
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4010,7 +4012,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `column_spacing`
     /// the column spacing
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4028,7 +4030,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `columns`
     /// the number of columns
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4051,7 +4053,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `path`
     /// A [`TreePath`][crate::TreePath]
     /// ## `cell`
@@ -4080,7 +4082,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `path`
     /// The path of the item to highlight
     /// ## `pos`
@@ -4102,7 +4104,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `orientation`
     /// the relative position of texts and icons
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4118,7 +4120,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `item_padding`
     /// the item padding
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4135,7 +4137,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `item_width`
     /// the width for each item
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4152,7 +4154,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `margin`
     /// the margin
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4170,7 +4172,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `column`
     /// A column in the currently used model, or -1 to display no text
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4188,7 +4190,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `model`
     /// The model.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4207,7 +4209,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `column`
     /// A column in the currently used model, or -1 to disable
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4233,7 +4235,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `reorderable`
     /// [`true`], if the list of items can be reordered.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4249,7 +4251,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `row_spacing`
     /// the row spacing
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4264,7 +4266,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `mode`
     /// The selection mode
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4281,7 +4283,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `spacing`
     /// the spacing
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4297,7 +4299,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `column`
     /// A column in the currently used model, or -1 to display no text
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4315,7 +4317,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `tooltip`
     /// a [`Tooltip`][crate::Tooltip]
     /// ## `path`
@@ -4353,7 +4355,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `column`
     /// an integer, which is a valid column number for @self’s model
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4370,7 +4372,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `tooltip`
     /// a [`Tooltip`][crate::Tooltip]
     /// ## `path`
@@ -4391,7 +4393,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_unselect_all&quot;</span>)]
     </span><span class="kw">pub fn </span>unselect_all(<span class="kw-2">&amp;</span><span class="self">self</span>) {
@@ -4404,7 +4406,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     /// ## `path`
     /// The [`TreePath`][crate::TreePath] to be unselected.
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
@@ -4423,7 +4425,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_unset_model_drag_dest&quot;</span>)]
     </span><span class="kw">pub fn </span>unset_model_drag_dest(<span class="kw-2">&amp;</span><span class="self">self</span>) {
@@ -4437,7 +4439,7 @@
     ///
     /// # Deprecated since 4.10
     ///
-    /// Use GtkGridView instead
+    /// Use [`GridView`][crate::GridView] instead
     </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v4_10&quot;</span>, deprecated = <span class="string">&quot;Since 4.10&quot;</span>)]
     #[doc(alias = <span class="string">&quot;gtk_icon_view_unset_model_drag_source&quot;</span>)]
     </span><span class="kw">pub fn </span>unset_model_drag_source(<span class="kw-2">&amp;</span><span class="self">self</span>) {
@@ -5782,4 +5784,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (e9493d63c 2022-11-16)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (53e4b9dd7 2022-12-04)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
