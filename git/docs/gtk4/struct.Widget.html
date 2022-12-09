@@ -307,7 +307,7 @@ foo_widget_class_init (FooWidgetClass *klass)
   gtk_widget_class_set_template_from_resource (GTK_WIDGET_CLASS (klass),
                                                &quot;/com/example/ui/foowidget.ui&quot;);
 }</code></pre></div>
-<p>You will also need to call <a href="prelude/trait.WidgetExt.html#tymethod.init_template" title="crate::prelude::WidgetExt::init_template()"><code>WidgetExt::init_template()</code></a> from the
+<p>You will also need to call <code>Gtk::Widget::init_template()</code> from the
 instance initialization function:</p>
 <p><strong>⚠️ The following code is in c ⚠️</strong></p>
 <div class="example-wrap"><pre class="language-c"><code>static void
@@ -317,7 +317,7 @@ foo_widget_init (FooWidget *self)
 
   // Initialize the rest of the widget...
 }</code></pre></div>
-<p>as well as calling <a href="prelude/trait.WidgetExt.html#tymethod.dispose_template" title="crate::prelude::WidgetExt::dispose_template()"><code>WidgetExt::dispose_template()</code></a> from the dispose
+<p>as well as calling <code>Gtk::Widget::dispose_template()</code> from the dispose
 function:</p>
 <p><strong>⚠️ The following code is in c ⚠️</strong></p>
 <div class="example-wrap"><pre class="language-c"><code>static void
@@ -333,7 +333,7 @@ foo_widget_dispose (GObject *gobject)
   G_OBJECT_CLASS (foo_widget_parent_class)-&gt;dispose (gobject);
 }</code></pre></div>
 <p>You can access widgets defined in the template using the
-[<code>prelude::WidgetExt::get_template_child</code>][crate::prelude::WidgetExt::get_template_child] function, but you will typically declare
+[<code>Widget::get_template_child</code>][crate::Widget::get_template_child] function, but you will typically declare
 a pointer in the instance private data structure of your type using the same
 name as the widget in the template definition, and call
 <code>Gtk::WidgetClass::bind_template_child_full()</code> (or one of its wrapper macros

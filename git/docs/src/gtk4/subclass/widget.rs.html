@@ -1485,6 +1485,37 @@
 <a href="#1412" id="1412">1412</a>
 <a href="#1413" id="1413">1413</a>
 <a href="#1414" id="1414">1414</a>
+<a href="#1415" id="1415">1415</a>
+<a href="#1416" id="1416">1416</a>
+<a href="#1417" id="1417">1417</a>
+<a href="#1418" id="1418">1418</a>
+<a href="#1419" id="1419">1419</a>
+<a href="#1420" id="1420">1420</a>
+<a href="#1421" id="1421">1421</a>
+<a href="#1422" id="1422">1422</a>
+<a href="#1423" id="1423">1423</a>
+<a href="#1424" id="1424">1424</a>
+<a href="#1425" id="1425">1425</a>
+<a href="#1426" id="1426">1426</a>
+<a href="#1427" id="1427">1427</a>
+<a href="#1428" id="1428">1428</a>
+<a href="#1429" id="1429">1429</a>
+<a href="#1430" id="1430">1430</a>
+<a href="#1431" id="1431">1431</a>
+<a href="#1432" id="1432">1432</a>
+<a href="#1433" id="1433">1433</a>
+<a href="#1434" id="1434">1434</a>
+<a href="#1435" id="1435">1435</a>
+<a href="#1436" id="1436">1436</a>
+<a href="#1437" id="1437">1437</a>
+<a href="#1438" id="1438">1438</a>
+<a href="#1439" id="1439">1439</a>
+<a href="#1440" id="1440">1440</a>
+<a href="#1441" id="1441">1441</a>
+<a href="#1442" id="1442">1442</a>
+<a href="#1443" id="1443">1443</a>
+<a href="#1444" id="1444">1444</a>
+<a href="#1445" id="1445">1445</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -2501,19 +2532,6 @@
         }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_bind_template_child_full&quot;</span>)]
-    </span><span class="kw">fn </span>bind_template_child(<span class="kw-2">&amp;mut </span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str) {
-        <span class="kw">unsafe </span>{
-            <span class="kw">let </span>widget_class = <span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>ffi::GtkWidgetClass;
-            ffi::gtk_widget_class_bind_template_child_full(
-                widget_class,
-                name.to_glib_none().<span class="number">0</span>,
-                <span class="bool-val">false </span><span class="kw">as </span>glib::ffi::gboolean,
-                <span class="number">0</span>,
-            );
-        }
-    }
-
     <span class="attr">#[doc(alias = <span class="string">&quot;gtk_widget_class_add_binding&quot;</span>)]
     </span><span class="kw">fn </span>add_binding&lt;
         F: Fn(<span class="kw-2">&amp;</span>&lt;&lt;<span class="self">Self </span><span class="kw">as </span>ClassStruct&gt;::Type <span class="kw">as </span>ObjectSubclass&gt;::Type, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Variant&gt;) -&gt; bool
@@ -2897,6 +2915,50 @@
 {
     <span class="kw">fn </span>bind_template_instance_callbacks(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         &lt;V <span class="kw">as </span>CompositeTemplateCallbacks&gt;::bind_template_callbacks(<span class="self">self</span>);
+    }
+}
+
+<span class="kw">pub trait </span>CompositeTemplateInitializingExt {
+    <span class="kw">fn </span>init_template(<span class="kw-2">&amp;</span><span class="self">self</span>);
+}
+
+<span class="kw">impl</span>&lt;T&gt; CompositeTemplateInitializingExt <span class="kw">for </span>glib::subclass::InitializingObject&lt;T&gt;
+<span class="kw">where
+    </span>T: WidgetImpl + CompositeTemplate,
+    &lt;T <span class="kw">as </span>ObjectSubclass&gt;::Type: IsA&lt;Widget&gt;,
+{
+    <span class="kw">fn </span>init_template(<span class="kw-2">&amp;</span><span class="self">self</span>) {
+        <span class="kw">unsafe </span>{
+            <span class="kw">let </span>widget = <span class="self">self
+                </span>.as_ref()
+                .unsafe_cast_ref::&lt;&lt;T <span class="kw">as </span>ObjectSubclass&gt;::Type&gt;();
+            ffi::gtk_widget_init_template(widget.as_ref().to_glib_none().<span class="number">0</span>);
+
+            &lt;T <span class="kw">as </span>CompositeTemplate&gt;::check_template_children(widget);
+        }
+    }
+}
+
+<span class="kw">pub trait </span>CompositeTemplateDisposeExt {
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
+    </span><span class="kw">fn </span>dispose_template(<span class="kw-2">&amp;</span><span class="self">self</span>);
+}
+
+<span class="kw">impl</span>&lt;T&gt; CompositeTemplateDisposeExt <span class="kw">for </span>T
+<span class="kw">where
+    </span>T: WidgetImpl + CompositeTemplate,
+    &lt;T <span class="kw">as </span>ObjectSubclass&gt;::Type: IsA&lt;Widget&gt;,
+{
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_8&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_8&quot;</span>)))]
+    </span><span class="kw">fn </span>dispose_template(<span class="kw-2">&amp;</span><span class="self">self</span>) {
+        <span class="kw">unsafe </span>{
+            ffi::gtk_widget_dispose_template(
+                <span class="self">self</span>.obj().upcast_ref::&lt;Widget&gt;().to_glib_none().<span class="number">0</span>,
+                &lt;T <span class="kw">as </span>ObjectSubclass&gt;::Type::static_type().into_glib(),
+            );
+        }
     }
 }
 </code></pre></div>

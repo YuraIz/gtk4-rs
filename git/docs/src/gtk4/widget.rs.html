@@ -195,30 +195,9 @@
 <a href="#122" id="122">122</a>
 <a href="#123" id="123">123</a>
 <a href="#124" id="124">124</a>
-<a href="#125" id="125">125</a>
-<a href="#126" id="126">126</a>
-<a href="#127" id="127">127</a>
-<a href="#128" id="128">128</a>
-<a href="#129" id="129">129</a>
-<a href="#130" id="130">130</a>
-<a href="#131" id="131">131</a>
-<a href="#132" id="132">132</a>
-<a href="#133" id="133">133</a>
-<a href="#134" id="134">134</a>
-<a href="#135" id="135">135</a>
-<a href="#136" id="136">136</a>
-<a href="#137" id="137">137</a>
-<a href="#138" id="138">138</a>
-<a href="#139" id="139">139</a>
-<a href="#140" id="140">140</a>
-<a href="#141" id="141">141</a>
-<a href="#142" id="142">142</a>
-<a href="#143" id="143">143</a>
-<a href="#144" id="144">144</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
 <span class="kw">use </span><span class="kw">crate</span>::Widget;
 
 <span class="kw">use </span>glib::object::{Cast, IsA, WeakRef};
@@ -338,25 +317,6 @@
                 ffi::gtk_widget_remove_tick_callback(widget.to_glib_none().<span class="number">0</span>, <span class="self">self</span>.id);
             }
         }
-    }
-}
-
-<span class="kw">pub trait </span>InitializingWidgetExt {
-    <span class="kw">fn </span>init_template(<span class="kw-2">&amp;</span><span class="self">self</span>);
-}
-
-<span class="kw">impl</span>&lt;T&gt; InitializingWidgetExt <span class="kw">for </span>glib::subclass::InitializingObject&lt;T&gt;
-<span class="kw">where
-    </span>T: WidgetImpl + CompositeTemplate,
-    &lt;T <span class="kw">as </span>ObjectSubclass&gt;::Type: IsA&lt;Widget&gt;,
-{
-    <span class="kw">fn </span>init_template(<span class="kw-2">&amp;</span><span class="self">self</span>) {
-        <span class="kw">let </span>widget = <span class="kw">unsafe </span>{
-            <span class="self">self</span>.as_ref()
-                .unsafe_cast_ref::&lt;&lt;T <span class="kw">as </span>ObjectSubclass&gt;::Type&gt;()
-        };
-        widget.init_template();
-        &lt;T <span class="kw">as </span>CompositeTemplate&gt;::check_template_children(widget);
     }
 }
 </code></pre></div>

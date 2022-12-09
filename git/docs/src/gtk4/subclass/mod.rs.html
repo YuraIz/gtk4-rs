@@ -239,6 +239,8 @@
 <a href="#166" id="166">166</a>
 <a href="#167" id="167">167</a>
 <a href="#168" id="168">168</a>
+<a href="#169" id="169">169</a>
+<a href="#170" id="170">170</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -404,7 +406,9 @@
     <span class="kw">pub use </span><span class="kw">super</span>::widget::CompositeTemplateInstanceCallbacksClass;
     <span class="kw">pub use </span><span class="kw">super</span>::widget::TemplateChild;
     <span class="kw">pub use </span><span class="kw">super</span>::widget::WidgetClassSubclassExt;
-    <span class="kw">pub use </span><span class="kw">super</span>::widget::{WidgetImpl, WidgetImplExt};
+    <span class="kw">pub use </span><span class="kw">super</span>::widget::{
+        CompositeTemplateDisposeExt, CompositeTemplateInitializingExt, WidgetImpl, WidgetImplExt,
+    };
     <span class="kw">pub use </span><span class="kw">super</span>::window::{WindowImpl, WindowImplExt};
 }
 </code></pre></div>
