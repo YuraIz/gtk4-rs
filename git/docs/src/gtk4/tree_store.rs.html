@@ -415,12 +415,10 @@
 <a href="#342" id="342">342</a>
 <a href="#343" id="343">343</a>
 <a href="#344" id="344">344</a>
-<a href="#345" id="345">345</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use crate</span>::{TreeIter, TreeModel, TreeStore};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{Cast, ToValue, Type, Value};
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, Cast, ToValue, Type, Value};
 <span class="kw">use </span>libc::c_int;
 
 <span class="kw">impl </span>TreeStore {

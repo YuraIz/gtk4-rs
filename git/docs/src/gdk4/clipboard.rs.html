@@ -175,18 +175,12 @@
 <a href="#102" id="102">102</a>
 <a href="#103" id="103">103</a>
 <a href="#104" id="104">104</a>
-<a href="#105" id="105">105</a>
-<a href="#106" id="106">106</a>
-<a href="#107" id="107">107</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Clipboard;
-<span class="kw">use </span>glib::object::IsA;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Clipboard};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>glib::GString;
-<span class="kw">use </span>std::future;
-<span class="kw">use </span>std::pin::Pin;
-<span class="kw">use </span>std::ptr;
+<span class="kw">use </span>std::{future, pin::Pin, ptr};
 
 <span class="kw">impl </span>Clipboard {
     <span class="doccomment">/// Asynchronously requests an input stream to read the @self&#39;s

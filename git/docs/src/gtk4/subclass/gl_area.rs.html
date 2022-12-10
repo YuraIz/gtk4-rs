@@ -187,18 +187,14 @@
 <a href="#114" id="114">114</a>
 <a href="#115" id="115">115</a>
 <a href="#116" id="116">116</a>
-<a href="#117" id="117">117</a>
-<a href="#118" id="118">118</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Traits intended for subclassing [`GLArea`](crate::GLArea).
 
-</span><span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::GLArea;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, GLArea};
 <span class="kw">use </span>gdk::GLContext;
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::Cast;
 
 <span class="attr">#[allow(clippy::upper_case_acronyms)]
 </span><span class="kw">pub trait </span>GLAreaImpl: GLAreaImplExt + WidgetImpl {

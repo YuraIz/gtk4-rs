@@ -256,11 +256,15 @@
 <a href="#183" id="183">183</a>
 <a href="#184" id="184">184</a>
 <a href="#185" id="185">185</a>
+<a href="#186" id="186">186</a>
+<a href="#187" id="187">187</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>glib::translate::{from_glib, FromGlib, IntoGlib, ToGlibPtr, ToGlibPtrMut};
-<span class="kw">use </span>glib::value::{FromValue, ToValue, ValueType};
-<span class="kw">use </span>glib::{StaticType, Type, Value};
+</span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+<span class="kw">use </span>glib::{
+    value::{FromValue, ToValue, ValueType},
+    StaticType, Type, Value,
+};
 <span class="kw">use </span>std::fmt;
 
 <span class="doccomment">/// Predefined values for use as response ids in gtk_dialog_add_button().

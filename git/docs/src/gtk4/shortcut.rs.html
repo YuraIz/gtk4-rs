@@ -103,11 +103,9 @@
 <a href="#30" id="30">30</a>
 <a href="#31" id="31">31</a>
 <a href="#32" id="32">32</a>
-<a href="#33" id="33">33</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{Shortcut, ShortcutAction, ShortcutTrigger};
-<span class="kw">use </span>glib::IsA;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Shortcut, ShortcutAction, ShortcutTrigger};
 
 <span class="kw">impl </span>Shortcut {
     <span class="doccomment">/// Creates a new [`Shortcut`][crate::Shortcut] that is triggered by @trigger and then activates

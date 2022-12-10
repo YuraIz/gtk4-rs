@@ -108,12 +108,10 @@
 <a href="#35" id="35">35</a>
 <a href="#36" id="36">36</a>
 <a href="#37" id="37">37</a>
-<a href="#38" id="38">38</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::TreePath;
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::slice;
 
 <span class="kw">impl </span>TreePath {
     <span class="doccomment">/// Returns the current indices of @self.
@@ -142,7 +140,7 @@
             <span class="kw">if </span>ptr.is_null() || count == <span class="number">0 </span>{
                 <span class="macro">vec!</span>[]
             } <span class="kw">else </span>{
-                slice::from_raw_parts(ptr, count <span class="kw">as </span>usize).to_owned()
+                std::slice::from_raw_parts(ptr, count <span class="kw">as </span>usize).to_owned()
             }
         }
     }

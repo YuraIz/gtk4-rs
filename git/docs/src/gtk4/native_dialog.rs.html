@@ -165,13 +165,13 @@
 <a href="#92" id="92">92</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::NativeDialog;
-<span class="kw">use </span><span class="kw">crate</span>::ResponseType;
-<span class="kw">use </span>std::cell::{Cell, RefCell};
-<span class="kw">use </span>std::future::Future;
-<span class="kw">use </span>std::pin::Pin;
-<span class="kw">use </span>std::rc::Rc;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, NativeDialog, ResponseType};
+<span class="kw">use </span>std::{
+    cell::{Cell, RefCell},
+    future::Future,
+    pin::Pin,
+    rc::Rc,
+};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`NativeDialog`](crate::NativeDialog).

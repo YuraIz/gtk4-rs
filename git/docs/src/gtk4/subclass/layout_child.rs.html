@@ -90,14 +90,12 @@
 <a href="#17" id="17">17</a>
 <a href="#18" id="18">18</a>
 <a href="#19" id="19">19</a>
-<a href="#20" id="20">20</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Traits intended for subclassing [`LayoutChild`](crate::LayoutChild).
 
-</span><span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::LayoutChild;
+</span><span class="kw">use crate</span>::{subclass::prelude::<span class="kw-2">*</span>, LayoutChild};
 
 <span class="kw">pub trait </span>LayoutChildImpl: ObjectImpl {}
 

@@ -103,12 +103,10 @@
 <a href="#30" id="30">30</a>
 <a href="#31" id="31">31</a>
 <a href="#32" id="32">32</a>
-<a href="#33" id="33">33</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::MapListModel;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, MapListModel};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::IsA;
 
 <span class="kw">impl </span>MapListModel {
     <span class="attr">#[doc(alias = <span class="string">&quot;gtk_map_list_model_new&quot;</span>)]

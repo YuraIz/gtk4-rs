@@ -127,17 +127,15 @@
 <a href="#54" id="54">54</a>
 <a href="#55" id="55">55</a>
 <a href="#56" id="56">56</a>
-<a href="#57" id="57">57</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::SpinButton;
-<span class="kw">use </span>glib::object::Cast;
-<span class="kw">use </span>glib::signal::{connect_raw, SignalHandlerId};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::ObjectType;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, SpinButton};
+<span class="kw">use </span>glib::{
+    signal::{connect_raw, SignalHandlerId},
+    translate::<span class="kw-2">*</span>,
+};
 <span class="kw">use </span>libc::{c_double, c_int};
-<span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
-<span class="kw">use </span>std::mem::transmute;
+<span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, mem::transmute};
 
 <span class="kw">impl </span>SpinButton {
     <span class="doccomment">/// Emitted to convert the users input into a double value.

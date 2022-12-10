@@ -253,19 +253,15 @@
 <a href="#180" id="180">180</a>
 <a href="#181" id="181">181</a>
 <a href="#182" id="182">182</a>
-<a href="#183" id="183">183</a>
-<a href="#184" id="184">184</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use crate</span>::{TextBuffer, TextIter, TextTag};
-<span class="kw">use </span>glib::object::{Cast, IsA};
-<span class="kw">use </span>glib::signal::{connect_raw, SignalHandlerId};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, TextBuffer, TextIter, TextTag};
+<span class="kw">use </span>glib::{
+    signal::{connect_raw, SignalHandlerId},
+    translate::<span class="kw-2">*</span>,
+};
 <span class="kw">use </span>libc::{c_char, c_int};
-<span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
-<span class="kw">use </span>std::mem::transmute;
-<span class="kw">use </span>std::{slice, str};
+<span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, mem::transmute, slice, str};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`TextBuffer`](crate::TextBuffer).

@@ -167,19 +167,13 @@
 <a href="#94" id="94">94</a>
 <a href="#95" id="95">95</a>
 <a href="#96" id="96">96</a>
-<a href="#97" id="97">97</a>
-<a href="#98" id="98">98</a>
-<a href="#99" id="99">99</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Traits intended for implementing the [`SymbolicPaintable`](crate::SymbolicPaintable) interface.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::SymbolicPaintable;
-<span class="kw">use </span>gdk::subclass::prelude::PaintableImpl;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, SymbolicPaintable};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::Cast;
 
 <span class="kw">pub trait </span>SymbolicPaintableImpl: PaintableImpl {
     <span class="kw">fn </span>snapshot_symbolic(

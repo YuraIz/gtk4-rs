@@ -148,12 +148,10 @@
 <a href="#75" id="75">75</a>
 <a href="#76" id="76">76</a>
 <a href="#77" id="77">77</a>
-<a href="#78" id="78">78</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use crate</span>::{ClosureExpression, Expression};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{value::ValueType, StaticType, Value};
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, value::ValueType, StaticType, Value};
 
 <span class="macro">define_expression!</span>(ClosureExpression, ffi::GtkClosureExpression);
 

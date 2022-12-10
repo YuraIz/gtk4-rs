@@ -536,10 +536,10 @@
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Traits intended for subclassing [`TextBuffer`](crate::TextBuffer).
 
-</span><span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
-<span class="kw">use crate</span>::{TextBuffer, TextChildAnchor, TextIter, TextMark, TextTag};
+</span><span class="kw">use crate</span>::{
+    prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, TextBuffer, TextChildAnchor, TextIter, TextMark, TextTag,
+};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::Cast;
 
 <span class="kw">pub trait </span>TextBufferImpl: TextBufferImplExt + ObjectImpl {
     <span class="kw">fn </span>apply_tag(<span class="kw-2">&amp;</span><span class="self">self</span>, tag: <span class="kw-2">&amp;</span>TextTag, start: <span class="kw-2">&amp;</span>TextIter, end: <span class="kw-2">&amp;</span>TextIter) {

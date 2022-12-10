@@ -101,12 +101,10 @@
 <a href="#28" id="28">28</a>
 <a href="#29" id="29">29</a>
 <a href="#30" id="30">30</a>
-<a href="#31" id="31">31</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{Entry, EntryCompletion, Widget};
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Entry, EntryCompletion, Widget};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::Cast;
 
 <span class="kw">impl </span>EntryCompletion {
     <span class="doccomment">/// Gets the entry @self has been attached to.

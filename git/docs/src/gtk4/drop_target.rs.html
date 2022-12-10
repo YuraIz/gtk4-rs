@@ -183,14 +183,18 @@
 <a href="#110" id="110">110</a>
 <a href="#111" id="111">111</a>
 <a href="#112" id="112">112</a>
+<a href="#113" id="113">113</a>
+<a href="#114" id="114">114</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::DropTarget;
-<span class="kw">use </span>glib::signal::connect_raw;
-<span class="kw">use </span>glib::Type;
-<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, value::FromValue, ObjectType, SignalHandlerId};
-<span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
-<span class="kw">use </span>std::mem::transmute;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, DropTarget};
+<span class="kw">use </span>glib::{
+    signal::{connect_raw, SignalHandlerId},
+    translate::<span class="kw-2">*</span>,
+    value::FromValue,
+    Type,
+};
+<span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, mem::transmute};
 
 <span class="kw">impl </span>DropTarget {
     <span class="doccomment">/// Sets the supported `GTypes` for this drop target.

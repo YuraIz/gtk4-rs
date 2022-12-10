@@ -242,26 +242,18 @@
 <a href="#169" id="169">169</a>
 <a href="#170" id="170">170</a>
 <a href="#171" id="171">171</a>
-<a href="#172" id="172">172</a>
-<a href="#173" id="173">173</a>
-<a href="#174" id="174">174</a>
-<a href="#175" id="175">175</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::X11Display;
-<span class="kw">use </span>glib::Cast;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, X11Display};
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;xlib&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;xlib&quot;</span>)))]
-</span><span class="kw">use </span>glib::{signal::connect_raw, signal::SignalHandlerId, ObjectType};
+</span><span class="kw">use </span>glib::signal::{connect_raw, SignalHandlerId};
 <span class="attr">#[cfg(any(all(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;egl&quot;</span>), feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(all(feature = <span class="string">&quot;v4_4&quot;</span>, feature = <span class="string">&quot;egl&quot;</span>))))]
 </span><span class="kw">use </span>khronos_egl <span class="kw">as </span>egl;
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;xlib&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;xlib&quot;</span>)))]
-</span><span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;xlib&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-#[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;xlib&quot;</span>)))]
-</span><span class="kw">use </span>std::mem::transmute;
+</span><span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, mem::transmute};
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;xlib&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;xlib&quot;</span>)))]
 </span><span class="kw">use </span>x11::xlib;

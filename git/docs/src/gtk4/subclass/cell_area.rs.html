@@ -1108,20 +1108,16 @@
 <a href="#1035" id="1035">1035</a>
 <a href="#1036" id="1036">1036</a>
 <a href="#1037" id="1037">1037</a>
-<a href="#1038" id="1038">1038</a>
-<a href="#1039" id="1039">1039</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Traits intended for subclassing [`CellArea`](crate::CellArea).
 
-</span><span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
-<span class="kw">use crate</span>::{
-    CellArea, CellAreaContext, CellRenderer, CellRendererState, DirectionType, SizeRequestMode,
-    Snapshot, TreeIter, TreeModel, Widget,
+</span><span class="kw">use crate</span>::{
+    prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, CellArea, CellAreaContext, CellRenderer, CellRendererState,
+    DirectionType, SizeRequestMode, Snapshot, TreeIter, TreeModel, Widget,
 };
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{Cast, IsA, ParamSpec, Value};
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, ParamSpec, Value};
 <span class="kw">use </span>std::mem;
 
 <span class="attr">#[derive(Debug)]

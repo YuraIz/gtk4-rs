@@ -175,12 +175,10 @@
 <a href="#102" id="102">102</a>
 <a href="#103" id="103">103</a>
 <a href="#104" id="104">104</a>
-<a href="#105" id="105">105</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::DirectoryList;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, DirectoryList};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{Cast, IsA, ToValue};
 
 <span class="kw">impl </span>DirectoryList {
     <span class="doccomment">/// Gets the IO priority set via gtk_directory_list_set_io_priority().

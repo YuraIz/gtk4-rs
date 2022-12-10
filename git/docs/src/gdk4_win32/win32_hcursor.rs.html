@@ -99,11 +99,9 @@
 <a href="#26" id="26">26</a>
 <a href="#27" id="27">27</a>
 <a href="#28" id="28">28</a>
-<a href="#29" id="29">29</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{Win32HCursor, HCURSOR};
-<span class="kw">use </span>glib::object::IsA;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Win32HCursor, HCURSOR};
 <span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, types::Pointee};
 <span class="kw">use </span>std::ptr::NonNull;
 

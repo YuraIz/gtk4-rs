@@ -107,12 +107,10 @@
 <a href="#34" id="34">34</a>
 <a href="#35" id="35">35</a>
 <a href="#36" id="36">36</a>
-<a href="#37" id="37">37</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::MediaStream;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, MediaStream};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::IsA;
 
 <span class="kw">pub trait </span>MediaStreamExtManual: <span class="lifetime">&#39;static </span>{
     <span class="doccomment">/// Sets @self into an error state.

@@ -216,17 +216,11 @@
 <a href="#143" id="143">143</a>
 <a href="#144" id="144">144</a>
 <a href="#145" id="145">145</a>
-<a href="#146" id="146">146</a>
-<a href="#147" id="147">147</a>
-<a href="#148" id="148">148</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{FontDialog, Window};
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, FontDialog, Window};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::IsA;
-<span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
-<span class="kw">use </span>std::pin::Pin;
-<span class="kw">use </span>std::ptr;
+<span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, pin::Pin, ptr};
 
 <span class="kw">impl </span>FontDialog {
     <span class="doccomment">/// This function initiates a font selection operation by

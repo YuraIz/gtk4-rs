@@ -113,11 +113,11 @@
 <a href="#40" id="40">40</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::ShortcutsSection;
-<span class="kw">use </span>glib::object::ObjectType;
-<span class="kw">use </span>glib::signal::{connect_raw, SignalHandlerId};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, ShortcutsSection};
+<span class="kw">use </span>glib::{
+    signal::{connect_raw, SignalHandlerId},
+    translate::<span class="kw-2">*</span>,
+};
 <span class="kw">use </span>std::mem::transmute;
 
 <span class="kw">impl </span>ShortcutsSection {

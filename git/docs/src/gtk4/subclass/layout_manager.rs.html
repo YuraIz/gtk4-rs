@@ -366,12 +366,12 @@
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Traits intended for subclassing [`LayoutManager`](crate::LayoutManager).
 
-</span><span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
+</span><span class="kw">use crate</span>::{
+    prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, LayoutChild, LayoutManager, Orientation, SizeRequestMode,
+    Widget,
+};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::Cast;
 <span class="kw">use </span>libc::c_int;
-
-<span class="kw">use crate</span>::{LayoutChild, LayoutManager, Orientation, SizeRequestMode, Widget};
 
 <span class="kw">pub trait </span>LayoutManagerImpl: LayoutManagerImplExt + ObjectImpl {
     <span class="kw">fn </span>allocate(<span class="kw-2">&amp;</span><span class="self">self</span>, widget: <span class="kw-2">&amp;</span>Widget, width: i32, height: i32, baseline: i32) {

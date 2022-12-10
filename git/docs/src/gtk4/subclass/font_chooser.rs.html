@@ -412,17 +412,13 @@
 <a href="#339" id="339">339</a>
 <a href="#340" id="340">340</a>
 <a href="#341" id="341">341</a>
-<a href="#342" id="342">342</a>
-<a href="#343" id="343">343</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Traits intended for implementing the [`FontChooser`](crate::FontChooser) interface.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::FontChooser;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{Cast, GString, IsA, ObjectExt, Quark};
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, FontChooser};
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, GString, Quark};
 <span class="kw">use </span>once_cell::sync::Lazy;
 <span class="kw">use </span>pango::{FontFace, FontFamily, FontMap};
 

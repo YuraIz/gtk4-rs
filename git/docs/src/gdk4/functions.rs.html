@@ -503,17 +503,11 @@
 <a href="#430" id="430">430</a>
 <a href="#431" id="431">431</a>
 <a href="#432" id="432">432</a>
-<a href="#433" id="433">433</a>
-<a href="#434" id="434">434</a>
-<a href="#435" id="435">435</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{ContentDeserializer, ContentSerializer};
-<span class="kw">use </span>glib::object::IsA;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, ContentDeserializer, ContentSerializer};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::future;
-<span class="kw">use </span>std::pin::Pin;
-<span class="kw">use </span>std::ptr;
+<span class="kw">use </span>std::{future, pin::Pin, ptr};
 
 <span class="attr">#[repr(packed)]
 </span><span class="kw">pub struct </span>GRange(<span class="kw">pub </span>i32, <span class="kw">pub </span>i32);

@@ -312,15 +312,11 @@
 <a href="#239" id="239">239</a>
 <a href="#240" id="240">240</a>
 <a href="#241" id="241">241</a>
-<a href="#242" id="242">242</a>
-<a href="#243" id="243">243</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Ordering;
-<span class="kw">use </span>glib::object::{Cast, IsA};
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Ordering};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::mem;
+<span class="kw">use </span>std::{fmt, mem};
 
 <span class="kw">use crate</span>::{SortType, TreeIter, TreeModel, TreeSortable};
 

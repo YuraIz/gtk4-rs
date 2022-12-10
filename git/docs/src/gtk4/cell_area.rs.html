@@ -202,14 +202,10 @@
 <a href="#129" id="129">129</a>
 <a href="#130" id="130">130</a>
 <a href="#131" id="131">131</a>
-<a href="#132" id="132">132</a>
-<a href="#133" id="133">133</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use crate</span>::{CellArea, CellRenderer};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{value::FromValue, IsA, Value};
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, CellArea, CellRenderer};
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, value::FromValue, Value};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`CellArea`](crate::CellArea).

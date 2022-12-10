@@ -417,12 +417,10 @@
 <a href="#344" id="344">344</a>
 <a href="#345" id="345">345</a>
 <a href="#346" id="346">346</a>
-<a href="#347" id="347">347</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{Notebook, Widget};
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Notebook, Widget};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::IsA;
 <span class="kw">use </span>libc::c_int;
 
 <span class="kw">impl </span>Notebook {

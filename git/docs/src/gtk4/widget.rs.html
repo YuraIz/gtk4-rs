@@ -192,17 +192,11 @@
 <a href="#119" id="119">119</a>
 <a href="#120" id="120">120</a>
 <a href="#121" id="121">121</a>
-<a href="#122" id="122">122</a>
-<a href="#123" id="123">123</a>
-<a href="#124" id="124">124</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::Widget;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Widget};
 
-<span class="kw">use </span>glib::object::{Cast, IsA, WeakRef};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::Continue;
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, Continue, WeakRef};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`Widget`](crate::Widget).

@@ -105,12 +105,10 @@
 <a href="#32" id="32">32</a>
 <a href="#33" id="33">33</a>
 <a href="#34" id="34">34</a>
-<a href="#35" id="35">35</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Actionable;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{IsA, Variant};
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Actionable};
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, Variant};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait containing manually implemented methods of [`Actionable`](crate::Actionable).

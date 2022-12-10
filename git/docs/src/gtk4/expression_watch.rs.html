@@ -146,13 +146,9 @@
 <a href="#73" id="73">73</a>
 <a href="#74" id="74">74</a>
 <a href="#75" id="75">75</a>
-<a href="#76" id="76">76</a>
-<a href="#77" id="77">77</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::value::FromValue;
-<span class="kw">use </span>glib::Value;
+</span><span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, value::FromValue, Value};
 
 <span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// An opaque structure representing a watched [`Expression`][crate::Expression].

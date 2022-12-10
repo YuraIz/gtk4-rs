@@ -475,9 +475,9 @@
 <a href="#402" id="402">402</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Expression;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Expression};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{value::FromValue, IsA, Object, StaticType, Type, Value};
+<span class="kw">use </span>glib::{value::FromValue, Object, StaticType, Type, Value};
 
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>AsRef&lt;Expression&gt; <span class="kw">for </span>Expression {

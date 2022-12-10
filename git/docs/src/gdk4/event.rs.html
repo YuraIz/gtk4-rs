@@ -298,15 +298,11 @@
 <a href="#225" id="225">225</a>
 <a href="#226" id="226">226</a>
 <a href="#227" id="227">227</a>
-<a href="#228" id="228">228</a>
-<a href="#229" id="229">229</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use crate</span>::{Event, EventType};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::StaticType;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::mem;
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, StaticType};
+<span class="kw">use </span>std::{fmt, mem};
 
 <span class="kw">impl </span>Event {
     <span class="kw">pub fn </span>is&lt;T: EventKind&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {

@@ -432,17 +432,13 @@
 <a href="#359" id="359">359</a>
 <a href="#360" id="360">360</a>
 <a href="#361" id="361">361</a>
-<a href="#362" id="362">362</a>
-<a href="#363" id="363">363</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>anyhow::{bail, <span class="prelude-ty">Result</span>};
 <span class="kw">use </span>proc_macro2::Span;
-<span class="kw">use </span>syn::parse::Error;
-<span class="kw">use </span>syn::spanned::Spanned;
 <span class="kw">use </span>syn::{
-    Attribute, DeriveInput, Field, Fields, Ident, Lit, Meta, MetaList, MetaNameValue, NestedMeta,
-    Type,
+    parse::Error, spanned::Spanned, Attribute, DeriveInput, Field, Fields, Ident, Lit, Meta,
+    MetaList, MetaNameValue, NestedMeta, Type,
 };
 
 <span class="kw">pub struct </span>Template {

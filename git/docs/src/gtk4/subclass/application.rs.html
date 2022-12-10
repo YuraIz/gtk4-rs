@@ -189,18 +189,14 @@
 <a href="#116" id="116">116</a>
 <a href="#117" id="117">117</a>
 <a href="#118" id="118">118</a>
-<a href="#119" id="119">119</a>
-<a href="#120" id="120">120</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Traits intended for subclassing [`Application`](crate::Application).
 
-</span><span class="kw">use </span>gio::subclass::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::Cast;
+</span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
-<span class="kw">use crate</span>::{Application, Window};
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, Application, Window};
 
 <span class="kw">pub trait </span>GtkApplicationImpl: ObjectImpl + GtkApplicationImplExt + ApplicationImpl {
     <span class="kw">fn </span>window_added(<span class="kw-2">&amp;</span><span class="self">self</span>, window: <span class="kw-2">&amp;</span>Window) {

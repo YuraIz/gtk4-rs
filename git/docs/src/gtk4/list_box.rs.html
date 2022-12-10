@@ -167,13 +167,11 @@
 <a href="#94" id="94">94</a>
 <a href="#95" id="95">95</a>
 <a href="#96" id="96">96</a>
-<a href="#97" id="97">97</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use crate</span>::{ListBox, ListBoxRow, Ordering};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
-<span class="kw">use </span>std::ptr;
+<span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, ptr};
 
 <span class="kw">impl </span>ListBox {
     <span class="attr">#[doc(alias = <span class="string">&quot;gtk_list_box_bind_model&quot;</span>)]

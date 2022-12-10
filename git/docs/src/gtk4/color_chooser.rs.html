@@ -131,12 +131,10 @@
 <a href="#58" id="58">58</a>
 <a href="#59" id="59">59</a>
 <a href="#60" id="60">60</a>
-<a href="#61" id="61">61</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{ColorChooser, Orientation};
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, ColorChooser, Orientation};
 <span class="kw">use </span>gdk::RGBA;
-<span class="kw">use </span>glib::object::IsA;
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>libc::c_int;
 

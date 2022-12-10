@@ -182,14 +182,10 @@
 <a href="#109" id="109">109</a>
 <a href="#110" id="110">110</a>
 <a href="#111" id="111">111</a>
-<a href="#112" id="112">112</a>
-<a href="#113" id="113">113</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Builder;
-<span class="kw">use </span>glib::object::{Cast, IsA};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::Object;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Builder};
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, Object};
 <span class="kw">use </span>std::path::Path;
 
 <span class="kw">impl </span>Builder {
@@ -222,7 +218,7 @@
     /// the current object
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gtk_builder_get_current_object&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_current_object&quot;</span>)]
-    </span><span class="kw">pub fn </span>current_object(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Object&gt; {
+    </span><span class="kw">pub fn </span>current_object(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Object&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr = ffi::gtk_builder_get_current_object(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
             <span class="kw">if </span>ptr.is_null() {

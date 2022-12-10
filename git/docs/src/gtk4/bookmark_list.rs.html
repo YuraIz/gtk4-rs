@@ -160,12 +160,10 @@
 <a href="#87" id="87">87</a>
 <a href="#88" id="88">88</a>
 <a href="#89" id="89">89</a>
-<a href="#90" id="90">90</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::BookmarkList;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::ToValue;
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, ToValue};
 
 <span class="kw">impl </span>BookmarkList {
     <span class="doccomment">/// Gets the IO priority to use while loading file.
