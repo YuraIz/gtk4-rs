@@ -222,7 +222,7 @@ if no tab label has specifically been set for @child.</p>
 <p>a widget contained in a page of @self</p>
 <h5 id="returns-12"><a href="#returns-12">Returns</a></h5>
 <p>the text of the tab label, or <a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html#variant.None" title="None"><code>None</code></a> if
-the tab label idget is not a <a href="struct.Label.html" title="crate::Label"><code>Label</code></a>. The string is owned
+the tab label widget is not a <a href="struct.Label.html" title="crate::Label"><code>Label</code></a>. The string is owned
 by the widget and must not be freed.</p>
 </div></details><details class="rustdoc-toggle method-toggle" open><summary><section id="method.tab_pos" class="method has-srclink"><a class="srclink rightside" href="../src/gtk4/auto/notebook.rs.html#366-368">source</a><h4 class="code-header">pub fn <a href="#method.tab_pos" class="fn">tab_pos</a>(&amp;self) -&gt; <a class="enum" href="enum.PositionType.html" title="enum gtk4::PositionType">PositionType</a></h4></section></summary><div class="docblock"><p>Gets the edge at which the tabs are drawn.</p>
 <h5 id="returns-13"><a href="#returns-13">Returns</a></h5>
@@ -278,7 +278,7 @@ scrolling if there are too many tabs to fit in the area.</p>
 <p><a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html" title="true"><code>true</code></a> if the tabs should be shown</p>
 </div></details><details class="rustdoc-toggle method-toggle" open><summary><section id="method.set_tab_detachable" class="method has-srclink"><a class="srclink rightside" href="../src/gtk4/auto/notebook.rs.html#578-586">source</a><h4 class="code-header">pub fn <a href="#method.set_tab_detachable" class="fn">set_tab_detachable</a>(&amp;self, child: &amp;impl <a class="trait" href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/trait.IsA.html" title="trait glib::object::IsA">IsA</a>&lt;<a class="struct" href="struct.Widget.html" title="struct gtk4::Widget">Widget</a>&gt;, detachable: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</h4></section></summary><div class="docblock"><p>Sets whether the tab can be detached from @self to another
 notebook or widget.</p>
-<p>Note that two notebooks must share a common group identificator
+<p>Note that two notebooks must share a common group identifier
 (see <a href="struct.Notebook.html#method.set_group_name" title="Self::set_group_name()"><code>set_group_name()</code></a>) to allow automatic tabs
 interchange between them.</p>
 <p>If you want a widget to interact with a notebook through DnD

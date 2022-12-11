@@ -76,16 +76,16 @@
 <h5 id="returns"><a href="#returns">Returns</a></h5>
 <p>the axes of @self</p>
 </div></details><details class="rustdoc-toggle method-toggle" open><summary><section id="method.hardware_id" class="method has-srclink"><a class="srclink rightside" href="../src/gdk4/auto/device_tool.rs.html#48-50">source</a><h4 class="code-header">pub fn <a href="#method.hardware_id" class="fn">hardware_id</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></h4></section></summary><div class="docblock"><p>Gets the hardware ID of this tool, or 0 if it’s not known.</p>
-<p>When non-zero, the identificator is unique for the given tool model,
+<p>When non-zero, the identifier is unique for the given tool model,
 meaning that two identical tools will share the same @hardware_id,
 but will have different serial numbers (see
 <a href="struct.DeviceTool.html#method.serial" title="Self::serial()"><code>serial()</code></a>).</p>
 <p>This is a more concrete (and device specific) method to identify
 a <a href="struct.DeviceTool.html" title="crate::DeviceTool"><code>DeviceTool</code></a> than <a href="struct.DeviceTool.html#method.tool_type" title="Self::tool_type()"><code>tool_type()</code></a>,
 as a tablet may support multiple devices with the same
-<a href="enum.DeviceToolType.html" title="crate::DeviceToolType"><code>DeviceToolType</code></a>, but different hardware identificators.</p>
+<a href="enum.DeviceToolType.html" title="crate::DeviceToolType"><code>DeviceToolType</code></a>, but different hardware identifiers.</p>
 <h5 id="returns-1"><a href="#returns-1">Returns</a></h5>
-<p>The hardware identificator of this tool.</p>
+<p>The hardware identifier of this tool.</p>
 </div></details><details class="rustdoc-toggle method-toggle" open><summary><section id="method.serial" class="method has-srclink"><a class="srclink rightside" href="../src/gdk4/auto/device_tool.rs.html#62-64">source</a><h4 class="code-header">pub fn <a href="#method.serial" class="fn">serial</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></h4></section></summary><div class="docblock"><p>Gets the serial number of this tool.</p>
 <p>This value can be used to identify a physical tool
 (eg. a tablet pen) across program executions.</p>
