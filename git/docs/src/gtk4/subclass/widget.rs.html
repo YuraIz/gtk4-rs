@@ -1509,6 +1509,10 @@
 <a href="#1436" id="1436">1436</a>
 <a href="#1437" id="1437">1437</a>
 <a href="#1438" id="1438">1438</a>
+<a href="#1439" id="1439">1439</a>
+<a href="#1440" id="1440">1440</a>
+<a href="#1441" id="1441">1441</a>
+<a href="#1442" id="1442">1442</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -2421,7 +2425,11 @@
         parameter_type: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
         activate: F,
     ) <span class="kw">where
-        </span>F: Fn(&lt;&lt;<span class="self">Self </span><span class="kw">as </span>ClassStruct&gt;::Type <span class="kw">as </span>ObjectSubclass&gt;::Type, <span class="kw-2">&amp;</span>str, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Variant&gt;) -&gt; Fut
+        </span>F: Fn(
+                &lt;&lt;<span class="self">Self </span><span class="kw">as </span>ClassStruct&gt;::Type <span class="kw">as </span>ObjectSubclass&gt;::Type,
+                String,
+                <span class="prelude-ty">Option</span>&lt;Variant&gt;,
+            ) -&gt; Fut
             + <span class="lifetime">&#39;static
             </span>+ Clone,
         Fut: Future&lt;Output = ()&gt;,
@@ -2434,7 +2442,7 @@
                 <span class="kw">let </span>action_name = action_name.to_owned();
                 <span class="kw">let </span>parameter_type = parameter_type.map(ToOwned::to_owned);
                 ctx.spawn_local(<span class="macro">glib::clone!</span>(@strong this, @strong action_name, @strong parameter_type, @strong activate =&gt; <span class="kw">async move </span>{
-                    activate(this, <span class="kw-2">&amp;</span>action_name, parameter_type.as_ref()).<span class="kw">await</span>;
+                    activate(this, action_name, parameter_type).<span class="kw">await</span>;
                 }));
             },
         );
