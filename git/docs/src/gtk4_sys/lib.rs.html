@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/sys/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-64113db173fe9e58.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-8fe2cf7ee64a76fb.css"><link rel="stylesheet" disabled href="../../static.files/dark-7aacebe982779e9a.css"><link rel="stylesheet" disabled href="../../static.files/ayu-29dcc614f7a7b461.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-a211dbb005fb8161.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/sys/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-34efc64c5083af8d.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -19858,6 +19858,21 @@
 <a href="#19785" id="19785">19785</a>
 <a href="#19786" id="19786">19786</a>
 <a href="#19787" id="19787">19787</a>
+<a href="#19788" id="19788">19788</a>
+<a href="#19789" id="19789">19789</a>
+<a href="#19790" id="19790">19790</a>
+<a href="#19791" id="19791">19791</a>
+<a href="#19792" id="19792">19792</a>
+<a href="#19793" id="19793">19793</a>
+<a href="#19794" id="19794">19794</a>
+<a href="#19795" id="19795">19795</a>
+<a href="#19796" id="19796">19796</a>
+<a href="#19797" id="19797">19797</a>
+<a href="#19798" id="19798">19798</a>
+<a href="#19799" id="19799">19799</a>
+<a href="#19800" id="19800">19800</a>
+<a href="#19801" id="19801">19801</a>
+<a href="#19802" id="19802">19802</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -20187,8 +20202,8 @@
 
 <span class="kw">pub type </span>GtkDialogError = c_int;
 <span class="kw">pub const </span>GTK_DIALOG_ERROR_FAILED: GtkDialogError = <span class="number">0</span>;
-<span class="kw">pub const </span>GTK_DIALOG_ERROR_ABORTED: GtkDialogError = <span class="number">1</span>;
-<span class="kw">pub const </span>GTK_DIALOG_ERROR_CANCELLED: GtkDialogError = <span class="number">2</span>;
+<span class="kw">pub const </span>GTK_DIALOG_ERROR_CANCELLED: GtkDialogError = <span class="number">1</span>;
+<span class="kw">pub const </span>GTK_DIALOG_ERROR_DISMISSED: GtkDialogError = <span class="number">2</span>;
 
 <span class="kw">pub type </span>GtkDirectionType = c_int;
 <span class="kw">pub const </span>GTK_DIR_TAB_FORWARD: GtkDirectionType = <span class="number">0</span>;
@@ -30302,6 +30317,7 @@
     </span><span class="kw">pub fn </span>gtk_alert_dialog_choose_finish(
         self_: <span class="kw-2">*mut </span>GtkAlertDialog,
         result: <span class="kw-2">*mut </span>gio::GAsyncResult,
+        error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; c_int;
     <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
@@ -32663,13 +32679,22 @@
     </span><span class="kw">pub fn </span>gtk_file_dialog_new() -&gt; <span class="kw-2">*mut </span>GtkFileDialog;
     <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
-    </span><span class="kw">pub fn </span>gtk_file_dialog_get_current_filter(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*mut </span>GtkFileFilter;
+    </span><span class="kw">pub fn </span>gtk_file_dialog_get_accept_label(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*const </span>c_char;
     <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
-    </span><span class="kw">pub fn </span>gtk_file_dialog_get_current_folder(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*mut </span>gio::GFile;
+    </span><span class="kw">pub fn </span>gtk_file_dialog_get_default_filter(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*mut </span>GtkFileFilter;
     <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_get_filters(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*mut </span>gio::GListModel;
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_file_dialog_get_initial_file(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*mut </span>gio::GFile;
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_file_dialog_get_initial_folder(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*mut </span>gio::GFile;
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_file_dialog_get_initial_name(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; <span class="kw-2">*const </span>c_char;
     <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_get_modal(self_: <span class="kw-2">*mut </span>GtkFileDialog) -&gt; gboolean;
@@ -32684,7 +32709,6 @@
     </span><span class="kw">pub fn </span>gtk_file_dialog_open(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
         parent: <span class="kw-2">*mut </span>GtkWindow,
-        current_file: <span class="kw-2">*mut </span>gio::GFile,
         cancellable: <span class="kw-2">*mut </span>gio::GCancellable,
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
@@ -32717,8 +32741,6 @@
     </span><span class="kw">pub fn </span>gtk_file_dialog_save(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
         parent: <span class="kw-2">*mut </span>GtkWindow,
-        current_file: <span class="kw-2">*mut </span>gio::GFile,
-        current_name: <span class="kw-2">*const </span>c_char,
         cancellable: <span class="kw-2">*mut </span>gio::GCancellable,
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
@@ -32735,7 +32757,6 @@
     </span><span class="kw">pub fn </span>gtk_file_dialog_select_folder(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
         parent: <span class="kw-2">*mut </span>GtkWindow,
-        current_folder: <span class="kw-2">*mut </span>gio::GFile,
         cancellable: <span class="kw-2">*mut </span>gio::GCancellable,
         callback: gio::GAsyncReadyCallback,
         user_data: gpointer,
@@ -32765,16 +32786,25 @@
     ) -&gt; <span class="kw-2">*mut </span>gio::GListModel;
     <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
-    </span><span class="kw">pub fn </span>gtk_file_dialog_set_current_filter(
+    </span><span class="kw">pub fn </span>gtk_file_dialog_set_accept_label(self_: <span class="kw-2">*mut </span>GtkFileDialog, accept_label: <span class="kw-2">*const </span>c_char);
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_file_dialog_set_default_filter(
         self_: <span class="kw-2">*mut </span>GtkFileDialog,
         filter: <span class="kw-2">*mut </span>GtkFileFilter,
     );
     <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
-    </span><span class="kw">pub fn </span>gtk_file_dialog_set_current_folder(self_: <span class="kw-2">*mut </span>GtkFileDialog, folder: <span class="kw-2">*mut </span>gio::GFile);
+    </span><span class="kw">pub fn </span>gtk_file_dialog_set_filters(self_: <span class="kw-2">*mut </span>GtkFileDialog, filters: <span class="kw-2">*mut </span>gio::GListModel);
     <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
-    </span><span class="kw">pub fn </span>gtk_file_dialog_set_filters(self_: <span class="kw-2">*mut </span>GtkFileDialog, filters: <span class="kw-2">*mut </span>gio::GListModel);
+    </span><span class="kw">pub fn </span>gtk_file_dialog_set_initial_file(self_: <span class="kw-2">*mut </span>GtkFileDialog, file: <span class="kw-2">*mut </span>gio::GFile);
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_file_dialog_set_initial_folder(self_: <span class="kw-2">*mut </span>GtkFileDialog, folder: <span class="kw-2">*mut </span>gio::GFile);
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
+    </span><span class="kw">pub fn </span>gtk_file_dialog_set_initial_name(self_: <span class="kw-2">*mut </span>GtkFileDialog, name: <span class="kw-2">*const </span>c_char);
     <span class="attr">#[cfg(any(feature = <span class="string">&quot;v4_10&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v4_10&quot;</span>)))]
     </span><span class="kw">pub fn </span>gtk_file_dialog_set_modal(self_: <span class="kw-2">*mut </span>GtkFileDialog, modal: gboolean);
@@ -39646,4 +39676,4 @@
 
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4_sys" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (1d12c3cea 2022-12-20)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4_sys" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (77429957a 2023-01-01)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
