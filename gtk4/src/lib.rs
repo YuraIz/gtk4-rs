@@ -67,21 +67,29 @@ where
 {
     skip_assert_initialized!();
 
-    use std::panic;
-    use std::sync::mpsc;
+    #[cfg(not(target_os = "macos"))]
+    {
+        use std::panic;
+        use std::sync::mpsc;
 
-    let (tx, rx) = mpsc::sync_channel(1);
-    TEST_THREAD_WORKER
-        .push(move || {
-            tx.send(panic::catch_unwind(function))
-                .unwrap_or_else(|_| panic!("Failed to return result from thread pool"));
-        })
-        .expect("Failed to schedule a test call");
-    rx.recv()
-        .expect("Failed to receive result from thread pool")
-        .unwrap_or_else(|e| std::panic::resume_unwind(e))
+        let (tx, rx) = mpsc::sync_channel(1);
+        TEST_THREAD_WORKER
+            .push(move || {
+                tx.send(panic::catch_unwind(function))
+                    .unwrap_or_else(|_| panic!("Failed to return result from thread pool"));
+            })
+            .expect("Failed to schedule a test call");
+        rx.recv()
+            .expect("Failed to receive result from thread pool")
+            .unwrap_or_else(|e| std::panic::resume_unwind(e))
+    }
+    #[cfg(target_os = "macos")]
+    {
+        crate::rt::dispatch::<F, R, _>(function)
+    }
 }
 
+#[cfg(not(target_os = "macos"))]
 static TEST_THREAD_WORKER: once_cell::sync::Lazy<glib::ThreadPool> =
     once_cell::sync::Lazy::new(|| {
         let pool = glib::ThreadPool::exclusive(1).unwrap();

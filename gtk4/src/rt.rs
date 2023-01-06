@@ -9,6 +9,13 @@ use std::{
 #[cfg(target_os = "macos")]
 extern "C" {
     fn pthread_main_np() -> i32;
+
+    fn dispatch_get_main_queue() -> *mut libc::c_void;
+    fn dispatch_sync_f(
+        queue: *mut libc::c_void,
+        context: *mut libc::c_void,
+        block: Option<unsafe extern "C" fn(*mut libc::c_void)>,
+    );
 }
 
 thread_local! {
@@ -154,6 +161,49 @@ pub fn init() -> Result<(), glib::BoolError> {
         } else {
             Err(glib::bool_error!("Failed to initialize GTK"))
         }
+    }
+}
+
+#[cfg(target_os = "macos")]
+pub(crate) fn dispatch<F, R, G>(function: F) -> R
+where
+    F: FnOnce() -> R + Send + std::panic::UnwindSafe + 'static,
+    G: FnOnce() -> () + 'static,
+    R: Send + 'static,
+{
+    skip_assert_initialized!();
+    use std::panic;
+    use std::sync::mpsc;
+
+    let (tx, rx) = mpsc::sync_channel(1);
+    unsafe {
+        let queue = dispatch_get_main_queue();
+
+        let trampoline = move || {
+            tx.send(panic::catch_unwind(function))
+                .unwrap_or_else(|_| panic!("Failed to return result from thread pool"));
+        };
+
+        extern "C" fn callback<G>(context: *mut libc::c_void)
+        where
+            G: FnOnce() -> () + 'static,
+        {
+            unsafe {
+                let func: &mut Option<G> = &mut *(context as *mut Option<G>);
+                if let Some(f) = func.take() {
+                    f();
+                }
+            }
+        }
+        dispatch_sync_f(
+            queue,
+            Box::into_raw(Box::new(Some(trampoline))) as *mut _,
+            Some(callback::<G>),
+        );
+
+        rx.recv()
+            .expect("Failed to receive result from thread pool")
+            .unwrap_or_else(|e| std::panic::resume_unwind(e))
     }
 }
 
