@@ -262,7 +262,7 @@ mod imp5 {
     use super::*;
 
     #[derive(Debug, Default, CompositeTemplate)]
-    #[template(file = "tests/my_widget.blp")]
+    #[template(file = "my_widget.blp")]
     pub struct MyWidget5 {
         #[template_child]
         pub label: TemplateChild<gtk::Label>,

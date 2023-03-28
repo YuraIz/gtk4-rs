@@ -32,17 +32,14 @@ pub fn include_blueprint(input: TokenStream) -> TokenStream {
         abort_call_site!("File name not found");
     }
 
-    let root = std::env::var("CARGO_MANIFEST_DIR").unwrap_or_else(|_| ".".into());
-
     let file_name = tokens[0].to_string();
     let file_name = file_name.trim();
     let file_name = &file_name[1..file_name.len() - 1];
 
-    let path = std::path::Path::new(&root).join(file_name);
-
-    if !path.exists() {
-        abort_call_site!("{} not found", &path.to_string_lossy());
-    }
+    let path = match blueprint::find_blueprint(file_name) {
+        Ok(path) => path,
+        Err(err) => abort_call_site!("{}", err),
+    };
 
     let path = path.to_string_lossy().to_string();
 
